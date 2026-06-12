@@ -4,7 +4,7 @@ module.exports = {
       name: "cunctator",
       script: "node_modules/next/dist/bin/next",
       args: "start -p 3000",
-      cwd: "/srv/cunctator/app",
+      cwd: "/srv/cuncWebsite/app",
       instances: 1,
       exec_mode: "fork",
       env: { NODE_ENV: "production" },

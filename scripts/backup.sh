@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Nightly backup of the SQLite database and uploaded documents.
-# Cron (as the app user):  30 3 * * *  /srv/cunctator/app/scripts/backup.sh
+# Cron (as the app user):  30 3 * * *  /srv/cuncWebsite/app/scripts/backup.sh
 set -euo pipefail
 
-APP_DIR="${APP_DIR:-/srv/cunctator/app}"
-BACKUP_DIR="${BACKUP_DIR:-/srv/cunctator/backups}"
+APP_DIR="${APP_DIR:-/srv/cuncWebsite/app}"
+BACKUP_DIR="${BACKUP_DIR:-/srv/cuncWebsite/backups}"
 KEEP_DAYS="${KEEP_DAYS:-14}"
 STAMP="$(date +%Y%m%d-%H%M%S)"
 DEST="$BACKUP_DIR/$STAMP"
