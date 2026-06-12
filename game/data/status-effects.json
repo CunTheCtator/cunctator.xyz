@@ -1,0 +1,122 @@
+[
+  {
+    "id": "slowed",
+    "name": "Slowed",
+    "level": "unit",
+    "description": "Movement range halved. The unit can still act but cannot close ground effectively.",
+    "duration": 2,
+    "type": "movement",
+    "magnitude": -2,
+    "stackable": false,
+    "curable": true,
+    "source": "ability"
+  },
+  {
+    "id": "fortified",
+    "name": "Fortified",
+    "level": "unit",
+    "description": "Incoming damage reduced. Applied by adjacent structures or specific abilities. Does not stack with itself but stacks with other defense effects.",
+    "duration": 2,
+    "type": "defense",
+    "magnitude": 3,
+    "stackable": false,
+    "curable": false,
+    "source": "ability"
+  },
+  {
+    "id": "disrupted",
+    "name": "Disrupted",
+    "level": "unit",
+    "description": "One of the unit's traits is suppressed for the duration. Which trait is suppressed is determined by the applying ability. Counters specialist units specifically.",
+    "duration": 2,
+    "type": "trait_suppress",
+    "magnitude": 1,
+    "stackable": false,
+    "curable": true,
+    "source": "ability"
+  },
+  {
+    "id": "burning",
+    "name": "Burning",
+    "level": "unit",
+    "description": "Deals damage at the start of each of the affected unit's turns. Primary damage-over-time effect.",
+    "duration": 3,
+    "type": "dot",
+    "magnitude": 4,
+    "stackable": false,
+    "curable": true,
+    "source": "ability"
+  },
+  {
+    "id": "marked",
+    "name": "Marked",
+    "level": "unit",
+    "description": "Unit is visible through fog of war regardless of distance. Defense reduced. Applied by Handler and Analyst abilities.",
+    "duration": 3,
+    "type": "vision",
+    "magnitude": 1,
+    "stackable": false,
+    "curable": false,
+    "source": "ability"
+  },
+  {
+    "id": "suppressed",
+    "name": "Suppressed",
+    "level": "unit",
+    "description": "Unit cannot move on its next turn. Can still attack and use abilities. Applied by Suppressor's Suppressing Fire trait.",
+    "duration": 1,
+    "type": "movement",
+    "magnitude": -99,
+    "stackable": false,
+    "curable": false,
+    "source": "ability"
+  },
+  {
+    "id": "famine",
+    "name": "Famine",
+    "level": "army",
+    "description": "The entire force loses 1 from their action budget each turn. Cannot stack. Maximum duration enforced to prevent prolonged paralysis.",
+    "duration": 2,
+    "type": "action-budget",
+    "magnitude": -1,
+    "stackable": false,
+    "curable": false,
+    "source": "ability"
+  },
+  {
+    "id": "inspired",
+    "name": "Inspired",
+    "level": "army",
+    "description": "The entire force gains 1 additional action each turn. Primary army-level buff. Awarded by puzzle node success.",
+    "duration": 2,
+    "type": "action-budget",
+    "magnitude": 1,
+    "stackable": false,
+    "curable": false,
+    "source": "puzzle"
+  },
+  {
+    "id": "blinded",
+    "name": "Blinded",
+    "level": "army",
+    "description": "All unit vision ranges reduced by 2 tiles. Interacts with fog of war directly. Reduces strategic information significantly.",
+    "duration": 2,
+    "type": "vision",
+    "magnitude": -2,
+    "stackable": false,
+    "curable": false,
+    "source": "ability"
+  },
+  {
+    "id": "rallied",
+    "name": "Rallied",
+    "level": "army",
+    "description": "All units gain a movement bonus. Army-level version of pressure effects. Applied by commander abilities and puzzle nodes.",
+    "duration": 2,
+    "type": "movement",
+    "magnitude": 1,
+    "stackable": false,
+    "curable": false,
+    "source": "puzzle"
+  }
+]

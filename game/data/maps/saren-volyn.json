@@ -1,0 +1,5462 @@
+{
+ "id": "saren-volyn",
+ "name": "Saren-Volyn — Crystalline Lattice",
+ "world": "Saren-Volyn",
+ "description": "Three corridors through the lattice. West: long and covered. Centre: short and blind — interference kills sensors. East: direct and contested. The bunker and the relay anchor opposite ends.",
+ "ambientRegister": "Prismatic, fractured sightlines. Crystalline resonance, comms static in the interference.",
+ "designRationale": "Corridor map without one-tiling: every lattice gap is 3 wide, every destination has two doors (bunker: front + rear; relay: two ramps). The interference field makes the central corridor a risk-trade — fastest line, no sensors. Three missions use the same terrain from three different directions.",
+ "usedInMissions": [
+  {
+   "campaign": "syndicate",
+   "mission": 2,
+   "side": "player"
+  },
+  {
+   "campaign": "pirates",
+   "mission": 2,
+   "side": "player"
+  },
+  {
+   "campaign": "syndicate",
+   "mission": 3,
+   "side": "player"
+  }
+ ],
+ "grid": {
+  "format": "region-spec",
+  "size": 64,
+  "implementation": "Fill defaultTile. Apply regions in order (later wins). Apply tileOverrides. Regions flagged interference reduce vision by 2 inside the zone.",
+  "defaultTile": {
+   "type": "open",
+   "movementCost": 1,
+   "blocksVision": false,
+   "destructible": false,
+   "resource": false
+  },
+  "regions": [
+   {
+    "label": "North rim",
+    "rows": [
+     0,
+     2
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "South rim",
+    "rows": [
+     61,
+     63
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West rim",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     0,
+     2
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East rim",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     61,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Lattice wall A (W/C split)",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     18,
+     21
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Wall A gap — north",
+    "rows": [
+     12,
+     15
+    ],
+    "cols": [
+     18,
+     21
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Wall A gap — mid",
+    "rows": [
+     30,
+     33
+    ],
+    "cols": [
+     18,
+     21
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Wall A gap — south",
+    "rows": [
+     48,
+     51
+    ],
+    "cols": [
+     18,
+     21
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Lattice wall B (C/E split)",
+    "rows": [
+     3,
+     45
+    ],
+    "cols": [
+     42,
+     45
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Wall B gap — north",
+    "rows": [
+     8,
+     11
+    ],
+    "cols": [
+     42,
+     45
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Wall B gap — mid",
+    "rows": [
+     26,
+     29
+    ],
+    "cols": [
+     42,
+     45
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Interference field (central)",
+    "rows": [
+     24,
+     40
+    ],
+    "cols": [
+     22,
+     41
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false,
+     "specialEffect": "interference",
+     "visionPenalty": 2
+    }
+   },
+   {
+    "label": "Pillars — C north",
+    "rows": [
+     18,
+     20
+    ],
+    "cols": [
+     28,
+     30
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pillars — C south",
+    "rows": [
+     34,
+     36
+    ],
+    "cols": [
+     33,
+     35
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pillars — W upper",
+    "rows": [
+     22,
+     24
+    ],
+    "cols": [
+     8,
+     10
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pillars — W lower",
+    "rows": [
+     40,
+     42
+    ],
+    "cols": [
+     12,
+     14
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pillars — E upper",
+    "rows": [
+     16,
+     18
+    ],
+    "cols": [
+     52,
+     54
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pillars — E lower",
+    "rows": [
+     34,
+     36
+    ],
+    "cols": [
+     50,
+     52
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spur — W north",
+    "rows": [
+     14,
+     16
+    ],
+    "cols": [
+     5,
+     9
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spur — W mid",
+    "rows": [
+     32,
+     34
+    ],
+    "cols": [
+     6,
+     9
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spur — W south",
+    "rows": [
+     50,
+     52
+    ],
+    "cols": [
+     8,
+     12
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spur — C upper",
+    "rows": [
+     22,
+     24
+    ],
+    "cols": [
+     24,
+     27
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spur — C lower",
+    "rows": [
+     30,
+     32
+    ],
+    "cols": [
+     37,
+     40
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spur — C exit",
+    "rows": [
+     44,
+     46
+    ],
+    "cols": [
+     24,
+     28
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spur — E north",
+    "rows": [
+     12,
+     14
+    ],
+    "cols": [
+     47,
+     50
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spur — E mid",
+    "rows": [
+     26,
+     28
+    ],
+    "cols": [
+     56,
+     59
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spur — E south",
+    "rows": [
+     42,
+     44
+    ],
+    "cols": [
+     47,
+     50
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Relay — platform shell",
+    "rows": [
+     5,
+     13
+    ],
+    "cols": [
+     26,
+     38
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Relay — platform floor",
+    "rows": [
+     7,
+     11
+    ],
+    "cols": [
+     28,
+     36
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Relay — S ramp",
+    "rows": [
+     11,
+     17
+    ],
+    "cols": [
+     31,
+     33
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Relay — E ramp",
+    "rows": [
+     8,
+     10
+    ],
+    "cols": [
+     36,
+     42
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Bunker — shell",
+    "rows": [
+     46,
+     58
+    ],
+    "cols": [
+     44,
+     58
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Bunker — interior floor",
+    "rows": [
+     48,
+     56
+    ],
+    "cols": [
+     46,
+     56
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Bunker — front approach (N)",
+    "rows": [
+     44,
+     48
+    ],
+    "cols": [
+     49,
+     51
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Bunker — rear exit (W)",
+    "rows": [
+     52,
+     53
+    ],
+    "cols": [
+     42,
+     46
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   }
+  ],
+  "tileOverrides": [
+   {
+    "row": 50,
+    "col": 48,
+    "label": "Asset interface terminal (buyer contact)",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 9,
+    "col": 32,
+    "label": "Northern relay core",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 36,
+    "col": 7,
+    "label": "Lattice node — W corridor",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 16,
+    "col": 35,
+    "label": "Relay supply node — defender eco at the S ramp",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 52,
+    "col": 28,
+    "label": "C-corridor cache — attacker eco, seats t3 from the S edge",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   }
+  ]
+ },
+ "resourceTiles": [
+  {
+   "row": 36,
+   "col": 7
+  },
+  {
+   "row": 16,
+   "col": 35
+  },
+  {
+   "row": 52,
+   "col": 28
+  }
+ ],
+ "keyFeatures": [
+  {
+   "id": "saren-volyn_asset_bunker",
+   "type": "objective",
+   "label": "Asset Bunker",
+   "description": "front door N + rear exit W",
+   "at": {
+    "row": 50,
+    "col": 49
+   }
+  },
+  {
+   "id": "saren-volyn_north_relay",
+   "type": "objective",
+   "label": "North Relay",
+   "description": "two ramps — can't be one-tiled shut",
+   "at": {
+    "row": 9,
+    "col": 33
+   }
+  },
+  {
+   "id": "saren-volyn_interference_field",
+   "type": "hazard",
+   "label": "Interference Field",
+   "description": "vision −2 · fastest corridor, blind",
+   "at": {
+    "row": 32,
+    "col": 31
+   }
+  },
+  {
+   "id": "saren-volyn_wall_a_gaps",
+   "type": "terrain",
+   "label": "Wall A Gaps",
+   "description": "3-wide × 3",
+   "at": {
+    "row": 31,
+    "col": 19
+   }
+  }
+ ],
+ "defaultSpawnZones": {
+  "player": [
+   {
+    "row": 54,
+    "col": 3
+   },
+   {
+    "row": 54,
+    "col": 4
+   },
+   {
+    "row": 54,
+    "col": 5
+   },
+   {
+    "row": 54,
+    "col": 6
+   },
+   {
+    "row": 55,
+    "col": 3
+   },
+   {
+    "row": 55,
+    "col": 4
+   },
+   {
+    "row": 55,
+    "col": 5
+   },
+   {
+    "row": 55,
+    "col": 6
+   },
+   {
+    "row": 56,
+    "col": 3
+   },
+   {
+    "row": 56,
+    "col": 4
+   },
+   {
+    "row": 56,
+    "col": 5
+   },
+   {
+    "row": 56,
+    "col": 6
+   },
+   {
+    "row": 57,
+    "col": 3
+   },
+   {
+    "row": 57,
+    "col": 4
+   },
+   {
+    "row": 57,
+    "col": 5
+   },
+   {
+    "row": 57,
+    "col": 6
+   },
+   {
+    "row": 58,
+    "col": 3
+   },
+   {
+    "row": 58,
+    "col": 4
+   },
+   {
+    "row": 58,
+    "col": 5
+   },
+   {
+    "row": 58,
+    "col": 6
+   },
+   {
+    "row": 59,
+    "col": 3
+   },
+   {
+    "row": 59,
+    "col": 4
+   },
+   {
+    "row": 59,
+    "col": 5
+   },
+   {
+    "row": 59,
+    "col": 6
+   }
+  ],
+  "enemy": [
+   {
+    "row": 48,
+    "col": 46
+   },
+   {
+    "row": 48,
+    "col": 47
+   },
+   {
+    "row": 48,
+    "col": 48
+   },
+   {
+    "row": 48,
+    "col": 49
+   },
+   {
+    "row": 48,
+    "col": 50
+   },
+   {
+    "row": 48,
+    "col": 51
+   },
+   {
+    "row": 48,
+    "col": 52
+   },
+   {
+    "row": 48,
+    "col": 53
+   },
+   {
+    "row": 48,
+    "col": 54
+   },
+   {
+    "row": 49,
+    "col": 46
+   },
+   {
+    "row": 49,
+    "col": 47
+   },
+   {
+    "row": 49,
+    "col": 48
+   },
+   {
+    "row": 49,
+    "col": 49
+   },
+   {
+    "row": 49,
+    "col": 50
+   },
+   {
+    "row": 49,
+    "col": 51
+   },
+   {
+    "row": 49,
+    "col": 52
+   },
+   {
+    "row": 49,
+    "col": 53
+   },
+   {
+    "row": 49,
+    "col": 54
+   },
+   {
+    "row": 50,
+    "col": 46
+   },
+   {
+    "row": 50,
+    "col": 47
+   },
+   {
+    "row": 50,
+    "col": 49
+   },
+   {
+    "row": 50,
+    "col": 50
+   },
+   {
+    "row": 50,
+    "col": 51
+   },
+   {
+    "row": 50,
+    "col": 52
+   },
+   {
+    "row": 50,
+    "col": 53
+   },
+   {
+    "row": 50,
+    "col": 54
+   },
+   {
+    "row": 51,
+    "col": 46
+   },
+   {
+    "row": 51,
+    "col": 47
+   },
+   {
+    "row": 51,
+    "col": 48
+   },
+   {
+    "row": 51,
+    "col": 49
+   },
+   {
+    "row": 51,
+    "col": 50
+   },
+   {
+    "row": 51,
+    "col": 51
+   },
+   {
+    "row": 51,
+    "col": 52
+   },
+   {
+    "row": 51,
+    "col": 53
+   },
+   {
+    "row": 51,
+    "col": 54
+   },
+   {
+    "row": 52,
+    "col": 46
+   },
+   {
+    "row": 52,
+    "col": 47
+   },
+   {
+    "row": 52,
+    "col": 48
+   },
+   {
+    "row": 52,
+    "col": 49
+   },
+   {
+    "row": 52,
+    "col": 50
+   },
+   {
+    "row": 52,
+    "col": 51
+   },
+   {
+    "row": 52,
+    "col": 52
+   },
+   {
+    "row": 52,
+    "col": 53
+   },
+   {
+    "row": 52,
+    "col": 54
+   },
+   {
+    "row": 53,
+    "col": 46
+   },
+   {
+    "row": 53,
+    "col": 47
+   },
+   {
+    "row": 53,
+    "col": 48
+   },
+   {
+    "row": 53,
+    "col": 49
+   },
+   {
+    "row": 53,
+    "col": 50
+   },
+   {
+    "row": 53,
+    "col": 51
+   },
+   {
+    "row": 53,
+    "col": 52
+   },
+   {
+    "row": 53,
+    "col": 53
+   },
+   {
+    "row": 53,
+    "col": 54
+   },
+   {
+    "row": 54,
+    "col": 46
+   },
+   {
+    "row": 54,
+    "col": 47
+   },
+   {
+    "row": 54,
+    "col": 48
+   },
+   {
+    "row": 54,
+    "col": 49
+   },
+   {
+    "row": 54,
+    "col": 50
+   },
+   {
+    "row": 54,
+    "col": 51
+   },
+   {
+    "row": 54,
+    "col": 52
+   },
+   {
+    "row": 54,
+    "col": 53
+   },
+   {
+    "row": 54,
+    "col": 54
+   },
+   {
+    "row": 28,
+    "col": 26
+   },
+   {
+    "row": 28,
+    "col": 27
+   },
+   {
+    "row": 28,
+    "col": 28
+   },
+   {
+    "row": 28,
+    "col": 29
+   },
+   {
+    "row": 28,
+    "col": 30
+   },
+   {
+    "row": 28,
+    "col": 31
+   },
+   {
+    "row": 28,
+    "col": 32
+   },
+   {
+    "row": 28,
+    "col": 33
+   },
+   {
+    "row": 28,
+    "col": 34
+   },
+   {
+    "row": 28,
+    "col": 35
+   },
+   {
+    "row": 28,
+    "col": 36
+   },
+   {
+    "row": 29,
+    "col": 26
+   },
+   {
+    "row": 29,
+    "col": 27
+   },
+   {
+    "row": 29,
+    "col": 28
+   },
+   {
+    "row": 29,
+    "col": 29
+   },
+   {
+    "row": 29,
+    "col": 30
+   },
+   {
+    "row": 29,
+    "col": 31
+   },
+   {
+    "row": 29,
+    "col": 32
+   },
+   {
+    "row": 29,
+    "col": 33
+   },
+   {
+    "row": 29,
+    "col": 34
+   },
+   {
+    "row": 29,
+    "col": 35
+   },
+   {
+    "row": 29,
+    "col": 36
+   },
+   {
+    "row": 30,
+    "col": 26
+   },
+   {
+    "row": 30,
+    "col": 27
+   },
+   {
+    "row": 30,
+    "col": 28
+   },
+   {
+    "row": 30,
+    "col": 29
+   },
+   {
+    "row": 30,
+    "col": 30
+   },
+   {
+    "row": 30,
+    "col": 31
+   },
+   {
+    "row": 30,
+    "col": 32
+   },
+   {
+    "row": 30,
+    "col": 33
+   },
+   {
+    "row": 30,
+    "col": 34
+   },
+   {
+    "row": 30,
+    "col": 35
+   },
+   {
+    "row": 30,
+    "col": 36
+   },
+   {
+    "row": 31,
+    "col": 26
+   },
+   {
+    "row": 31,
+    "col": 27
+   },
+   {
+    "row": 31,
+    "col": 28
+   },
+   {
+    "row": 31,
+    "col": 29
+   },
+   {
+    "row": 31,
+    "col": 30
+   },
+   {
+    "row": 31,
+    "col": 31
+   },
+   {
+    "row": 31,
+    "col": 32
+   },
+   {
+    "row": 31,
+    "col": 33
+   },
+   {
+    "row": 31,
+    "col": 34
+   },
+   {
+    "row": 31,
+    "col": 35
+   },
+   {
+    "row": 31,
+    "col": 36
+   },
+   {
+    "row": 32,
+    "col": 26
+   },
+   {
+    "row": 32,
+    "col": 27
+   },
+   {
+    "row": 32,
+    "col": 28
+   },
+   {
+    "row": 32,
+    "col": 29
+   },
+   {
+    "row": 32,
+    "col": 30
+   },
+   {
+    "row": 32,
+    "col": 31
+   },
+   {
+    "row": 32,
+    "col": 32
+   },
+   {
+    "row": 32,
+    "col": 33
+   },
+   {
+    "row": 32,
+    "col": 34
+   },
+   {
+    "row": 32,
+    "col": 35
+   },
+   {
+    "row": 32,
+    "col": 36
+   },
+   {
+    "row": 33,
+    "col": 26
+   },
+   {
+    "row": 33,
+    "col": 27
+   },
+   {
+    "row": 33,
+    "col": 28
+   },
+   {
+    "row": 33,
+    "col": 29
+   },
+   {
+    "row": 33,
+    "col": 30
+   },
+   {
+    "row": 33,
+    "col": 31
+   },
+   {
+    "row": 33,
+    "col": 32
+   },
+   {
+    "row": 33,
+    "col": 33
+   },
+   {
+    "row": 33,
+    "col": 34
+   },
+   {
+    "row": 33,
+    "col": 35
+   },
+   {
+    "row": 33,
+    "col": 36
+   },
+   {
+    "row": 34,
+    "col": 26
+   },
+   {
+    "row": 34,
+    "col": 27
+   },
+   {
+    "row": 34,
+    "col": 28
+   },
+   {
+    "row": 34,
+    "col": 29
+   },
+   {
+    "row": 34,
+    "col": 30
+   },
+   {
+    "row": 34,
+    "col": 31
+   },
+   {
+    "row": 34,
+    "col": 32
+   },
+   {
+    "row": 34,
+    "col": 36
+   },
+   {
+    "row": 35,
+    "col": 26
+   },
+   {
+    "row": 35,
+    "col": 27
+   },
+   {
+    "row": 35,
+    "col": 28
+   },
+   {
+    "row": 35,
+    "col": 29
+   },
+   {
+    "row": 35,
+    "col": 30
+   },
+   {
+    "row": 35,
+    "col": 31
+   },
+   {
+    "row": 35,
+    "col": 32
+   },
+   {
+    "row": 35,
+    "col": 36
+   },
+   {
+    "row": 36,
+    "col": 26
+   },
+   {
+    "row": 36,
+    "col": 27
+   },
+   {
+    "row": 36,
+    "col": 28
+   },
+   {
+    "row": 36,
+    "col": 29
+   },
+   {
+    "row": 36,
+    "col": 30
+   },
+   {
+    "row": 36,
+    "col": 31
+   },
+   {
+    "row": 36,
+    "col": 32
+   },
+   {
+    "row": 36,
+    "col": 36
+   },
+   {
+    "row": 36,
+    "col": 53
+   },
+   {
+    "row": 36,
+    "col": 54
+   },
+   {
+    "row": 36,
+    "col": 55
+   },
+   {
+    "row": 36,
+    "col": 56
+   },
+   {
+    "row": 36,
+    "col": 57
+   },
+   {
+    "row": 36,
+    "col": 58
+   },
+   {
+    "row": 37,
+    "col": 52
+   },
+   {
+    "row": 37,
+    "col": 53
+   },
+   {
+    "row": 37,
+    "col": 54
+   },
+   {
+    "row": 37,
+    "col": 55
+   },
+   {
+    "row": 37,
+    "col": 56
+   },
+   {
+    "row": 37,
+    "col": 57
+   },
+   {
+    "row": 37,
+    "col": 58
+   },
+   {
+    "row": 38,
+    "col": 52
+   },
+   {
+    "row": 38,
+    "col": 53
+   },
+   {
+    "row": 38,
+    "col": 54
+   },
+   {
+    "row": 38,
+    "col": 55
+   },
+   {
+    "row": 38,
+    "col": 56
+   },
+   {
+    "row": 38,
+    "col": 57
+   },
+   {
+    "row": 38,
+    "col": 58
+   },
+   {
+    "row": 39,
+    "col": 52
+   },
+   {
+    "row": 39,
+    "col": 53
+   },
+   {
+    "row": 39,
+    "col": 54
+   },
+   {
+    "row": 39,
+    "col": 55
+   },
+   {
+    "row": 39,
+    "col": 56
+   },
+   {
+    "row": 39,
+    "col": 57
+   },
+   {
+    "row": 39,
+    "col": 58
+   },
+   {
+    "row": 40,
+    "col": 52
+   },
+   {
+    "row": 40,
+    "col": 53
+   },
+   {
+    "row": 40,
+    "col": 54
+   },
+   {
+    "row": 40,
+    "col": 55
+   },
+   {
+    "row": 40,
+    "col": 56
+   },
+   {
+    "row": 40,
+    "col": 57
+   },
+   {
+    "row": 40,
+    "col": 58
+   },
+   {
+    "row": 41,
+    "col": 52
+   },
+   {
+    "row": 41,
+    "col": 53
+   },
+   {
+    "row": 41,
+    "col": 54
+   },
+   {
+    "row": 41,
+    "col": 55
+   },
+   {
+    "row": 41,
+    "col": 56
+   },
+   {
+    "row": 41,
+    "col": 57
+   },
+   {
+    "row": 41,
+    "col": 58
+   },
+   {
+    "row": 42,
+    "col": 52
+   },
+   {
+    "row": 42,
+    "col": 53
+   },
+   {
+    "row": 42,
+    "col": 54
+   },
+   {
+    "row": 42,
+    "col": 55
+   },
+   {
+    "row": 42,
+    "col": 56
+   },
+   {
+    "row": 42,
+    "col": 57
+   },
+   {
+    "row": 42,
+    "col": 58
+   }
+  ]
+ },
+ "puzzleNodes": [
+  {
+   "id": "saren_node_1",
+   "label": "Refraction Console",
+   "row": 22,
+   "col": 25,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "cleansed",
+    "description": "Cleansed, 2 turns"
+   }
+  },
+  {
+   "id": "saren_node_2",
+   "label": "Lattice Relay",
+   "row": 40,
+   "col": 38,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "army_1_vision",
+    "description": "Army +1 vision, 2 turns"
+   }
+  }
+ ],
+ "missionOverrides": {
+  "syndicate_m2": {
+   "objectiveLabel": "Quiet insertion from the southwest. The bunker's front door is watched; the rear exit isn't — they don't know you know about it. Don't leave a nameable body.",
+   "enemyFaction": "covenant",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 54,
+      "col": 3
+     },
+     {
+      "row": 54,
+      "col": 4
+     },
+     {
+      "row": 54,
+      "col": 5
+     },
+     {
+      "row": 54,
+      "col": 6
+     },
+     {
+      "row": 55,
+      "col": 3
+     },
+     {
+      "row": 55,
+      "col": 4
+     },
+     {
+      "row": 55,
+      "col": 5
+     },
+     {
+      "row": 55,
+      "col": 6
+     },
+     {
+      "row": 56,
+      "col": 3
+     },
+     {
+      "row": 56,
+      "col": 4
+     },
+     {
+      "row": 56,
+      "col": 5
+     },
+     {
+      "row": 56,
+      "col": 6
+     },
+     {
+      "row": 57,
+      "col": 3
+     },
+     {
+      "row": 57,
+      "col": 4
+     },
+     {
+      "row": 57,
+      "col": 5
+     },
+     {
+      "row": 57,
+      "col": 6
+     },
+     {
+      "row": 58,
+      "col": 3
+     },
+     {
+      "row": 58,
+      "col": 4
+     },
+     {
+      "row": 58,
+      "col": 5
+     },
+     {
+      "row": 58,
+      "col": 6
+     },
+     {
+      "row": 59,
+      "col": 3
+     },
+     {
+      "row": 59,
+      "col": 4
+     },
+     {
+      "row": 59,
+      "col": 5
+     },
+     {
+      "row": 59,
+      "col": 6
+     }
+    ],
+    "enemy": [
+     {
+      "row": 48,
+      "col": 46
+     },
+     {
+      "row": 48,
+      "col": 47
+     },
+     {
+      "row": 48,
+      "col": 48
+     },
+     {
+      "row": 48,
+      "col": 49
+     },
+     {
+      "row": 48,
+      "col": 50
+     },
+     {
+      "row": 48,
+      "col": 51
+     },
+     {
+      "row": 48,
+      "col": 52
+     },
+     {
+      "row": 48,
+      "col": 53
+     },
+     {
+      "row": 48,
+      "col": 54
+     },
+     {
+      "row": 49,
+      "col": 46
+     },
+     {
+      "row": 49,
+      "col": 47
+     },
+     {
+      "row": 49,
+      "col": 48
+     },
+     {
+      "row": 49,
+      "col": 49
+     },
+     {
+      "row": 49,
+      "col": 50
+     },
+     {
+      "row": 49,
+      "col": 51
+     },
+     {
+      "row": 49,
+      "col": 52
+     },
+     {
+      "row": 49,
+      "col": 53
+     },
+     {
+      "row": 49,
+      "col": 54
+     },
+     {
+      "row": 50,
+      "col": 46
+     },
+     {
+      "row": 50,
+      "col": 47
+     },
+     {
+      "row": 50,
+      "col": 49
+     },
+     {
+      "row": 50,
+      "col": 50
+     },
+     {
+      "row": 50,
+      "col": 51
+     },
+     {
+      "row": 50,
+      "col": 52
+     },
+     {
+      "row": 50,
+      "col": 53
+     },
+     {
+      "row": 50,
+      "col": 54
+     },
+     {
+      "row": 51,
+      "col": 46
+     },
+     {
+      "row": 51,
+      "col": 47
+     },
+     {
+      "row": 51,
+      "col": 48
+     },
+     {
+      "row": 51,
+      "col": 49
+     },
+     {
+      "row": 51,
+      "col": 50
+     },
+     {
+      "row": 51,
+      "col": 51
+     },
+     {
+      "row": 51,
+      "col": 52
+     },
+     {
+      "row": 51,
+      "col": 53
+     },
+     {
+      "row": 51,
+      "col": 54
+     },
+     {
+      "row": 52,
+      "col": 46
+     },
+     {
+      "row": 52,
+      "col": 47
+     },
+     {
+      "row": 52,
+      "col": 48
+     },
+     {
+      "row": 52,
+      "col": 49
+     },
+     {
+      "row": 52,
+      "col": 50
+     },
+     {
+      "row": 52,
+      "col": 51
+     },
+     {
+      "row": 52,
+      "col": 52
+     },
+     {
+      "row": 52,
+      "col": 53
+     },
+     {
+      "row": 52,
+      "col": 54
+     },
+     {
+      "row": 53,
+      "col": 46
+     },
+     {
+      "row": 53,
+      "col": 47
+     },
+     {
+      "row": 53,
+      "col": 48
+     },
+     {
+      "row": 53,
+      "col": 49
+     },
+     {
+      "row": 53,
+      "col": 50
+     },
+     {
+      "row": 53,
+      "col": 51
+     },
+     {
+      "row": 53,
+      "col": 52
+     },
+     {
+      "row": 53,
+      "col": 53
+     },
+     {
+      "row": 53,
+      "col": 54
+     },
+     {
+      "row": 54,
+      "col": 46
+     },
+     {
+      "row": 54,
+      "col": 47
+     },
+     {
+      "row": 54,
+      "col": 48
+     },
+     {
+      "row": 54,
+      "col": 49
+     },
+     {
+      "row": 54,
+      "col": 50
+     },
+     {
+      "row": 54,
+      "col": 51
+     },
+     {
+      "row": 54,
+      "col": 52
+     },
+     {
+      "row": 54,
+      "col": 53
+     },
+     {
+      "row": 54,
+      "col": 54
+     },
+     {
+      "row": 28,
+      "col": 26
+     },
+     {
+      "row": 28,
+      "col": 27
+     },
+     {
+      "row": 28,
+      "col": 28
+     },
+     {
+      "row": 28,
+      "col": 29
+     },
+     {
+      "row": 28,
+      "col": 30
+     },
+     {
+      "row": 28,
+      "col": 31
+     },
+     {
+      "row": 28,
+      "col": 32
+     },
+     {
+      "row": 28,
+      "col": 33
+     },
+     {
+      "row": 28,
+      "col": 34
+     },
+     {
+      "row": 28,
+      "col": 35
+     },
+     {
+      "row": 28,
+      "col": 36
+     },
+     {
+      "row": 29,
+      "col": 26
+     },
+     {
+      "row": 29,
+      "col": 27
+     },
+     {
+      "row": 29,
+      "col": 28
+     },
+     {
+      "row": 29,
+      "col": 29
+     },
+     {
+      "row": 29,
+      "col": 30
+     },
+     {
+      "row": 29,
+      "col": 31
+     },
+     {
+      "row": 29,
+      "col": 32
+     },
+     {
+      "row": 29,
+      "col": 33
+     },
+     {
+      "row": 29,
+      "col": 34
+     },
+     {
+      "row": 29,
+      "col": 35
+     },
+     {
+      "row": 29,
+      "col": 36
+     },
+     {
+      "row": 30,
+      "col": 26
+     },
+     {
+      "row": 30,
+      "col": 27
+     },
+     {
+      "row": 30,
+      "col": 28
+     },
+     {
+      "row": 30,
+      "col": 29
+     },
+     {
+      "row": 30,
+      "col": 30
+     },
+     {
+      "row": 30,
+      "col": 31
+     },
+     {
+      "row": 30,
+      "col": 32
+     },
+     {
+      "row": 30,
+      "col": 33
+     },
+     {
+      "row": 30,
+      "col": 34
+     },
+     {
+      "row": 30,
+      "col": 35
+     },
+     {
+      "row": 30,
+      "col": 36
+     },
+     {
+      "row": 31,
+      "col": 26
+     },
+     {
+      "row": 31,
+      "col": 27
+     },
+     {
+      "row": 31,
+      "col": 28
+     },
+     {
+      "row": 31,
+      "col": 29
+     },
+     {
+      "row": 31,
+      "col": 30
+     },
+     {
+      "row": 31,
+      "col": 31
+     },
+     {
+      "row": 31,
+      "col": 32
+     },
+     {
+      "row": 31,
+      "col": 33
+     },
+     {
+      "row": 31,
+      "col": 34
+     },
+     {
+      "row": 31,
+      "col": 35
+     },
+     {
+      "row": 31,
+      "col": 36
+     },
+     {
+      "row": 32,
+      "col": 26
+     },
+     {
+      "row": 32,
+      "col": 27
+     },
+     {
+      "row": 32,
+      "col": 28
+     },
+     {
+      "row": 32,
+      "col": 29
+     },
+     {
+      "row": 32,
+      "col": 30
+     },
+     {
+      "row": 32,
+      "col": 31
+     },
+     {
+      "row": 32,
+      "col": 32
+     },
+     {
+      "row": 32,
+      "col": 33
+     },
+     {
+      "row": 32,
+      "col": 34
+     },
+     {
+      "row": 32,
+      "col": 35
+     },
+     {
+      "row": 32,
+      "col": 36
+     },
+     {
+      "row": 33,
+      "col": 26
+     },
+     {
+      "row": 33,
+      "col": 27
+     },
+     {
+      "row": 33,
+      "col": 28
+     },
+     {
+      "row": 33,
+      "col": 29
+     },
+     {
+      "row": 33,
+      "col": 30
+     },
+     {
+      "row": 33,
+      "col": 31
+     },
+     {
+      "row": 33,
+      "col": 32
+     },
+     {
+      "row": 33,
+      "col": 33
+     },
+     {
+      "row": 33,
+      "col": 34
+     },
+     {
+      "row": 33,
+      "col": 35
+     },
+     {
+      "row": 33,
+      "col": 36
+     },
+     {
+      "row": 34,
+      "col": 26
+     },
+     {
+      "row": 34,
+      "col": 27
+     },
+     {
+      "row": 34,
+      "col": 28
+     },
+     {
+      "row": 34,
+      "col": 29
+     },
+     {
+      "row": 34,
+      "col": 30
+     },
+     {
+      "row": 34,
+      "col": 31
+     },
+     {
+      "row": 34,
+      "col": 32
+     },
+     {
+      "row": 34,
+      "col": 36
+     },
+     {
+      "row": 35,
+      "col": 26
+     },
+     {
+      "row": 35,
+      "col": 27
+     },
+     {
+      "row": 35,
+      "col": 28
+     },
+     {
+      "row": 35,
+      "col": 29
+     },
+     {
+      "row": 35,
+      "col": 30
+     },
+     {
+      "row": 35,
+      "col": 31
+     },
+     {
+      "row": 35,
+      "col": 32
+     },
+     {
+      "row": 35,
+      "col": 36
+     },
+     {
+      "row": 36,
+      "col": 26
+     },
+     {
+      "row": 36,
+      "col": 27
+     },
+     {
+      "row": 36,
+      "col": 28
+     },
+     {
+      "row": 36,
+      "col": 29
+     },
+     {
+      "row": 36,
+      "col": 30
+     },
+     {
+      "row": 36,
+      "col": 31
+     },
+     {
+      "row": 36,
+      "col": 32
+     },
+     {
+      "row": 36,
+      "col": 36
+     },
+     {
+      "row": 36,
+      "col": 53
+     },
+     {
+      "row": 36,
+      "col": 54
+     },
+     {
+      "row": 36,
+      "col": 55
+     },
+     {
+      "row": 36,
+      "col": 56
+     },
+     {
+      "row": 36,
+      "col": 57
+     },
+     {
+      "row": 36,
+      "col": 58
+     },
+     {
+      "row": 37,
+      "col": 52
+     },
+     {
+      "row": 37,
+      "col": 53
+     },
+     {
+      "row": 37,
+      "col": 54
+     },
+     {
+      "row": 37,
+      "col": 55
+     },
+     {
+      "row": 37,
+      "col": 56
+     },
+     {
+      "row": 37,
+      "col": 57
+     },
+     {
+      "row": 37,
+      "col": 58
+     },
+     {
+      "row": 38,
+      "col": 52
+     },
+     {
+      "row": 38,
+      "col": 53
+     },
+     {
+      "row": 38,
+      "col": 54
+     },
+     {
+      "row": 38,
+      "col": 55
+     },
+     {
+      "row": 38,
+      "col": 56
+     },
+     {
+      "row": 38,
+      "col": 57
+     },
+     {
+      "row": 38,
+      "col": 58
+     },
+     {
+      "row": 39,
+      "col": 52
+     },
+     {
+      "row": 39,
+      "col": 53
+     },
+     {
+      "row": 39,
+      "col": 54
+     },
+     {
+      "row": 39,
+      "col": 55
+     },
+     {
+      "row": 39,
+      "col": 56
+     },
+     {
+      "row": 39,
+      "col": 57
+     },
+     {
+      "row": 39,
+      "col": 58
+     },
+     {
+      "row": 40,
+      "col": 52
+     },
+     {
+      "row": 40,
+      "col": 53
+     },
+     {
+      "row": 40,
+      "col": 54
+     },
+     {
+      "row": 40,
+      "col": 55
+     },
+     {
+      "row": 40,
+      "col": 56
+     },
+     {
+      "row": 40,
+      "col": 57
+     },
+     {
+      "row": 40,
+      "col": 58
+     },
+     {
+      "row": 41,
+      "col": 52
+     },
+     {
+      "row": 41,
+      "col": 53
+     },
+     {
+      "row": 41,
+      "col": 54
+     },
+     {
+      "row": 41,
+      "col": 55
+     },
+     {
+      "row": 41,
+      "col": 56
+     },
+     {
+      "row": 41,
+      "col": 57
+     },
+     {
+      "row": 41,
+      "col": 58
+     },
+     {
+      "row": 42,
+      "col": 52
+     },
+     {
+      "row": 42,
+      "col": 53
+     },
+     {
+      "row": 42,
+      "col": 54
+     },
+     {
+      "row": 42,
+      "col": 55
+     },
+     {
+      "row": 42,
+      "col": 56
+     },
+     {
+      "row": 42,
+      "col": 57
+     },
+     {
+      "row": 42,
+      "col": 58
+     }
+    ]
+   },
+   "reinforcements": [],
+   "objectiveTiles": [
+    {
+     "row": 50,
+     "col": 48,
+     "label": "Asset terminal"
+    },
+    {
+     "row": 56,
+     "col": 5,
+     "label": "Exfil zone"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "South hug → rear exit",
+     "kind": "covered",
+     "waypoints": [
+      {
+       "row": 56,
+       "col": 5
+      },
+      {
+       "row": 51,
+       "col": 10
+      },
+      {
+       "row": 49,
+       "col": 19
+      },
+      {
+       "row": 52,
+       "col": 28
+      },
+      {
+       "row": 54,
+       "col": 38
+      },
+      {
+       "row": 52,
+       "col": 44
+      }
+     ]
+    },
+    {
+     "label": "Interference line (blind)",
+     "kind": "flank",
+     "waypoints": [
+      {
+       "row": 56,
+       "col": 5
+      },
+      {
+       "row": 49,
+       "col": 19
+      },
+      {
+       "row": 45,
+       "col": 26
+      },
+      {
+       "row": 38,
+       "col": 32
+      },
+      {
+       "row": 31,
+       "col": 38
+      },
+      {
+       "row": 27,
+       "col": 43
+      },
+      {
+       "row": 40,
+       "col": 50
+      },
+      {
+       "row": 46,
+       "col": 50
+      }
+     ]
+    },
+    {
+     "label": "East corridor (loud)",
+     "kind": "fast",
+     "waypoints": [
+      {
+       "row": 56,
+       "col": 5
+      },
+      {
+       "row": 49,
+       "col": 19
+      },
+      {
+       "row": 46,
+       "col": 30
+      },
+      {
+       "row": 27,
+       "col": 43
+      },
+      {
+       "row": 36,
+       "col": 48
+      },
+      {
+       "row": 44,
+       "col": 50
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Three lines in: south-edge hug to the rear exit, central corridor under interference (their sensors are blind too), east corridor if it goes loud."
+    },
+    {
+     "condition": "design-note",
+     "element": "Asset sits in your custody for hours after this — that gap is the story."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "syndicate_operative",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Speed and Reposition — in and out of the rear exit"
+     },
+     {
+      "unitId": "syndicate_handler",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Marks watchers before they report"
+     },
+     {
+      "unitId": "syndicate_rangefinder",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Covers the exfil from the SW spur"
+     },
+     {
+      "unitId": "syndicate_contractor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Seals the rear exit behind you"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Bunker door — the watched front"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Interior fire down the entry hall"
+     },
+     {
+      "unitId": "covenant_witness",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Patrol — Far Sight cuts through refraction"
+     },
+     {
+      "unitId": "covenant_arbiter",
+      "count": 1,
+      "spawnZone": 2,
+      "commander": false,
+      "designNote": "East corridor picket"
+     }
+    ],
+    "reinforcements": []
+   },
+   "economyNotes": {
+    "player": "No extractors either side — every body is accountable. (You were told not to leave a nameable one.)",
+    "enemy": "Fixed garrison. What you slip past stays slipped past."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       54,
+       59
+      ],
+      "cols": [
+       3,
+       6
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       48,
+       54
+      ],
+      "cols": [
+       46,
+       54
+      ]
+     },
+     {
+      "rows": [
+       28,
+       36
+      ],
+      "cols": [
+       26,
+       36
+      ]
+     },
+     {
+      "rows": [
+       36,
+       42
+      ],
+      "cols": [
+       52,
+       58
+      ]
+     }
+    ]
+   }
+  },
+  "pirates_m2": {
+   "objectiveLabel": "Hit from the east edge, fast, before a real response spools up. The buyer's unknown sender pings the terminal mid-mission — be standing there when it does.",
+   "enemyFaction": "covenant",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 18,
+      "col": 58
+     },
+     {
+      "row": 18,
+      "col": 59
+     },
+     {
+      "row": 18,
+      "col": 60
+     },
+     {
+      "row": 19,
+      "col": 58
+     },
+     {
+      "row": 19,
+      "col": 59
+     },
+     {
+      "row": 19,
+      "col": 60
+     },
+     {
+      "row": 20,
+      "col": 58
+     },
+     {
+      "row": 20,
+      "col": 59
+     },
+     {
+      "row": 20,
+      "col": 60
+     },
+     {
+      "row": 21,
+      "col": 58
+     },
+     {
+      "row": 21,
+      "col": 59
+     },
+     {
+      "row": 21,
+      "col": 60
+     },
+     {
+      "row": 22,
+      "col": 58
+     },
+     {
+      "row": 22,
+      "col": 59
+     },
+     {
+      "row": 22,
+      "col": 60
+     },
+     {
+      "row": 23,
+      "col": 58
+     },
+     {
+      "row": 23,
+      "col": 59
+     },
+     {
+      "row": 23,
+      "col": 60
+     },
+     {
+      "row": 24,
+      "col": 58
+     },
+     {
+      "row": 24,
+      "col": 59
+     },
+     {
+      "row": 24,
+      "col": 60
+     },
+     {
+      "row": 25,
+      "col": 58
+     },
+     {
+      "row": 25,
+      "col": 59
+     },
+     {
+      "row": 25,
+      "col": 60
+     },
+     {
+      "row": 26,
+      "col": 58
+     },
+     {
+      "row": 26,
+      "col": 59
+     },
+     {
+      "row": 26,
+      "col": 60
+     },
+     {
+      "row": 27,
+      "col": 58
+     },
+     {
+      "row": 27,
+      "col": 59
+     },
+     {
+      "row": 27,
+      "col": 60
+     },
+     {
+      "row": 28,
+      "col": 58
+     },
+     {
+      "row": 28,
+      "col": 59
+     },
+     {
+      "row": 28,
+      "col": 60
+     }
+    ],
+    "enemy": [
+     {
+      "row": 48,
+      "col": 46
+     },
+     {
+      "row": 48,
+      "col": 47
+     },
+     {
+      "row": 48,
+      "col": 48
+     },
+     {
+      "row": 48,
+      "col": 49
+     },
+     {
+      "row": 48,
+      "col": 50
+     },
+     {
+      "row": 48,
+      "col": 51
+     },
+     {
+      "row": 48,
+      "col": 52
+     },
+     {
+      "row": 48,
+      "col": 53
+     },
+     {
+      "row": 48,
+      "col": 54
+     },
+     {
+      "row": 49,
+      "col": 46
+     },
+     {
+      "row": 49,
+      "col": 47
+     },
+     {
+      "row": 49,
+      "col": 48
+     },
+     {
+      "row": 49,
+      "col": 49
+     },
+     {
+      "row": 49,
+      "col": 50
+     },
+     {
+      "row": 49,
+      "col": 51
+     },
+     {
+      "row": 49,
+      "col": 52
+     },
+     {
+      "row": 49,
+      "col": 53
+     },
+     {
+      "row": 49,
+      "col": 54
+     },
+     {
+      "row": 50,
+      "col": 46
+     },
+     {
+      "row": 50,
+      "col": 47
+     },
+     {
+      "row": 50,
+      "col": 49
+     },
+     {
+      "row": 50,
+      "col": 50
+     },
+     {
+      "row": 50,
+      "col": 51
+     },
+     {
+      "row": 50,
+      "col": 52
+     },
+     {
+      "row": 50,
+      "col": 53
+     },
+     {
+      "row": 50,
+      "col": 54
+     },
+     {
+      "row": 51,
+      "col": 46
+     },
+     {
+      "row": 51,
+      "col": 47
+     },
+     {
+      "row": 51,
+      "col": 48
+     },
+     {
+      "row": 51,
+      "col": 49
+     },
+     {
+      "row": 51,
+      "col": 50
+     },
+     {
+      "row": 51,
+      "col": 51
+     },
+     {
+      "row": 51,
+      "col": 52
+     },
+     {
+      "row": 51,
+      "col": 53
+     },
+     {
+      "row": 51,
+      "col": 54
+     },
+     {
+      "row": 52,
+      "col": 46
+     },
+     {
+      "row": 52,
+      "col": 47
+     },
+     {
+      "row": 52,
+      "col": 48
+     },
+     {
+      "row": 52,
+      "col": 49
+     },
+     {
+      "row": 52,
+      "col": 50
+     },
+     {
+      "row": 52,
+      "col": 51
+     },
+     {
+      "row": 52,
+      "col": 52
+     },
+     {
+      "row": 52,
+      "col": 53
+     },
+     {
+      "row": 52,
+      "col": 54
+     },
+     {
+      "row": 53,
+      "col": 46
+     },
+     {
+      "row": 53,
+      "col": 47
+     },
+     {
+      "row": 53,
+      "col": 48
+     },
+     {
+      "row": 53,
+      "col": 49
+     },
+     {
+      "row": 53,
+      "col": 50
+     },
+     {
+      "row": 53,
+      "col": 51
+     },
+     {
+      "row": 53,
+      "col": 52
+     },
+     {
+      "row": 53,
+      "col": 53
+     },
+     {
+      "row": 53,
+      "col": 54
+     },
+     {
+      "row": 54,
+      "col": 46
+     },
+     {
+      "row": 54,
+      "col": 47
+     },
+     {
+      "row": 54,
+      "col": 48
+     },
+     {
+      "row": 54,
+      "col": 49
+     },
+     {
+      "row": 54,
+      "col": 50
+     },
+     {
+      "row": 54,
+      "col": 51
+     },
+     {
+      "row": 54,
+      "col": 52
+     },
+     {
+      "row": 54,
+      "col": 53
+     },
+     {
+      "row": 54,
+      "col": 54
+     },
+     {
+      "row": 42,
+      "col": 47
+     },
+     {
+      "row": 42,
+      "col": 48
+     },
+     {
+      "row": 42,
+      "col": 49
+     },
+     {
+      "row": 42,
+      "col": 50
+     },
+     {
+      "row": 43,
+      "col": 47
+     },
+     {
+      "row": 43,
+      "col": 48
+     },
+     {
+      "row": 43,
+      "col": 49
+     },
+     {
+      "row": 43,
+      "col": 50
+     },
+     {
+      "row": 44,
+      "col": 47
+     },
+     {
+      "row": 44,
+      "col": 48
+     },
+     {
+      "row": 44,
+      "col": 49
+     },
+     {
+      "row": 44,
+      "col": 50
+     }
+    ]
+   },
+   "reinforcements": [
+    {
+     "turn": 4,
+     "label": "Response · t4",
+     "tiles": [
+      {
+       "row": 12,
+       "col": 31
+      },
+      {
+       "row": 12,
+       "col": 32
+      },
+      {
+       "row": 12,
+       "col": 33
+      },
+      {
+       "row": 13,
+       "col": 31
+      },
+      {
+       "row": 13,
+       "col": 32
+      },
+      {
+       "row": 13,
+       "col": 33
+      },
+      {
+       "row": 14,
+       "col": 30
+      },
+      {
+       "row": 14,
+       "col": 31
+      },
+      {
+       "row": 14,
+       "col": 32
+      },
+      {
+       "row": 14,
+       "col": 33
+      },
+      {
+       "row": 14,
+       "col": 34
+      },
+      {
+       "row": 15,
+       "col": 30
+      },
+      {
+       "row": 15,
+       "col": 31
+      },
+      {
+       "row": 15,
+       "col": 32
+      },
+      {
+       "row": 15,
+       "col": 33
+      },
+      {
+       "row": 15,
+       "col": 34
+      },
+      {
+       "row": 16,
+       "col": 30
+      },
+      {
+       "row": 16,
+       "col": 31
+      },
+      {
+       "row": 16,
+       "col": 32
+      },
+      {
+       "row": 16,
+       "col": 33
+      },
+      {
+       "row": 16,
+       "col": 34
+      },
+      {
+       "row": 17,
+       "col": 30
+      },
+      {
+       "row": 17,
+       "col": 31
+      },
+      {
+       "row": 17,
+       "col": 32
+      },
+      {
+       "row": 17,
+       "col": 33
+      },
+      {
+       "row": 17,
+       "col": 34
+      }
+     ]
+    }
+   ],
+   "objectiveTiles": [
+    {
+     "row": 50,
+     "col": 48,
+     "label": "Component terminal"
+    },
+    {
+     "row": 23,
+     "col": 59,
+     "label": "Exfil zone"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "East corridor run",
+     "kind": "fast",
+     "waypoints": [
+      {
+       "row": 23,
+       "col": 59
+      },
+      {
+       "row": 27,
+       "col": 57
+      },
+      {
+       "row": 43,
+       "col": 49
+      },
+      {
+       "row": 46,
+       "col": 50
+      }
+     ]
+    },
+    {
+     "label": "Pillar weave (covered)",
+     "kind": "covered",
+     "waypoints": [
+      {
+       "row": 23,
+       "col": 59
+      },
+      {
+       "row": 17,
+       "col": 50
+      },
+      {
+       "row": 13,
+       "col": 48
+      },
+      {
+       "row": 27,
+       "col": 44
+      },
+      {
+       "row": 31,
+       "col": 38
+      },
+      {
+       "row": 52,
+       "col": 44
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Covenant response forms at the relay and comes down the S ramp — the reinforcement vector is the map's other end."
+    },
+    {
+     "condition": "design-note",
+     "element": "Korren incident resolves post-mission."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "pirates_runner",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Fast in from the east edge before response spools"
+     },
+     {
+      "unitId": "pirates_bruiser",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Holds the bunker door open"
+     },
+     {
+      "unitId": "pirates_scavenger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Refraction console from 2 tiles"
+     },
+     {
+      "unitId": "pirates_wrecker",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Cuts the bunker shell if the door jams"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Door anchor"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "The priests on site"
+     },
+     {
+      "unitId": "covenant_witness",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Spur lookout"
+     }
+    ],
+    "reinforcements": [
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Response forms at the relay, comes down the S ramp"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "With it"
+     }
+    ]
+   },
+   "economyNotes": {
+    "player": "No Siphon — the response clock outruns any economy you could seat.",
+    "enemy": "Priests are fixed; the t4 column is their sustain. Be gone before it arrives."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       18,
+       28
+      ],
+      "cols": [
+       58,
+       60
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       48,
+       54
+      ],
+      "cols": [
+       46,
+       54
+      ]
+     },
+     {
+      "rows": [
+       42,
+       44
+      ],
+      "cols": [
+       47,
+       50
+      ]
+     }
+    ]
+   }
+  },
+  "syndicate_m3": {
+   "objectiveLabel": "Push north up all three corridors and ring the relay. The platform has two ramps — take both or hold neither. The surface fight is cover for work inside.",
+   "enemyFaction": "covenant",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 56,
+      "col": 22
+     },
+     {
+      "row": 56,
+      "col": 23
+     },
+     {
+      "row": 56,
+      "col": 24
+     },
+     {
+      "row": 56,
+      "col": 25
+     },
+     {
+      "row": 56,
+      "col": 26
+     },
+     {
+      "row": 56,
+      "col": 27
+     },
+     {
+      "row": 56,
+      "col": 28
+     },
+     {
+      "row": 56,
+      "col": 29
+     },
+     {
+      "row": 56,
+      "col": 30
+     },
+     {
+      "row": 56,
+      "col": 31
+     },
+     {
+      "row": 56,
+      "col": 32
+     },
+     {
+      "row": 56,
+      "col": 33
+     },
+     {
+      "row": 56,
+      "col": 34
+     },
+     {
+      "row": 56,
+      "col": 35
+     },
+     {
+      "row": 56,
+      "col": 36
+     },
+     {
+      "row": 56,
+      "col": 37
+     },
+     {
+      "row": 56,
+      "col": 38
+     },
+     {
+      "row": 56,
+      "col": 39
+     },
+     {
+      "row": 56,
+      "col": 40
+     },
+     {
+      "row": 57,
+      "col": 22
+     },
+     {
+      "row": 57,
+      "col": 23
+     },
+     {
+      "row": 57,
+      "col": 24
+     },
+     {
+      "row": 57,
+      "col": 25
+     },
+     {
+      "row": 57,
+      "col": 26
+     },
+     {
+      "row": 57,
+      "col": 27
+     },
+     {
+      "row": 57,
+      "col": 28
+     },
+     {
+      "row": 57,
+      "col": 29
+     },
+     {
+      "row": 57,
+      "col": 30
+     },
+     {
+      "row": 57,
+      "col": 31
+     },
+     {
+      "row": 57,
+      "col": 32
+     },
+     {
+      "row": 57,
+      "col": 33
+     },
+     {
+      "row": 57,
+      "col": 34
+     },
+     {
+      "row": 57,
+      "col": 35
+     },
+     {
+      "row": 57,
+      "col": 36
+     },
+     {
+      "row": 57,
+      "col": 37
+     },
+     {
+      "row": 57,
+      "col": 38
+     },
+     {
+      "row": 57,
+      "col": 39
+     },
+     {
+      "row": 57,
+      "col": 40
+     },
+     {
+      "row": 58,
+      "col": 22
+     },
+     {
+      "row": 58,
+      "col": 23
+     },
+     {
+      "row": 58,
+      "col": 24
+     },
+     {
+      "row": 58,
+      "col": 25
+     },
+     {
+      "row": 58,
+      "col": 26
+     },
+     {
+      "row": 58,
+      "col": 27
+     },
+     {
+      "row": 58,
+      "col": 28
+     },
+     {
+      "row": 58,
+      "col": 29
+     },
+     {
+      "row": 58,
+      "col": 30
+     },
+     {
+      "row": 58,
+      "col": 31
+     },
+     {
+      "row": 58,
+      "col": 32
+     },
+     {
+      "row": 58,
+      "col": 33
+     },
+     {
+      "row": 58,
+      "col": 34
+     },
+     {
+      "row": 58,
+      "col": 35
+     },
+     {
+      "row": 58,
+      "col": 36
+     },
+     {
+      "row": 58,
+      "col": 37
+     },
+     {
+      "row": 58,
+      "col": 38
+     },
+     {
+      "row": 58,
+      "col": 39
+     },
+     {
+      "row": 58,
+      "col": 40
+     },
+     {
+      "row": 59,
+      "col": 22
+     },
+     {
+      "row": 59,
+      "col": 23
+     },
+     {
+      "row": 59,
+      "col": 24
+     },
+     {
+      "row": 59,
+      "col": 25
+     },
+     {
+      "row": 59,
+      "col": 26
+     },
+     {
+      "row": 59,
+      "col": 27
+     },
+     {
+      "row": 59,
+      "col": 28
+     },
+     {
+      "row": 59,
+      "col": 29
+     },
+     {
+      "row": 59,
+      "col": 30
+     },
+     {
+      "row": 59,
+      "col": 31
+     },
+     {
+      "row": 59,
+      "col": 32
+     },
+     {
+      "row": 59,
+      "col": 33
+     },
+     {
+      "row": 59,
+      "col": 34
+     },
+     {
+      "row": 59,
+      "col": 35
+     },
+     {
+      "row": 59,
+      "col": 36
+     },
+     {
+      "row": 59,
+      "col": 37
+     },
+     {
+      "row": 59,
+      "col": 38
+     },
+     {
+      "row": 59,
+      "col": 39
+     },
+     {
+      "row": 59,
+      "col": 40
+     }
+    ],
+    "enemy": [
+     {
+      "row": 28,
+      "col": 24
+     },
+     {
+      "row": 28,
+      "col": 25
+     },
+     {
+      "row": 28,
+      "col": 26
+     },
+     {
+      "row": 28,
+      "col": 27
+     },
+     {
+      "row": 28,
+      "col": 28
+     },
+     {
+      "row": 28,
+      "col": 29
+     },
+     {
+      "row": 28,
+      "col": 30
+     },
+     {
+      "row": 28,
+      "col": 31
+     },
+     {
+      "row": 28,
+      "col": 32
+     },
+     {
+      "row": 28,
+      "col": 33
+     },
+     {
+      "row": 28,
+      "col": 34
+     },
+     {
+      "row": 28,
+      "col": 35
+     },
+     {
+      "row": 28,
+      "col": 36
+     },
+     {
+      "row": 28,
+      "col": 37
+     },
+     {
+      "row": 28,
+      "col": 38
+     },
+     {
+      "row": 29,
+      "col": 24
+     },
+     {
+      "row": 29,
+      "col": 25
+     },
+     {
+      "row": 29,
+      "col": 26
+     },
+     {
+      "row": 29,
+      "col": 27
+     },
+     {
+      "row": 29,
+      "col": 28
+     },
+     {
+      "row": 29,
+      "col": 29
+     },
+     {
+      "row": 29,
+      "col": 30
+     },
+     {
+      "row": 29,
+      "col": 31
+     },
+     {
+      "row": 29,
+      "col": 32
+     },
+     {
+      "row": 29,
+      "col": 33
+     },
+     {
+      "row": 29,
+      "col": 34
+     },
+     {
+      "row": 29,
+      "col": 35
+     },
+     {
+      "row": 29,
+      "col": 36
+     },
+     {
+      "row": 29,
+      "col": 37
+     },
+     {
+      "row": 29,
+      "col": 38
+     },
+     {
+      "row": 30,
+      "col": 24
+     },
+     {
+      "row": 30,
+      "col": 25
+     },
+     {
+      "row": 30,
+      "col": 26
+     },
+     {
+      "row": 30,
+      "col": 27
+     },
+     {
+      "row": 30,
+      "col": 28
+     },
+     {
+      "row": 30,
+      "col": 29
+     },
+     {
+      "row": 30,
+      "col": 30
+     },
+     {
+      "row": 30,
+      "col": 31
+     },
+     {
+      "row": 30,
+      "col": 32
+     },
+     {
+      "row": 30,
+      "col": 33
+     },
+     {
+      "row": 30,
+      "col": 34
+     },
+     {
+      "row": 30,
+      "col": 35
+     },
+     {
+      "row": 30,
+      "col": 36
+     },
+     {
+      "row": 30,
+      "col": 37
+     },
+     {
+      "row": 30,
+      "col": 38
+     },
+     {
+      "row": 31,
+      "col": 24
+     },
+     {
+      "row": 31,
+      "col": 25
+     },
+     {
+      "row": 31,
+      "col": 26
+     },
+     {
+      "row": 31,
+      "col": 27
+     },
+     {
+      "row": 31,
+      "col": 28
+     },
+     {
+      "row": 31,
+      "col": 29
+     },
+     {
+      "row": 31,
+      "col": 30
+     },
+     {
+      "row": 31,
+      "col": 31
+     },
+     {
+      "row": 31,
+      "col": 32
+     },
+     {
+      "row": 31,
+      "col": 33
+     },
+     {
+      "row": 31,
+      "col": 34
+     },
+     {
+      "row": 31,
+      "col": 35
+     },
+     {
+      "row": 31,
+      "col": 36
+     },
+     {
+      "row": 31,
+      "col": 37
+     },
+     {
+      "row": 31,
+      "col": 38
+     },
+     {
+      "row": 32,
+      "col": 24
+     },
+     {
+      "row": 32,
+      "col": 25
+     },
+     {
+      "row": 32,
+      "col": 26
+     },
+     {
+      "row": 32,
+      "col": 27
+     },
+     {
+      "row": 32,
+      "col": 28
+     },
+     {
+      "row": 32,
+      "col": 29
+     },
+     {
+      "row": 32,
+      "col": 30
+     },
+     {
+      "row": 32,
+      "col": 31
+     },
+     {
+      "row": 32,
+      "col": 32
+     },
+     {
+      "row": 32,
+      "col": 33
+     },
+     {
+      "row": 32,
+      "col": 34
+     },
+     {
+      "row": 32,
+      "col": 35
+     },
+     {
+      "row": 32,
+      "col": 36
+     },
+     {
+      "row": 32,
+      "col": 37
+     },
+     {
+      "row": 32,
+      "col": 38
+     },
+     {
+      "row": 33,
+      "col": 24
+     },
+     {
+      "row": 33,
+      "col": 25
+     },
+     {
+      "row": 33,
+      "col": 26
+     },
+     {
+      "row": 33,
+      "col": 27
+     },
+     {
+      "row": 33,
+      "col": 28
+     },
+     {
+      "row": 33,
+      "col": 29
+     },
+     {
+      "row": 33,
+      "col": 30
+     },
+     {
+      "row": 33,
+      "col": 31
+     },
+     {
+      "row": 33,
+      "col": 32
+     },
+     {
+      "row": 33,
+      "col": 33
+     },
+     {
+      "row": 33,
+      "col": 34
+     },
+     {
+      "row": 33,
+      "col": 35
+     },
+     {
+      "row": 33,
+      "col": 36
+     },
+     {
+      "row": 33,
+      "col": 37
+     },
+     {
+      "row": 33,
+      "col": 38
+     },
+     {
+      "row": 34,
+      "col": 24
+     },
+     {
+      "row": 34,
+      "col": 25
+     },
+     {
+      "row": 34,
+      "col": 26
+     },
+     {
+      "row": 34,
+      "col": 27
+     },
+     {
+      "row": 34,
+      "col": 28
+     },
+     {
+      "row": 34,
+      "col": 29
+     },
+     {
+      "row": 34,
+      "col": 30
+     },
+     {
+      "row": 34,
+      "col": 31
+     },
+     {
+      "row": 34,
+      "col": 32
+     },
+     {
+      "row": 34,
+      "col": 36
+     },
+     {
+      "row": 34,
+      "col": 37
+     },
+     {
+      "row": 34,
+      "col": 38
+     },
+     {
+      "row": 35,
+      "col": 24
+     },
+     {
+      "row": 35,
+      "col": 25
+     },
+     {
+      "row": 35,
+      "col": 26
+     },
+     {
+      "row": 35,
+      "col": 27
+     },
+     {
+      "row": 35,
+      "col": 28
+     },
+     {
+      "row": 35,
+      "col": 29
+     },
+     {
+      "row": 35,
+      "col": 30
+     },
+     {
+      "row": 35,
+      "col": 31
+     },
+     {
+      "row": 35,
+      "col": 32
+     },
+     {
+      "row": 35,
+      "col": 36
+     },
+     {
+      "row": 35,
+      "col": 37
+     },
+     {
+      "row": 35,
+      "col": 38
+     },
+     {
+      "row": 36,
+      "col": 24
+     },
+     {
+      "row": 36,
+      "col": 25
+     },
+     {
+      "row": 36,
+      "col": 26
+     },
+     {
+      "row": 36,
+      "col": 27
+     },
+     {
+      "row": 36,
+      "col": 28
+     },
+     {
+      "row": 36,
+      "col": 29
+     },
+     {
+      "row": 36,
+      "col": 30
+     },
+     {
+      "row": 36,
+      "col": 31
+     },
+     {
+      "row": 36,
+      "col": 32
+     },
+     {
+      "row": 36,
+      "col": 36
+     },
+     {
+      "row": 36,
+      "col": 37
+     },
+     {
+      "row": 36,
+      "col": 38
+     },
+     {
+      "row": 7,
+      "col": 28
+     },
+     {
+      "row": 7,
+      "col": 29
+     },
+     {
+      "row": 7,
+      "col": 30
+     },
+     {
+      "row": 7,
+      "col": 31
+     },
+     {
+      "row": 7,
+      "col": 32
+     },
+     {
+      "row": 7,
+      "col": 33
+     },
+     {
+      "row": 7,
+      "col": 34
+     },
+     {
+      "row": 7,
+      "col": 35
+     },
+     {
+      "row": 7,
+      "col": 36
+     },
+     {
+      "row": 8,
+      "col": 28
+     },
+     {
+      "row": 8,
+      "col": 29
+     },
+     {
+      "row": 8,
+      "col": 30
+     },
+     {
+      "row": 8,
+      "col": 31
+     },
+     {
+      "row": 8,
+      "col": 32
+     },
+     {
+      "row": 8,
+      "col": 33
+     },
+     {
+      "row": 8,
+      "col": 34
+     },
+     {
+      "row": 8,
+      "col": 35
+     },
+     {
+      "row": 8,
+      "col": 36
+     },
+     {
+      "row": 9,
+      "col": 28
+     },
+     {
+      "row": 9,
+      "col": 29
+     },
+     {
+      "row": 9,
+      "col": 30
+     },
+     {
+      "row": 9,
+      "col": 31
+     },
+     {
+      "row": 9,
+      "col": 33
+     },
+     {
+      "row": 9,
+      "col": 34
+     },
+     {
+      "row": 9,
+      "col": 35
+     },
+     {
+      "row": 9,
+      "col": 36
+     },
+     {
+      "row": 10,
+      "col": 28
+     },
+     {
+      "row": 10,
+      "col": 29
+     },
+     {
+      "row": 10,
+      "col": 30
+     },
+     {
+      "row": 10,
+      "col": 31
+     },
+     {
+      "row": 10,
+      "col": 32
+     },
+     {
+      "row": 10,
+      "col": 33
+     },
+     {
+      "row": 10,
+      "col": 34
+     },
+     {
+      "row": 10,
+      "col": 35
+     },
+     {
+      "row": 10,
+      "col": 36
+     },
+     {
+      "row": 11,
+      "col": 28
+     },
+     {
+      "row": 11,
+      "col": 29
+     },
+     {
+      "row": 11,
+      "col": 30
+     },
+     {
+      "row": 11,
+      "col": 31
+     },
+     {
+      "row": 11,
+      "col": 32
+     },
+     {
+      "row": 11,
+      "col": 33
+     },
+     {
+      "row": 11,
+      "col": 34
+     },
+     {
+      "row": 11,
+      "col": 35
+     },
+     {
+      "row": 11,
+      "col": 36
+     },
+     {
+      "row": 14,
+      "col": 46
+     },
+     {
+      "row": 14,
+      "col": 47
+     },
+     {
+      "row": 14,
+      "col": 48
+     },
+     {
+      "row": 14,
+      "col": 49
+     },
+     {
+      "row": 14,
+      "col": 50
+     },
+     {
+      "row": 14,
+      "col": 51
+     },
+     {
+      "row": 14,
+      "col": 52
+     },
+     {
+      "row": 14,
+      "col": 53
+     },
+     {
+      "row": 14,
+      "col": 54
+     },
+     {
+      "row": 15,
+      "col": 46
+     },
+     {
+      "row": 15,
+      "col": 47
+     },
+     {
+      "row": 15,
+      "col": 48
+     },
+     {
+      "row": 15,
+      "col": 49
+     },
+     {
+      "row": 15,
+      "col": 50
+     },
+     {
+      "row": 15,
+      "col": 51
+     },
+     {
+      "row": 15,
+      "col": 52
+     },
+     {
+      "row": 15,
+      "col": 53
+     },
+     {
+      "row": 15,
+      "col": 54
+     },
+     {
+      "row": 16,
+      "col": 46
+     },
+     {
+      "row": 16,
+      "col": 47
+     },
+     {
+      "row": 16,
+      "col": 48
+     },
+     {
+      "row": 16,
+      "col": 49
+     },
+     {
+      "row": 16,
+      "col": 50
+     },
+     {
+      "row": 16,
+      "col": 51
+     },
+     {
+      "row": 17,
+      "col": 46
+     },
+     {
+      "row": 17,
+      "col": 47
+     },
+     {
+      "row": 17,
+      "col": 48
+     },
+     {
+      "row": 17,
+      "col": 49
+     },
+     {
+      "row": 17,
+      "col": 50
+     },
+     {
+      "row": 17,
+      "col": 51
+     },
+     {
+      "row": 18,
+      "col": 46
+     },
+     {
+      "row": 18,
+      "col": 47
+     },
+     {
+      "row": 18,
+      "col": 48
+     },
+     {
+      "row": 18,
+      "col": 49
+     },
+     {
+      "row": 18,
+      "col": 50
+     },
+     {
+      "row": 18,
+      "col": 51
+     }
+    ]
+   },
+   "reinforcements": [
+    {
+     "turn": 4,
+     "label": "Column · t4",
+     "tiles": [
+      {
+       "row": 8,
+       "col": 50
+      },
+      {
+       "row": 8,
+       "col": 51
+      },
+      {
+       "row": 8,
+       "col": 52
+      },
+      {
+       "row": 8,
+       "col": 53
+      },
+      {
+       "row": 8,
+       "col": 54
+      },
+      {
+       "row": 8,
+       "col": 55
+      },
+      {
+       "row": 8,
+       "col": 56
+      },
+      {
+       "row": 8,
+       "col": 57
+      },
+      {
+       "row": 8,
+       "col": 58
+      },
+      {
+       "row": 9,
+       "col": 50
+      },
+      {
+       "row": 9,
+       "col": 51
+      },
+      {
+       "row": 9,
+       "col": 52
+      },
+      {
+       "row": 9,
+       "col": 53
+      },
+      {
+       "row": 9,
+       "col": 54
+      },
+      {
+       "row": 9,
+       "col": 55
+      },
+      {
+       "row": 9,
+       "col": 56
+      },
+      {
+       "row": 9,
+       "col": 57
+      },
+      {
+       "row": 9,
+       "col": 58
+      },
+      {
+       "row": 10,
+       "col": 50
+      },
+      {
+       "row": 10,
+       "col": 51
+      },
+      {
+       "row": 10,
+       "col": 52
+      },
+      {
+       "row": 10,
+       "col": 53
+      },
+      {
+       "row": 10,
+       "col": 54
+      },
+      {
+       "row": 10,
+       "col": 55
+      },
+      {
+       "row": 10,
+       "col": 56
+      },
+      {
+       "row": 10,
+       "col": 57
+      },
+      {
+       "row": 10,
+       "col": 58
+      },
+      {
+       "row": 11,
+       "col": 50
+      },
+      {
+       "row": 11,
+       "col": 51
+      },
+      {
+       "row": 11,
+       "col": 52
+      },
+      {
+       "row": 11,
+       "col": 53
+      },
+      {
+       "row": 11,
+       "col": 54
+      },
+      {
+       "row": 11,
+       "col": 55
+      },
+      {
+       "row": 11,
+       "col": 56
+      },
+      {
+       "row": 11,
+       "col": 57
+      },
+      {
+       "row": 11,
+       "col": 58
+      },
+      {
+       "row": 12,
+       "col": 50
+      },
+      {
+       "row": 12,
+       "col": 51
+      },
+      {
+       "row": 12,
+       "col": 52
+      },
+      {
+       "row": 12,
+       "col": 53
+      },
+      {
+       "row": 12,
+       "col": 54
+      },
+      {
+       "row": 12,
+       "col": 55
+      },
+      {
+       "row": 12,
+       "col": 56
+      },
+      {
+       "row": 12,
+       "col": 57
+      },
+      {
+       "row": 12,
+       "col": 58
+      },
+      {
+       "row": 13,
+       "col": 50
+      },
+      {
+       "row": 13,
+       "col": 51
+      },
+      {
+       "row": 13,
+       "col": 52
+      },
+      {
+       "row": 13,
+       "col": 53
+      },
+      {
+       "row": 13,
+       "col": 54
+      },
+      {
+       "row": 13,
+       "col": 55
+      },
+      {
+       "row": 13,
+       "col": 56
+      },
+      {
+       "row": 13,
+       "col": 57
+      },
+      {
+       "row": 13,
+       "col": 58
+      },
+      {
+       "row": 14,
+       "col": 50
+      },
+      {
+       "row": 14,
+       "col": 51
+      },
+      {
+       "row": 14,
+       "col": 52
+      },
+      {
+       "row": 14,
+       "col": 53
+      },
+      {
+       "row": 14,
+       "col": 54
+      },
+      {
+       "row": 14,
+       "col": 55
+      },
+      {
+       "row": 14,
+       "col": 56
+      },
+      {
+       "row": 14,
+       "col": 57
+      },
+      {
+       "row": 14,
+       "col": 58
+      }
+     ]
+    }
+   ],
+   "objectiveTiles": [
+    {
+     "row": 9,
+     "col": 32,
+     "label": "Relay core — ring it"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "Central push (blind)",
+     "kind": "fast",
+     "waypoints": [
+      {
+       "row": 58,
+       "col": 31
+      },
+      {
+       "row": 45,
+       "col": 26
+      },
+      {
+       "row": 38,
+       "col": 32
+      },
+      {
+       "row": 24,
+       "col": 29
+      },
+      {
+       "row": 16,
+       "col": 32
+      },
+      {
+       "row": 12,
+       "col": 32
+      }
+     ]
+    },
+    {
+     "label": "West corridor swing",
+     "kind": "covered",
+     "waypoints": [
+      {
+       "row": 58,
+       "col": 26
+      },
+      {
+       "row": 51,
+       "col": 10
+      },
+      {
+       "row": 33,
+       "col": 8
+      },
+      {
+       "row": 23,
+       "col": 13
+      },
+      {
+       "row": 13,
+       "col": 19
+      },
+      {
+       "row": 9,
+       "col": 28
+      }
+     ]
+    },
+    {
+     "label": "East ramp flank",
+     "kind": "flank",
+     "waypoints": [
+      {
+       "row": 58,
+       "col": 36
+      },
+      {
+       "row": 59,
+       "col": 48
+      },
+      {
+       "row": 52,
+       "col": 59
+      },
+      {
+       "row": 40,
+       "col": 58
+      },
+      {
+       "row": 36,
+       "col": 48
+      },
+      {
+       "row": 13,
+       "col": 48
+      },
+      {
+       "row": 9,
+       "col": 40
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Relay-activity + Soldan scenes gate on turn & consequence score."
+    },
+    {
+     "condition": "design-note",
+     "element": "Covenant reinforcement enters the east corridor turn 4 — the route you didn't take stays dangerous."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "syndicate_assessor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Seats on the C-corridor cache — funds the sustained push"
+     },
+     {
+      "unitId": "syndicate_operative",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Corridor swings — west and east at once"
+     },
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Hold each ramp once taken"
+     },
+     {
+      "unitId": "syndicate_rangefinder",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Overwatch up the blind central line"
+     },
+     {
+      "unitId": "syndicate_handler",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Marks through the interference"
+     },
+     {
+      "unitId": "syndicate_contractor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Rings the relay — the actual objective"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "covenant_keeper",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "The line, dug into the interference"
+     },
+     {
+      "unitId": "covenant_arbiter",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Strips your tempo at the gaps"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 2,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Platform battery"
+     },
+     {
+      "unitId": "covenant_seeker",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "The relay's own supply — their rebuy point, behind the walls"
+     },
+     {
+      "unitId": "covenant_witness",
+      "count": 1,
+      "spawnZone": 2,
+      "commander": false,
+      "designNote": "East spur — counters your blind corridor"
+     }
+    ],
+    "reinforcements": [
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Column up the corridor you didn't take"
+     },
+     {
+      "unitId": "covenant_arbiter",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "With it"
+     }
+    ]
+   },
+   "economyNotes": {
+    "player": "Assessor seats the relocated C-corridor cache by t3 — ≈1 rebuy per 3 turns sustains the push up the corridors.",
+    "enemy": "The relay runs its own Seeker on the supply node at the S ramp — regrowing from t2. Ring the relay; a rout is a treadmill."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       56,
+       59
+      ],
+      "cols": [
+       22,
+       40
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       28,
+       36
+      ],
+      "cols": [
+       24,
+       38
+      ]
+     },
+     {
+      "rows": [
+       7,
+       11
+      ],
+      "cols": [
+       28,
+       36
+      ]
+     },
+     {
+      "rows": [
+       14,
+       18
+      ],
+      "cols": [
+       46,
+       54
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "terrain": {
+  "seed": 42,
+  "warpStrength": 0.5,
+  "palette": {
+   "open": [
+    196,
+    205,
+    224
+   ],
+   "ruins": [
+    122,
+    127,
+    139
+   ],
+   "mountain": [
+    63,
+    66,
+    72
+   ],
+   "spire_wall": [
+    16,
+    18,
+    35
+   ],
+   "spire_floor": [
+    90,
+    107,
+    135
+   ]
+  },
+  "amplitude": {
+   "open": 20,
+   "ruins": 24,
+   "mountain": 32,
+   "spire_wall": 14,
+   "spire_floor": 22
+  },
+  "blockingRenderTypes": [
+   "mountain",
+   "spire_wall"
+  ],
+  "renderTypeOverrides": [
+   {
+    "rows": [
+     5,
+     13
+    ],
+    "cols": [
+     26,
+     38
+    ],
+    "renderType": "spire_wall",
+    "label": "Relay — platform shell"
+   },
+   {
+    "rows": [
+     46,
+     58
+    ],
+    "cols": [
+     44,
+     58
+    ],
+    "renderType": "spire_wall",
+    "label": "Bunker — shell"
+   },
+   {
+    "rows": [
+     7,
+     11
+    ],
+    "cols": [
+     28,
+     36
+    ],
+    "renderType": "spire_floor",
+    "label": "Relay — platform floor"
+   },
+   {
+    "rows": [
+     11,
+     17
+    ],
+    "cols": [
+     31,
+     33
+    ],
+    "renderType": "spire_floor",
+    "label": "Relay — S ramp"
+   },
+   {
+    "rows": [
+     8,
+     10
+    ],
+    "cols": [
+     36,
+     42
+    ],
+    "renderType": "spire_floor",
+    "label": "Relay — E ramp"
+   },
+   {
+    "rows": [
+     48,
+     56
+    ],
+    "cols": [
+     46,
+     56
+    ],
+    "renderType": "spire_floor",
+    "label": "Bunker — interior floor"
+   },
+   {
+    "rows": [
+     44,
+     48
+    ],
+    "cols": [
+     49,
+     51
+    ],
+    "renderType": "spire_floor",
+    "label": "Bunker — front approach (N)"
+   },
+   {
+    "rows": [
+     52,
+     53
+    ],
+    "cols": [
+     42,
+     46
+    ],
+    "renderType": "spire_floor",
+    "label": "Bunker — rear exit (W)"
+   }
+  ],
+  "structureRenderType": "spire_wall",
+  "decorations": {
+   "boulder": [],
+   "crevasse": []
+  },
+  "ruinsPerturb": {
+   "regions": [],
+   "erodeProb": 0.45,
+   "expandProb": 0.35
+  },
+  "spriteAssets": {
+   "resource": "/game/assets/terrain/shared/resource.png",
+   "puzzle": "/game/assets/terrain/shared/puzzle.png"
+  },
+  "paintedTiles": {
+   "open": "/game/assets/terrain/saren-volyn/open.png",
+   "ruins": "/game/assets/terrain/saren-volyn/harsh.png",
+   "mountain": "/game/assets/terrain/saren-volyn/impassable.png",
+   "spire_wall": "/game/assets/terrain/saren-volyn/flair_spireWall.png",
+   "spire_floor": "/game/assets/terrain/saren-volyn/flair_spireFloor.png"
+  },
+  "paintedBlurSigma": {
+   "open": 5,
+   "ruins": 5,
+   "mountain": 5,
+   "spire_wall": 0,
+   "spire_floor": 0
+  },
+  "paintedOutputSize": 3072,
+  "resourceAlphaScale": 0.6,
+  "fractal": {
+   "fine": {
+    "baseScale": 2,
+    "octaves": 4,
+    "seedOffset": 0
+   },
+   "medium": {
+    "baseScale": 6,
+    "octaves": 3,
+    "seedOffset": 9999
+   },
+   "warpX": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 1111
+   },
+   "warpY": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 2222
+   },
+   "fineMediumMix": [
+    0.6,
+    0.4
+   ]
+  },
+  "boundaryAntiAliasStrength": 0.15,
+  "rotationHash": [
+   137,
+   31
+  ]
+ }
+}

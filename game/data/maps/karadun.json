@@ -1,0 +1,2442 @@
+{
+ "id": "karadun",
+ "name": "Karadun — Glass Field",
+ "world": "Karadun",
+ "description": "Open glass with no natural cover except two melt-trenches that both lead to the console pole — one from the southwest, one from the northeast. Both sides know it. That's the map.",
+ "ambientRegister": "Pale amber-white glass, thin washed-out sky, a tonal hum off the pole.",
+ "designRationale": "Open maps suit deny/rout objectives, but bare-open is boring traversal — so the two covered approaches are mirrored and collide at the pole ring: a designed collision point. Rock clusters cut flank lanes without ever one-tiling. The pole ring's cover faces outward: it rewards arriving first.",
+ "usedInMissions": [
+  {
+   "campaign": "syndicate",
+   "mission": 1,
+   "side": "player"
+  },
+  {
+   "campaign": "pirates",
+   "mission": 1,
+   "side": "player"
+  }
+ ],
+ "grid": {
+  "format": "region-spec",
+  "size": 64,
+  "implementation": "Fill defaultTile. Apply regions in order (later wins). Apply tileOverrides. Regions flagged interference reduce vision by 2 inside the zone.",
+  "defaultTile": {
+   "type": "open",
+   "movementCost": 1,
+   "blocksVision": false,
+   "destructible": false,
+   "resource": false
+  },
+  "regions": [
+   {
+    "label": "North rim",
+    "rows": [
+     0,
+     2
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "South rim",
+    "rows": [
+     61,
+     63
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West rim",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     0,
+     2
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East rim",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     61,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pole ring — N arc",
+    "rows": [
+     26,
+     27
+    ],
+    "cols": [
+     28,
+     36
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pole ring — S arc",
+    "rows": [
+     37,
+     38
+    ],
+    "cols": [
+     28,
+     36
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pole ring — W arc",
+    "rows": [
+     29,
+     35
+    ],
+    "cols": [
+     25,
+     26
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pole ring — E arc",
+    "rows": [
+     29,
+     35
+    ],
+    "cols": [
+     38,
+     39
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West trench — outer",
+    "rows": [
+     44,
+     46
+    ],
+    "cols": [
+     10,
+     18
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West trench — mid",
+    "rows": [
+     40,
+     42
+    ],
+    "cols": [
+     16,
+     24
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West trench — inner",
+    "rows": [
+     36,
+     38
+    ],
+    "cols": [
+     22,
+     27
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East trench — outer",
+    "rows": [
+     16,
+     18
+    ],
+    "cols": [
+     44,
+     52
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East trench — mid",
+    "rows": [
+     20,
+     22
+    ],
+    "cols": [
+     38,
+     46
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East trench — inner",
+    "rows": [
+     24,
+     25
+    ],
+    "cols": [
+     34,
+     40
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Rocks — NW",
+    "rows": [
+     12,
+     15
+    ],
+    "cols": [
+     14,
+     17
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Rocks — NE",
+    "rows": [
+     10,
+     13
+    ],
+    "cols": [
+     44,
+     47
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Rocks — W",
+    "rows": [
+     34,
+     37
+    ],
+    "cols": [
+     12,
+     15
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Rocks — E",
+    "rows": [
+     28,
+     31
+    ],
+    "cols": [
+     50,
+     53
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Rocks — SW",
+    "rows": [
+     46,
+     49
+    ],
+    "cols": [
+     18,
+     21
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Rocks — SE",
+    "rows": [
+     44,
+     47
+    ],
+    "cols": [
+     42,
+     45
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Watch tower apron",
+    "rows": [
+     8,
+     13
+    ],
+    "cols": [
+     47,
+     53
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   }
+  ],
+  "tileOverrides": [
+   {
+    "row": 32,
+    "col": 32,
+    "label": "Console pole — remnant beneath",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 10,
+    "col": 50,
+    "label": "Syndicate watch tower",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 30,
+    "col": 6,
+    "label": "West cluster (off-route)",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 31,
+    "col": 6,
+    "label": "",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 36,
+    "col": 58,
+    "label": "East cluster (off-route)",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 37,
+    "col": 58,
+    "label": "",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 34,
+    "col": 30,
+    "label": "Vrath working-fund cache (in ring)",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   }
+  ]
+ },
+ "resourceTiles": [
+  {
+   "row": 30,
+   "col": 6
+  },
+  {
+   "row": 31,
+   "col": 6
+  },
+  {
+   "row": 36,
+   "col": 58
+  },
+  {
+   "row": 37,
+   "col": 58
+  },
+  {
+   "row": 34,
+   "col": 30
+  }
+ ],
+ "keyFeatures": [
+  {
+   "id": "karadun_console_pole",
+   "type": "objective",
+   "label": "Console Pole",
+   "description": "ring cover faces outward — first there holds it",
+   "at": {
+    "row": 32,
+    "col": 33
+   }
+  },
+  {
+   "id": "karadun_west_trench",
+   "type": "terrain",
+   "label": "West Trench",
+   "description": "covered approach SW→pole",
+   "at": {
+    "row": 41,
+    "col": 20
+   }
+  },
+  {
+   "id": "karadun_east_trench",
+   "type": "terrain",
+   "label": "East Trench",
+   "description": "covered approach NE→pole",
+   "at": {
+    "row": 21,
+    "col": 42
+   }
+  },
+  {
+   "id": "karadun_watch_tower",
+   "type": "landmark",
+   "label": "Watch Tower",
+   "description": "overlooks the east trench",
+   "at": {
+    "row": 10,
+    "col": 51
+   }
+  },
+  {
+   "id": "karadun_vrath_cache",
+   "type": "resource",
+   "label": "Vrath Cache",
+   "description": "inside the ring — contested",
+   "at": {
+    "row": 34,
+    "col": 30
+   }
+  }
+ ],
+ "defaultSpawnZones": {
+  "player": [
+   {
+    "row": 26,
+    "col": 3
+   },
+   {
+    "row": 26,
+    "col": 4
+   },
+   {
+    "row": 27,
+    "col": 3
+   },
+   {
+    "row": 27,
+    "col": 4
+   },
+   {
+    "row": 28,
+    "col": 3
+   },
+   {
+    "row": 28,
+    "col": 4
+   },
+   {
+    "row": 29,
+    "col": 3
+   },
+   {
+    "row": 29,
+    "col": 4
+   },
+   {
+    "row": 30,
+    "col": 3
+   },
+   {
+    "row": 30,
+    "col": 4
+   },
+   {
+    "row": 31,
+    "col": 3
+   },
+   {
+    "row": 31,
+    "col": 4
+   },
+   {
+    "row": 32,
+    "col": 3
+   },
+   {
+    "row": 32,
+    "col": 4
+   },
+   {
+    "row": 33,
+    "col": 3
+   },
+   {
+    "row": 33,
+    "col": 4
+   },
+   {
+    "row": 34,
+    "col": 3
+   },
+   {
+    "row": 34,
+    "col": 4
+   },
+   {
+    "row": 35,
+    "col": 3
+   },
+   {
+    "row": 35,
+    "col": 4
+   },
+   {
+    "row": 36,
+    "col": 3
+   },
+   {
+    "row": 36,
+    "col": 4
+   },
+   {
+    "row": 37,
+    "col": 3
+   },
+   {
+    "row": 37,
+    "col": 4
+   },
+   {
+    "row": 38,
+    "col": 3
+   },
+   {
+    "row": 38,
+    "col": 4
+   }
+  ],
+  "enemy": [
+   {
+    "row": 26,
+    "col": 59
+   },
+   {
+    "row": 26,
+    "col": 60
+   },
+   {
+    "row": 27,
+    "col": 59
+   },
+   {
+    "row": 27,
+    "col": 60
+   },
+   {
+    "row": 28,
+    "col": 59
+   },
+   {
+    "row": 28,
+    "col": 60
+   },
+   {
+    "row": 29,
+    "col": 59
+   },
+   {
+    "row": 29,
+    "col": 60
+   },
+   {
+    "row": 30,
+    "col": 59
+   },
+   {
+    "row": 30,
+    "col": 60
+   },
+   {
+    "row": 31,
+    "col": 59
+   },
+   {
+    "row": 31,
+    "col": 60
+   },
+   {
+    "row": 32,
+    "col": 59
+   },
+   {
+    "row": 32,
+    "col": 60
+   },
+   {
+    "row": 33,
+    "col": 59
+   },
+   {
+    "row": 33,
+    "col": 60
+   },
+   {
+    "row": 34,
+    "col": 59
+   },
+   {
+    "row": 34,
+    "col": 60
+   },
+   {
+    "row": 35,
+    "col": 59
+   },
+   {
+    "row": 35,
+    "col": 60
+   },
+   {
+    "row": 36,
+    "col": 59
+   },
+   {
+    "row": 36,
+    "col": 60
+   },
+   {
+    "row": 37,
+    "col": 59
+   },
+   {
+    "row": 37,
+    "col": 60
+   },
+   {
+    "row": 38,
+    "col": 59
+   },
+   {
+    "row": 38,
+    "col": 60
+   }
+  ]
+ },
+ "puzzleNodes": [
+  {
+   "id": "karadun_node_1",
+   "label": "Field Relay",
+   "row": 16,
+   "col": 31,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "army_1_move",
+    "description": "Army +1 move, 2 turns"
+   }
+  },
+  {
+   "id": "karadun_node_2",
+   "label": "South Relay",
+   "row": 48,
+   "col": 33,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "rallied",
+    "description": "Rallied, 2 turns"
+   }
+  }
+ ],
+ "missionOverrides": {
+  "syndicate_m1": {
+   "objectiveLabel": "The Vrakthi amplifier team is racing up the east trench. You hold the west trench. Both approaches collide at the ring — deny activation; holding the pole yourself is optional.",
+   "enemyFaction": "vrath",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 26,
+      "col": 3
+     },
+     {
+      "row": 26,
+      "col": 4
+     },
+     {
+      "row": 27,
+      "col": 3
+     },
+     {
+      "row": 27,
+      "col": 4
+     },
+     {
+      "row": 28,
+      "col": 3
+     },
+     {
+      "row": 28,
+      "col": 4
+     },
+     {
+      "row": 29,
+      "col": 3
+     },
+     {
+      "row": 29,
+      "col": 4
+     },
+     {
+      "row": 30,
+      "col": 3
+     },
+     {
+      "row": 30,
+      "col": 4
+     },
+     {
+      "row": 31,
+      "col": 3
+     },
+     {
+      "row": 31,
+      "col": 4
+     },
+     {
+      "row": 32,
+      "col": 3
+     },
+     {
+      "row": 32,
+      "col": 4
+     },
+     {
+      "row": 33,
+      "col": 3
+     },
+     {
+      "row": 33,
+      "col": 4
+     },
+     {
+      "row": 34,
+      "col": 3
+     },
+     {
+      "row": 34,
+      "col": 4
+     },
+     {
+      "row": 35,
+      "col": 3
+     },
+     {
+      "row": 35,
+      "col": 4
+     },
+     {
+      "row": 36,
+      "col": 3
+     },
+     {
+      "row": 36,
+      "col": 4
+     },
+     {
+      "row": 37,
+      "col": 3
+     },
+     {
+      "row": 37,
+      "col": 4
+     },
+     {
+      "row": 38,
+      "col": 3
+     },
+     {
+      "row": 38,
+      "col": 4
+     }
+    ],
+    "enemy": [
+     {
+      "row": 26,
+      "col": 59
+     },
+     {
+      "row": 26,
+      "col": 60
+     },
+     {
+      "row": 27,
+      "col": 59
+     },
+     {
+      "row": 27,
+      "col": 60
+     },
+     {
+      "row": 28,
+      "col": 59
+     },
+     {
+      "row": 28,
+      "col": 60
+     },
+     {
+      "row": 29,
+      "col": 59
+     },
+     {
+      "row": 29,
+      "col": 60
+     },
+     {
+      "row": 30,
+      "col": 59
+     },
+     {
+      "row": 30,
+      "col": 60
+     },
+     {
+      "row": 31,
+      "col": 59
+     },
+     {
+      "row": 31,
+      "col": 60
+     },
+     {
+      "row": 32,
+      "col": 59
+     },
+     {
+      "row": 32,
+      "col": 60
+     },
+     {
+      "row": 33,
+      "col": 59
+     },
+     {
+      "row": 33,
+      "col": 60
+     },
+     {
+      "row": 34,
+      "col": 59
+     },
+     {
+      "row": 34,
+      "col": 60
+     },
+     {
+      "row": 35,
+      "col": 59
+     },
+     {
+      "row": 35,
+      "col": 60
+     },
+     {
+      "row": 36,
+      "col": 59
+     },
+     {
+      "row": 36,
+      "col": 60
+     },
+     {
+      "row": 37,
+      "col": 59
+     },
+     {
+      "row": 37,
+      "col": 60
+     },
+     {
+      "row": 38,
+      "col": 59
+     },
+     {
+      "row": 38,
+      "col": 60
+     }
+    ]
+   },
+   "reinforcements": [
+    {
+     "turn": 3,
+     "label": "Amp team · t3",
+     "tiles": [
+      {
+       "row": 4,
+       "col": 54
+      },
+      {
+       "row": 4,
+       "col": 55
+      },
+      {
+       "row": 4,
+       "col": 56
+      },
+      {
+       "row": 4,
+       "col": 57
+      },
+      {
+       "row": 4,
+       "col": 58
+      },
+      {
+       "row": 4,
+       "col": 59
+      },
+      {
+       "row": 5,
+       "col": 54
+      },
+      {
+       "row": 5,
+       "col": 55
+      },
+      {
+       "row": 5,
+       "col": 56
+      },
+      {
+       "row": 5,
+       "col": 57
+      },
+      {
+       "row": 5,
+       "col": 58
+      },
+      {
+       "row": 5,
+       "col": 59
+      },
+      {
+       "row": 6,
+       "col": 54
+      },
+      {
+       "row": 6,
+       "col": 55
+      },
+      {
+       "row": 6,
+       "col": 56
+      },
+      {
+       "row": 6,
+       "col": 57
+      },
+      {
+       "row": 6,
+       "col": 58
+      },
+      {
+       "row": 6,
+       "col": 59
+      },
+      {
+       "row": 7,
+       "col": 54
+      },
+      {
+       "row": 7,
+       "col": 55
+      },
+      {
+       "row": 7,
+       "col": 56
+      },
+      {
+       "row": 7,
+       "col": 57
+      },
+      {
+       "row": 7,
+       "col": 58
+      },
+      {
+       "row": 7,
+       "col": 59
+      },
+      {
+       "row": 8,
+       "col": 54
+      },
+      {
+       "row": 8,
+       "col": 55
+      },
+      {
+       "row": 8,
+       "col": 56
+      },
+      {
+       "row": 8,
+       "col": 57
+      },
+      {
+       "row": 8,
+       "col": 58
+      },
+      {
+       "row": 8,
+       "col": 59
+      }
+     ]
+    }
+   ],
+   "objectiveTiles": [
+    {
+     "row": 32,
+     "col": 32,
+     "label": "Console pole — deny"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "West trench (covered)",
+     "kind": "covered",
+     "waypoints": [
+      {
+       "row": 32,
+       "col": 4
+      },
+      {
+       "row": 45,
+       "col": 12
+      },
+      {
+       "row": 41,
+       "col": 20
+      },
+      {
+       "row": 37,
+       "col": 25
+      },
+      {
+       "row": 34,
+       "col": 27
+      }
+     ]
+    },
+    {
+     "label": "North rock lane (flank)",
+     "kind": "flank",
+     "waypoints": [
+      {
+       "row": 28,
+       "col": 4
+      },
+      {
+       "row": 20,
+       "col": 10
+      },
+      {
+       "row": 12,
+       "col": 18
+      },
+      {
+       "row": 16,
+       "col": 30
+      },
+      {
+       "row": 26,
+       "col": 32
+      }
+     ]
+    },
+    {
+     "label": "Vrath east trench",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 32,
+       "col": 60
+      },
+      {
+       "row": 17,
+       "col": 50
+      },
+      {
+       "row": 21,
+       "col": 42
+      },
+      {
+       "row": 24,
+       "col": 37
+      },
+      {
+       "row": 28,
+       "col": 36
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Capture window on the Vrakthi commander at <30% HP."
+    },
+    {
+     "condition": "design-note",
+     "element": "The trenches are mirrored: whoever wins the ring fights from cover, the other in the open."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "syndicate_operative",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Win the ring race — Reposition keeps them alive in the open"
+     },
+     {
+      "unitId": "syndicate_rangefinder",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Overwatch from the W arc punishes open glass"
+     },
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Holds a ring corner once taken"
+     },
+     {
+      "unitId": "syndicate_handler",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Marks the amplifier team through the rocks"
+     },
+     {
+      "unitId": "syndicate_assessor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "West cluster pays for the war"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "vrath_charger",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Their race leg — 5 move on flat glass"
+     },
+     {
+      "unitId": "vrath_breaker",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Cracks whatever you build at the ring"
+     },
+     {
+      "unitId": "vrath_render",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Knocks holders off the pole"
+     },
+     {
+      "unitId": "vrath_sworn",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Trails the trench, cleans up"
+     }
+    ],
+    "reinforcements": [
+     {
+      "unitId": "vrath_forger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "The amplifier team itself — the mission clock"
+     },
+     {
+      "unitId": "vrath_sworn",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Escort"
+     }
+    ]
+   },
+   "economyNotes": {
+    "player": "Assessor on the west cluster (2 tiles) — 100/turn once seated; Operatives rebuy at 125. You win the long game.",
+    "enemy": "No Reaper — fixed force plus the amplifier team at t3. They must win the pole race before attrition tells."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       26,
+       38
+      ],
+      "cols": [
+       3,
+       4
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       26,
+       38
+      ],
+      "cols": [
+       59,
+       60
+      ]
+     }
+    ]
+   }
+  },
+  "pirates_m1": {
+   "objectiveLabel": "In from the south, lift the remnant from under the pole, back out south — between patrol rotations, under the watch tower's sightline.",
+   "enemyFaction": "syndicate",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 56,
+      "col": 26
+     },
+     {
+      "row": 56,
+      "col": 27
+     },
+     {
+      "row": 56,
+      "col": 28
+     },
+     {
+      "row": 56,
+      "col": 29
+     },
+     {
+      "row": 56,
+      "col": 30
+     },
+     {
+      "row": 56,
+      "col": 31
+     },
+     {
+      "row": 56,
+      "col": 32
+     },
+     {
+      "row": 56,
+      "col": 33
+     },
+     {
+      "row": 56,
+      "col": 34
+     },
+     {
+      "row": 56,
+      "col": 35
+     },
+     {
+      "row": 56,
+      "col": 36
+     },
+     {
+      "row": 56,
+      "col": 37
+     },
+     {
+      "row": 56,
+      "col": 38
+     },
+     {
+      "row": 57,
+      "col": 26
+     },
+     {
+      "row": 57,
+      "col": 27
+     },
+     {
+      "row": 57,
+      "col": 28
+     },
+     {
+      "row": 57,
+      "col": 29
+     },
+     {
+      "row": 57,
+      "col": 30
+     },
+     {
+      "row": 57,
+      "col": 31
+     },
+     {
+      "row": 57,
+      "col": 32
+     },
+     {
+      "row": 57,
+      "col": 33
+     },
+     {
+      "row": 57,
+      "col": 34
+     },
+     {
+      "row": 57,
+      "col": 35
+     },
+     {
+      "row": 57,
+      "col": 36
+     },
+     {
+      "row": 57,
+      "col": 37
+     },
+     {
+      "row": 57,
+      "col": 38
+     },
+     {
+      "row": 58,
+      "col": 26
+     },
+     {
+      "row": 58,
+      "col": 27
+     },
+     {
+      "row": 58,
+      "col": 28
+     },
+     {
+      "row": 58,
+      "col": 29
+     },
+     {
+      "row": 58,
+      "col": 30
+     },
+     {
+      "row": 58,
+      "col": 31
+     },
+     {
+      "row": 58,
+      "col": 32
+     },
+     {
+      "row": 58,
+      "col": 33
+     },
+     {
+      "row": 58,
+      "col": 34
+     },
+     {
+      "row": 58,
+      "col": 35
+     },
+     {
+      "row": 58,
+      "col": 36
+     },
+     {
+      "row": 58,
+      "col": 37
+     },
+     {
+      "row": 58,
+      "col": 38
+     },
+     {
+      "row": 59,
+      "col": 26
+     },
+     {
+      "row": 59,
+      "col": 27
+     },
+     {
+      "row": 59,
+      "col": 28
+     },
+     {
+      "row": 59,
+      "col": 29
+     },
+     {
+      "row": 59,
+      "col": 30
+     },
+     {
+      "row": 59,
+      "col": 31
+     },
+     {
+      "row": 59,
+      "col": 32
+     },
+     {
+      "row": 59,
+      "col": 33
+     },
+     {
+      "row": 59,
+      "col": 34
+     },
+     {
+      "row": 59,
+      "col": 35
+     },
+     {
+      "row": 59,
+      "col": 36
+     },
+     {
+      "row": 59,
+      "col": 37
+     },
+     {
+      "row": 59,
+      "col": 38
+     }
+    ],
+    "enemy": [
+     {
+      "row": 28,
+      "col": 28
+     },
+     {
+      "row": 28,
+      "col": 29
+     },
+     {
+      "row": 28,
+      "col": 30
+     },
+     {
+      "row": 28,
+      "col": 31
+     },
+     {
+      "row": 28,
+      "col": 32
+     },
+     {
+      "row": 28,
+      "col": 33
+     },
+     {
+      "row": 28,
+      "col": 34
+     },
+     {
+      "row": 28,
+      "col": 35
+     },
+     {
+      "row": 28,
+      "col": 36
+     },
+     {
+      "row": 29,
+      "col": 28
+     },
+     {
+      "row": 29,
+      "col": 29
+     },
+     {
+      "row": 29,
+      "col": 30
+     },
+     {
+      "row": 29,
+      "col": 31
+     },
+     {
+      "row": 29,
+      "col": 32
+     },
+     {
+      "row": 29,
+      "col": 33
+     },
+     {
+      "row": 29,
+      "col": 34
+     },
+     {
+      "row": 29,
+      "col": 35
+     },
+     {
+      "row": 29,
+      "col": 36
+     },
+     {
+      "row": 30,
+      "col": 28
+     },
+     {
+      "row": 30,
+      "col": 29
+     },
+     {
+      "row": 30,
+      "col": 30
+     },
+     {
+      "row": 30,
+      "col": 31
+     },
+     {
+      "row": 30,
+      "col": 32
+     },
+     {
+      "row": 30,
+      "col": 33
+     },
+     {
+      "row": 30,
+      "col": 34
+     },
+     {
+      "row": 30,
+      "col": 35
+     },
+     {
+      "row": 30,
+      "col": 36
+     },
+     {
+      "row": 31,
+      "col": 28
+     },
+     {
+      "row": 31,
+      "col": 29
+     },
+     {
+      "row": 31,
+      "col": 30
+     },
+     {
+      "row": 31,
+      "col": 31
+     },
+     {
+      "row": 31,
+      "col": 32
+     },
+     {
+      "row": 31,
+      "col": 33
+     },
+     {
+      "row": 31,
+      "col": 34
+     },
+     {
+      "row": 31,
+      "col": 35
+     },
+     {
+      "row": 31,
+      "col": 36
+     },
+     {
+      "row": 9,
+      "col": 48
+     },
+     {
+      "row": 9,
+      "col": 49
+     },
+     {
+      "row": 9,
+      "col": 50
+     },
+     {
+      "row": 9,
+      "col": 51
+     },
+     {
+      "row": 9,
+      "col": 52
+     },
+     {
+      "row": 10,
+      "col": 48
+     },
+     {
+      "row": 10,
+      "col": 49
+     },
+     {
+      "row": 10,
+      "col": 51
+     },
+     {
+      "row": 10,
+      "col": 52
+     },
+     {
+      "row": 11,
+      "col": 48
+     },
+     {
+      "row": 11,
+      "col": 49
+     },
+     {
+      "row": 11,
+      "col": 50
+     },
+     {
+      "row": 11,
+      "col": 51
+     },
+     {
+      "row": 11,
+      "col": 52
+     },
+     {
+      "row": 12,
+      "col": 48
+     },
+     {
+      "row": 12,
+      "col": 49
+     },
+     {
+      "row": 12,
+      "col": 50
+     },
+     {
+      "row": 12,
+      "col": 51
+     },
+     {
+      "row": 12,
+      "col": 52
+     }
+    ]
+   },
+   "reinforcements": [
+    {
+     "turn": 3,
+     "label": "Patrol · t3",
+     "tiles": [
+      {
+       "row": 4,
+       "col": 20
+      },
+      {
+       "row": 4,
+       "col": 21
+      },
+      {
+       "row": 4,
+       "col": 22
+      },
+      {
+       "row": 4,
+       "col": 23
+      },
+      {
+       "row": 4,
+       "col": 24
+      },
+      {
+       "row": 4,
+       "col": 25
+      },
+      {
+       "row": 4,
+       "col": 26
+      },
+      {
+       "row": 4,
+       "col": 27
+      },
+      {
+       "row": 4,
+       "col": 28
+      },
+      {
+       "row": 4,
+       "col": 29
+      },
+      {
+       "row": 4,
+       "col": 30
+      },
+      {
+       "row": 4,
+       "col": 31
+      },
+      {
+       "row": 4,
+       "col": 32
+      },
+      {
+       "row": 4,
+       "col": 33
+      },
+      {
+       "row": 4,
+       "col": 34
+      },
+      {
+       "row": 4,
+       "col": 35
+      },
+      {
+       "row": 4,
+       "col": 36
+      },
+      {
+       "row": 5,
+       "col": 20
+      },
+      {
+       "row": 5,
+       "col": 21
+      },
+      {
+       "row": 5,
+       "col": 22
+      },
+      {
+       "row": 5,
+       "col": 23
+      },
+      {
+       "row": 5,
+       "col": 24
+      },
+      {
+       "row": 5,
+       "col": 25
+      },
+      {
+       "row": 5,
+       "col": 26
+      },
+      {
+       "row": 5,
+       "col": 27
+      },
+      {
+       "row": 5,
+       "col": 28
+      },
+      {
+       "row": 5,
+       "col": 29
+      },
+      {
+       "row": 5,
+       "col": 30
+      },
+      {
+       "row": 5,
+       "col": 31
+      },
+      {
+       "row": 5,
+       "col": 32
+      },
+      {
+       "row": 5,
+       "col": 33
+      },
+      {
+       "row": 5,
+       "col": 34
+      },
+      {
+       "row": 5,
+       "col": 35
+      },
+      {
+       "row": 5,
+       "col": 36
+      },
+      {
+       "row": 6,
+       "col": 20
+      },
+      {
+       "row": 6,
+       "col": 21
+      },
+      {
+       "row": 6,
+       "col": 22
+      },
+      {
+       "row": 6,
+       "col": 23
+      },
+      {
+       "row": 6,
+       "col": 24
+      },
+      {
+       "row": 6,
+       "col": 25
+      },
+      {
+       "row": 6,
+       "col": 26
+      },
+      {
+       "row": 6,
+       "col": 27
+      },
+      {
+       "row": 6,
+       "col": 28
+      },
+      {
+       "row": 6,
+       "col": 29
+      },
+      {
+       "row": 6,
+       "col": 30
+      },
+      {
+       "row": 6,
+       "col": 31
+      },
+      {
+       "row": 6,
+       "col": 32
+      },
+      {
+       "row": 6,
+       "col": 33
+      },
+      {
+       "row": 6,
+       "col": 34
+      },
+      {
+       "row": 6,
+       "col": 35
+      },
+      {
+       "row": 6,
+       "col": 36
+      },
+      {
+       "row": 7,
+       "col": 20
+      },
+      {
+       "row": 7,
+       "col": 21
+      },
+      {
+       "row": 7,
+       "col": 22
+      },
+      {
+       "row": 7,
+       "col": 23
+      },
+      {
+       "row": 7,
+       "col": 24
+      },
+      {
+       "row": 7,
+       "col": 25
+      },
+      {
+       "row": 7,
+       "col": 26
+      },
+      {
+       "row": 7,
+       "col": 27
+      },
+      {
+       "row": 7,
+       "col": 28
+      },
+      {
+       "row": 7,
+       "col": 29
+      },
+      {
+       "row": 7,
+       "col": 30
+      },
+      {
+       "row": 7,
+       "col": 31
+      },
+      {
+       "row": 7,
+       "col": 32
+      },
+      {
+       "row": 7,
+       "col": 33
+      },
+      {
+       "row": 7,
+       "col": 34
+      },
+      {
+       "row": 7,
+       "col": 35
+      },
+      {
+       "row": 7,
+       "col": 36
+      },
+      {
+       "row": 8,
+       "col": 20
+      },
+      {
+       "row": 8,
+       "col": 21
+      },
+      {
+       "row": 8,
+       "col": 22
+      },
+      {
+       "row": 8,
+       "col": 23
+      },
+      {
+       "row": 8,
+       "col": 24
+      },
+      {
+       "row": 8,
+       "col": 25
+      },
+      {
+       "row": 8,
+       "col": 26
+      },
+      {
+       "row": 8,
+       "col": 27
+      },
+      {
+       "row": 8,
+       "col": 28
+      },
+      {
+       "row": 8,
+       "col": 29
+      },
+      {
+       "row": 8,
+       "col": 30
+      },
+      {
+       "row": 8,
+       "col": 31
+      },
+      {
+       "row": 8,
+       "col": 32
+      },
+      {
+       "row": 8,
+       "col": 33
+      },
+      {
+       "row": 8,
+       "col": 34
+      },
+      {
+       "row": 8,
+       "col": 35
+      },
+      {
+       "row": 8,
+       "col": 36
+      }
+     ]
+    }
+   ],
+   "objectiveTiles": [
+    {
+     "row": 32,
+     "col": 32,
+     "label": "Remnant — lift"
+    },
+    {
+     "row": 58,
+     "col": 32,
+     "label": "Exfil zone"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "South run",
+     "kind": "fast",
+     "waypoints": [
+      {
+       "row": 58,
+       "col": 32
+      },
+      {
+       "row": 48,
+       "col": 33
+      },
+      {
+       "row": 39,
+       "col": 32
+      },
+      {
+       "row": 34,
+       "col": 32
+      }
+     ]
+    },
+    {
+     "label": "SW trench loop",
+     "kind": "covered",
+     "waypoints": [
+      {
+       "row": 58,
+       "col": 28
+      },
+      {
+       "row": 50,
+       "col": 23
+      },
+      {
+       "row": 45,
+       "col": 14
+      },
+      {
+       "row": 41,
+       "col": 20
+      },
+      {
+       "row": 37,
+       "col": 26
+      },
+      {
+       "row": 34,
+       "col": 30
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Extract-type: exfil leg matters; the south relay puzzle node sits on the way out."
+    },
+    {
+     "condition": "design-note",
+     "element": "The Vrath cache inside the ring triggers a post-mission split decision."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "pirates_runner",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Lift and sprint — 6 move beats the rotation"
+     },
+     {
+      "unitId": "pirates_scavenger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "South relay from 2 tiles, on the way out"
+     },
+     {
+      "unitId": "pirates_wrecker",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Cracks the pole housing"
+     },
+     {
+      "unitId": "pirates_rigger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Traps the exfil line against pursuit"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Ring garrison — denial at the prize"
+     },
+     {
+      "unitId": "syndicate_operative",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Inner patrol"
+     },
+     {
+      "unitId": "syndicate_rangefinder",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Tower overwatch down the east trench"
+     }
+    ],
+    "reinforcements": [
+     {
+      "unitId": "syndicate_operative",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "The rotation you're racing"
+     }
+    ]
+   },
+   "economyNotes": {
+    "player": "No Siphon — in, lift, out. The exfil is the whole budget.",
+    "enemy": "No economy, but the patrol rotation is free — their reinforcement is the clock, not currency."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       56,
+       59
+      ],
+      "cols": [
+       26,
+       38
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       28,
+       31
+      ],
+      "cols": [
+       28,
+       36
+      ]
+     },
+     {
+      "rows": [
+       9,
+       12
+      ],
+      "cols": [
+       48,
+       52
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "terrain": {
+  "seed": 42,
+  "warpStrength": 0.5,
+  "palette": {
+   "open": [
+    205,
+    198,
+    176
+   ],
+   "ruins": [
+    127,
+    123,
+    109
+   ],
+   "mountain": [
+    66,
+    63,
+    56
+   ],
+   "spire_wall": [
+    16,
+    18,
+    35
+   ],
+   "spire_floor": [
+    90,
+    107,
+    135
+   ]
+  },
+  "amplitude": {
+   "open": 20,
+   "ruins": 24,
+   "mountain": 32,
+   "spire_wall": 14,
+   "spire_floor": 22
+  },
+  "blockingRenderTypes": [
+   "mountain",
+   "spire_wall"
+  ],
+  "renderTypeOverrides": [],
+  "structureRenderType": "spire_wall",
+  "decorations": {
+   "boulder": [],
+   "crevasse": []
+  },
+  "ruinsPerturb": {
+   "regions": [],
+   "erodeProb": 0.45,
+   "expandProb": 0.35
+  },
+  "spriteAssets": {
+   "resource": "/game/assets/terrain/shared/resource.png",
+   "puzzle": "/game/assets/terrain/shared/puzzle.png"
+  },
+  "paintedTiles": {
+   "open": "/game/assets/terrain/karadun/open.png",
+   "ruins": "/game/assets/terrain/karadun/harsh.png",
+   "mountain": "/game/assets/terrain/karadun/impassable.png"
+  },
+  "paintedBlurSigma": {
+   "open": 5,
+   "ruins": 5,
+   "mountain": 5,
+   "spire_wall": 0,
+   "spire_floor": 0
+  },
+  "paintedOutputSize": 3072,
+  "resourceAlphaScale": 0.6,
+  "fractal": {
+   "fine": {
+    "baseScale": 2,
+    "octaves": 4,
+    "seedOffset": 0
+   },
+   "medium": {
+    "baseScale": 6,
+    "octaves": 3,
+    "seedOffset": 9999
+   },
+   "warpX": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 1111
+   },
+   "warpY": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 2222
+   },
+   "fineMediumMix": [
+    0.6,
+    0.4
+   ]
+  },
+  "boundaryAntiAliasStrength": 0.15,
+  "rotationHash": [
+   137,
+   31
+  ]
+ }
+}

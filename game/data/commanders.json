@@ -1,0 +1,282 @@
+[
+  {
+    "id": "covenant_confessor",
+    "factionId": "covenant",
+    "name": "The Confessor",
+    "passiveLabel": "Attrition",
+    "passiveDescription": "All damage-over-time effects applied by friendly units last 1 additional turn and deal increased damage.",
+    "passiveEffect": {
+      "type": "dot_amplify",
+      "target": "army",
+      "magnitude": 2,
+      "condition": null
+    },
+    "stats": {
+      "health": 90,
+      "attack": 6,
+      "defense": 3,
+      "movementRange": 3,
+      "visionRange": 4,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_confessor_judgment",
+        "name": "Judgment",
+        "description": "Once per mission, applies a damage-over-time effect to all visible enemy units simultaneously.",
+        "effect": {
+          "type": "dot",
+          "target": "all_visible_enemies",
+          "magnitude": 3,
+          "duration": 2,
+          "condition": "once_per_mission"
+        }
+      }
+    ]
+  },
+  {
+    "id": "covenant_shepherd",
+    "factionId": "covenant",
+    "name": "The Shepherd",
+    "passiveLabel": "Sustain",
+    "passiveDescription": "All friendly units recover a small amount of health at the start of each turn.",
+    "passiveEffect": {
+      "type": "heal",
+      "target": "army",
+      "magnitude": 3,
+      "condition": "start_of_turn"
+    },
+    "stats": {
+      "health": 85,
+      "attack": 5,
+      "defense": 3,
+      "movementRange": 3,
+      "visionRange": 4,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_shepherd_refuge",
+        "name": "Refuge",
+        "description": "Adjacent friendly units receive a defense bonus equal to the Shepherd's current defense stat.",
+        "effect": {
+          "type": "defense",
+          "target": "adjacent_allies",
+          "magnitude": 3,
+          "duration": -1,
+          "condition": "shepherd_alive"
+        }
+      }
+    ]
+  },
+  {
+    "id": "syndicate_director",
+    "factionId": "syndicate",
+    "name": "The Director",
+    "passiveLabel": "Offensive Coordination",
+    "passiveDescription": "All friendly units deal increased damage. The bonus is higher for units that have not moved this turn.",
+    "passiveEffect": {
+      "type": "damage",
+      "target": "army",
+      "magnitude": 2,
+      "condition": null
+    },
+    "stats": {
+      "health": 80,
+      "attack": 8,
+      "defense": 2,
+      "movementRange": 3,
+      "visionRange": 5,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_director_strike",
+        "name": "Coordinated Strike",
+        "description": "Once per turn, a friendly unit within 4 tiles may make a bonus attack immediately after the Director attacks.",
+        "effect": {
+          "type": "action-budget",
+          "target": "allied_unit",
+          "magnitude": 1,
+          "duration": 1,
+          "condition": "after_director_attack"
+        }
+      }
+    ]
+  },
+  {
+    "id": "syndicate_analyst",
+    "factionId": "syndicate",
+    "name": "The Analyst",
+    "passiveLabel": "Information Advantage",
+    "passiveDescription": "All friendly units have extended vision range. Enemy units within the Analyst's vision are marked, reducing their defense.",
+    "passiveEffect": {
+      "type": "vision",
+      "target": "army",
+      "magnitude": 2,
+      "condition": null
+    },
+    "stats": {
+      "health": 75,
+      "attack": 5,
+      "defense": 2,
+      "movementRange": 3,
+      "visionRange": 7,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_analyst_expose",
+        "name": "Full Assessment",
+        "description": "Once per mission, reveals all enemy positions on the map for 2 turns regardless of fog of war.",
+        "effect": {
+          "type": "vision",
+          "target": "all_enemies",
+          "magnitude": 1,
+          "duration": 2,
+          "condition": "once_per_mission"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vrath_warlord",
+    "factionId": "vrath",
+    "name": "The Warlord",
+    "passiveLabel": "Overwhelming Force",
+    "passiveDescription": "All friendly units deal significantly increased damage. The bonus scales with the number of enemies remaining — the fewer enemies, the higher the bonus.",
+    "passiveEffect": {
+      "type": "damage",
+      "target": "army",
+      "magnitude": 4,
+      "condition": "scales_with_enemy_count"
+    },
+    "stats": {
+      "health": 150,
+      "attack": 12,
+      "defense": 4,
+      "movementRange": 3,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_warlord_challenge",
+        "name": "Challenge",
+        "description": "Once per mission, forces a target enemy unit to attack the Warlord on their next turn if possible.",
+        "effect": {
+          "type": "taunt",
+          "target": "enemy_unit",
+          "magnitude": 1,
+          "duration": 1,
+          "condition": "once_per_mission"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vrath_undying",
+    "factionId": "vrath",
+    "name": "The Undying",
+    "passiveLabel": "Relentless Pressure",
+    "passiveDescription": "All friendly units have increased movement range. Units that move before attacking deal bonus damage.",
+    "passiveEffect": {
+      "type": "movement",
+      "target": "army",
+      "magnitude": 1,
+      "condition": null
+    },
+    "stats": {
+      "health": 120,
+      "attack": 10,
+      "defense": 3,
+      "movementRange": 5,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_undying_press",
+        "name": "Press Forward",
+        "description": "Friendly units that end their turn adjacent to an enemy gain a bonus attack action next turn.",
+        "effect": {
+          "type": "action-budget",
+          "target": "adjacent_ally",
+          "magnitude": 1,
+          "duration": 1,
+          "condition": "adjacent_to_enemy_end_of_turn"
+        }
+      }
+    ]
+  },
+  {
+    "id": "pirates_captain",
+    "factionId": "pirates",
+    "name": "The Captain",
+    "passiveLabel": "Crew Morale",
+    "passiveDescription": "All friendly units deal increased damage and receive a minor health regeneration each turn. The bonus increases when the Captain is in close proximity to the action.",
+    "passiveEffect": {
+      "type": "damage",
+      "target": "army",
+      "magnitude": 3,
+      "condition": null
+    },
+    "stats": {
+      "health": 130,
+      "attack": 10,
+      "defense": 3,
+      "movementRange": 4,
+      "visionRange": 5,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_captain_inspiration",
+        "name": "That's An Order",
+        "description": "Once per turn, grants a friendly unit within 3 tiles an immediate bonus action.",
+        "effect": {
+          "type": "action-budget",
+          "target": "allied_unit",
+          "magnitude": 1,
+          "duration": 1,
+          "condition": "once_per_turn"
+        }
+      }
+    ]
+  },
+  {
+    "id": "pirates_fixer",
+    "factionId": "pirates",
+    "name": "The Fixer",
+    "passiveLabel": "Organized Chaos",
+    "passiveDescription": "Wrecker and Scavenger abilities have reduced cooldowns and increased effect magnitude. All friendly units have a chance to apply a random debuff on attack.",
+    "passiveEffect": {
+      "type": "ability_cooldown",
+      "target": "army",
+      "magnitude": -1,
+      "condition": "wrecker_or_scavenger"
+    },
+    "stats": {
+      "health": 100,
+      "attack": 8,
+      "defense": 2,
+      "movementRange": 4,
+      "visionRange": 6,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_fixer_contingency",
+        "name": "Contingency",
+        "description": "Once per mission, when a friendly unit would be destroyed, the Fixer can spend 2 actions to leave it at 1 health instead.",
+        "effect": {
+          "type": "prevent_death",
+          "target": "allied_unit",
+          "magnitude": 1,
+          "duration": 1,
+          "condition": "once_per_mission"
+        }
+      }
+    ]
+  }
+]

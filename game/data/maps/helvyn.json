@@ -1,0 +1,7044 @@
+{
+ "id": "helvyn",
+ "name": "Helvyn — Southern Ice Shelf",
+ "world": "Helvyn",
+ "description": "A remnant spire half-sunk into the shelf, reachable down three ice lanes split by pressure ridges. Every campaign that touches Helvyn approaches the same spire from a different lane.",
+ "ambientRegister": "Arctic blue-white. Wind, settling ice, the spire groaning as it sinks.",
+ "designRationale": "Seize-type map, so it reads west→east. Three lanes, three spire entrances — the route is chosen at deployment, not discovered. Ridge chokes are 3 tiles wide (no one-tiling). Caches sit off-lane to pull escorts away from the main push.",
+ "usedInMissions": [
+  {
+   "campaign": "covenant",
+   "mission": 1,
+   "side": "player"
+  },
+  {
+   "campaign": "covenant",
+   "mission": 2,
+   "side": "player"
+  },
+  {
+   "campaign": "covenant",
+   "mission": 3,
+   "side": "player"
+  },
+  {
+   "campaign": "pirates",
+   "mission": 3,
+   "side": "player"
+  }
+ ],
+ "grid": {
+  "format": "region-spec",
+  "size": 64,
+  "implementation": "Fill defaultTile. Apply regions in order (later wins). Apply tileOverrides. Regions flagged interference reduce vision by 2 inside the zone.",
+  "defaultTile": {
+   "type": "open",
+   "movementCost": 1,
+   "blocksVision": false,
+   "destructible": false,
+   "resource": false
+  },
+  "regions": [
+   {
+    "label": "North rim",
+    "rows": [
+     0,
+     2
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "South rim",
+    "rows": [
+     61,
+     63
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East rim",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     61,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pressure ridge A (N/central split)",
+    "rows": [
+     18,
+     20
+    ],
+    "cols": [
+     6,
+     43
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Ridge A choke — west",
+    "rows": [
+     18,
+     20
+    ],
+    "cols": [
+     14,
+     16
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Ridge A choke — east",
+    "rows": [
+     18,
+     20
+    ],
+    "cols": [
+     32,
+     34
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Pressure ridge B (central/S split)",
+    "rows": [
+     42,
+     44
+    ],
+    "cols": [
+     10,
+     42
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Ridge B choke — west",
+    "rows": [
+     42,
+     44
+    ],
+    "cols": [
+     20,
+     22
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Ridge B choke — east",
+    "rows": [
+     42,
+     44
+    ],
+    "cols": [
+     40,
+     42
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — N lane west",
+    "rows": [
+     6,
+     9
+    ],
+    "cols": [
+     10,
+     15
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — N lane mid",
+    "rows": [
+     10,
+     14
+    ],
+    "cols": [
+     24,
+     28
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — N lane east",
+    "rows": [
+     5,
+     9
+    ],
+    "cols": [
+     36,
+     40
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — C lane 1",
+    "rows": [
+     24,
+     28
+    ],
+    "cols": [
+     8,
+     12
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — C lane 2",
+    "rows": [
+     32,
+     36
+    ],
+    "cols": [
+     16,
+     20
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — C lane 3",
+    "rows": [
+     24,
+     27
+    ],
+    "cols": [
+     24,
+     29
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — C lane 4",
+    "rows": [
+     34,
+     38
+    ],
+    "cols": [
+     26,
+     30
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — S lane west",
+    "rows": [
+     46,
+     50
+    ],
+    "cols": [
+     14,
+     18
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — S lane mid",
+    "rows": [
+     52,
+     56
+    ],
+    "cols": [
+     26,
+     30
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Broken ice — S lane east",
+    "rows": [
+     46,
+     49
+    ],
+    "cols": [
+     36,
+     40
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "South apron (pre-breach cover)",
+    "rows": [
+     50,
+     54
+    ],
+    "cols": [
+     44,
+     48
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Crevasse — S lane",
+    "rows": [
+     50,
+     53
+    ],
+    "cols": [
+     32,
+     35
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Crevasse — SE",
+    "rows": [
+     56,
+     59
+    ],
+    "cols": [
+     40,
+     44
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — central shell",
+    "rows": [
+     22,
+     40
+    ],
+    "cols": [
+     44,
+     59
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — central floor",
+    "rows": [
+     24,
+     38
+    ],
+    "cols": [
+     46,
+     57
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — north node shell",
+    "rows": [
+     8,
+     16
+    ],
+    "cols": [
+     48,
+     58
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — north node floor",
+    "rows": [
+     10,
+     14
+    ],
+    "cols": [
+     50,
+     56
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — north corridor (N entrance)",
+    "rows": [
+     14,
+     23
+    ],
+    "cols": [
+     52,
+     53
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — annex shell",
+    "rows": [
+     28,
+     36
+    ],
+    "cols": [
+     34,
+     43
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — annex floor",
+    "rows": [
+     30,
+     34
+    ],
+    "cols": [
+     36,
+     42
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — annex W entrance",
+    "rows": [
+     31,
+     33
+    ],
+    "cols": [
+     34,
+     35
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — annex/central link",
+    "rows": [
+     31,
+     33
+    ],
+    "cols": [
+     42,
+     46
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Spire — S breach corridor",
+    "rows": [
+     38,
+     41
+    ],
+    "cols": [
+     50,
+     52
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   }
+  ],
+  "tileOverrides": [
+   {
+    "row": 30,
+    "col": 48,
+    "label": "Central console (trigger 48,30)",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 12,
+    "col": 53,
+    "label": "North node interface — researcher's notes",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 32,
+    "col": 40,
+    "label": "Annex node (trigger 40,32)",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 18,
+    "col": 47,
+    "label": "Spire vent cache — defender eco, seats t2 from the floors",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 19,
+    "col": 47,
+    "label": "",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 35,
+    "col": 10,
+    "label": "C-lane cache (behind cover)",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 55,
+    "col": 22,
+    "label": "S-lane cache",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 58,
+    "col": 12,
+    "label": "SW shelf cache",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   }
+  ]
+ },
+ "resourceTiles": [
+  {
+   "row": 18,
+   "col": 47
+  },
+  {
+   "row": 19,
+   "col": 47
+  },
+  {
+   "row": 35,
+   "col": 10
+  },
+  {
+   "row": 55,
+   "col": 22
+  },
+  {
+   "row": 58,
+   "col": 12
+  }
+ ],
+ "keyFeatures": [
+  {
+   "id": "helvyn_central_chamber",
+   "type": "objective",
+   "label": "Central Chamber",
+   "description": "trigger tile 48,30",
+   "at": {
+    "row": 30,
+    "col": 49
+   }
+  },
+  {
+   "id": "helvyn_annex_node",
+   "type": "objective",
+   "label": "Annex Node",
+   "description": "trigger tile 40,32",
+   "at": {
+    "row": 32,
+    "col": 39
+   }
+  },
+  {
+   "id": "helvyn_north_node",
+   "type": "objective",
+   "label": "North Node",
+   "description": "notes / work-site",
+   "at": {
+    "row": 12,
+    "col": 53
+   }
+  },
+  {
+   "id": "helvyn_ridge_a_chokes",
+   "type": "terrain",
+   "label": "Ridge A Chokes",
+   "description": "3-wide, ×2",
+   "at": {
+    "row": 19,
+    "col": 15
+   }
+  },
+  {
+   "id": "helvyn_ridge_b_chokes",
+   "type": "terrain",
+   "label": "Ridge B Chokes",
+   "description": "3-wide, ×2",
+   "at": {
+    "row": 43,
+    "col": 21
+   }
+  },
+  {
+   "id": "helvyn_south_breach",
+   "type": "terrain",
+   "label": "South Breach",
+   "description": "separate entrance for S lane",
+   "at": {
+    "row": 40,
+    "col": 51
+   }
+  }
+ ],
+ "defaultSpawnZones": {
+  "player": [
+   {
+    "row": 24,
+    "col": 0
+   },
+   {
+    "row": 24,
+    "col": 1
+   },
+   {
+    "row": 24,
+    "col": 2
+   },
+   {
+    "row": 25,
+    "col": 0
+   },
+   {
+    "row": 25,
+    "col": 1
+   },
+   {
+    "row": 25,
+    "col": 2
+   },
+   {
+    "row": 26,
+    "col": 0
+   },
+   {
+    "row": 26,
+    "col": 1
+   },
+   {
+    "row": 26,
+    "col": 2
+   },
+   {
+    "row": 27,
+    "col": 0
+   },
+   {
+    "row": 27,
+    "col": 1
+   },
+   {
+    "row": 27,
+    "col": 2
+   },
+   {
+    "row": 28,
+    "col": 0
+   },
+   {
+    "row": 28,
+    "col": 1
+   },
+   {
+    "row": 28,
+    "col": 2
+   },
+   {
+    "row": 29,
+    "col": 0
+   },
+   {
+    "row": 29,
+    "col": 1
+   },
+   {
+    "row": 29,
+    "col": 2
+   },
+   {
+    "row": 30,
+    "col": 0
+   },
+   {
+    "row": 30,
+    "col": 1
+   },
+   {
+    "row": 30,
+    "col": 2
+   },
+   {
+    "row": 31,
+    "col": 0
+   },
+   {
+    "row": 31,
+    "col": 1
+   },
+   {
+    "row": 31,
+    "col": 2
+   },
+   {
+    "row": 32,
+    "col": 0
+   },
+   {
+    "row": 32,
+    "col": 1
+   },
+   {
+    "row": 32,
+    "col": 2
+   },
+   {
+    "row": 33,
+    "col": 0
+   },
+   {
+    "row": 33,
+    "col": 1
+   },
+   {
+    "row": 33,
+    "col": 2
+   },
+   {
+    "row": 34,
+    "col": 0
+   },
+   {
+    "row": 34,
+    "col": 1
+   },
+   {
+    "row": 34,
+    "col": 2
+   },
+   {
+    "row": 6,
+    "col": 0
+   },
+   {
+    "row": 6,
+    "col": 1
+   },
+   {
+    "row": 6,
+    "col": 2
+   },
+   {
+    "row": 7,
+    "col": 0
+   },
+   {
+    "row": 7,
+    "col": 1
+   },
+   {
+    "row": 7,
+    "col": 2
+   },
+   {
+    "row": 8,
+    "col": 0
+   },
+   {
+    "row": 8,
+    "col": 1
+   },
+   {
+    "row": 8,
+    "col": 2
+   },
+   {
+    "row": 9,
+    "col": 0
+   },
+   {
+    "row": 9,
+    "col": 1
+   },
+   {
+    "row": 9,
+    "col": 2
+   },
+   {
+    "row": 10,
+    "col": 0
+   },
+   {
+    "row": 10,
+    "col": 1
+   },
+   {
+    "row": 10,
+    "col": 2
+   },
+   {
+    "row": 11,
+    "col": 0
+   },
+   {
+    "row": 11,
+    "col": 1
+   },
+   {
+    "row": 11,
+    "col": 2
+   },
+   {
+    "row": 12,
+    "col": 0
+   },
+   {
+    "row": 12,
+    "col": 1
+   },
+   {
+    "row": 12,
+    "col": 2
+   }
+  ],
+  "enemy": [
+   {
+    "row": 24,
+    "col": 24
+   },
+   {
+    "row": 24,
+    "col": 25
+   },
+   {
+    "row": 24,
+    "col": 26
+   },
+   {
+    "row": 24,
+    "col": 27
+   },
+   {
+    "row": 24,
+    "col": 28
+   },
+   {
+    "row": 24,
+    "col": 29
+   },
+   {
+    "row": 24,
+    "col": 30
+   },
+   {
+    "row": 25,
+    "col": 24
+   },
+   {
+    "row": 25,
+    "col": 25
+   },
+   {
+    "row": 25,
+    "col": 26
+   },
+   {
+    "row": 25,
+    "col": 27
+   },
+   {
+    "row": 25,
+    "col": 28
+   },
+   {
+    "row": 25,
+    "col": 29
+   },
+   {
+    "row": 25,
+    "col": 30
+   },
+   {
+    "row": 26,
+    "col": 24
+   },
+   {
+    "row": 26,
+    "col": 25
+   },
+   {
+    "row": 26,
+    "col": 26
+   },
+   {
+    "row": 26,
+    "col": 27
+   },
+   {
+    "row": 26,
+    "col": 28
+   },
+   {
+    "row": 26,
+    "col": 29
+   },
+   {
+    "row": 26,
+    "col": 30
+   },
+   {
+    "row": 27,
+    "col": 24
+   },
+   {
+    "row": 27,
+    "col": 25
+   },
+   {
+    "row": 27,
+    "col": 26
+   },
+   {
+    "row": 27,
+    "col": 27
+   },
+   {
+    "row": 27,
+    "col": 28
+   },
+   {
+    "row": 27,
+    "col": 29
+   },
+   {
+    "row": 27,
+    "col": 30
+   },
+   {
+    "row": 28,
+    "col": 24
+   },
+   {
+    "row": 28,
+    "col": 25
+   },
+   {
+    "row": 28,
+    "col": 26
+   },
+   {
+    "row": 28,
+    "col": 27
+   },
+   {
+    "row": 28,
+    "col": 28
+   },
+   {
+    "row": 28,
+    "col": 29
+   },
+   {
+    "row": 28,
+    "col": 30
+   },
+   {
+    "row": 29,
+    "col": 24
+   },
+   {
+    "row": 29,
+    "col": 25
+   },
+   {
+    "row": 29,
+    "col": 26
+   },
+   {
+    "row": 29,
+    "col": 27
+   },
+   {
+    "row": 29,
+    "col": 28
+   },
+   {
+    "row": 29,
+    "col": 29
+   },
+   {
+    "row": 29,
+    "col": 30
+   },
+   {
+    "row": 30,
+    "col": 24
+   },
+   {
+    "row": 30,
+    "col": 25
+   },
+   {
+    "row": 30,
+    "col": 26
+   },
+   {
+    "row": 30,
+    "col": 27
+   },
+   {
+    "row": 30,
+    "col": 28
+   },
+   {
+    "row": 30,
+    "col": 29
+   },
+   {
+    "row": 30,
+    "col": 30
+   },
+   {
+    "row": 31,
+    "col": 24
+   },
+   {
+    "row": 31,
+    "col": 25
+   },
+   {
+    "row": 31,
+    "col": 26
+   },
+   {
+    "row": 31,
+    "col": 27
+   },
+   {
+    "row": 31,
+    "col": 28
+   },
+   {
+    "row": 31,
+    "col": 29
+   },
+   {
+    "row": 31,
+    "col": 30
+   },
+   {
+    "row": 32,
+    "col": 24
+   },
+   {
+    "row": 32,
+    "col": 25
+   },
+   {
+    "row": 32,
+    "col": 26
+   },
+   {
+    "row": 32,
+    "col": 27
+   },
+   {
+    "row": 32,
+    "col": 28
+   },
+   {
+    "row": 32,
+    "col": 29
+   },
+   {
+    "row": 32,
+    "col": 30
+   },
+   {
+    "row": 33,
+    "col": 24
+   },
+   {
+    "row": 33,
+    "col": 25
+   },
+   {
+    "row": 33,
+    "col": 26
+   },
+   {
+    "row": 33,
+    "col": 27
+   },
+   {
+    "row": 33,
+    "col": 28
+   },
+   {
+    "row": 33,
+    "col": 29
+   },
+   {
+    "row": 33,
+    "col": 30
+   },
+   {
+    "row": 34,
+    "col": 24
+   },
+   {
+    "row": 34,
+    "col": 25
+   },
+   {
+    "row": 34,
+    "col": 26
+   },
+   {
+    "row": 34,
+    "col": 27
+   },
+   {
+    "row": 34,
+    "col": 28
+   },
+   {
+    "row": 34,
+    "col": 29
+   },
+   {
+    "row": 34,
+    "col": 30
+   },
+   {
+    "row": 35,
+    "col": 24
+   },
+   {
+    "row": 35,
+    "col": 25
+   },
+   {
+    "row": 35,
+    "col": 26
+   },
+   {
+    "row": 35,
+    "col": 27
+   },
+   {
+    "row": 35,
+    "col": 28
+   },
+   {
+    "row": 35,
+    "col": 29
+   },
+   {
+    "row": 35,
+    "col": 30
+   },
+   {
+    "row": 36,
+    "col": 24
+   },
+   {
+    "row": 36,
+    "col": 25
+   },
+   {
+    "row": 36,
+    "col": 26
+   },
+   {
+    "row": 36,
+    "col": 27
+   },
+   {
+    "row": 36,
+    "col": 28
+   },
+   {
+    "row": 36,
+    "col": 29
+   },
+   {
+    "row": 36,
+    "col": 30
+   },
+   {
+    "row": 37,
+    "col": 24
+   },
+   {
+    "row": 37,
+    "col": 25
+   },
+   {
+    "row": 37,
+    "col": 26
+   },
+   {
+    "row": 37,
+    "col": 27
+   },
+   {
+    "row": 37,
+    "col": 28
+   },
+   {
+    "row": 37,
+    "col": 29
+   },
+   {
+    "row": 37,
+    "col": 30
+   },
+   {
+    "row": 38,
+    "col": 24
+   },
+   {
+    "row": 38,
+    "col": 25
+   },
+   {
+    "row": 38,
+    "col": 26
+   },
+   {
+    "row": 38,
+    "col": 27
+   },
+   {
+    "row": 38,
+    "col": 28
+   },
+   {
+    "row": 38,
+    "col": 29
+   },
+   {
+    "row": 38,
+    "col": 30
+   },
+   {
+    "row": 28,
+    "col": 46
+   },
+   {
+    "row": 28,
+    "col": 47
+   },
+   {
+    "row": 28,
+    "col": 48
+   },
+   {
+    "row": 28,
+    "col": 49
+   },
+   {
+    "row": 28,
+    "col": 50
+   },
+   {
+    "row": 28,
+    "col": 51
+   },
+   {
+    "row": 28,
+    "col": 52
+   },
+   {
+    "row": 29,
+    "col": 46
+   },
+   {
+    "row": 29,
+    "col": 47
+   },
+   {
+    "row": 29,
+    "col": 48
+   },
+   {
+    "row": 29,
+    "col": 49
+   },
+   {
+    "row": 29,
+    "col": 50
+   },
+   {
+    "row": 29,
+    "col": 51
+   },
+   {
+    "row": 29,
+    "col": 52
+   },
+   {
+    "row": 30,
+    "col": 46
+   },
+   {
+    "row": 30,
+    "col": 47
+   },
+   {
+    "row": 30,
+    "col": 49
+   },
+   {
+    "row": 30,
+    "col": 50
+   },
+   {
+    "row": 30,
+    "col": 51
+   },
+   {
+    "row": 30,
+    "col": 52
+   },
+   {
+    "row": 31,
+    "col": 46
+   },
+   {
+    "row": 31,
+    "col": 47
+   },
+   {
+    "row": 31,
+    "col": 48
+   },
+   {
+    "row": 31,
+    "col": 49
+   },
+   {
+    "row": 31,
+    "col": 50
+   },
+   {
+    "row": 31,
+    "col": 51
+   },
+   {
+    "row": 31,
+    "col": 52
+   },
+   {
+    "row": 32,
+    "col": 46
+   },
+   {
+    "row": 32,
+    "col": 47
+   },
+   {
+    "row": 32,
+    "col": 48
+   },
+   {
+    "row": 32,
+    "col": 49
+   },
+   {
+    "row": 32,
+    "col": 50
+   },
+   {
+    "row": 32,
+    "col": 51
+   },
+   {
+    "row": 32,
+    "col": 52
+   },
+   {
+    "row": 33,
+    "col": 46
+   },
+   {
+    "row": 33,
+    "col": 47
+   },
+   {
+    "row": 33,
+    "col": 48
+   },
+   {
+    "row": 33,
+    "col": 49
+   },
+   {
+    "row": 33,
+    "col": 50
+   },
+   {
+    "row": 33,
+    "col": 51
+   },
+   {
+    "row": 33,
+    "col": 52
+   },
+   {
+    "row": 34,
+    "col": 46
+   },
+   {
+    "row": 34,
+    "col": 47
+   },
+   {
+    "row": 34,
+    "col": 48
+   },
+   {
+    "row": 34,
+    "col": 49
+   },
+   {
+    "row": 34,
+    "col": 50
+   },
+   {
+    "row": 34,
+    "col": 51
+   },
+   {
+    "row": 34,
+    "col": 52
+   },
+   {
+    "row": 10,
+    "col": 50
+   },
+   {
+    "row": 10,
+    "col": 51
+   },
+   {
+    "row": 10,
+    "col": 52
+   },
+   {
+    "row": 10,
+    "col": 53
+   },
+   {
+    "row": 10,
+    "col": 54
+   },
+   {
+    "row": 10,
+    "col": 55
+   },
+   {
+    "row": 11,
+    "col": 50
+   },
+   {
+    "row": 11,
+    "col": 51
+   },
+   {
+    "row": 11,
+    "col": 52
+   },
+   {
+    "row": 11,
+    "col": 53
+   },
+   {
+    "row": 11,
+    "col": 54
+   },
+   {
+    "row": 11,
+    "col": 55
+   },
+   {
+    "row": 12,
+    "col": 50
+   },
+   {
+    "row": 12,
+    "col": 51
+   },
+   {
+    "row": 12,
+    "col": 52
+   },
+   {
+    "row": 12,
+    "col": 54
+   },
+   {
+    "row": 12,
+    "col": 55
+   },
+   {
+    "row": 13,
+    "col": 50
+   },
+   {
+    "row": 13,
+    "col": 51
+   },
+   {
+    "row": 13,
+    "col": 52
+   },
+   {
+    "row": 13,
+    "col": 53
+   },
+   {
+    "row": 13,
+    "col": 54
+   },
+   {
+    "row": 13,
+    "col": 55
+   },
+   {
+    "row": 14,
+    "col": 50
+   },
+   {
+    "row": 14,
+    "col": 51
+   },
+   {
+    "row": 14,
+    "col": 52
+   },
+   {
+    "row": 14,
+    "col": 53
+   },
+   {
+    "row": 14,
+    "col": 54
+   },
+   {
+    "row": 14,
+    "col": 55
+   }
+  ]
+ },
+ "puzzleNodes": [
+  {
+   "id": "helvyn_node_1",
+   "label": "Ridge Console",
+   "row": 10,
+   "col": 26,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "army_1_action",
+    "description": "Army +1 action, 2 turns"
+   }
+  },
+  {
+   "id": "helvyn_node_2",
+   "label": "Approach Console",
+   "row": 46,
+   "col": 52,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "fortified",
+    "description": "Fortified, 2 turns"
+   }
+  }
+ ],
+ "missionOverrides": {
+  "covenant_m1": {
+   "objectiveLabel": "Fold the forward line in the central lane, breach the spire, take the central console. The researcher's notes are in the north node — a true side objective.",
+   "enemyFaction": "syndicate",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 24,
+      "col": 0
+     },
+     {
+      "row": 24,
+      "col": 1
+     },
+     {
+      "row": 24,
+      "col": 2
+     },
+     {
+      "row": 25,
+      "col": 0
+     },
+     {
+      "row": 25,
+      "col": 1
+     },
+     {
+      "row": 25,
+      "col": 2
+     },
+     {
+      "row": 26,
+      "col": 0
+     },
+     {
+      "row": 26,
+      "col": 1
+     },
+     {
+      "row": 26,
+      "col": 2
+     },
+     {
+      "row": 27,
+      "col": 0
+     },
+     {
+      "row": 27,
+      "col": 1
+     },
+     {
+      "row": 27,
+      "col": 2
+     },
+     {
+      "row": 28,
+      "col": 0
+     },
+     {
+      "row": 28,
+      "col": 1
+     },
+     {
+      "row": 28,
+      "col": 2
+     },
+     {
+      "row": 29,
+      "col": 0
+     },
+     {
+      "row": 29,
+      "col": 1
+     },
+     {
+      "row": 29,
+      "col": 2
+     },
+     {
+      "row": 30,
+      "col": 0
+     },
+     {
+      "row": 30,
+      "col": 1
+     },
+     {
+      "row": 30,
+      "col": 2
+     },
+     {
+      "row": 31,
+      "col": 0
+     },
+     {
+      "row": 31,
+      "col": 1
+     },
+     {
+      "row": 31,
+      "col": 2
+     },
+     {
+      "row": 32,
+      "col": 0
+     },
+     {
+      "row": 32,
+      "col": 1
+     },
+     {
+      "row": 32,
+      "col": 2
+     },
+     {
+      "row": 33,
+      "col": 0
+     },
+     {
+      "row": 33,
+      "col": 1
+     },
+     {
+      "row": 33,
+      "col": 2
+     },
+     {
+      "row": 34,
+      "col": 0
+     },
+     {
+      "row": 34,
+      "col": 1
+     },
+     {
+      "row": 34,
+      "col": 2
+     },
+     {
+      "row": 6,
+      "col": 0
+     },
+     {
+      "row": 6,
+      "col": 1
+     },
+     {
+      "row": 6,
+      "col": 2
+     },
+     {
+      "row": 7,
+      "col": 0
+     },
+     {
+      "row": 7,
+      "col": 1
+     },
+     {
+      "row": 7,
+      "col": 2
+     },
+     {
+      "row": 8,
+      "col": 0
+     },
+     {
+      "row": 8,
+      "col": 1
+     },
+     {
+      "row": 8,
+      "col": 2
+     },
+     {
+      "row": 9,
+      "col": 0
+     },
+     {
+      "row": 9,
+      "col": 1
+     },
+     {
+      "row": 9,
+      "col": 2
+     },
+     {
+      "row": 10,
+      "col": 0
+     },
+     {
+      "row": 10,
+      "col": 1
+     },
+     {
+      "row": 10,
+      "col": 2
+     },
+     {
+      "row": 11,
+      "col": 0
+     },
+     {
+      "row": 11,
+      "col": 1
+     },
+     {
+      "row": 11,
+      "col": 2
+     },
+     {
+      "row": 12,
+      "col": 0
+     },
+     {
+      "row": 12,
+      "col": 1
+     },
+     {
+      "row": 12,
+      "col": 2
+     }
+    ],
+    "enemy": [
+     {
+      "row": 24,
+      "col": 24
+     },
+     {
+      "row": 24,
+      "col": 25
+     },
+     {
+      "row": 24,
+      "col": 26
+     },
+     {
+      "row": 24,
+      "col": 27
+     },
+     {
+      "row": 24,
+      "col": 28
+     },
+     {
+      "row": 24,
+      "col": 29
+     },
+     {
+      "row": 24,
+      "col": 30
+     },
+     {
+      "row": 25,
+      "col": 24
+     },
+     {
+      "row": 25,
+      "col": 25
+     },
+     {
+      "row": 25,
+      "col": 26
+     },
+     {
+      "row": 25,
+      "col": 27
+     },
+     {
+      "row": 25,
+      "col": 28
+     },
+     {
+      "row": 25,
+      "col": 29
+     },
+     {
+      "row": 25,
+      "col": 30
+     },
+     {
+      "row": 26,
+      "col": 24
+     },
+     {
+      "row": 26,
+      "col": 25
+     },
+     {
+      "row": 26,
+      "col": 26
+     },
+     {
+      "row": 26,
+      "col": 27
+     },
+     {
+      "row": 26,
+      "col": 28
+     },
+     {
+      "row": 26,
+      "col": 29
+     },
+     {
+      "row": 26,
+      "col": 30
+     },
+     {
+      "row": 27,
+      "col": 24
+     },
+     {
+      "row": 27,
+      "col": 25
+     },
+     {
+      "row": 27,
+      "col": 26
+     },
+     {
+      "row": 27,
+      "col": 27
+     },
+     {
+      "row": 27,
+      "col": 28
+     },
+     {
+      "row": 27,
+      "col": 29
+     },
+     {
+      "row": 27,
+      "col": 30
+     },
+     {
+      "row": 28,
+      "col": 24
+     },
+     {
+      "row": 28,
+      "col": 25
+     },
+     {
+      "row": 28,
+      "col": 26
+     },
+     {
+      "row": 28,
+      "col": 27
+     },
+     {
+      "row": 28,
+      "col": 28
+     },
+     {
+      "row": 28,
+      "col": 29
+     },
+     {
+      "row": 28,
+      "col": 30
+     },
+     {
+      "row": 29,
+      "col": 24
+     },
+     {
+      "row": 29,
+      "col": 25
+     },
+     {
+      "row": 29,
+      "col": 26
+     },
+     {
+      "row": 29,
+      "col": 27
+     },
+     {
+      "row": 29,
+      "col": 28
+     },
+     {
+      "row": 29,
+      "col": 29
+     },
+     {
+      "row": 29,
+      "col": 30
+     },
+     {
+      "row": 30,
+      "col": 24
+     },
+     {
+      "row": 30,
+      "col": 25
+     },
+     {
+      "row": 30,
+      "col": 26
+     },
+     {
+      "row": 30,
+      "col": 27
+     },
+     {
+      "row": 30,
+      "col": 28
+     },
+     {
+      "row": 30,
+      "col": 29
+     },
+     {
+      "row": 30,
+      "col": 30
+     },
+     {
+      "row": 31,
+      "col": 24
+     },
+     {
+      "row": 31,
+      "col": 25
+     },
+     {
+      "row": 31,
+      "col": 26
+     },
+     {
+      "row": 31,
+      "col": 27
+     },
+     {
+      "row": 31,
+      "col": 28
+     },
+     {
+      "row": 31,
+      "col": 29
+     },
+     {
+      "row": 31,
+      "col": 30
+     },
+     {
+      "row": 32,
+      "col": 24
+     },
+     {
+      "row": 32,
+      "col": 25
+     },
+     {
+      "row": 32,
+      "col": 26
+     },
+     {
+      "row": 32,
+      "col": 27
+     },
+     {
+      "row": 32,
+      "col": 28
+     },
+     {
+      "row": 32,
+      "col": 29
+     },
+     {
+      "row": 32,
+      "col": 30
+     },
+     {
+      "row": 33,
+      "col": 24
+     },
+     {
+      "row": 33,
+      "col": 25
+     },
+     {
+      "row": 33,
+      "col": 26
+     },
+     {
+      "row": 33,
+      "col": 27
+     },
+     {
+      "row": 33,
+      "col": 28
+     },
+     {
+      "row": 33,
+      "col": 29
+     },
+     {
+      "row": 33,
+      "col": 30
+     },
+     {
+      "row": 34,
+      "col": 24
+     },
+     {
+      "row": 34,
+      "col": 25
+     },
+     {
+      "row": 34,
+      "col": 26
+     },
+     {
+      "row": 34,
+      "col": 27
+     },
+     {
+      "row": 34,
+      "col": 28
+     },
+     {
+      "row": 34,
+      "col": 29
+     },
+     {
+      "row": 34,
+      "col": 30
+     },
+     {
+      "row": 35,
+      "col": 24
+     },
+     {
+      "row": 35,
+      "col": 25
+     },
+     {
+      "row": 35,
+      "col": 26
+     },
+     {
+      "row": 35,
+      "col": 27
+     },
+     {
+      "row": 35,
+      "col": 28
+     },
+     {
+      "row": 35,
+      "col": 29
+     },
+     {
+      "row": 35,
+      "col": 30
+     },
+     {
+      "row": 36,
+      "col": 24
+     },
+     {
+      "row": 36,
+      "col": 25
+     },
+     {
+      "row": 36,
+      "col": 26
+     },
+     {
+      "row": 36,
+      "col": 27
+     },
+     {
+      "row": 36,
+      "col": 28
+     },
+     {
+      "row": 36,
+      "col": 29
+     },
+     {
+      "row": 36,
+      "col": 30
+     },
+     {
+      "row": 37,
+      "col": 24
+     },
+     {
+      "row": 37,
+      "col": 25
+     },
+     {
+      "row": 37,
+      "col": 26
+     },
+     {
+      "row": 37,
+      "col": 27
+     },
+     {
+      "row": 37,
+      "col": 28
+     },
+     {
+      "row": 37,
+      "col": 29
+     },
+     {
+      "row": 37,
+      "col": 30
+     },
+     {
+      "row": 38,
+      "col": 24
+     },
+     {
+      "row": 38,
+      "col": 25
+     },
+     {
+      "row": 38,
+      "col": 26
+     },
+     {
+      "row": 38,
+      "col": 27
+     },
+     {
+      "row": 38,
+      "col": 28
+     },
+     {
+      "row": 38,
+      "col": 29
+     },
+     {
+      "row": 38,
+      "col": 30
+     },
+     {
+      "row": 28,
+      "col": 46
+     },
+     {
+      "row": 28,
+      "col": 47
+     },
+     {
+      "row": 28,
+      "col": 48
+     },
+     {
+      "row": 28,
+      "col": 49
+     },
+     {
+      "row": 28,
+      "col": 50
+     },
+     {
+      "row": 28,
+      "col": 51
+     },
+     {
+      "row": 28,
+      "col": 52
+     },
+     {
+      "row": 29,
+      "col": 46
+     },
+     {
+      "row": 29,
+      "col": 47
+     },
+     {
+      "row": 29,
+      "col": 48
+     },
+     {
+      "row": 29,
+      "col": 49
+     },
+     {
+      "row": 29,
+      "col": 50
+     },
+     {
+      "row": 29,
+      "col": 51
+     },
+     {
+      "row": 29,
+      "col": 52
+     },
+     {
+      "row": 30,
+      "col": 46
+     },
+     {
+      "row": 30,
+      "col": 47
+     },
+     {
+      "row": 30,
+      "col": 49
+     },
+     {
+      "row": 30,
+      "col": 50
+     },
+     {
+      "row": 30,
+      "col": 51
+     },
+     {
+      "row": 30,
+      "col": 52
+     },
+     {
+      "row": 31,
+      "col": 46
+     },
+     {
+      "row": 31,
+      "col": 47
+     },
+     {
+      "row": 31,
+      "col": 48
+     },
+     {
+      "row": 31,
+      "col": 49
+     },
+     {
+      "row": 31,
+      "col": 50
+     },
+     {
+      "row": 31,
+      "col": 51
+     },
+     {
+      "row": 31,
+      "col": 52
+     },
+     {
+      "row": 32,
+      "col": 46
+     },
+     {
+      "row": 32,
+      "col": 47
+     },
+     {
+      "row": 32,
+      "col": 48
+     },
+     {
+      "row": 32,
+      "col": 49
+     },
+     {
+      "row": 32,
+      "col": 50
+     },
+     {
+      "row": 32,
+      "col": 51
+     },
+     {
+      "row": 32,
+      "col": 52
+     },
+     {
+      "row": 33,
+      "col": 46
+     },
+     {
+      "row": 33,
+      "col": 47
+     },
+     {
+      "row": 33,
+      "col": 48
+     },
+     {
+      "row": 33,
+      "col": 49
+     },
+     {
+      "row": 33,
+      "col": 50
+     },
+     {
+      "row": 33,
+      "col": 51
+     },
+     {
+      "row": 33,
+      "col": 52
+     },
+     {
+      "row": 34,
+      "col": 46
+     },
+     {
+      "row": 34,
+      "col": 47
+     },
+     {
+      "row": 34,
+      "col": 48
+     },
+     {
+      "row": 34,
+      "col": 49
+     },
+     {
+      "row": 34,
+      "col": 50
+     },
+     {
+      "row": 34,
+      "col": 51
+     },
+     {
+      "row": 34,
+      "col": 52
+     },
+     {
+      "row": 10,
+      "col": 50
+     },
+     {
+      "row": 10,
+      "col": 51
+     },
+     {
+      "row": 10,
+      "col": 52
+     },
+     {
+      "row": 10,
+      "col": 53
+     },
+     {
+      "row": 10,
+      "col": 54
+     },
+     {
+      "row": 10,
+      "col": 55
+     },
+     {
+      "row": 11,
+      "col": 50
+     },
+     {
+      "row": 11,
+      "col": 51
+     },
+     {
+      "row": 11,
+      "col": 52
+     },
+     {
+      "row": 11,
+      "col": 53
+     },
+     {
+      "row": 11,
+      "col": 54
+     },
+     {
+      "row": 11,
+      "col": 55
+     },
+     {
+      "row": 12,
+      "col": 50
+     },
+     {
+      "row": 12,
+      "col": 51
+     },
+     {
+      "row": 12,
+      "col": 52
+     },
+     {
+      "row": 12,
+      "col": 54
+     },
+     {
+      "row": 12,
+      "col": 55
+     },
+     {
+      "row": 13,
+      "col": 50
+     },
+     {
+      "row": 13,
+      "col": 51
+     },
+     {
+      "row": 13,
+      "col": 52
+     },
+     {
+      "row": 13,
+      "col": 53
+     },
+     {
+      "row": 13,
+      "col": 54
+     },
+     {
+      "row": 13,
+      "col": 55
+     },
+     {
+      "row": 14,
+      "col": 50
+     },
+     {
+      "row": 14,
+      "col": 51
+     },
+     {
+      "row": 14,
+      "col": 52
+     },
+     {
+      "row": 14,
+      "col": 53
+     },
+     {
+      "row": 14,
+      "col": 54
+     },
+     {
+      "row": 14,
+      "col": 55
+     }
+    ]
+   },
+   "reinforcements": [],
+   "objectiveTiles": [
+    {
+     "row": 30,
+     "col": 48,
+     "label": "Central console"
+    },
+    {
+     "row": 12,
+     "col": 53,
+     "label": "Notes (side)"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "Central push",
+     "kind": "fast",
+     "waypoints": [
+      {
+       "row": 29,
+       "col": 2
+      },
+      {
+       "row": 26,
+       "col": 10
+      },
+      {
+       "row": 34,
+       "col": 18
+      },
+      {
+       "row": 26,
+       "col": 27
+      },
+      {
+       "row": 32,
+       "col": 31
+      },
+      {
+       "row": 32,
+       "col": 38
+      },
+      {
+       "row": 32,
+       "col": 44
+      },
+      {
+       "row": 30,
+       "col": 48
+      }
+     ]
+    },
+    {
+     "label": "North flank → corridor",
+     "kind": "flank",
+     "waypoints": [
+      {
+       "row": 9,
+       "col": 2
+      },
+      {
+       "row": 8,
+       "col": 13
+      },
+      {
+       "row": 12,
+       "col": 26
+      },
+      {
+       "row": 7,
+       "col": 38
+      },
+      {
+       "row": 12,
+       "col": 52
+      },
+      {
+       "row": 22,
+       "col": 52
+      },
+      {
+       "row": 28,
+       "col": 50
+      }
+     ]
+    },
+    {
+     "label": "South sweep → breach",
+     "kind": "covered",
+     "waypoints": [
+      {
+       "row": 29,
+       "col": 2
+      },
+      {
+       "row": 38,
+       "col": 16
+      },
+      {
+       "row": 43,
+       "col": 21
+      },
+      {
+       "row": 54,
+       "col": 28
+      },
+      {
+       "row": 47,
+       "col": 38
+      },
+      {
+       "row": 52,
+       "col": 46
+      },
+      {
+       "row": 40,
+       "col": 51
+      },
+      {
+       "row": 34,
+       "col": 51
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Spire-breach scene fires at the central console (48,30)."
+    },
+    {
+     "condition": "design-note",
+     "element": "Notes (north node) pull a detachment off the main push — classic side objective."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "covenant_keeper",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Anchor each cover hop; Sanctuary holds the open ice between"
+     },
+     {
+      "unitId": "covenant_arbiter",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Censure the forward line before each push"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Resonance burns Suppressors out of cover"
+     },
+     {
+      "unitId": "covenant_architect",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Fortify the annex once breached"
+     },
+     {
+      "unitId": "covenant_seeker",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Works the C-lane cache — seats ~t4 at mv 2, behind the advance"
+     },
+     {
+      "unitId": "covenant_witness",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Leads the notes detachment — Far Sight through the ridge gap"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Covers the corridor from broken ice"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Area Denial on the central cover hops"
+     },
+     {
+      "unitId": "syndicate_operative",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Counter-flanks whichever choke you ignore"
+     },
+     {
+      "unitId": "syndicate_rangefinder",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Overwatch down the annex link corridor"
+     },
+     {
+      "unitId": "syndicate_handler",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Marks breachers for the garrison"
+     },
+     {
+      "unitId": "syndicate_operative",
+      "count": 1,
+      "spawnZone": 2,
+      "commander": false,
+      "designNote": "North node picket"
+     }
+    ],
+    "reinforcements": []
+   },
+   "economyNotes": {
+    "player": "Seeker (mv 2) seats the C-lane cache ~t4 — deliberately mid-mission: the push must start on what you brought. 50/turn after; one rebuy every ≈3 turns.",
+    "enemy": "No Assessor on the line — what you break stays broken. Their garrison is the whole defense."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       24,
+       34
+      ],
+      "cols": [
+       0,
+       2
+      ]
+     },
+     {
+      "rows": [
+       6,
+       12
+      ],
+      "cols": [
+       0,
+       2
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       24,
+       38
+      ],
+      "cols": [
+       24,
+       30
+      ]
+     },
+     {
+      "rows": [
+       28,
+       34
+      ],
+      "cols": [
+       46,
+       52
+      ]
+     },
+     {
+      "rows": [
+       10,
+       14
+      ],
+      "cols": [
+       50,
+       55
+      ]
+     }
+    ]
+   }
+  },
+  "covenant_m2": {
+   "objectiveLabel": "Six researchers work three sites at once. Defend all three — the lanes you attacked down in M1 are now the lanes they attack down.",
+   "enemyFaction": "syndicate",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 28,
+      "col": 46
+     },
+     {
+      "row": 28,
+      "col": 47
+     },
+     {
+      "row": 28,
+      "col": 48
+     },
+     {
+      "row": 28,
+      "col": 49
+     },
+     {
+      "row": 28,
+      "col": 50
+     },
+     {
+      "row": 28,
+      "col": 51
+     },
+     {
+      "row": 28,
+      "col": 52
+     },
+     {
+      "row": 28,
+      "col": 53
+     },
+     {
+      "row": 28,
+      "col": 54
+     },
+     {
+      "row": 28,
+      "col": 55
+     },
+     {
+      "row": 28,
+      "col": 56
+     },
+     {
+      "row": 29,
+      "col": 46
+     },
+     {
+      "row": 29,
+      "col": 47
+     },
+     {
+      "row": 29,
+      "col": 48
+     },
+     {
+      "row": 29,
+      "col": 49
+     },
+     {
+      "row": 29,
+      "col": 50
+     },
+     {
+      "row": 29,
+      "col": 51
+     },
+     {
+      "row": 29,
+      "col": 52
+     },
+     {
+      "row": 29,
+      "col": 53
+     },
+     {
+      "row": 29,
+      "col": 54
+     },
+     {
+      "row": 29,
+      "col": 55
+     },
+     {
+      "row": 29,
+      "col": 56
+     },
+     {
+      "row": 30,
+      "col": 46
+     },
+     {
+      "row": 30,
+      "col": 47
+     },
+     {
+      "row": 30,
+      "col": 49
+     },
+     {
+      "row": 30,
+      "col": 50
+     },
+     {
+      "row": 30,
+      "col": 51
+     },
+     {
+      "row": 30,
+      "col": 52
+     },
+     {
+      "row": 30,
+      "col": 53
+     },
+     {
+      "row": 30,
+      "col": 54
+     },
+     {
+      "row": 30,
+      "col": 55
+     },
+     {
+      "row": 30,
+      "col": 56
+     },
+     {
+      "row": 31,
+      "col": 46
+     },
+     {
+      "row": 31,
+      "col": 47
+     },
+     {
+      "row": 31,
+      "col": 48
+     },
+     {
+      "row": 31,
+      "col": 49
+     },
+     {
+      "row": 31,
+      "col": 50
+     },
+     {
+      "row": 31,
+      "col": 51
+     },
+     {
+      "row": 31,
+      "col": 52
+     },
+     {
+      "row": 31,
+      "col": 53
+     },
+     {
+      "row": 31,
+      "col": 54
+     },
+     {
+      "row": 31,
+      "col": 55
+     },
+     {
+      "row": 31,
+      "col": 56
+     },
+     {
+      "row": 32,
+      "col": 46
+     },
+     {
+      "row": 32,
+      "col": 47
+     },
+     {
+      "row": 32,
+      "col": 48
+     },
+     {
+      "row": 32,
+      "col": 49
+     },
+     {
+      "row": 32,
+      "col": 50
+     },
+     {
+      "row": 32,
+      "col": 51
+     },
+     {
+      "row": 32,
+      "col": 52
+     },
+     {
+      "row": 32,
+      "col": 53
+     },
+     {
+      "row": 32,
+      "col": 54
+     },
+     {
+      "row": 32,
+      "col": 55
+     },
+     {
+      "row": 32,
+      "col": 56
+     },
+     {
+      "row": 33,
+      "col": 46
+     },
+     {
+      "row": 33,
+      "col": 47
+     },
+     {
+      "row": 33,
+      "col": 48
+     },
+     {
+      "row": 33,
+      "col": 49
+     },
+     {
+      "row": 33,
+      "col": 50
+     },
+     {
+      "row": 33,
+      "col": 51
+     },
+     {
+      "row": 33,
+      "col": 52
+     },
+     {
+      "row": 33,
+      "col": 53
+     },
+     {
+      "row": 33,
+      "col": 54
+     },
+     {
+      "row": 33,
+      "col": 55
+     },
+     {
+      "row": 33,
+      "col": 56
+     },
+     {
+      "row": 34,
+      "col": 46
+     },
+     {
+      "row": 34,
+      "col": 47
+     },
+     {
+      "row": 34,
+      "col": 48
+     },
+     {
+      "row": 34,
+      "col": 49
+     },
+     {
+      "row": 34,
+      "col": 50
+     },
+     {
+      "row": 34,
+      "col": 51
+     },
+     {
+      "row": 34,
+      "col": 52
+     },
+     {
+      "row": 34,
+      "col": 53
+     },
+     {
+      "row": 34,
+      "col": 54
+     },
+     {
+      "row": 34,
+      "col": 55
+     },
+     {
+      "row": 34,
+      "col": 56
+     },
+     {
+      "row": 35,
+      "col": 46
+     },
+     {
+      "row": 35,
+      "col": 47
+     },
+     {
+      "row": 35,
+      "col": 48
+     },
+     {
+      "row": 35,
+      "col": 49
+     },
+     {
+      "row": 35,
+      "col": 50
+     },
+     {
+      "row": 35,
+      "col": 51
+     },
+     {
+      "row": 35,
+      "col": 52
+     },
+     {
+      "row": 35,
+      "col": 53
+     },
+     {
+      "row": 35,
+      "col": 54
+     },
+     {
+      "row": 35,
+      "col": 55
+     },
+     {
+      "row": 35,
+      "col": 56
+     },
+     {
+      "row": 36,
+      "col": 46
+     },
+     {
+      "row": 36,
+      "col": 47
+     },
+     {
+      "row": 36,
+      "col": 48
+     },
+     {
+      "row": 36,
+      "col": 49
+     },
+     {
+      "row": 36,
+      "col": 50
+     },
+     {
+      "row": 36,
+      "col": 51
+     },
+     {
+      "row": 36,
+      "col": 52
+     },
+     {
+      "row": 36,
+      "col": 53
+     },
+     {
+      "row": 36,
+      "col": 54
+     },
+     {
+      "row": 36,
+      "col": 55
+     },
+     {
+      "row": 36,
+      "col": 56
+     },
+     {
+      "row": 30,
+      "col": 36
+     },
+     {
+      "row": 30,
+      "col": 37
+     },
+     {
+      "row": 30,
+      "col": 38
+     },
+     {
+      "row": 30,
+      "col": 39
+     },
+     {
+      "row": 30,
+      "col": 40
+     },
+     {
+      "row": 30,
+      "col": 41
+     },
+     {
+      "row": 30,
+      "col": 42
+     },
+     {
+      "row": 31,
+      "col": 36
+     },
+     {
+      "row": 31,
+      "col": 37
+     },
+     {
+      "row": 31,
+      "col": 38
+     },
+     {
+      "row": 31,
+      "col": 39
+     },
+     {
+      "row": 31,
+      "col": 40
+     },
+     {
+      "row": 31,
+      "col": 41
+     },
+     {
+      "row": 31,
+      "col": 42
+     },
+     {
+      "row": 32,
+      "col": 36
+     },
+     {
+      "row": 32,
+      "col": 37
+     },
+     {
+      "row": 32,
+      "col": 38
+     },
+     {
+      "row": 32,
+      "col": 39
+     },
+     {
+      "row": 32,
+      "col": 41
+     },
+     {
+      "row": 32,
+      "col": 42
+     },
+     {
+      "row": 33,
+      "col": 36
+     },
+     {
+      "row": 33,
+      "col": 37
+     },
+     {
+      "row": 33,
+      "col": 38
+     },
+     {
+      "row": 33,
+      "col": 39
+     },
+     {
+      "row": 33,
+      "col": 40
+     },
+     {
+      "row": 33,
+      "col": 41
+     },
+     {
+      "row": 33,
+      "col": 42
+     },
+     {
+      "row": 34,
+      "col": 36
+     },
+     {
+      "row": 34,
+      "col": 37
+     },
+     {
+      "row": 34,
+      "col": 38
+     },
+     {
+      "row": 34,
+      "col": 39
+     },
+     {
+      "row": 34,
+      "col": 40
+     },
+     {
+      "row": 34,
+      "col": 41
+     },
+     {
+      "row": 34,
+      "col": 42
+     }
+    ],
+    "enemy": [
+     {
+      "row": 24,
+      "col": 0
+     },
+     {
+      "row": 24,
+      "col": 1
+     },
+     {
+      "row": 24,
+      "col": 2
+     },
+     {
+      "row": 25,
+      "col": 0
+     },
+     {
+      "row": 25,
+      "col": 1
+     },
+     {
+      "row": 25,
+      "col": 2
+     },
+     {
+      "row": 26,
+      "col": 0
+     },
+     {
+      "row": 26,
+      "col": 1
+     },
+     {
+      "row": 26,
+      "col": 2
+     },
+     {
+      "row": 27,
+      "col": 0
+     },
+     {
+      "row": 27,
+      "col": 1
+     },
+     {
+      "row": 27,
+      "col": 2
+     },
+     {
+      "row": 28,
+      "col": 0
+     },
+     {
+      "row": 28,
+      "col": 1
+     },
+     {
+      "row": 28,
+      "col": 2
+     },
+     {
+      "row": 29,
+      "col": 0
+     },
+     {
+      "row": 29,
+      "col": 1
+     },
+     {
+      "row": 29,
+      "col": 2
+     },
+     {
+      "row": 30,
+      "col": 0
+     },
+     {
+      "row": 30,
+      "col": 1
+     },
+     {
+      "row": 30,
+      "col": 2
+     },
+     {
+      "row": 31,
+      "col": 0
+     },
+     {
+      "row": 31,
+      "col": 1
+     },
+     {
+      "row": 31,
+      "col": 2
+     },
+     {
+      "row": 32,
+      "col": 0
+     },
+     {
+      "row": 32,
+      "col": 1
+     },
+     {
+      "row": 32,
+      "col": 2
+     },
+     {
+      "row": 33,
+      "col": 0
+     },
+     {
+      "row": 33,
+      "col": 1
+     },
+     {
+      "row": 33,
+      "col": 2
+     },
+     {
+      "row": 34,
+      "col": 0
+     },
+     {
+      "row": 34,
+      "col": 1
+     },
+     {
+      "row": 34,
+      "col": 2
+     }
+    ]
+   },
+   "reinforcements": [
+    {
+     "turn": 3,
+     "label": "Wave 2 · t3",
+     "tiles": [
+      {
+       "row": 6,
+       "col": 0
+      },
+      {
+       "row": 6,
+       "col": 1
+      },
+      {
+       "row": 6,
+       "col": 2
+      },
+      {
+       "row": 7,
+       "col": 0
+      },
+      {
+       "row": 7,
+       "col": 1
+      },
+      {
+       "row": 7,
+       "col": 2
+      },
+      {
+       "row": 8,
+       "col": 0
+      },
+      {
+       "row": 8,
+       "col": 1
+      },
+      {
+       "row": 8,
+       "col": 2
+      },
+      {
+       "row": 9,
+       "col": 0
+      },
+      {
+       "row": 9,
+       "col": 1
+      },
+      {
+       "row": 9,
+       "col": 2
+      },
+      {
+       "row": 10,
+       "col": 0
+      },
+      {
+       "row": 10,
+       "col": 1
+      },
+      {
+       "row": 10,
+       "col": 2
+      },
+      {
+       "row": 11,
+       "col": 0
+      },
+      {
+       "row": 11,
+       "col": 1
+      },
+      {
+       "row": 11,
+       "col": 2
+      },
+      {
+       "row": 12,
+       "col": 0
+      },
+      {
+       "row": 12,
+       "col": 1
+      },
+      {
+       "row": 12,
+       "col": 2
+      }
+     ]
+    },
+    {
+     "turn": 5,
+     "label": "Wave 3 · t5",
+     "tiles": [
+      {
+       "row": 52,
+       "col": 0
+      },
+      {
+       "row": 52,
+       "col": 1
+      },
+      {
+       "row": 52,
+       "col": 2
+      },
+      {
+       "row": 53,
+       "col": 0
+      },
+      {
+       "row": 53,
+       "col": 1
+      },
+      {
+       "row": 53,
+       "col": 2
+      },
+      {
+       "row": 54,
+       "col": 0
+      },
+      {
+       "row": 54,
+       "col": 1
+      },
+      {
+       "row": 54,
+       "col": 2
+      },
+      {
+       "row": 55,
+       "col": 0
+      },
+      {
+       "row": 55,
+       "col": 1
+      },
+      {
+       "row": 55,
+       "col": 2
+      },
+      {
+       "row": 56,
+       "col": 0
+      },
+      {
+       "row": 56,
+       "col": 1
+      },
+      {
+       "row": 56,
+       "col": 2
+      },
+      {
+       "row": 57,
+       "col": 0
+      },
+      {
+       "row": 57,
+       "col": 1
+      },
+      {
+       "row": 57,
+       "col": 2
+      },
+      {
+       "row": 58,
+       "col": 0
+      },
+      {
+       "row": 58,
+       "col": 1
+      },
+      {
+       "row": 58,
+       "col": 2
+      }
+     ]
+    }
+   ],
+   "objectiveTiles": [
+    {
+     "row": 30,
+     "col": 48,
+     "label": "Central work-site"
+    },
+    {
+     "row": 12,
+     "col": 53,
+     "label": "North work-site"
+    },
+    {
+     "row": 32,
+     "col": 40,
+     "label": "Annex work-site"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "Wave 1 thrust",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 29,
+       "col": 2
+      },
+      {
+       "row": 34,
+       "col": 18
+      },
+      {
+       "row": 32,
+       "col": 31
+      },
+      {
+       "row": 32,
+       "col": 35
+      }
+     ]
+    },
+    {
+     "label": "Wave 2 thrust (t3)",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 9,
+       "col": 2
+      },
+      {
+       "row": 12,
+       "col": 26
+      },
+      {
+       "row": 7,
+       "col": 40
+      },
+      {
+       "row": 12,
+       "col": 52
+      }
+     ]
+    },
+    {
+     "label": "Wave 3 thrust (t5)",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 55,
+       "col": 2
+      },
+      {
+       "row": 43,
+       "col": 21
+      },
+      {
+       "row": 47,
+       "col": 38
+      },
+      {
+       "row": 41,
+       "col": 51
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Defend-type: waves from three vectors so the line has to keep moving."
+    },
+    {
+     "condition": "design-note",
+     "element": "Caevyn may arrive turn 3 if M1 intel was sent raw."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Holds the west entrance throat"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Interior fire over the researchers"
+     },
+     {
+      "unitId": "covenant_arbiter",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Strips actions off each wave as it closes"
+     },
+     {
+      "unitId": "covenant_seeker",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "The output that's running hot — protect it"
+     },
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Annex door anchor"
+     },
+     {
+      "unitId": "covenant_architect",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Emplacements between the three sites"
+     },
+     {
+      "unitId": "covenant_witness",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Early warning down the west lanes"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "syndicate_operative",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Wave 1 probes the central lane"
+     },
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Wave 1 anchor"
+     }
+    ],
+    "reinforcements": [
+     {
+      "unitId": "syndicate_operative",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Wave 2 — north lane sprint at the notes site"
+     },
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Wave 3 — south breach push"
+     },
+     {
+      "unitId": "syndicate_rangefinder",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Wave 3 — covers the breach from the apron"
+     }
+    ]
+   },
+   "economyNotes": {
+    "player": "Vent cache sits just north of the walls — Seeker seats by t2. Fast establish is the design: the defense regrows between waves.",
+    "enemy": "Waves are scripted, not bought — survive each one and the pressure resets."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       28,
+       36
+      ],
+      "cols": [
+       46,
+       56
+      ]
+     },
+     {
+      "rows": [
+       30,
+       34
+      ],
+      "cols": [
+       36,
+       42
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       24,
+       34
+      ],
+      "cols": [
+       0,
+       2
+      ]
+     }
+    ]
+   }
+  },
+  "covenant_m3": {
+   "objectiveLabel": "The Vrath come up the south lane and over the south rim. The annex node is the flashpoint — hold it.",
+   "enemyFaction": "vrath",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 26,
+      "col": 46
+     },
+     {
+      "row": 26,
+      "col": 47
+     },
+     {
+      "row": 26,
+      "col": 48
+     },
+     {
+      "row": 26,
+      "col": 49
+     },
+     {
+      "row": 26,
+      "col": 50
+     },
+     {
+      "row": 26,
+      "col": 51
+     },
+     {
+      "row": 26,
+      "col": 52
+     },
+     {
+      "row": 26,
+      "col": 53
+     },
+     {
+      "row": 26,
+      "col": 54
+     },
+     {
+      "row": 26,
+      "col": 55
+     },
+     {
+      "row": 26,
+      "col": 56
+     },
+     {
+      "row": 27,
+      "col": 46
+     },
+     {
+      "row": 27,
+      "col": 47
+     },
+     {
+      "row": 27,
+      "col": 48
+     },
+     {
+      "row": 27,
+      "col": 49
+     },
+     {
+      "row": 27,
+      "col": 50
+     },
+     {
+      "row": 27,
+      "col": 51
+     },
+     {
+      "row": 27,
+      "col": 52
+     },
+     {
+      "row": 27,
+      "col": 53
+     },
+     {
+      "row": 27,
+      "col": 54
+     },
+     {
+      "row": 27,
+      "col": 55
+     },
+     {
+      "row": 27,
+      "col": 56
+     },
+     {
+      "row": 28,
+      "col": 46
+     },
+     {
+      "row": 28,
+      "col": 47
+     },
+     {
+      "row": 28,
+      "col": 48
+     },
+     {
+      "row": 28,
+      "col": 49
+     },
+     {
+      "row": 28,
+      "col": 50
+     },
+     {
+      "row": 28,
+      "col": 51
+     },
+     {
+      "row": 28,
+      "col": 52
+     },
+     {
+      "row": 28,
+      "col": 53
+     },
+     {
+      "row": 28,
+      "col": 54
+     },
+     {
+      "row": 28,
+      "col": 55
+     },
+     {
+      "row": 28,
+      "col": 56
+     },
+     {
+      "row": 29,
+      "col": 46
+     },
+     {
+      "row": 29,
+      "col": 47
+     },
+     {
+      "row": 29,
+      "col": 48
+     },
+     {
+      "row": 29,
+      "col": 49
+     },
+     {
+      "row": 29,
+      "col": 50
+     },
+     {
+      "row": 29,
+      "col": 51
+     },
+     {
+      "row": 29,
+      "col": 52
+     },
+     {
+      "row": 29,
+      "col": 53
+     },
+     {
+      "row": 29,
+      "col": 54
+     },
+     {
+      "row": 29,
+      "col": 55
+     },
+     {
+      "row": 29,
+      "col": 56
+     },
+     {
+      "row": 30,
+      "col": 46
+     },
+     {
+      "row": 30,
+      "col": 47
+     },
+     {
+      "row": 30,
+      "col": 49
+     },
+     {
+      "row": 30,
+      "col": 50
+     },
+     {
+      "row": 30,
+      "col": 51
+     },
+     {
+      "row": 30,
+      "col": 52
+     },
+     {
+      "row": 30,
+      "col": 53
+     },
+     {
+      "row": 30,
+      "col": 54
+     },
+     {
+      "row": 30,
+      "col": 55
+     },
+     {
+      "row": 30,
+      "col": 56
+     },
+     {
+      "row": 31,
+      "col": 46
+     },
+     {
+      "row": 31,
+      "col": 47
+     },
+     {
+      "row": 31,
+      "col": 48
+     },
+     {
+      "row": 31,
+      "col": 49
+     },
+     {
+      "row": 31,
+      "col": 50
+     },
+     {
+      "row": 31,
+      "col": 51
+     },
+     {
+      "row": 31,
+      "col": 52
+     },
+     {
+      "row": 31,
+      "col": 53
+     },
+     {
+      "row": 31,
+      "col": 54
+     },
+     {
+      "row": 31,
+      "col": 55
+     },
+     {
+      "row": 31,
+      "col": 56
+     },
+     {
+      "row": 32,
+      "col": 46
+     },
+     {
+      "row": 32,
+      "col": 47
+     },
+     {
+      "row": 32,
+      "col": 48
+     },
+     {
+      "row": 32,
+      "col": 49
+     },
+     {
+      "row": 32,
+      "col": 50
+     },
+     {
+      "row": 32,
+      "col": 51
+     },
+     {
+      "row": 32,
+      "col": 52
+     },
+     {
+      "row": 32,
+      "col": 53
+     },
+     {
+      "row": 32,
+      "col": 54
+     },
+     {
+      "row": 32,
+      "col": 55
+     },
+     {
+      "row": 32,
+      "col": 56
+     },
+     {
+      "row": 33,
+      "col": 46
+     },
+     {
+      "row": 33,
+      "col": 47
+     },
+     {
+      "row": 33,
+      "col": 48
+     },
+     {
+      "row": 33,
+      "col": 49
+     },
+     {
+      "row": 33,
+      "col": 50
+     },
+     {
+      "row": 33,
+      "col": 51
+     },
+     {
+      "row": 33,
+      "col": 52
+     },
+     {
+      "row": 33,
+      "col": 53
+     },
+     {
+      "row": 33,
+      "col": 54
+     },
+     {
+      "row": 33,
+      "col": 55
+     },
+     {
+      "row": 33,
+      "col": 56
+     },
+     {
+      "row": 34,
+      "col": 46
+     },
+     {
+      "row": 34,
+      "col": 47
+     },
+     {
+      "row": 34,
+      "col": 48
+     },
+     {
+      "row": 34,
+      "col": 49
+     },
+     {
+      "row": 34,
+      "col": 50
+     },
+     {
+      "row": 34,
+      "col": 51
+     },
+     {
+      "row": 34,
+      "col": 52
+     },
+     {
+      "row": 34,
+      "col": 53
+     },
+     {
+      "row": 34,
+      "col": 54
+     },
+     {
+      "row": 34,
+      "col": 55
+     },
+     {
+      "row": 34,
+      "col": 56
+     },
+     {
+      "row": 35,
+      "col": 46
+     },
+     {
+      "row": 35,
+      "col": 47
+     },
+     {
+      "row": 35,
+      "col": 48
+     },
+     {
+      "row": 35,
+      "col": 49
+     },
+     {
+      "row": 35,
+      "col": 50
+     },
+     {
+      "row": 35,
+      "col": 51
+     },
+     {
+      "row": 35,
+      "col": 52
+     },
+     {
+      "row": 35,
+      "col": 53
+     },
+     {
+      "row": 35,
+      "col": 54
+     },
+     {
+      "row": 35,
+      "col": 55
+     },
+     {
+      "row": 35,
+      "col": 56
+     },
+     {
+      "row": 36,
+      "col": 46
+     },
+     {
+      "row": 36,
+      "col": 47
+     },
+     {
+      "row": 36,
+      "col": 48
+     },
+     {
+      "row": 36,
+      "col": 49
+     },
+     {
+      "row": 36,
+      "col": 50
+     },
+     {
+      "row": 36,
+      "col": 51
+     },
+     {
+      "row": 36,
+      "col": 52
+     },
+     {
+      "row": 36,
+      "col": 53
+     },
+     {
+      "row": 36,
+      "col": 54
+     },
+     {
+      "row": 36,
+      "col": 55
+     },
+     {
+      "row": 36,
+      "col": 56
+     },
+     {
+      "row": 37,
+      "col": 28
+     },
+     {
+      "row": 37,
+      "col": 29
+     },
+     {
+      "row": 37,
+      "col": 30
+     },
+     {
+      "row": 37,
+      "col": 31
+     },
+     {
+      "row": 37,
+      "col": 32
+     },
+     {
+      "row": 37,
+      "col": 33
+     },
+     {
+      "row": 37,
+      "col": 34
+     },
+     {
+      "row": 37,
+      "col": 35
+     },
+     {
+      "row": 37,
+      "col": 36
+     },
+     {
+      "row": 37,
+      "col": 37
+     },
+     {
+      "row": 37,
+      "col": 38
+     },
+     {
+      "row": 38,
+      "col": 28
+     },
+     {
+      "row": 38,
+      "col": 29
+     },
+     {
+      "row": 38,
+      "col": 30
+     },
+     {
+      "row": 38,
+      "col": 31
+     },
+     {
+      "row": 38,
+      "col": 32
+     },
+     {
+      "row": 38,
+      "col": 33
+     },
+     {
+      "row": 38,
+      "col": 34
+     },
+     {
+      "row": 38,
+      "col": 35
+     },
+     {
+      "row": 38,
+      "col": 36
+     },
+     {
+      "row": 38,
+      "col": 37
+     },
+     {
+      "row": 38,
+      "col": 38
+     },
+     {
+      "row": 39,
+      "col": 28
+     },
+     {
+      "row": 39,
+      "col": 29
+     },
+     {
+      "row": 39,
+      "col": 30
+     },
+     {
+      "row": 39,
+      "col": 31
+     },
+     {
+      "row": 39,
+      "col": 32
+     },
+     {
+      "row": 39,
+      "col": 33
+     },
+     {
+      "row": 39,
+      "col": 34
+     },
+     {
+      "row": 39,
+      "col": 35
+     },
+     {
+      "row": 39,
+      "col": 36
+     },
+     {
+      "row": 39,
+      "col": 37
+     },
+     {
+      "row": 39,
+      "col": 38
+     },
+     {
+      "row": 40,
+      "col": 28
+     },
+     {
+      "row": 40,
+      "col": 29
+     },
+     {
+      "row": 40,
+      "col": 30
+     },
+     {
+      "row": 40,
+      "col": 31
+     },
+     {
+      "row": 40,
+      "col": 32
+     },
+     {
+      "row": 40,
+      "col": 33
+     },
+     {
+      "row": 40,
+      "col": 34
+     },
+     {
+      "row": 40,
+      "col": 35
+     },
+     {
+      "row": 40,
+      "col": 36
+     },
+     {
+      "row": 40,
+      "col": 37
+     },
+     {
+      "row": 40,
+      "col": 38
+     }
+    ],
+    "enemy": [
+     {
+      "row": 46,
+      "col": 0
+     },
+     {
+      "row": 46,
+      "col": 1
+     },
+     {
+      "row": 46,
+      "col": 2
+     },
+     {
+      "row": 46,
+      "col": 3
+     },
+     {
+      "row": 46,
+      "col": 4
+     },
+     {
+      "row": 47,
+      "col": 0
+     },
+     {
+      "row": 47,
+      "col": 1
+     },
+     {
+      "row": 47,
+      "col": 2
+     },
+     {
+      "row": 47,
+      "col": 3
+     },
+     {
+      "row": 47,
+      "col": 4
+     },
+     {
+      "row": 48,
+      "col": 0
+     },
+     {
+      "row": 48,
+      "col": 1
+     },
+     {
+      "row": 48,
+      "col": 2
+     },
+     {
+      "row": 48,
+      "col": 3
+     },
+     {
+      "row": 48,
+      "col": 4
+     },
+     {
+      "row": 49,
+      "col": 0
+     },
+     {
+      "row": 49,
+      "col": 1
+     },
+     {
+      "row": 49,
+      "col": 2
+     },
+     {
+      "row": 49,
+      "col": 3
+     },
+     {
+      "row": 49,
+      "col": 4
+     },
+     {
+      "row": 50,
+      "col": 0
+     },
+     {
+      "row": 50,
+      "col": 1
+     },
+     {
+      "row": 50,
+      "col": 2
+     },
+     {
+      "row": 50,
+      "col": 3
+     },
+     {
+      "row": 50,
+      "col": 4
+     },
+     {
+      "row": 51,
+      "col": 0
+     },
+     {
+      "row": 51,
+      "col": 1
+     },
+     {
+      "row": 51,
+      "col": 2
+     },
+     {
+      "row": 51,
+      "col": 3
+     },
+     {
+      "row": 51,
+      "col": 4
+     },
+     {
+      "row": 52,
+      "col": 0
+     },
+     {
+      "row": 52,
+      "col": 1
+     },
+     {
+      "row": 52,
+      "col": 2
+     },
+     {
+      "row": 52,
+      "col": 3
+     },
+     {
+      "row": 52,
+      "col": 4
+     },
+     {
+      "row": 53,
+      "col": 0
+     },
+     {
+      "row": 53,
+      "col": 1
+     },
+     {
+      "row": 53,
+      "col": 2
+     },
+     {
+      "row": 53,
+      "col": 3
+     },
+     {
+      "row": 53,
+      "col": 4
+     },
+     {
+      "row": 54,
+      "col": 0
+     },
+     {
+      "row": 54,
+      "col": 1
+     },
+     {
+      "row": 54,
+      "col": 2
+     },
+     {
+      "row": 54,
+      "col": 3
+     },
+     {
+      "row": 54,
+      "col": 4
+     },
+     {
+      "row": 55,
+      "col": 0
+     },
+     {
+      "row": 55,
+      "col": 1
+     },
+     {
+      "row": 55,
+      "col": 2
+     },
+     {
+      "row": 55,
+      "col": 3
+     },
+     {
+      "row": 55,
+      "col": 4
+     },
+     {
+      "row": 56,
+      "col": 0
+     },
+     {
+      "row": 56,
+      "col": 1
+     },
+     {
+      "row": 56,
+      "col": 2
+     },
+     {
+      "row": 56,
+      "col": 3
+     },
+     {
+      "row": 56,
+      "col": 4
+     },
+     {
+      "row": 57,
+      "col": 0
+     },
+     {
+      "row": 57,
+      "col": 1
+     },
+     {
+      "row": 57,
+      "col": 2
+     },
+     {
+      "row": 57,
+      "col": 3
+     },
+     {
+      "row": 57,
+      "col": 4
+     },
+     {
+      "row": 58,
+      "col": 0
+     },
+     {
+      "row": 58,
+      "col": 1
+     },
+     {
+      "row": 58,
+      "col": 2
+     },
+     {
+      "row": 58,
+      "col": 3
+     },
+     {
+      "row": 58,
+      "col": 4
+     },
+     {
+      "row": 56,
+      "col": 20
+     },
+     {
+      "row": 56,
+      "col": 21
+     },
+     {
+      "row": 56,
+      "col": 22
+     },
+     {
+      "row": 56,
+      "col": 23
+     },
+     {
+      "row": 56,
+      "col": 24
+     },
+     {
+      "row": 56,
+      "col": 25
+     },
+     {
+      "row": 56,
+      "col": 26
+     },
+     {
+      "row": 56,
+      "col": 27
+     },
+     {
+      "row": 56,
+      "col": 28
+     },
+     {
+      "row": 56,
+      "col": 29
+     },
+     {
+      "row": 56,
+      "col": 30
+     },
+     {
+      "row": 56,
+      "col": 31
+     },
+     {
+      "row": 56,
+      "col": 32
+     },
+     {
+      "row": 56,
+      "col": 33
+     },
+     {
+      "row": 56,
+      "col": 34
+     },
+     {
+      "row": 57,
+      "col": 20
+     },
+     {
+      "row": 57,
+      "col": 21
+     },
+     {
+      "row": 57,
+      "col": 22
+     },
+     {
+      "row": 57,
+      "col": 23
+     },
+     {
+      "row": 57,
+      "col": 24
+     },
+     {
+      "row": 57,
+      "col": 25
+     },
+     {
+      "row": 57,
+      "col": 26
+     },
+     {
+      "row": 57,
+      "col": 27
+     },
+     {
+      "row": 57,
+      "col": 28
+     },
+     {
+      "row": 57,
+      "col": 29
+     },
+     {
+      "row": 57,
+      "col": 30
+     },
+     {
+      "row": 57,
+      "col": 31
+     },
+     {
+      "row": 57,
+      "col": 32
+     },
+     {
+      "row": 57,
+      "col": 33
+     },
+     {
+      "row": 57,
+      "col": 34
+     },
+     {
+      "row": 58,
+      "col": 20
+     },
+     {
+      "row": 58,
+      "col": 21
+     },
+     {
+      "row": 58,
+      "col": 22
+     },
+     {
+      "row": 58,
+      "col": 23
+     },
+     {
+      "row": 58,
+      "col": 24
+     },
+     {
+      "row": 58,
+      "col": 25
+     },
+     {
+      "row": 58,
+      "col": 26
+     },
+     {
+      "row": 58,
+      "col": 27
+     },
+     {
+      "row": 58,
+      "col": 28
+     },
+     {
+      "row": 58,
+      "col": 29
+     },
+     {
+      "row": 58,
+      "col": 30
+     },
+     {
+      "row": 58,
+      "col": 31
+     },
+     {
+      "row": 58,
+      "col": 32
+     },
+     {
+      "row": 58,
+      "col": 33
+     },
+     {
+      "row": 58,
+      "col": 34
+     },
+     {
+      "row": 59,
+      "col": 20
+     },
+     {
+      "row": 59,
+      "col": 21
+     },
+     {
+      "row": 59,
+      "col": 22
+     },
+     {
+      "row": 59,
+      "col": 23
+     },
+     {
+      "row": 59,
+      "col": 24
+     },
+     {
+      "row": 59,
+      "col": 25
+     },
+     {
+      "row": 59,
+      "col": 26
+     },
+     {
+      "row": 59,
+      "col": 27
+     },
+     {
+      "row": 59,
+      "col": 28
+     },
+     {
+      "row": 59,
+      "col": 29
+     },
+     {
+      "row": 59,
+      "col": 30
+     },
+     {
+      "row": 59,
+      "col": 31
+     },
+     {
+      "row": 59,
+      "col": 32
+     },
+     {
+      "row": 59,
+      "col": 33
+     },
+     {
+      "row": 59,
+      "col": 34
+     },
+     {
+      "row": 60,
+      "col": 20
+     },
+     {
+      "row": 60,
+      "col": 21
+     },
+     {
+      "row": 60,
+      "col": 22
+     },
+     {
+      "row": 60,
+      "col": 23
+     },
+     {
+      "row": 60,
+      "col": 24
+     },
+     {
+      "row": 60,
+      "col": 25
+     },
+     {
+      "row": 60,
+      "col": 26
+     },
+     {
+      "row": 60,
+      "col": 27
+     },
+     {
+      "row": 60,
+      "col": 28
+     },
+     {
+      "row": 60,
+      "col": 29
+     },
+     {
+      "row": 60,
+      "col": 30
+     },
+     {
+      "row": 60,
+      "col": 31
+     },
+     {
+      "row": 60,
+      "col": 32
+     },
+     {
+      "row": 60,
+      "col": 33
+     },
+     {
+      "row": 60,
+      "col": 34
+     }
+    ]
+   },
+   "reinforcements": [
+    {
+     "turn": 4,
+     "label": "Syndicate · t4",
+     "tiles": [
+      {
+       "row": 24,
+       "col": 0
+      },
+      {
+       "row": 24,
+       "col": 1
+      },
+      {
+       "row": 24,
+       "col": 2
+      },
+      {
+       "row": 25,
+       "col": 0
+      },
+      {
+       "row": 25,
+       "col": 1
+      },
+      {
+       "row": 25,
+       "col": 2
+      },
+      {
+       "row": 26,
+       "col": 0
+      },
+      {
+       "row": 26,
+       "col": 1
+      },
+      {
+       "row": 26,
+       "col": 2
+      },
+      {
+       "row": 27,
+       "col": 0
+      },
+      {
+       "row": 27,
+       "col": 1
+      },
+      {
+       "row": 27,
+       "col": 2
+      },
+      {
+       "row": 28,
+       "col": 0
+      },
+      {
+       "row": 28,
+       "col": 1
+      },
+      {
+       "row": 28,
+       "col": 2
+      },
+      {
+       "row": 29,
+       "col": 0
+      },
+      {
+       "row": 29,
+       "col": 1
+      },
+      {
+       "row": 29,
+       "col": 2
+      },
+      {
+       "row": 30,
+       "col": 0
+      },
+      {
+       "row": 30,
+       "col": 1
+      },
+      {
+       "row": 30,
+       "col": 2
+      },
+      {
+       "row": 31,
+       "col": 0
+      },
+      {
+       "row": 31,
+       "col": 1
+      },
+      {
+       "row": 31,
+       "col": 2
+      },
+      {
+       "row": 32,
+       "col": 0
+      },
+      {
+       "row": 32,
+       "col": 1
+      },
+      {
+       "row": 32,
+       "col": 2
+      },
+      {
+       "row": 33,
+       "col": 0
+      },
+      {
+       "row": 33,
+       "col": 1
+      },
+      {
+       "row": 33,
+       "col": 2
+      },
+      {
+       "row": 34,
+       "col": 0
+      },
+      {
+       "row": 34,
+       "col": 1
+      },
+      {
+       "row": 34,
+       "col": 2
+      }
+     ]
+    }
+   ],
+   "objectiveTiles": [
+    {
+     "row": 32,
+     "col": 40,
+     "label": "Annex node — hold"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "Vrath main thrust",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 52,
+       "col": 4
+      },
+      {
+       "row": 43,
+       "col": 21
+      },
+      {
+       "row": 38,
+       "col": 28
+      },
+      {
+       "row": 32,
+       "col": 34
+      }
+     ]
+    },
+    {
+     "label": "Vrath rim breach",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 58,
+       "col": 27
+      },
+      {
+       "row": 47,
+       "col": 38
+      },
+      {
+       "row": 52,
+       "col": 46
+      },
+      {
+       "row": 40,
+       "col": 51
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Annex scene fires at (40,32)."
+    },
+    {
+     "condition": "design-note",
+     "element": "Syndicate reinforcements may arrive west at midpoint — a third party, not a third wave."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "covenant_seeker",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "The site's economy, still running — rebuy point for the defense"
+     },
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Central chamber anchor"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "DoT is the answer to 140hp Breakers"
+     },
+     {
+      "unitId": "covenant_arbiter",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Censure the Breaker before it swings"
+     },
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Forward anchor on the annex apron"
+     },
+     {
+      "unitId": "covenant_witness",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Sees the rim breach coming"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "vrath_breaker",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Main thrust up the south lane"
+     },
+     {
+      "unitId": "vrath_sworn",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Relentless follow-through"
+     },
+     {
+      "unitId": "vrath_render",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Knocks defenders out of the annex doors"
+     },
+     {
+      "unitId": "vrath_charger",
+      "count": 2,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Rim breach — 5 move closes fast"
+     }
+    ],
+    "reinforcements": [
+     {
+      "unitId": "syndicate_operative",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Third party, not third wave — they want the site intact"
+     }
+    ]
+   },
+   "economyNotes": {
+    "player": "The site economy from M1/M2 is still running — Seeker re-seats the vent cache by t2 and funds ≈1 rebuy per 3 turns. Defense leans on it.",
+    "enemy": "Vrath spend bodies, not currency — the assault is finite. Outlast the spend."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       26,
+       36
+      ],
+      "cols": [
+       46,
+       56
+      ]
+     },
+     {
+      "rows": [
+       37,
+       40
+      ],
+      "cols": [
+       28,
+       38
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       46,
+       58
+      ],
+      "cols": [
+       0,
+       4
+      ]
+     },
+     {
+      "rows": [
+       56,
+       60
+      ],
+      "cols": [
+       20,
+       34
+      ]
+     }
+    ]
+   }
+  },
+  "pirates_m3": {
+   "objectiveLabel": "In through the south breach, lift the remnant at the central console, back out the way you came — before the garrison rotates.",
+   "enemyFaction": "syndicate",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 54,
+      "col": 3
+     },
+     {
+      "row": 54,
+      "col": 4
+     },
+     {
+      "row": 54,
+      "col": 5
+     },
+     {
+      "row": 54,
+      "col": 6
+     },
+     {
+      "row": 54,
+      "col": 7
+     },
+     {
+      "row": 54,
+      "col": 8
+     },
+     {
+      "row": 54,
+      "col": 9
+     },
+     {
+      "row": 55,
+      "col": 3
+     },
+     {
+      "row": 55,
+      "col": 4
+     },
+     {
+      "row": 55,
+      "col": 5
+     },
+     {
+      "row": 55,
+      "col": 6
+     },
+     {
+      "row": 55,
+      "col": 7
+     },
+     {
+      "row": 55,
+      "col": 8
+     },
+     {
+      "row": 55,
+      "col": 9
+     },
+     {
+      "row": 56,
+      "col": 3
+     },
+     {
+      "row": 56,
+      "col": 4
+     },
+     {
+      "row": 56,
+      "col": 5
+     },
+     {
+      "row": 56,
+      "col": 6
+     },
+     {
+      "row": 56,
+      "col": 7
+     },
+     {
+      "row": 56,
+      "col": 8
+     },
+     {
+      "row": 56,
+      "col": 9
+     },
+     {
+      "row": 57,
+      "col": 3
+     },
+     {
+      "row": 57,
+      "col": 4
+     },
+     {
+      "row": 57,
+      "col": 5
+     },
+     {
+      "row": 57,
+      "col": 6
+     },
+     {
+      "row": 57,
+      "col": 7
+     },
+     {
+      "row": 57,
+      "col": 8
+     },
+     {
+      "row": 57,
+      "col": 9
+     },
+     {
+      "row": 58,
+      "col": 3
+     },
+     {
+      "row": 58,
+      "col": 4
+     },
+     {
+      "row": 58,
+      "col": 5
+     },
+     {
+      "row": 58,
+      "col": 6
+     },
+     {
+      "row": 58,
+      "col": 7
+     },
+     {
+      "row": 58,
+      "col": 8
+     },
+     {
+      "row": 58,
+      "col": 9
+     },
+     {
+      "row": 59,
+      "col": 3
+     },
+     {
+      "row": 59,
+      "col": 4
+     },
+     {
+      "row": 59,
+      "col": 5
+     },
+     {
+      "row": 59,
+      "col": 6
+     },
+     {
+      "row": 59,
+      "col": 7
+     },
+     {
+      "row": 59,
+      "col": 8
+     },
+     {
+      "row": 59,
+      "col": 9
+     },
+     {
+      "row": 60,
+      "col": 3
+     },
+     {
+      "row": 60,
+      "col": 4
+     },
+     {
+      "row": 60,
+      "col": 5
+     },
+     {
+      "row": 60,
+      "col": 6
+     },
+     {
+      "row": 60,
+      "col": 7
+     },
+     {
+      "row": 60,
+      "col": 8
+     },
+     {
+      "row": 60,
+      "col": 9
+     }
+    ],
+    "enemy": [
+     {
+      "row": 26,
+      "col": 46
+     },
+     {
+      "row": 26,
+      "col": 47
+     },
+     {
+      "row": 26,
+      "col": 48
+     },
+     {
+      "row": 26,
+      "col": 49
+     },
+     {
+      "row": 26,
+      "col": 50
+     },
+     {
+      "row": 26,
+      "col": 51
+     },
+     {
+      "row": 26,
+      "col": 52
+     },
+     {
+      "row": 26,
+      "col": 53
+     },
+     {
+      "row": 26,
+      "col": 54
+     },
+     {
+      "row": 26,
+      "col": 55
+     },
+     {
+      "row": 26,
+      "col": 56
+     },
+     {
+      "row": 27,
+      "col": 46
+     },
+     {
+      "row": 27,
+      "col": 47
+     },
+     {
+      "row": 27,
+      "col": 48
+     },
+     {
+      "row": 27,
+      "col": 49
+     },
+     {
+      "row": 27,
+      "col": 50
+     },
+     {
+      "row": 27,
+      "col": 51
+     },
+     {
+      "row": 27,
+      "col": 52
+     },
+     {
+      "row": 27,
+      "col": 53
+     },
+     {
+      "row": 27,
+      "col": 54
+     },
+     {
+      "row": 27,
+      "col": 55
+     },
+     {
+      "row": 27,
+      "col": 56
+     },
+     {
+      "row": 28,
+      "col": 46
+     },
+     {
+      "row": 28,
+      "col": 47
+     },
+     {
+      "row": 28,
+      "col": 48
+     },
+     {
+      "row": 28,
+      "col": 49
+     },
+     {
+      "row": 28,
+      "col": 50
+     },
+     {
+      "row": 28,
+      "col": 51
+     },
+     {
+      "row": 28,
+      "col": 52
+     },
+     {
+      "row": 28,
+      "col": 53
+     },
+     {
+      "row": 28,
+      "col": 54
+     },
+     {
+      "row": 28,
+      "col": 55
+     },
+     {
+      "row": 28,
+      "col": 56
+     },
+     {
+      "row": 29,
+      "col": 46
+     },
+     {
+      "row": 29,
+      "col": 47
+     },
+     {
+      "row": 29,
+      "col": 48
+     },
+     {
+      "row": 29,
+      "col": 49
+     },
+     {
+      "row": 29,
+      "col": 50
+     },
+     {
+      "row": 29,
+      "col": 51
+     },
+     {
+      "row": 29,
+      "col": 52
+     },
+     {
+      "row": 29,
+      "col": 53
+     },
+     {
+      "row": 29,
+      "col": 54
+     },
+     {
+      "row": 29,
+      "col": 55
+     },
+     {
+      "row": 29,
+      "col": 56
+     },
+     {
+      "row": 30,
+      "col": 46
+     },
+     {
+      "row": 30,
+      "col": 47
+     },
+     {
+      "row": 30,
+      "col": 49
+     },
+     {
+      "row": 30,
+      "col": 50
+     },
+     {
+      "row": 30,
+      "col": 51
+     },
+     {
+      "row": 30,
+      "col": 52
+     },
+     {
+      "row": 30,
+      "col": 53
+     },
+     {
+      "row": 30,
+      "col": 54
+     },
+     {
+      "row": 30,
+      "col": 55
+     },
+     {
+      "row": 30,
+      "col": 56
+     },
+     {
+      "row": 31,
+      "col": 46
+     },
+     {
+      "row": 31,
+      "col": 47
+     },
+     {
+      "row": 31,
+      "col": 48
+     },
+     {
+      "row": 31,
+      "col": 49
+     },
+     {
+      "row": 31,
+      "col": 50
+     },
+     {
+      "row": 31,
+      "col": 51
+     },
+     {
+      "row": 31,
+      "col": 52
+     },
+     {
+      "row": 31,
+      "col": 53
+     },
+     {
+      "row": 31,
+      "col": 54
+     },
+     {
+      "row": 31,
+      "col": 55
+     },
+     {
+      "row": 31,
+      "col": 56
+     },
+     {
+      "row": 32,
+      "col": 46
+     },
+     {
+      "row": 32,
+      "col": 47
+     },
+     {
+      "row": 32,
+      "col": 48
+     },
+     {
+      "row": 32,
+      "col": 49
+     },
+     {
+      "row": 32,
+      "col": 50
+     },
+     {
+      "row": 32,
+      "col": 51
+     },
+     {
+      "row": 32,
+      "col": 52
+     },
+     {
+      "row": 32,
+      "col": 53
+     },
+     {
+      "row": 32,
+      "col": 54
+     },
+     {
+      "row": 32,
+      "col": 55
+     },
+     {
+      "row": 32,
+      "col": 56
+     },
+     {
+      "row": 33,
+      "col": 46
+     },
+     {
+      "row": 33,
+      "col": 47
+     },
+     {
+      "row": 33,
+      "col": 48
+     },
+     {
+      "row": 33,
+      "col": 49
+     },
+     {
+      "row": 33,
+      "col": 50
+     },
+     {
+      "row": 33,
+      "col": 51
+     },
+     {
+      "row": 33,
+      "col": 52
+     },
+     {
+      "row": 33,
+      "col": 53
+     },
+     {
+      "row": 33,
+      "col": 54
+     },
+     {
+      "row": 33,
+      "col": 55
+     },
+     {
+      "row": 33,
+      "col": 56
+     },
+     {
+      "row": 34,
+      "col": 46
+     },
+     {
+      "row": 34,
+      "col": 47
+     },
+     {
+      "row": 34,
+      "col": 48
+     },
+     {
+      "row": 34,
+      "col": 49
+     },
+     {
+      "row": 34,
+      "col": 50
+     },
+     {
+      "row": 34,
+      "col": 51
+     },
+     {
+      "row": 34,
+      "col": 52
+     },
+     {
+      "row": 34,
+      "col": 53
+     },
+     {
+      "row": 34,
+      "col": 54
+     },
+     {
+      "row": 34,
+      "col": 55
+     },
+     {
+      "row": 34,
+      "col": 56
+     },
+     {
+      "row": 35,
+      "col": 46
+     },
+     {
+      "row": 35,
+      "col": 47
+     },
+     {
+      "row": 35,
+      "col": 48
+     },
+     {
+      "row": 35,
+      "col": 49
+     },
+     {
+      "row": 35,
+      "col": 50
+     },
+     {
+      "row": 35,
+      "col": 51
+     },
+     {
+      "row": 35,
+      "col": 52
+     },
+     {
+      "row": 35,
+      "col": 53
+     },
+     {
+      "row": 35,
+      "col": 54
+     },
+     {
+      "row": 35,
+      "col": 55
+     },
+     {
+      "row": 35,
+      "col": 56
+     },
+     {
+      "row": 36,
+      "col": 46
+     },
+     {
+      "row": 36,
+      "col": 47
+     },
+     {
+      "row": 36,
+      "col": 48
+     },
+     {
+      "row": 36,
+      "col": 49
+     },
+     {
+      "row": 36,
+      "col": 50
+     },
+     {
+      "row": 36,
+      "col": 51
+     },
+     {
+      "row": 36,
+      "col": 52
+     },
+     {
+      "row": 36,
+      "col": 53
+     },
+     {
+      "row": 36,
+      "col": 54
+     },
+     {
+      "row": 36,
+      "col": 55
+     },
+     {
+      "row": 36,
+      "col": 56
+     },
+     {
+      "row": 50,
+      "col": 44
+     },
+     {
+      "row": 50,
+      "col": 45
+     },
+     {
+      "row": 50,
+      "col": 46
+     },
+     {
+      "row": 50,
+      "col": 47
+     },
+     {
+      "row": 50,
+      "col": 48
+     },
+     {
+      "row": 51,
+      "col": 44
+     },
+     {
+      "row": 51,
+      "col": 45
+     },
+     {
+      "row": 51,
+      "col": 46
+     },
+     {
+      "row": 51,
+      "col": 47
+     },
+     {
+      "row": 51,
+      "col": 48
+     },
+     {
+      "row": 52,
+      "col": 44
+     },
+     {
+      "row": 52,
+      "col": 45
+     },
+     {
+      "row": 52,
+      "col": 46
+     },
+     {
+      "row": 52,
+      "col": 47
+     },
+     {
+      "row": 52,
+      "col": 48
+     },
+     {
+      "row": 53,
+      "col": 44
+     },
+     {
+      "row": 53,
+      "col": 45
+     },
+     {
+      "row": 53,
+      "col": 46
+     },
+     {
+      "row": 53,
+      "col": 47
+     },
+     {
+      "row": 53,
+      "col": 48
+     },
+     {
+      "row": 54,
+      "col": 44
+     },
+     {
+      "row": 54,
+      "col": 45
+     },
+     {
+      "row": 54,
+      "col": 46
+     },
+     {
+      "row": 54,
+      "col": 47
+     },
+     {
+      "row": 54,
+      "col": 48
+     },
+     {
+      "row": 30,
+      "col": 36
+     },
+     {
+      "row": 30,
+      "col": 37
+     },
+     {
+      "row": 30,
+      "col": 38
+     },
+     {
+      "row": 30,
+      "col": 39
+     },
+     {
+      "row": 30,
+      "col": 40
+     },
+     {
+      "row": 30,
+      "col": 41
+     },
+     {
+      "row": 30,
+      "col": 42
+     },
+     {
+      "row": 31,
+      "col": 36
+     },
+     {
+      "row": 31,
+      "col": 37
+     },
+     {
+      "row": 31,
+      "col": 38
+     },
+     {
+      "row": 31,
+      "col": 39
+     },
+     {
+      "row": 31,
+      "col": 40
+     },
+     {
+      "row": 31,
+      "col": 41
+     },
+     {
+      "row": 31,
+      "col": 42
+     },
+     {
+      "row": 32,
+      "col": 36
+     },
+     {
+      "row": 32,
+      "col": 37
+     },
+     {
+      "row": 32,
+      "col": 38
+     },
+     {
+      "row": 32,
+      "col": 39
+     },
+     {
+      "row": 32,
+      "col": 41
+     },
+     {
+      "row": 32,
+      "col": 42
+     },
+     {
+      "row": 33,
+      "col": 36
+     },
+     {
+      "row": 33,
+      "col": 37
+     },
+     {
+      "row": 33,
+      "col": 38
+     },
+     {
+      "row": 33,
+      "col": 39
+     },
+     {
+      "row": 33,
+      "col": 40
+     },
+     {
+      "row": 33,
+      "col": 41
+     },
+     {
+      "row": 33,
+      "col": 42
+     },
+     {
+      "row": 34,
+      "col": 36
+     },
+     {
+      "row": 34,
+      "col": 37
+     },
+     {
+      "row": 34,
+      "col": 38
+     },
+     {
+      "row": 34,
+      "col": 39
+     },
+     {
+      "row": 34,
+      "col": 40
+     },
+     {
+      "row": 34,
+      "col": 41
+     },
+     {
+      "row": 34,
+      "col": 42
+     }
+    ]
+   },
+   "reinforcements": [],
+   "objectiveTiles": [
+    {
+     "row": 30,
+     "col": 48,
+     "label": "Remnant — lift & return"
+    },
+    {
+     "row": 58,
+     "col": 6,
+     "label": "Exfil zone"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "Breach run",
+     "kind": "fast",
+     "waypoints": [
+      {
+       "row": 57,
+       "col": 6
+      },
+      {
+       "row": 48,
+       "col": 17
+      },
+      {
+       "row": 54,
+       "col": 28
+      },
+      {
+       "row": 47,
+       "col": 38
+      },
+      {
+       "row": 52,
+       "col": 46
+      },
+      {
+       "row": 40,
+       "col": 51
+      },
+      {
+       "row": 32,
+       "col": 49
+      }
+     ]
+    },
+    {
+     "label": "Annex diversion",
+     "kind": "flank",
+     "waypoints": [
+      {
+       "row": 57,
+       "col": 6
+      },
+      {
+       "row": 43,
+       "col": 21
+      },
+      {
+       "row": 34,
+       "col": 18
+      },
+      {
+       "row": 32,
+       "col": 31
+      },
+      {
+       "row": 32,
+       "col": 35
+      },
+      {
+       "row": 32,
+       "col": 40
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Extract-type: the exfil leg is the mission. The annex W entrance is the decompression valve if the breach jams."
+    },
+    {
+     "condition": "design-note",
+     "element": "Syndicate defends conservatively — protecting an investment."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "pirates_bruiser",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Punches the south breach open"
+     },
+     {
+      "unitId": "pirates_runner",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Carry the remnant out — Slippery beats Suppressors"
+     },
+     {
+      "unitId": "pirates_wrecker",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Sabotage the fortifications for free"
+     },
+     {
+      "unitId": "pirates_scavenger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Hits the approach console from 2 tiles"
+     },
+     {
+      "unitId": "pirates_rigger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Booby-traps the exfil behind you"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Interior denial around the remnant"
+     },
+     {
+      "unitId": "syndicate_rangefinder",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Overwatch the long south lane"
+     },
+     {
+      "unitId": "syndicate_handler",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Marks runners through the breach"
+     },
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Apron post — slows the approach"
+     },
+     {
+      "unitId": "syndicate_contractor",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Rebuilds what the Wrecker cuts"
+     },
+     {
+      "unitId": "syndicate_operative",
+      "count": 1,
+      "spawnZone": 2,
+      "commander": false,
+      "designNote": "Annex rover — the investment's insurance"
+     },
+     {
+      "unitId": "syndicate_assessor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "The investment itself — their rebuy point. You can't kill it; outrun it"
+     }
+    ],
+    "reinforcements": []
+   },
+   "economyNotes": {
+    "player": "No Siphon — what lands on the shelf is all you get. Every loss is permanent.",
+    "enemy": "Assessor seats the vent cache ~t3 — garrison losses regrow after that. Your window to trade cheaply is the first three turns."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       54,
+       60
+      ],
+      "cols": [
+       3,
+       9
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       26,
+       36
+      ],
+      "cols": [
+       46,
+       56
+      ]
+     },
+     {
+      "rows": [
+       50,
+       54
+      ],
+      "cols": [
+       44,
+       48
+      ]
+     },
+     {
+      "rows": [
+       30,
+       34
+      ],
+      "cols": [
+       36,
+       42
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "terrain": {
+  "seed": 42,
+  "warpStrength": 0.5,
+  "palette": {
+   "open": [
+    201,
+    222,
+    236
+   ],
+   "ruins": [
+    125,
+    138,
+    146
+   ],
+   "mountain": [
+    64,
+    71,
+    76
+   ],
+   "spire_wall": [
+    16,
+    18,
+    35
+   ],
+   "spire_floor": [
+    90,
+    107,
+    135
+   ]
+  },
+  "amplitude": {
+   "open": 20,
+   "ruins": 24,
+   "mountain": 32,
+   "spire_wall": 14,
+   "spire_floor": 22
+  },
+  "blockingRenderTypes": [
+   "mountain",
+   "spire_wall"
+  ],
+  "renderTypeOverrides": [
+   {
+    "rows": [
+     22,
+     40
+    ],
+    "cols": [
+     44,
+     59
+    ],
+    "renderType": "spire_wall",
+    "label": "Spire — central shell"
+   },
+   {
+    "rows": [
+     8,
+     16
+    ],
+    "cols": [
+     48,
+     58
+    ],
+    "renderType": "spire_wall",
+    "label": "Spire — north node shell"
+   },
+   {
+    "rows": [
+     28,
+     36
+    ],
+    "cols": [
+     34,
+     43
+    ],
+    "renderType": "spire_wall",
+    "label": "Spire — annex shell"
+   },
+   {
+    "rows": [
+     24,
+     38
+    ],
+    "cols": [
+     46,
+     57
+    ],
+    "renderType": "spire_floor",
+    "label": "Spire — central floor"
+   },
+   {
+    "rows": [
+     10,
+     14
+    ],
+    "cols": [
+     50,
+     56
+    ],
+    "renderType": "spire_floor",
+    "label": "Spire — north node floor"
+   },
+   {
+    "rows": [
+     14,
+     23
+    ],
+    "cols": [
+     52,
+     53
+    ],
+    "renderType": "spire_floor",
+    "label": "Spire — north corridor (N entrance)"
+   },
+   {
+    "rows": [
+     30,
+     34
+    ],
+    "cols": [
+     36,
+     42
+    ],
+    "renderType": "spire_floor",
+    "label": "Spire — annex floor"
+   },
+   {
+    "rows": [
+     31,
+     33
+    ],
+    "cols": [
+     34,
+     35
+    ],
+    "renderType": "spire_floor",
+    "label": "Spire — annex W entrance"
+   },
+   {
+    "rows": [
+     31,
+     33
+    ],
+    "cols": [
+     42,
+     46
+    ],
+    "renderType": "spire_floor",
+    "label": "Spire — annex/central link"
+   },
+   {
+    "rows": [
+     38,
+     41
+    ],
+    "cols": [
+     50,
+     52
+    ],
+    "renderType": "spire_floor",
+    "label": "Spire — S breach corridor"
+   }
+  ],
+  "structureRenderType": "spire_wall",
+  "decorations": {
+   "boulder": [],
+   "crevasse": []
+  },
+  "ruinsPerturb": {
+   "regions": [],
+   "erodeProb": 0.45,
+   "expandProb": 0.35
+  },
+  "spriteAssets": {
+   "resource": "/game/assets/terrain/shared/resource.png",
+   "puzzle": "/game/assets/terrain/shared/puzzle.png"
+  },
+  "paintedTiles": {
+   "open": "/game/assets/terrain/helvyn/open.png",
+   "ruins": "/game/assets/terrain/helvyn/harsh.png",
+   "mountain": "/game/assets/terrain/helvyn/impassable.png",
+   "spire_wall": "/game/assets/terrain/helvyn/flair_spireWall.png",
+   "spire_floor": "/game/assets/terrain/helvyn/flair_spireFloor.png"
+  },
+  "paintedBlurSigma": {
+   "open": 5,
+   "ruins": 5,
+   "mountain": 5,
+   "spire_wall": 0,
+   "spire_floor": 0
+  },
+  "paintedOutputSize": 3072,
+  "resourceAlphaScale": 0.6,
+  "fractal": {
+   "fine": {
+    "baseScale": 2,
+    "octaves": 4,
+    "seedOffset": 0
+   },
+   "medium": {
+    "baseScale": 6,
+    "octaves": 3,
+    "seedOffset": 9999
+   },
+   "warpX": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 1111
+   },
+   "warpY": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 2222
+   },
+   "fineMediumMix": [
+    0.6,
+    0.4
+   ]
+  },
+  "boundaryAntiAliasStrength": 0.15,
+  "rotationHash": [
+   137,
+   31
+  ]
+ }
+}

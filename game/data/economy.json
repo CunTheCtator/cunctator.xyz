@@ -1,0 +1,92 @@
+{
+  "xp": {
+    "milestones": {
+      "statIncrease": 2,
+      "secondTrait": 4,
+      "ability1Unlock": 6,
+      "ability2Unlock": 7
+    },
+    "statIncreaseAmount": 2,
+    "statIncreasePlayerChoice": true,
+    "statIncreaseOptions": ["attack", "defense", "movementRange"],
+    "system": {
+      "killBonus": 1,
+      "damageShareFormula": "damageDelt / unitMaxHealth",
+      "killerReceivesDamageShare": false,
+      "carryOverSamePlanet": true,
+      "carryOverDifferentPlanet": false,
+      "globalCurrencyCarriesOverAlways": true
+    }
+  },
+  "resourceTiles": {
+    "baseOutputPerTurn": 50,
+    "relayPostBonus": 25,
+    "supplyCacheBonusPerTurn": 20,
+    "extractorUpgrades": [
+      { "level": 1, "cost": 0,   "outputMultiplier": 1.0, "label": "Base" },
+      { "level": 2, "cost": 200, "outputMultiplier": 1.25, "label": "Upgraded" },
+      { "level": 3, "cost": 400, "outputMultiplier": 1.5,  "label": "Amplified" }
+    ],
+    "note": "Extractor upgrade is performed by the Builder unit spending 2 actions adjacent to the Extractor. Cost is deducted from global currency."
+  },
+  "unitReplacementCosts": {
+    "note": "Extractor cannot be replaced — it is unkillable. All other units can be replaced by spending currency. Replacement unit spawns at the Extractor's position on the following turn.",
+    "covenant_keeper":    150,
+    "covenant_arbiter":   125,
+    "covenant_cantor":    125,
+    "covenant_witness":   125,
+    "covenant_architect": 175,
+    "covenant_seeker":    "unkillable",
+    "syndicate_operative":   125,
+    "syndicate_suppressor":  150,
+    "syndicate_rangefinder": 125,
+    "syndicate_handler":     125,
+    "syndicate_contractor":  175,
+    "syndicate_assessor":    "unkillable",
+    "vrath_breaker":  175,
+    "vrath_sworn":    150,
+    "vrath_charger":  150,
+    "vrath_render":   150,
+    "vrath_forger":   175,
+    "vrath_reaper":   "unkillable",
+    "pirates_bruiser":   175,
+    "pirates_runner":    150,
+    "pirates_wrecker":   150,
+    "pirates_scavenger": 150,
+    "pirates_rigger":    175,
+    "pirates_siphon":    "unkillable",
+    "commanders": 300
+  },
+  "structureCosts": {
+    "note": "See structures.json for full structure definitions. Costs duplicated here for quick engine reference.",
+    "barrier":                    50,
+    "fortified_wall":             120,
+    "fortified_wall_upgrade":     70,
+    "relay_post":                 150,
+    "watchtower":                 100,
+    "turret":                     175,
+    "covenant_sanctified_ground": 200,
+    "covenant_resonance_beacon":  225,
+    "syndicate_sensor_array":     220,
+    "syndicate_supply_cache":     200,
+    "vrath_spike_wall":           200,
+    "vrath_war_totem":            225,
+    "pirates_booby_trap":         175,
+    "pirates_scrap_turret":       200
+  },
+  "structureRepair": {
+    "actionCostPerRepair": 1,
+    "durabilityRestoredPerAction": 10,
+    "currencyCostPerPoint": 2,
+    "requiresAdjacentBuilder": true,
+    "cannotExceedBaseDurability": true
+  },
+  "cooldownDefaults": {
+    "note": "Individual ability cooldowns are defined in abilities.json. These are the design guidelines used to set them.",
+    "utility": 3,
+    "combat": 4,
+    "powerfulOrArmyWide": 6,
+    "oncePerMission": -1
+  },
+  "balanceNotes": "All numeric values in this file are Phase 3 placeholders. They establish relative relationships and economic intent but require playtesting to calibrate. Adjust one variable at a time. Key design intent: early game should feel resource-starved, mid game comfortable, late game flush. Players should never be able to afford everything simultaneously."
+}

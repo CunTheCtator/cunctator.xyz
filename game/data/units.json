@@ -1,0 +1,830 @@
+[
+  {
+    "id": "covenant_keeper",
+    "factionId": "covenant",
+    "name": "Keeper",
+    "role": "heavy",
+    "isBuilder": false,
+    "stats": {
+      "health": 120,
+      "attack": 6,
+      "defense": 4,
+      "movementRange": 2,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_sanctuary",
+        "name": "Sanctuary",
+        "description": "Adjacent allied units receive a defense bonus while the Keeper is alive.",
+        "effect": {
+          "type": "defense",
+          "target": "adjacent_allies",
+          "magnitude": 2,
+          "duration": -1,
+          "condition": "keeper_alive"
+        }
+      },
+      {
+        "id": "trait_immovable",
+        "name": "Immovable",
+        "description": "The Keeper cannot be displaced by knockback effects.",
+        "effect": {
+          "type": "knockback_immunity",
+          "target": "self",
+          "magnitude": 1,
+          "duration": -1,
+          "condition": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "covenant_arbiter",
+    "factionId": "covenant",
+    "name": "Arbiter",
+    "role": "disrupt",
+    "isBuilder": false,
+    "stats": {
+      "health": 80,
+      "attack": 5,
+      "defense": 2,
+      "movementRange": 3,
+      "visionRange": 4,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_censure",
+        "name": "Censure",
+        "description": "On attack, applies a debuff that reduces the target's action budget by 1 for one turn.",
+        "effect": {
+          "type": "action-budget",
+          "target": "enemy_unit",
+          "magnitude": -1,
+          "duration": 1,
+          "condition": "on_attack"
+        }
+      },
+      {
+        "id": "trait_doctrine",
+        "name": "Doctrine",
+        "description": "Once per mission, can apply an army-level debuff to the enemy force.",
+        "effect": {
+          "type": "action-budget",
+          "target": "enemy_army",
+          "magnitude": -1,
+          "duration": 2,
+          "condition": "once_per_mission"
+        }
+      }
+    ]
+  },
+  {
+    "id": "covenant_cantor",
+    "factionId": "covenant",
+    "name": "Cantor",
+    "role": "ranged",
+    "isBuilder": false,
+    "stats": {
+      "health": 70,
+      "attack": 7,
+      "defense": 1,
+      "movementRange": 2,
+      "visionRange": 5,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_resonance",
+        "name": "Resonance",
+        "description": "Attacks apply a damage-over-time effect that persists for 2 turns.",
+        "effect": {
+          "type": "dot",
+          "target": "enemy_unit",
+          "magnitude": 3,
+          "duration": 2,
+          "condition": "on_attack"
+        }
+      }
+    ]
+  },
+  {
+    "id": "covenant_witness",
+    "factionId": "covenant",
+    "name": "Witness",
+    "role": "support",
+    "isBuilder": false,
+    "stats": {
+      "health": 65,
+      "attack": 4,
+      "defense": 1,
+      "movementRange": 3,
+      "visionRange": 6,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_far_sight",
+        "name": "Far Sight",
+        "description": "Extends the vision range of all adjacent allied units by 2 tiles.",
+        "effect": {
+          "type": "vision",
+          "target": "adjacent_allies",
+          "magnitude": 2,
+          "duration": -1,
+          "condition": "witness_alive"
+        }
+      },
+      {
+        "id": "trait_expose",
+        "name": "Expose",
+        "description": "On attack, reveals the target's position through fog of war for 2 turns even if the target retreats out of vision.",
+        "effect": {
+          "type": "vision",
+          "target": "enemy_unit",
+          "magnitude": 1,
+          "duration": 2,
+          "condition": "on_attack"
+        }
+      }
+    ]
+  },
+  {
+    "id": "covenant_architect",
+    "factionId": "covenant",
+    "name": "Architect",
+    "role": "builder",
+    "isBuilder": true,
+    "stats": {
+      "health": 60,
+      "attack": 3,
+      "defense": 2,
+      "movementRange": 2,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_sanctified_ground",
+        "name": "Sanctified Ground",
+        "description": "Structures placed by the Architect provide a minor defense buff to adjacent allied units.",
+        "effect": {
+          "type": "defense",
+          "target": "adjacent_allies",
+          "magnitude": 1,
+          "duration": -1,
+          "condition": "within_structure_range"
+        }
+      }
+    ]
+  },
+  {
+    "id": "syndicate_operative",
+    "factionId": "syndicate",
+    "name": "Operative",
+    "role": "mobile",
+    "isBuilder": false,
+    "stats": {
+      "health": 75,
+      "attack": 7,
+      "defense": 2,
+      "movementRange": 4,
+      "visionRange": 4,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_reposition",
+        "name": "Reposition",
+        "description": "After attacking, may move up to 2 tiles without spending an additional action.",
+        "effect": {
+          "type": "movement",
+          "target": "self",
+          "magnitude": 2,
+          "duration": 1,
+          "condition": "on_attack"
+        }
+      }
+    ]
+  },
+  {
+    "id": "syndicate_suppressor",
+    "factionId": "syndicate",
+    "name": "Suppressor",
+    "role": "heavy",
+    "isBuilder": false,
+    "stats": {
+      "health": 100,
+      "attack": 5,
+      "defense": 3,
+      "movementRange": 2,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_area_denial",
+        "name": "Area Denial",
+        "description": "Enemy units entering tiles adjacent to the Suppressor must spend an additional action.",
+        "effect": {
+          "type": "movement",
+          "target": "adjacent_enemies",
+          "magnitude": -1,
+          "duration": -1,
+          "condition": "suppressor_alive"
+        }
+      },
+      {
+        "id": "trait_suppressing_fire",
+        "name": "Suppressing Fire",
+        "description": "On attack, the target cannot move on their next turn.",
+        "effect": {
+          "type": "movement",
+          "target": "enemy_unit",
+          "magnitude": -99,
+          "duration": 1,
+          "condition": "on_attack"
+        }
+      }
+    ]
+  },
+  {
+    "id": "syndicate_rangefinder",
+    "factionId": "syndicate",
+    "name": "Rangefinder",
+    "role": "ranged",
+    "isBuilder": false,
+    "stats": {
+      "health": 65,
+      "attack": 9,
+      "defense": 1,
+      "movementRange": 2,
+      "visionRange": 6,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_overwatch",
+        "name": "Overwatch",
+        "description": "If the Rangefinder did not move this turn, attack range increases by 2 tiles.",
+        "effect": {
+          "type": "attack_range",
+          "target": "self",
+          "magnitude": 2,
+          "duration": 1,
+          "condition": "no_movement_this_turn"
+        }
+      }
+    ]
+  },
+  {
+    "id": "syndicate_handler",
+    "factionId": "syndicate",
+    "name": "Handler",
+    "role": "support",
+    "isBuilder": false,
+    "stats": {
+      "health": 70,
+      "attack": 4,
+      "defense": 2,
+      "movementRange": 3,
+      "visionRange": 5,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_intel_feed",
+        "name": "Intel Feed",
+        "description": "Once per turn, can mark an enemy unit. Marked units are visible through fog of war for 3 turns and receive reduced defense.",
+        "effect": {
+          "type": "vision",
+          "target": "enemy_unit",
+          "magnitude": 1,
+          "duration": 3,
+          "condition": "once_per_turn"
+        }
+      }
+    ]
+  },
+  {
+    "id": "syndicate_contractor",
+    "factionId": "syndicate",
+    "name": "Contractor",
+    "role": "builder",
+    "isBuilder": true,
+    "stats": {
+      "health": 65,
+      "attack": 4,
+      "defense": 2,
+      "movementRange": 3,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_efficient_construction",
+        "name": "Efficient Construction",
+        "description": "Building and removing structures costs 1 fewer action than standard.",
+        "effect": {
+          "type": "action-budget",
+          "target": "self",
+          "magnitude": 1,
+          "duration": -1,
+          "condition": "on_build"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vrath_breaker",
+    "factionId": "vrath",
+    "name": "Breaker",
+    "role": "heavy",
+    "isBuilder": false,
+    "stats": {
+      "health": 140,
+      "attack": 10,
+      "defense": 4,
+      "movementRange": 2,
+      "visionRange": 2,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_shatter",
+        "name": "Shatter",
+        "description": "Attacks destroy enemy-built structures in the target tile without additional action cost.",
+        "effect": {
+          "type": "structure_destroy",
+          "target": "target_tile",
+          "magnitude": 1,
+          "duration": 1,
+          "condition": "on_attack"
+        }
+      },
+      {
+        "id": "trait_unstoppable",
+        "name": "Unstoppable",
+        "description": "Movement cost through difficult terrain is reduced by 1.",
+        "effect": {
+          "type": "movement",
+          "target": "self",
+          "magnitude": 1,
+          "duration": -1,
+          "condition": "difficult_terrain"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vrath_sworn",
+    "factionId": "vrath",
+    "name": "Sworn",
+    "role": "ranged",
+    "isBuilder": false,
+    "stats": {
+      "health": 85,
+      "attack": 8,
+      "defense": 2,
+      "movementRange": 3,
+      "visionRange": 4,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_relentless",
+        "name": "Relentless",
+        "description": "If the Sworn kills a unit, gains an additional attack action this turn.",
+        "effect": {
+          "type": "action-budget",
+          "target": "self",
+          "magnitude": 1,
+          "duration": 1,
+          "condition": "on_kill"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vrath_charger",
+    "factionId": "vrath",
+    "name": "Charger",
+    "role": "mobile",
+    "isBuilder": false,
+    "stats": {
+      "health": 80,
+      "attack": 8,
+      "defense": 2,
+      "movementRange": 5,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_charge",
+        "name": "Charge",
+        "description": "If the Charger moves 3 or more tiles before attacking, the attack deals bonus damage.",
+        "effect": {
+          "type": "damage",
+          "target": "enemy_unit",
+          "magnitude": 4,
+          "duration": 1,
+          "condition": "moved_3_or_more"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vrath_render",
+    "factionId": "vrath",
+    "name": "Render",
+    "role": "disrupt",
+    "isBuilder": false,
+    "stats": {
+      "health": 90,
+      "attack": 7,
+      "defense": 3,
+      "movementRange": 3,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_knockback",
+        "name": "Knockback",
+        "description": "Attacks push the target 1 tile away from the Render, potentially breaking formation.",
+        "effect": {
+          "type": "knockback",
+          "target": "enemy_unit",
+          "magnitude": 1,
+          "duration": 1,
+          "condition": "on_attack"
+        }
+      },
+      {
+        "id": "trait_disrupting_blow",
+        "name": "Disrupting Blow",
+        "description": "On attack, the target loses 1 action from their next turn's budget.",
+        "effect": {
+          "type": "action-budget",
+          "target": "enemy_unit",
+          "magnitude": -1,
+          "duration": 1,
+          "condition": "on_attack"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vrath_forger",
+    "factionId": "vrath",
+    "name": "Forger",
+    "role": "builder",
+    "isBuilder": true,
+    "stats": {
+      "health": 75,
+      "attack": 5,
+      "defense": 3,
+      "movementRange": 2,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_reinforced_construction",
+        "name": "Reinforced Construction",
+        "description": "Structures placed by the Forger have increased durability and require additional actions to destroy.",
+        "effect": {
+          "type": "structure_durability",
+          "target": "placed_structure",
+          "magnitude": 2,
+          "duration": -1,
+          "condition": "on_build"
+        }
+      }
+    ]
+  },
+  {
+    "id": "pirates_bruiser",
+    "factionId": "pirates",
+    "name": "Bruiser",
+    "role": "heavy",
+    "isBuilder": false,
+    "stats": {
+      "health": 150,
+      "attack": 11,
+      "defense": 4,
+      "movementRange": 2,
+      "visionRange": 2,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_brawler",
+        "name": "Brawler",
+        "description": "Deals bonus damage when attacking units that are already damaged below half health.",
+        "effect": {
+          "type": "damage",
+          "target": "enemy_unit",
+          "magnitude": 5,
+          "duration": 1,
+          "condition": "target_below_half_health"
+        }
+      },
+      {
+        "id": "trait_thick_skin",
+        "name": "Thick Skin",
+        "description": "Immune to damage-over-time effects.",
+        "effect": {
+          "type": "dot_immunity",
+          "target": "self",
+          "magnitude": 1,
+          "duration": -1,
+          "condition": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "pirates_runner",
+    "factionId": "pirates",
+    "name": "Runner",
+    "role": "mobile",
+    "isBuilder": false,
+    "stats": {
+      "health": 80,
+      "attack": 8,
+      "defense": 2,
+      "movementRange": 6,
+      "visionRange": 5,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_slippery",
+        "name": "Slippery",
+        "description": "Cannot be targeted by suppression or movement-restricting effects.",
+        "effect": {
+          "type": "suppression_immunity",
+          "target": "self",
+          "magnitude": 1,
+          "duration": -1,
+          "condition": null
+        }
+      },
+      {
+        "id": "trait_hit_and_run",
+        "name": "Hit and Run",
+        "description": "May attack and move in any order without penalty.",
+        "effect": {
+          "type": "action_order",
+          "target": "self",
+          "magnitude": 1,
+          "duration": -1,
+          "condition": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "pirates_wrecker",
+    "factionId": "pirates",
+    "name": "Wrecker",
+    "role": "disrupt",
+    "isBuilder": false,
+    "stats": {
+      "health": 90,
+      "attack": 8,
+      "defense": 2,
+      "movementRange": 3,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_sabotage",
+        "name": "Sabotage",
+        "description": "Can destroy any structure regardless of faction, including allied structures, without spending an attack action.",
+        "effect": {
+          "type": "structure_destroy",
+          "target": "target_tile",
+          "magnitude": 1,
+          "duration": 1,
+          "condition": "on_activate"
+        }
+      },
+      {
+        "id": "trait_chaos_grenade",
+        "name": "Chaos Grenade",
+        "description": "Once per mission, applies a random debuff to all units in a 2-tile radius.",
+        "effect": {
+          "type": "random_debuff",
+          "target": "area",
+          "magnitude": 2,
+          "duration": 2,
+          "condition": "once_per_mission"
+        }
+      }
+    ]
+  },
+  {
+    "id": "pirates_scavenger",
+    "factionId": "pirates",
+    "name": "Scavenger",
+    "role": "wildcard",
+    "isBuilder": false,
+    "stats": {
+      "health": 75,
+      "attack": 7,
+      "defense": 2,
+      "movementRange": 4,
+      "visionRange": 5,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_strip",
+        "name": "Strip",
+        "description": "On attack, has a chance to remove one active buff from the target and apply it to the Scavenger.",
+        "effect": {
+          "type": "buff_steal",
+          "target": "enemy_unit",
+          "magnitude": 1,
+          "duration": 2,
+          "condition": "on_attack"
+        }
+      },
+      {
+        "id": "trait_puzzle_runner",
+        "name": "Puzzle Runner",
+        "description": "Can activate puzzle nodes from 2 tiles away instead of requiring adjacency.",
+        "effect": {
+          "type": "puzzle_range",
+          "target": "self",
+          "magnitude": 2,
+          "duration": -1,
+          "condition": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "pirates_rigger",
+    "factionId": "pirates",
+    "name": "Rigger",
+    "role": "builder",
+    "isBuilder": true,
+    "stats": {
+      "health": 70,
+      "attack": 5,
+      "defense": 2,
+      "movementRange": 3,
+      "visionRange": 4,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_booby_trap",
+        "name": "Booby Trap",
+        "description": "Structures placed by the Rigger deal damage to the first enemy unit that destroys them.",
+        "effect": {
+          "type": "damage",
+          "target": "structure_destroyer",
+          "magnitude": 8,
+          "duration": 1,
+          "condition": "on_structure_destroyed"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": "covenant_seeker",
+    "factionId": "covenant",
+    "name": "Seeker",
+    "role": "extractor",
+    "isBuilder": false,
+    "isExtractor": true,
+    "unkillable": true,
+    "stats": {
+      "health": -1,
+      "attack": 0,
+      "defense": 0,
+      "movementRange": 2,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_seeker_resonance",
+        "name": "Remnant Resonance",
+        "description": "Generates currency from each adjacent resource tile each turn. Amount increases with upgrade level.",
+        "effect": {
+          "type": "currency_generation",
+          "target": "adjacent_resource_tiles",
+          "magnitude": 50,
+          "duration": -1,
+          "condition": null
+        }
+      }
+    ]
+  },
+
+  {
+    "id": "syndicate_assessor",
+    "factionId": "syndicate",
+    "name": "Assessor",
+    "role": "extractor",
+    "isBuilder": false,
+    "isExtractor": true,
+    "unkillable": true,
+    "stats": {
+      "health": -1,
+      "attack": 0,
+      "defense": 0,
+      "movementRange": 2,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_assessor_valuation",
+        "name": "Field Valuation",
+        "description": "Generates currency from each adjacent resource tile each turn. Amount increases with upgrade level.",
+        "effect": {
+          "type": "currency_generation",
+          "target": "adjacent_resource_tiles",
+          "magnitude": 50,
+          "duration": -1,
+          "condition": null
+        }
+      }
+    ]
+  },
+
+  {
+    "id": "vrath_reaper",
+    "factionId": "vrath",
+    "name": "Reaper",
+    "role": "extractor",
+    "isBuilder": false,
+    "isExtractor": true,
+    "unkillable": true,
+    "stats": {
+      "health": -1,
+      "attack": 0,
+      "defense": 0,
+      "movementRange": 2,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_reaper_harvest",
+        "name": "Harvest",
+        "description": "Generates currency from each adjacent resource tile each turn. Amount increases with upgrade level.",
+        "effect": {
+          "type": "currency_generation",
+          "target": "adjacent_resource_tiles",
+          "magnitude": 50,
+          "duration": -1,
+          "condition": null
+        }
+      }
+    ]
+  },
+
+  {
+    "id": "pirates_siphon",
+    "factionId": "pirates",
+    "name": "Siphon",
+    "role": "extractor",
+    "isBuilder": false,
+    "isExtractor": true,
+    "unkillable": true,
+    "stats": {
+      "health": -1,
+      "attack": 0,
+      "defense": 0,
+      "movementRange": 2,
+      "visionRange": 3,
+      "actionCost": 1
+    },
+    "traits": [
+      {
+        "id": "trait_siphon_tap",
+        "name": "Tap",
+        "description": "Generates currency from each adjacent resource tile each turn. Amount increases with upgrade level.",
+        "effect": {
+          "type": "currency_generation",
+          "target": "adjacent_resource_tiles",
+          "magnitude": 50,
+          "duration": -1,
+          "condition": null
+        }
+      }
+    ]
+  }
+]

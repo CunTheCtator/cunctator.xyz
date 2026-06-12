@@ -1,0 +1,2867 @@
+{
+ "id": "yelvar",
+ "name": "Yelvar — Western Valley",
+ "world": "Yelvar",
+ "description": "Closed canopy with one clearing — the only place in the valley with real sightlines. A trail runs through it south to north. Whoever holds the clearing holds the valley; whoever leaves it first answers for why.",
+ "ambientRegister": "Oppressive green under closed canopy. Insect noise, amplified footfalls, near-silence between clashes.",
+ "designRationale": "The forest is the map: it slows movement and kills vision everywhere except the clearing, so the clearing is the designed collision point. Three approaches with different risk profiles converge on it. The reposition order targets terrain you can already see (the north trail) — the dilemma is legible from deployment.",
+ "usedInMissions": [
+  {
+   "campaign": "vrath",
+   "mission": 1,
+   "side": "player"
+  }
+ ],
+ "grid": {
+  "format": "region-spec",
+  "size": 64,
+  "implementation": "Fill defaultTile. Apply regions in order (later wins). Apply tileOverrides. Regions flagged interference reduce vision by 2 inside the zone.",
+  "defaultTile": {
+   "type": "forest",
+   "movementCost": 2,
+   "blocksVision": true,
+   "destructible": false,
+   "resource": false
+  },
+  "regions": [
+   {
+    "label": "North ridge",
+    "rows": [
+     0,
+     2
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "South ridge",
+    "rows": [
+     61,
+     63
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West wall",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     0,
+     1
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East wall",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     62,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Trail — south segment",
+    "rows": [
+     36,
+     60
+    ],
+    "cols": [
+     30,
+     33
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Trail — north segment (the approach)",
+    "rows": [
+     3,
+     24
+    ],
+    "cols": [
+     30,
+     33
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Valley clearing",
+    "rows": [
+     24,
+     36
+    ],
+    "cols": [
+     20,
+     44
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Creek — lower",
+    "rows": [
+     54,
+     57
+    ],
+    "cols": [
+     8,
+     16
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Creek — bend",
+    "rows": [
+     48,
+     53
+    ],
+    "cols": [
+     14,
+     18
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Creek — mid",
+    "rows": [
+     42,
+     47
+    ],
+    "cols": [
+     16,
+     20
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Creek — clearing inlet",
+    "rows": [
+     36,
+     41
+    ],
+    "cols": [
+     18,
+     22
+    ],
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Thicket — E flank belt",
+    "rows": [
+     20,
+     40
+    ],
+    "cols": [
+     48,
+     54
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Thicket — NW",
+    "rows": [
+     8,
+     16
+    ],
+    "cols": [
+     8,
+     18
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Thicket — SE",
+    "rows": [
+     44,
+     54
+    ],
+    "cols": [
+     40,
+     50
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Thicket — clearing W rim",
+    "rows": [
+     26,
+     34
+    ],
+    "cols": [
+     12,
+     18
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Outcrop — clearing NW",
+    "rows": [
+     22,
+     23
+    ],
+    "cols": [
+     26,
+     28
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Outcrop — clearing SE",
+    "rows": [
+     35,
+     36
+    ],
+    "cols": [
+     36,
+     38
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Outcrop — NE forest",
+    "rows": [
+     10,
+     13
+    ],
+    "cols": [
+     44,
+     47
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Outcrop — SW forest",
+    "rows": [
+     50,
+     52
+    ],
+    "cols": [
+     24,
+     26
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   }
+  ],
+  "tileOverrides": [
+   {
+    "row": 30,
+    "col": 32,
+    "label": "Covenant command marker",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 8,
+    "col": 32,
+    "label": "Northern approach waypoint",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 30,
+    "col": 14,
+    "label": "Forage cache — W (in thicket)",
+    "tile": {
+     "type": "forest",
+     "movementCost": 2,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 28,
+    "col": 46,
+    "label": "Forage cache — E (off-trail)",
+    "tile": {
+     "type": "forest",
+     "movementCost": 2,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 55,
+    "col": 22,
+    "label": "Trailhead forage — Reaper seat, t2 from deploy",
+    "tile": {
+     "type": "open",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   }
+  ]
+ },
+ "resourceTiles": [
+  {
+   "row": 30,
+   "col": 14
+  },
+  {
+   "row": 28,
+   "col": 46
+  },
+  {
+   "row": 55,
+   "col": 22
+  }
+ ],
+ "keyFeatures": [
+  {
+   "id": "yelvar_valley_clearing",
+   "type": "objective",
+   "label": "Valley Clearing",
+   "description": "the only sightlines — designed collision point",
+   "at": {
+    "row": 30,
+    "col": 33
+   }
+  },
+  {
+   "id": "yelvar_northern_approach",
+   "type": "objective",
+   "label": "Northern Approach",
+   "description": "reposition order at ~50% enemy",
+   "at": {
+    "row": 8,
+    "col": 33
+   }
+  },
+  {
+   "id": "yelvar_e_thicket_belt",
+   "type": "terrain",
+   "label": "E Thicket Belt",
+   "description": "blind, slow — ambush ground",
+   "at": {
+    "row": 30,
+    "col": 51
+   }
+  },
+  {
+   "id": "yelvar_creek",
+   "type": "terrain",
+   "label": "Creek",
+   "description": "fast lane, exposed at the inlet",
+   "at": {
+    "row": 48,
+    "col": 17
+   }
+  }
+ ],
+ "defaultSpawnZones": {
+  "player": [
+   {
+    "row": 56,
+    "col": 26
+   },
+   {
+    "row": 56,
+    "col": 27
+   },
+   {
+    "row": 56,
+    "col": 28
+   },
+   {
+    "row": 56,
+    "col": 29
+   },
+   {
+    "row": 56,
+    "col": 30
+   },
+   {
+    "row": 56,
+    "col": 31
+   },
+   {
+    "row": 56,
+    "col": 32
+   },
+   {
+    "row": 56,
+    "col": 33
+   },
+   {
+    "row": 56,
+    "col": 34
+   },
+   {
+    "row": 56,
+    "col": 35
+   },
+   {
+    "row": 56,
+    "col": 36
+   },
+   {
+    "row": 56,
+    "col": 37
+   },
+   {
+    "row": 56,
+    "col": 38
+   },
+   {
+    "row": 57,
+    "col": 26
+   },
+   {
+    "row": 57,
+    "col": 27
+   },
+   {
+    "row": 57,
+    "col": 28
+   },
+   {
+    "row": 57,
+    "col": 29
+   },
+   {
+    "row": 57,
+    "col": 30
+   },
+   {
+    "row": 57,
+    "col": 31
+   },
+   {
+    "row": 57,
+    "col": 32
+   },
+   {
+    "row": 57,
+    "col": 33
+   },
+   {
+    "row": 57,
+    "col": 34
+   },
+   {
+    "row": 57,
+    "col": 35
+   },
+   {
+    "row": 57,
+    "col": 36
+   },
+   {
+    "row": 57,
+    "col": 37
+   },
+   {
+    "row": 57,
+    "col": 38
+   },
+   {
+    "row": 58,
+    "col": 26
+   },
+   {
+    "row": 58,
+    "col": 27
+   },
+   {
+    "row": 58,
+    "col": 28
+   },
+   {
+    "row": 58,
+    "col": 29
+   },
+   {
+    "row": 58,
+    "col": 30
+   },
+   {
+    "row": 58,
+    "col": 31
+   },
+   {
+    "row": 58,
+    "col": 32
+   },
+   {
+    "row": 58,
+    "col": 33
+   },
+   {
+    "row": 58,
+    "col": 34
+   },
+   {
+    "row": 58,
+    "col": 35
+   },
+   {
+    "row": 58,
+    "col": 36
+   },
+   {
+    "row": 58,
+    "col": 37
+   },
+   {
+    "row": 58,
+    "col": 38
+   },
+   {
+    "row": 59,
+    "col": 26
+   },
+   {
+    "row": 59,
+    "col": 27
+   },
+   {
+    "row": 59,
+    "col": 28
+   },
+   {
+    "row": 59,
+    "col": 29
+   },
+   {
+    "row": 59,
+    "col": 30
+   },
+   {
+    "row": 59,
+    "col": 31
+   },
+   {
+    "row": 59,
+    "col": 32
+   },
+   {
+    "row": 59,
+    "col": 33
+   },
+   {
+    "row": 59,
+    "col": 34
+   },
+   {
+    "row": 59,
+    "col": 35
+   },
+   {
+    "row": 59,
+    "col": 36
+   },
+   {
+    "row": 59,
+    "col": 37
+   },
+   {
+    "row": 59,
+    "col": 38
+   }
+  ],
+  "enemy": [
+   {
+    "row": 26,
+    "col": 24
+   },
+   {
+    "row": 26,
+    "col": 25
+   },
+   {
+    "row": 26,
+    "col": 26
+   },
+   {
+    "row": 26,
+    "col": 27
+   },
+   {
+    "row": 26,
+    "col": 28
+   },
+   {
+    "row": 26,
+    "col": 29
+   },
+   {
+    "row": 26,
+    "col": 30
+   },
+   {
+    "row": 26,
+    "col": 31
+   },
+   {
+    "row": 26,
+    "col": 32
+   },
+   {
+    "row": 26,
+    "col": 33
+   },
+   {
+    "row": 26,
+    "col": 34
+   },
+   {
+    "row": 26,
+    "col": 35
+   },
+   {
+    "row": 26,
+    "col": 36
+   },
+   {
+    "row": 26,
+    "col": 37
+   },
+   {
+    "row": 26,
+    "col": 38
+   },
+   {
+    "row": 26,
+    "col": 39
+   },
+   {
+    "row": 26,
+    "col": 40
+   },
+   {
+    "row": 27,
+    "col": 24
+   },
+   {
+    "row": 27,
+    "col": 25
+   },
+   {
+    "row": 27,
+    "col": 26
+   },
+   {
+    "row": 27,
+    "col": 27
+   },
+   {
+    "row": 27,
+    "col": 28
+   },
+   {
+    "row": 27,
+    "col": 29
+   },
+   {
+    "row": 27,
+    "col": 30
+   },
+   {
+    "row": 27,
+    "col": 31
+   },
+   {
+    "row": 27,
+    "col": 32
+   },
+   {
+    "row": 27,
+    "col": 33
+   },
+   {
+    "row": 27,
+    "col": 34
+   },
+   {
+    "row": 27,
+    "col": 35
+   },
+   {
+    "row": 27,
+    "col": 36
+   },
+   {
+    "row": 27,
+    "col": 37
+   },
+   {
+    "row": 27,
+    "col": 38
+   },
+   {
+    "row": 27,
+    "col": 39
+   },
+   {
+    "row": 27,
+    "col": 40
+   },
+   {
+    "row": 28,
+    "col": 24
+   },
+   {
+    "row": 28,
+    "col": 25
+   },
+   {
+    "row": 28,
+    "col": 26
+   },
+   {
+    "row": 28,
+    "col": 27
+   },
+   {
+    "row": 28,
+    "col": 28
+   },
+   {
+    "row": 28,
+    "col": 29
+   },
+   {
+    "row": 28,
+    "col": 30
+   },
+   {
+    "row": 28,
+    "col": 31
+   },
+   {
+    "row": 28,
+    "col": 32
+   },
+   {
+    "row": 28,
+    "col": 33
+   },
+   {
+    "row": 28,
+    "col": 34
+   },
+   {
+    "row": 28,
+    "col": 35
+   },
+   {
+    "row": 28,
+    "col": 36
+   },
+   {
+    "row": 28,
+    "col": 37
+   },
+   {
+    "row": 28,
+    "col": 38
+   },
+   {
+    "row": 28,
+    "col": 39
+   },
+   {
+    "row": 28,
+    "col": 40
+   },
+   {
+    "row": 29,
+    "col": 24
+   },
+   {
+    "row": 29,
+    "col": 25
+   },
+   {
+    "row": 29,
+    "col": 26
+   },
+   {
+    "row": 29,
+    "col": 27
+   },
+   {
+    "row": 29,
+    "col": 28
+   },
+   {
+    "row": 29,
+    "col": 29
+   },
+   {
+    "row": 29,
+    "col": 30
+   },
+   {
+    "row": 29,
+    "col": 31
+   },
+   {
+    "row": 29,
+    "col": 32
+   },
+   {
+    "row": 29,
+    "col": 33
+   },
+   {
+    "row": 29,
+    "col": 34
+   },
+   {
+    "row": 29,
+    "col": 35
+   },
+   {
+    "row": 29,
+    "col": 36
+   },
+   {
+    "row": 29,
+    "col": 37
+   },
+   {
+    "row": 29,
+    "col": 38
+   },
+   {
+    "row": 29,
+    "col": 39
+   },
+   {
+    "row": 29,
+    "col": 40
+   },
+   {
+    "row": 30,
+    "col": 24
+   },
+   {
+    "row": 30,
+    "col": 25
+   },
+   {
+    "row": 30,
+    "col": 26
+   },
+   {
+    "row": 30,
+    "col": 27
+   },
+   {
+    "row": 30,
+    "col": 28
+   },
+   {
+    "row": 30,
+    "col": 29
+   },
+   {
+    "row": 30,
+    "col": 30
+   },
+   {
+    "row": 30,
+    "col": 31
+   },
+   {
+    "row": 30,
+    "col": 33
+   },
+   {
+    "row": 30,
+    "col": 34
+   },
+   {
+    "row": 30,
+    "col": 35
+   },
+   {
+    "row": 30,
+    "col": 36
+   },
+   {
+    "row": 30,
+    "col": 37
+   },
+   {
+    "row": 30,
+    "col": 38
+   },
+   {
+    "row": 30,
+    "col": 39
+   },
+   {
+    "row": 30,
+    "col": 40
+   },
+   {
+    "row": 31,
+    "col": 24
+   },
+   {
+    "row": 31,
+    "col": 25
+   },
+   {
+    "row": 31,
+    "col": 26
+   },
+   {
+    "row": 31,
+    "col": 27
+   },
+   {
+    "row": 31,
+    "col": 28
+   },
+   {
+    "row": 31,
+    "col": 29
+   },
+   {
+    "row": 31,
+    "col": 30
+   },
+   {
+    "row": 31,
+    "col": 31
+   },
+   {
+    "row": 31,
+    "col": 32
+   },
+   {
+    "row": 31,
+    "col": 33
+   },
+   {
+    "row": 31,
+    "col": 34
+   },
+   {
+    "row": 31,
+    "col": 35
+   },
+   {
+    "row": 31,
+    "col": 36
+   },
+   {
+    "row": 31,
+    "col": 37
+   },
+   {
+    "row": 31,
+    "col": 38
+   },
+   {
+    "row": 31,
+    "col": 39
+   },
+   {
+    "row": 31,
+    "col": 40
+   },
+   {
+    "row": 32,
+    "col": 24
+   },
+   {
+    "row": 32,
+    "col": 25
+   },
+   {
+    "row": 32,
+    "col": 26
+   },
+   {
+    "row": 32,
+    "col": 27
+   },
+   {
+    "row": 32,
+    "col": 28
+   },
+   {
+    "row": 32,
+    "col": 29
+   },
+   {
+    "row": 32,
+    "col": 30
+   },
+   {
+    "row": 32,
+    "col": 31
+   },
+   {
+    "row": 32,
+    "col": 32
+   },
+   {
+    "row": 32,
+    "col": 33
+   },
+   {
+    "row": 32,
+    "col": 34
+   },
+   {
+    "row": 32,
+    "col": 35
+   },
+   {
+    "row": 32,
+    "col": 36
+   },
+   {
+    "row": 32,
+    "col": 37
+   },
+   {
+    "row": 32,
+    "col": 38
+   },
+   {
+    "row": 32,
+    "col": 39
+   },
+   {
+    "row": 32,
+    "col": 40
+   },
+   {
+    "row": 33,
+    "col": 24
+   },
+   {
+    "row": 33,
+    "col": 25
+   },
+   {
+    "row": 33,
+    "col": 26
+   },
+   {
+    "row": 33,
+    "col": 27
+   },
+   {
+    "row": 33,
+    "col": 28
+   },
+   {
+    "row": 33,
+    "col": 29
+   },
+   {
+    "row": 33,
+    "col": 30
+   },
+   {
+    "row": 33,
+    "col": 31
+   },
+   {
+    "row": 33,
+    "col": 32
+   },
+   {
+    "row": 33,
+    "col": 33
+   },
+   {
+    "row": 33,
+    "col": 34
+   },
+   {
+    "row": 33,
+    "col": 35
+   },
+   {
+    "row": 33,
+    "col": 36
+   },
+   {
+    "row": 33,
+    "col": 37
+   },
+   {
+    "row": 33,
+    "col": 38
+   },
+   {
+    "row": 33,
+    "col": 39
+   },
+   {
+    "row": 33,
+    "col": 40
+   },
+   {
+    "row": 34,
+    "col": 24
+   },
+   {
+    "row": 34,
+    "col": 25
+   },
+   {
+    "row": 34,
+    "col": 26
+   },
+   {
+    "row": 34,
+    "col": 27
+   },
+   {
+    "row": 34,
+    "col": 28
+   },
+   {
+    "row": 34,
+    "col": 29
+   },
+   {
+    "row": 34,
+    "col": 30
+   },
+   {
+    "row": 34,
+    "col": 31
+   },
+   {
+    "row": 34,
+    "col": 32
+   },
+   {
+    "row": 34,
+    "col": 33
+   },
+   {
+    "row": 34,
+    "col": 34
+   },
+   {
+    "row": 34,
+    "col": 35
+   },
+   {
+    "row": 34,
+    "col": 36
+   },
+   {
+    "row": 34,
+    "col": 37
+   },
+   {
+    "row": 34,
+    "col": 38
+   },
+   {
+    "row": 34,
+    "col": 39
+   },
+   {
+    "row": 34,
+    "col": 40
+   },
+   {
+    "row": 16,
+    "col": 29
+   },
+   {
+    "row": 16,
+    "col": 30
+   },
+   {
+    "row": 16,
+    "col": 31
+   },
+   {
+    "row": 16,
+    "col": 32
+   },
+   {
+    "row": 16,
+    "col": 33
+   },
+   {
+    "row": 16,
+    "col": 34
+   },
+   {
+    "row": 17,
+    "col": 29
+   },
+   {
+    "row": 17,
+    "col": 30
+   },
+   {
+    "row": 17,
+    "col": 31
+   },
+   {
+    "row": 17,
+    "col": 32
+   },
+   {
+    "row": 17,
+    "col": 33
+   },
+   {
+    "row": 17,
+    "col": 34
+   },
+   {
+    "row": 18,
+    "col": 29
+   },
+   {
+    "row": 18,
+    "col": 30
+   },
+   {
+    "row": 18,
+    "col": 31
+   },
+   {
+    "row": 18,
+    "col": 32
+   },
+   {
+    "row": 18,
+    "col": 33
+   },
+   {
+    "row": 18,
+    "col": 34
+   },
+   {
+    "row": 19,
+    "col": 29
+   },
+   {
+    "row": 19,
+    "col": 30
+   },
+   {
+    "row": 19,
+    "col": 31
+   },
+   {
+    "row": 19,
+    "col": 32
+   },
+   {
+    "row": 19,
+    "col": 33
+   },
+   {
+    "row": 19,
+    "col": 34
+   },
+   {
+    "row": 20,
+    "col": 29
+   },
+   {
+    "row": 20,
+    "col": 30
+   },
+   {
+    "row": 20,
+    "col": 31
+   },
+   {
+    "row": 20,
+    "col": 32
+   },
+   {
+    "row": 20,
+    "col": 33
+   },
+   {
+    "row": 20,
+    "col": 34
+   },
+   {
+    "row": 21,
+    "col": 29
+   },
+   {
+    "row": 21,
+    "col": 30
+   },
+   {
+    "row": 21,
+    "col": 31
+   },
+   {
+    "row": 21,
+    "col": 32
+   },
+   {
+    "row": 21,
+    "col": 33
+   },
+   {
+    "row": 21,
+    "col": 34
+   },
+   {
+    "row": 22,
+    "col": 29
+   },
+   {
+    "row": 22,
+    "col": 30
+   },
+   {
+    "row": 22,
+    "col": 31
+   },
+   {
+    "row": 22,
+    "col": 32
+   },
+   {
+    "row": 22,
+    "col": 33
+   },
+   {
+    "row": 22,
+    "col": 34
+   }
+  ]
+ },
+ "puzzleNodes": [
+  {
+   "id": "yelvar_node_1",
+   "label": "Canopy Relay",
+   "row": 14,
+   "col": 10,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "concealed",
+    "description": "Concealed, 2 turns"
+   }
+  },
+  {
+   "id": "yelvar_node_2",
+   "label": "Creek Console",
+   "row": 44,
+   "col": 18,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "army_1_move",
+    "description": "Army +1 move, 2 turns"
+   }
+  }
+ ],
+ "missionOverrides": {
+  "vrath_m1": {
+   "objectiveLabel": "The Covenant hold the clearing with hard cover on its rim. Come up the trail, the creek, the thicket — or all three. At ~50% enemy strength the High Chief orders you north. The flank isn't finished. Choose.",
+   "enemyFaction": "covenant",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 56,
+      "col": 26
+     },
+     {
+      "row": 56,
+      "col": 27
+     },
+     {
+      "row": 56,
+      "col": 28
+     },
+     {
+      "row": 56,
+      "col": 29
+     },
+     {
+      "row": 56,
+      "col": 30
+     },
+     {
+      "row": 56,
+      "col": 31
+     },
+     {
+      "row": 56,
+      "col": 32
+     },
+     {
+      "row": 56,
+      "col": 33
+     },
+     {
+      "row": 56,
+      "col": 34
+     },
+     {
+      "row": 56,
+      "col": 35
+     },
+     {
+      "row": 56,
+      "col": 36
+     },
+     {
+      "row": 56,
+      "col": 37
+     },
+     {
+      "row": 56,
+      "col": 38
+     },
+     {
+      "row": 57,
+      "col": 26
+     },
+     {
+      "row": 57,
+      "col": 27
+     },
+     {
+      "row": 57,
+      "col": 28
+     },
+     {
+      "row": 57,
+      "col": 29
+     },
+     {
+      "row": 57,
+      "col": 30
+     },
+     {
+      "row": 57,
+      "col": 31
+     },
+     {
+      "row": 57,
+      "col": 32
+     },
+     {
+      "row": 57,
+      "col": 33
+     },
+     {
+      "row": 57,
+      "col": 34
+     },
+     {
+      "row": 57,
+      "col": 35
+     },
+     {
+      "row": 57,
+      "col": 36
+     },
+     {
+      "row": 57,
+      "col": 37
+     },
+     {
+      "row": 57,
+      "col": 38
+     },
+     {
+      "row": 58,
+      "col": 26
+     },
+     {
+      "row": 58,
+      "col": 27
+     },
+     {
+      "row": 58,
+      "col": 28
+     },
+     {
+      "row": 58,
+      "col": 29
+     },
+     {
+      "row": 58,
+      "col": 30
+     },
+     {
+      "row": 58,
+      "col": 31
+     },
+     {
+      "row": 58,
+      "col": 32
+     },
+     {
+      "row": 58,
+      "col": 33
+     },
+     {
+      "row": 58,
+      "col": 34
+     },
+     {
+      "row": 58,
+      "col": 35
+     },
+     {
+      "row": 58,
+      "col": 36
+     },
+     {
+      "row": 58,
+      "col": 37
+     },
+     {
+      "row": 58,
+      "col": 38
+     },
+     {
+      "row": 59,
+      "col": 26
+     },
+     {
+      "row": 59,
+      "col": 27
+     },
+     {
+      "row": 59,
+      "col": 28
+     },
+     {
+      "row": 59,
+      "col": 29
+     },
+     {
+      "row": 59,
+      "col": 30
+     },
+     {
+      "row": 59,
+      "col": 31
+     },
+     {
+      "row": 59,
+      "col": 32
+     },
+     {
+      "row": 59,
+      "col": 33
+     },
+     {
+      "row": 59,
+      "col": 34
+     },
+     {
+      "row": 59,
+      "col": 35
+     },
+     {
+      "row": 59,
+      "col": 36
+     },
+     {
+      "row": 59,
+      "col": 37
+     },
+     {
+      "row": 59,
+      "col": 38
+     }
+    ],
+    "enemy": [
+     {
+      "row": 26,
+      "col": 24
+     },
+     {
+      "row": 26,
+      "col": 25
+     },
+     {
+      "row": 26,
+      "col": 26
+     },
+     {
+      "row": 26,
+      "col": 27
+     },
+     {
+      "row": 26,
+      "col": 28
+     },
+     {
+      "row": 26,
+      "col": 29
+     },
+     {
+      "row": 26,
+      "col": 30
+     },
+     {
+      "row": 26,
+      "col": 31
+     },
+     {
+      "row": 26,
+      "col": 32
+     },
+     {
+      "row": 26,
+      "col": 33
+     },
+     {
+      "row": 26,
+      "col": 34
+     },
+     {
+      "row": 26,
+      "col": 35
+     },
+     {
+      "row": 26,
+      "col": 36
+     },
+     {
+      "row": 26,
+      "col": 37
+     },
+     {
+      "row": 26,
+      "col": 38
+     },
+     {
+      "row": 26,
+      "col": 39
+     },
+     {
+      "row": 26,
+      "col": 40
+     },
+     {
+      "row": 27,
+      "col": 24
+     },
+     {
+      "row": 27,
+      "col": 25
+     },
+     {
+      "row": 27,
+      "col": 26
+     },
+     {
+      "row": 27,
+      "col": 27
+     },
+     {
+      "row": 27,
+      "col": 28
+     },
+     {
+      "row": 27,
+      "col": 29
+     },
+     {
+      "row": 27,
+      "col": 30
+     },
+     {
+      "row": 27,
+      "col": 31
+     },
+     {
+      "row": 27,
+      "col": 32
+     },
+     {
+      "row": 27,
+      "col": 33
+     },
+     {
+      "row": 27,
+      "col": 34
+     },
+     {
+      "row": 27,
+      "col": 35
+     },
+     {
+      "row": 27,
+      "col": 36
+     },
+     {
+      "row": 27,
+      "col": 37
+     },
+     {
+      "row": 27,
+      "col": 38
+     },
+     {
+      "row": 27,
+      "col": 39
+     },
+     {
+      "row": 27,
+      "col": 40
+     },
+     {
+      "row": 28,
+      "col": 24
+     },
+     {
+      "row": 28,
+      "col": 25
+     },
+     {
+      "row": 28,
+      "col": 26
+     },
+     {
+      "row": 28,
+      "col": 27
+     },
+     {
+      "row": 28,
+      "col": 28
+     },
+     {
+      "row": 28,
+      "col": 29
+     },
+     {
+      "row": 28,
+      "col": 30
+     },
+     {
+      "row": 28,
+      "col": 31
+     },
+     {
+      "row": 28,
+      "col": 32
+     },
+     {
+      "row": 28,
+      "col": 33
+     },
+     {
+      "row": 28,
+      "col": 34
+     },
+     {
+      "row": 28,
+      "col": 35
+     },
+     {
+      "row": 28,
+      "col": 36
+     },
+     {
+      "row": 28,
+      "col": 37
+     },
+     {
+      "row": 28,
+      "col": 38
+     },
+     {
+      "row": 28,
+      "col": 39
+     },
+     {
+      "row": 28,
+      "col": 40
+     },
+     {
+      "row": 29,
+      "col": 24
+     },
+     {
+      "row": 29,
+      "col": 25
+     },
+     {
+      "row": 29,
+      "col": 26
+     },
+     {
+      "row": 29,
+      "col": 27
+     },
+     {
+      "row": 29,
+      "col": 28
+     },
+     {
+      "row": 29,
+      "col": 29
+     },
+     {
+      "row": 29,
+      "col": 30
+     },
+     {
+      "row": 29,
+      "col": 31
+     },
+     {
+      "row": 29,
+      "col": 32
+     },
+     {
+      "row": 29,
+      "col": 33
+     },
+     {
+      "row": 29,
+      "col": 34
+     },
+     {
+      "row": 29,
+      "col": 35
+     },
+     {
+      "row": 29,
+      "col": 36
+     },
+     {
+      "row": 29,
+      "col": 37
+     },
+     {
+      "row": 29,
+      "col": 38
+     },
+     {
+      "row": 29,
+      "col": 39
+     },
+     {
+      "row": 29,
+      "col": 40
+     },
+     {
+      "row": 30,
+      "col": 24
+     },
+     {
+      "row": 30,
+      "col": 25
+     },
+     {
+      "row": 30,
+      "col": 26
+     },
+     {
+      "row": 30,
+      "col": 27
+     },
+     {
+      "row": 30,
+      "col": 28
+     },
+     {
+      "row": 30,
+      "col": 29
+     },
+     {
+      "row": 30,
+      "col": 30
+     },
+     {
+      "row": 30,
+      "col": 31
+     },
+     {
+      "row": 30,
+      "col": 33
+     },
+     {
+      "row": 30,
+      "col": 34
+     },
+     {
+      "row": 30,
+      "col": 35
+     },
+     {
+      "row": 30,
+      "col": 36
+     },
+     {
+      "row": 30,
+      "col": 37
+     },
+     {
+      "row": 30,
+      "col": 38
+     },
+     {
+      "row": 30,
+      "col": 39
+     },
+     {
+      "row": 30,
+      "col": 40
+     },
+     {
+      "row": 31,
+      "col": 24
+     },
+     {
+      "row": 31,
+      "col": 25
+     },
+     {
+      "row": 31,
+      "col": 26
+     },
+     {
+      "row": 31,
+      "col": 27
+     },
+     {
+      "row": 31,
+      "col": 28
+     },
+     {
+      "row": 31,
+      "col": 29
+     },
+     {
+      "row": 31,
+      "col": 30
+     },
+     {
+      "row": 31,
+      "col": 31
+     },
+     {
+      "row": 31,
+      "col": 32
+     },
+     {
+      "row": 31,
+      "col": 33
+     },
+     {
+      "row": 31,
+      "col": 34
+     },
+     {
+      "row": 31,
+      "col": 35
+     },
+     {
+      "row": 31,
+      "col": 36
+     },
+     {
+      "row": 31,
+      "col": 37
+     },
+     {
+      "row": 31,
+      "col": 38
+     },
+     {
+      "row": 31,
+      "col": 39
+     },
+     {
+      "row": 31,
+      "col": 40
+     },
+     {
+      "row": 32,
+      "col": 24
+     },
+     {
+      "row": 32,
+      "col": 25
+     },
+     {
+      "row": 32,
+      "col": 26
+     },
+     {
+      "row": 32,
+      "col": 27
+     },
+     {
+      "row": 32,
+      "col": 28
+     },
+     {
+      "row": 32,
+      "col": 29
+     },
+     {
+      "row": 32,
+      "col": 30
+     },
+     {
+      "row": 32,
+      "col": 31
+     },
+     {
+      "row": 32,
+      "col": 32
+     },
+     {
+      "row": 32,
+      "col": 33
+     },
+     {
+      "row": 32,
+      "col": 34
+     },
+     {
+      "row": 32,
+      "col": 35
+     },
+     {
+      "row": 32,
+      "col": 36
+     },
+     {
+      "row": 32,
+      "col": 37
+     },
+     {
+      "row": 32,
+      "col": 38
+     },
+     {
+      "row": 32,
+      "col": 39
+     },
+     {
+      "row": 32,
+      "col": 40
+     },
+     {
+      "row": 33,
+      "col": 24
+     },
+     {
+      "row": 33,
+      "col": 25
+     },
+     {
+      "row": 33,
+      "col": 26
+     },
+     {
+      "row": 33,
+      "col": 27
+     },
+     {
+      "row": 33,
+      "col": 28
+     },
+     {
+      "row": 33,
+      "col": 29
+     },
+     {
+      "row": 33,
+      "col": 30
+     },
+     {
+      "row": 33,
+      "col": 31
+     },
+     {
+      "row": 33,
+      "col": 32
+     },
+     {
+      "row": 33,
+      "col": 33
+     },
+     {
+      "row": 33,
+      "col": 34
+     },
+     {
+      "row": 33,
+      "col": 35
+     },
+     {
+      "row": 33,
+      "col": 36
+     },
+     {
+      "row": 33,
+      "col": 37
+     },
+     {
+      "row": 33,
+      "col": 38
+     },
+     {
+      "row": 33,
+      "col": 39
+     },
+     {
+      "row": 33,
+      "col": 40
+     },
+     {
+      "row": 34,
+      "col": 24
+     },
+     {
+      "row": 34,
+      "col": 25
+     },
+     {
+      "row": 34,
+      "col": 26
+     },
+     {
+      "row": 34,
+      "col": 27
+     },
+     {
+      "row": 34,
+      "col": 28
+     },
+     {
+      "row": 34,
+      "col": 29
+     },
+     {
+      "row": 34,
+      "col": 30
+     },
+     {
+      "row": 34,
+      "col": 31
+     },
+     {
+      "row": 34,
+      "col": 32
+     },
+     {
+      "row": 34,
+      "col": 33
+     },
+     {
+      "row": 34,
+      "col": 34
+     },
+     {
+      "row": 34,
+      "col": 35
+     },
+     {
+      "row": 34,
+      "col": 36
+     },
+     {
+      "row": 34,
+      "col": 37
+     },
+     {
+      "row": 34,
+      "col": 38
+     },
+     {
+      "row": 34,
+      "col": 39
+     },
+     {
+      "row": 34,
+      "col": 40
+     },
+     {
+      "row": 16,
+      "col": 29
+     },
+     {
+      "row": 16,
+      "col": 30
+     },
+     {
+      "row": 16,
+      "col": 31
+     },
+     {
+      "row": 16,
+      "col": 32
+     },
+     {
+      "row": 16,
+      "col": 33
+     },
+     {
+      "row": 16,
+      "col": 34
+     },
+     {
+      "row": 17,
+      "col": 29
+     },
+     {
+      "row": 17,
+      "col": 30
+     },
+     {
+      "row": 17,
+      "col": 31
+     },
+     {
+      "row": 17,
+      "col": 32
+     },
+     {
+      "row": 17,
+      "col": 33
+     },
+     {
+      "row": 17,
+      "col": 34
+     },
+     {
+      "row": 18,
+      "col": 29
+     },
+     {
+      "row": 18,
+      "col": 30
+     },
+     {
+      "row": 18,
+      "col": 31
+     },
+     {
+      "row": 18,
+      "col": 32
+     },
+     {
+      "row": 18,
+      "col": 33
+     },
+     {
+      "row": 18,
+      "col": 34
+     },
+     {
+      "row": 19,
+      "col": 29
+     },
+     {
+      "row": 19,
+      "col": 30
+     },
+     {
+      "row": 19,
+      "col": 31
+     },
+     {
+      "row": 19,
+      "col": 32
+     },
+     {
+      "row": 19,
+      "col": 33
+     },
+     {
+      "row": 19,
+      "col": 34
+     },
+     {
+      "row": 20,
+      "col": 29
+     },
+     {
+      "row": 20,
+      "col": 30
+     },
+     {
+      "row": 20,
+      "col": 31
+     },
+     {
+      "row": 20,
+      "col": 32
+     },
+     {
+      "row": 20,
+      "col": 33
+     },
+     {
+      "row": 20,
+      "col": 34
+     },
+     {
+      "row": 21,
+      "col": 29
+     },
+     {
+      "row": 21,
+      "col": 30
+     },
+     {
+      "row": 21,
+      "col": 31
+     },
+     {
+      "row": 21,
+      "col": 32
+     },
+     {
+      "row": 21,
+      "col": 33
+     },
+     {
+      "row": 21,
+      "col": 34
+     },
+     {
+      "row": 22,
+      "col": 29
+     },
+     {
+      "row": 22,
+      "col": 30
+     },
+     {
+      "row": 22,
+      "col": 31
+     },
+     {
+      "row": 22,
+      "col": 32
+     },
+     {
+      "row": 22,
+      "col": 33
+     },
+     {
+      "row": 22,
+      "col": 34
+     }
+    ]
+   },
+   "reinforcements": [],
+   "objectiveTiles": [
+    {
+     "row": 30,
+     "col": 32,
+     "label": "Covenant line — break it"
+    },
+    {
+     "row": 8,
+     "col": 32,
+     "label": "Reposition waypoint (t~50%)"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "Trail push (watched)",
+     "kind": "fast",
+     "waypoints": [
+      {
+       "row": 58,
+       "col": 32
+      },
+      {
+       "row": 48,
+       "col": 32
+      },
+      {
+       "row": 38,
+       "col": 32
+      },
+      {
+       "row": 31,
+       "col": 32
+      }
+     ]
+    },
+    {
+     "label": "Creek flank (exposed inlet)",
+     "kind": "flank",
+     "waypoints": [
+      {
+       "row": 58,
+       "col": 28
+      },
+      {
+       "row": 55,
+       "col": 12
+      },
+      {
+       "row": 50,
+       "col": 16
+      },
+      {
+       "row": 44,
+       "col": 18
+      },
+      {
+       "row": 38,
+       "col": 20
+      },
+      {
+       "row": 32,
+       "col": 24
+      }
+     ]
+    },
+    {
+     "label": "Thicket creep (blind)",
+     "kind": "covered",
+     "waypoints": [
+      {
+       "row": 58,
+       "col": 36
+      },
+      {
+       "row": 50,
+       "col": 44
+      },
+      {
+       "row": 38,
+       "col": 51
+      },
+      {
+       "row": 28,
+       "col": 51
+      },
+      {
+       "row": 28,
+       "col": 44
+      },
+      {
+       "row": 30,
+       "col": 40
+      }
+     ]
+    },
+    {
+     "label": "Reposition order",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 28,
+       "col": 32
+      },
+      {
+       "row": 18,
+       "col": 32
+      },
+      {
+       "row": 9,
+       "col": 32
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Three approaches: trail (direct, watched), creek (fast, exposed at the inlet), E thicket (slow, blind, ambush)."
+    },
+    {
+     "condition": "design-note",
+     "element": "The cohort judges you by how the story is told after — obey vs. finish is the whole evaluation."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "vrath_reaper",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Seats the trailhead forage by t2 — funds the wave you'll want at ~50%"
+     },
+     {
+      "unitId": "vrath_breaker",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "The line-break — Unstoppable ignores the forest tax"
+     },
+     {
+      "unitId": "vrath_charger",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Creek flank — 3+ move into the clearing is a Charge"
+     },
+     {
+      "unitId": "vrath_sworn",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Thicket creep — Relentless chains kills in the blind"
+     },
+     {
+      "unitId": "vrath_render",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Knocks Keepers off the outcrop rim"
+     },
+     {
+      "unitId": "vrath_forger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Firebase at the clearing mouth"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "covenant_keeper",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Clearing anchors on the outcrops"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Burns the trail approach"
+     },
+     {
+      "unitId": "covenant_arbiter",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Blunts the Charge before it lands"
+     },
+     {
+      "unitId": "covenant_witness",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Canopy vision against your blind approaches"
+     },
+     {
+      "unitId": "covenant_architect",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Rim fortifications"
+     },
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Reserve on the north trail — the reposition target"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "With it"
+     }
+    ],
+    "reinforcements": []
+   },
+   "economyNotes": {
+    "player": "Reaper (mv 2) seats the trailhead forage by t2 — funds the second wave you'll want when the order lands at ~50%.",
+    "enemy": "Expedition line, no economy — finite. That's why breaking it is possible before the reposition order."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       56,
+       59
+      ],
+      "cols": [
+       26,
+       38
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       26,
+       34
+      ],
+      "cols": [
+       24,
+       40
+      ]
+     },
+     {
+      "rows": [
+       16,
+       22
+      ],
+      "cols": [
+       29,
+       34
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "terrain": {
+  "seed": 42,
+  "warpStrength": 0.5,
+  "palette": {
+   "open": [
+    120,
+    132,
+    92
+   ],
+   "ruins": [
+    74,
+    82,
+    57
+   ],
+   "mountain": [
+    38,
+    42,
+    29
+   ],
+   "spire_wall": [
+    16,
+    18,
+    35
+   ],
+   "spire_floor": [
+    90,
+    107,
+    135
+   ]
+  },
+  "amplitude": {
+   "open": 20,
+   "ruins": 24,
+   "mountain": 32,
+   "spire_wall": 14,
+   "spire_floor": 22
+  },
+  "blockingRenderTypes": [
+   "mountain",
+   "spire_wall"
+  ],
+  "renderTypeOverrides": [],
+  "structureRenderType": "ruins",
+  "decorations": {
+   "boulder": [],
+   "crevasse": []
+  },
+  "ruinsPerturb": {
+   "regions": [],
+   "erodeProb": 0.45,
+   "expandProb": 0.35
+  },
+  "spriteAssets": {
+   "resource": "/game/assets/terrain/shared/resource.png",
+   "puzzle": "/game/assets/terrain/shared/puzzle.png"
+  },
+  "paintedTiles": {
+   "open": "/game/assets/terrain/yelvar/open.png",
+   "ruins": "/game/assets/terrain/yelvar/harsh.png",
+   "mountain": "/game/assets/terrain/yelvar/impassable.png"
+  },
+  "paintedBlurSigma": {
+   "open": 5,
+   "ruins": 5,
+   "mountain": 5,
+   "spire_wall": 0,
+   "spire_floor": 0
+  },
+  "paintedOutputSize": 3072,
+  "resourceAlphaScale": 0.6,
+  "fractal": {
+   "fine": {
+    "baseScale": 2,
+    "octaves": 4,
+    "seedOffset": 0
+   },
+   "medium": {
+    "baseScale": 6,
+    "octaves": 3,
+    "seedOffset": 9999
+   },
+   "warpX": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 1111
+   },
+   "warpY": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 2222
+   },
+   "fineMediumMix": [
+    0.6,
+    0.4
+   ]
+  },
+  "boundaryAntiAliasStrength": 0.15,
+  "rotationHash": [
+   137,
+   31
+  ]
+ }
+}

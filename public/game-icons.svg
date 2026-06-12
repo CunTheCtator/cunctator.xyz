@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  
+  
+
+  
+
+  <symbol id="ic-status-slowed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 6.5l5 5 5-5"></path>
+    <path d="M7 13l5 5 5-5"></path>
+  </symbol>
+
+  <symbol id="ic-status-fortified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3l7.5 3v5.2c0 4.8-3.2 7.9-7.5 9.8-4.3-1.9-7.5-5-7.5-9.8V6z"></path>
+  </symbol>
+
+  <symbol id="ic-status-disrupted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.5 12H7l2-5.5 3 11 2-5.5h1.5"></path>
+    <path d="M19.5 12h2"></path>
+  </symbol>
+
+  <symbol id="ic-status-burning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3c3 3.8 6 6.1 6 9.9a6 6 0 0 1-12 0C6 9.1 9 6.8 12 3z"></path>
+    <path d="M9.8 14.8c0 1.7.9 2.8 2.2 3.3 1.3-.5 2.2-1.6 2.2-3.3"></path>
+  </symbol>
+
+  <symbol id="ic-status-marked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"></circle>
+    <path d="M12 2.5V6M12 18v3.5M2.5 12H6M18 12h3.5"></path>
+    <circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none"></circle>
+  </symbol>
+
+  <symbol id="ic-status-suppressed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5V13"></path>
+    <path d="M8.5 9.5L12 13l3.5-3.5"></path>
+    <path d="M6 17.5h12"></path>
+  </symbol>
+
+  <symbol id="ic-status-famine" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 12a7.5 7.5 0 0 0 15 0z"></path>
+    <path d="M9.5 6.5h5"></path>
+  </symbol>
+
+  <symbol id="ic-status-inspired" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 2.5L5.5 13h5l-1 8.5L17 11h-5z"></path>
+  </symbol>
+
+  <symbol id="ic-status-blinded" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 12c2.5-4 5.5-6 9-6s6.5 2 9 6c-2.5 4-5.5 6-9 6s-6.5-2-9-6z"></path>
+    <path d="M5 19L19 5"></path>
+  </symbol>
+
+  <symbol id="ic-status-rallied" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 11l5-5 5 5"></path>
+    <path d="M7 17.5l5-5 5 5"></path>
+  </symbol>
+
+  
+
+  <symbol id="ic-struct-barrier" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.5" y="8" width="17" height="9" rx="1"></rect>
+    <path d="M3.5 12.5h17M9.2 8v4.5M14.8 12.5V17"></path>
+  </symbol>
+
+  <symbol id="ic-struct-fortified-wall" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 20.5V8h3.5V5h3v3h3V5h3v3H20v12.5z"></path>
+    <path d="M4 14.5h16"></path>
+  </symbol>
+
+  <symbol id="ic-struct-relay-post" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="4" r="1.2" fill="currentColor" stroke="none"></circle>
+    <path d="M12 6.5v6"></path>
+    <path d="M12 12.5L6.5 20.5M12 12.5l5.5 8M9.2 16.6h5.6"></path>
+  </symbol>
+
+  <symbol id="ic-struct-watchtower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.5 10L8 5.5h8l1.5 4.5z"></path>
+    <path d="M9 20.5V10M15 10v10.5"></path>
+    <path d="M12 13.5V16"></path>
+    <path d="M5 20.5h14"></path>
+  </symbol>
+
+  <symbol id="ic-struct-turret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 18.5a6 6 0 0 1 12 0"></path>
+    <path d="M3.5 18.5h17"></path>
+    <path d="M16.2 13.8L20 10"></path>
+  </symbol>
+
+  <symbol id="ic-struct-sanctified-ground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 9.5l5 3.5-5 3.5L7 13z"></path>
+    <path d="M12 3.5v2.7M6 6l2 2M18 6l-2 2"></path>
+  </symbol>
+
+  <symbol id="ic-struct-resonance-beacon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="14" r="1.2" fill="currentColor" stroke="none"></circle>
+    <path d="M12 20.5v-4"></path>
+    <path d="M8.5 10.5a4.9 4.9 0 0 1 7 0"></path>
+    <path d="M5.6 7.6a9 9 0 0 1 12.8 0"></path>
+  </symbol>
+
+  <symbol id="ic-struct-sensor-array" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.5"></circle>
+    <path d="M12 12V4.3M12 12l5.4 5.4"></path>
+    <circle cx="16" cy="8.5" r="1.15" fill="currentColor" stroke="none"></circle>
+  </symbol>
+
+  <symbol id="ic-struct-supply-cache" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="7.5" width="16" height="13" rx="1.2"></rect>
+    <path d="M4 11.5h16"></path>
+    <circle cx="12" cy="16" r="2.3"></circle>
+    <path d="M13.6 14.4l1-1M10.4 14.4l-1-1M13.6 17.6l1 1M10.4 17.6l-1 1"></path>
+  </symbol>
+
+  <symbol id="ic-struct-spike-wall" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 20.5v-6h16v6z"></path>
+    <path d="M4.5 14.5l2.2-4 2.2 4M9.8 14.5l2.2-4 2.2 4M15.1 14.5l2.2-4 2.2 4"></path>
+  </symbol>
+
+  <symbol id="ic-struct-war-totem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.5 20.5V5h7v15.5"></path>
+    <path d="M8.5 9.5h7M8.5 14h7"></path>
+    <path d="M8.5 5.5L6 3.5M15.5 5.5L18 3.5"></path>
+    <path d="M5.5 20.5h13"></path>
+  </symbol>
+
+  <symbol id="ic-struct-booby-trap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="13.5" r="5"></circle>
+    <path d="M12 5.8v2.7M12 18.5v2.7M4.3 13.5H7M17 13.5h2.7M6.9 8.4l1.9 1.9M17.1 8.4l-1.9 1.9"></path>
+    <circle cx="12" cy="13.5" r="1.15" fill="currentColor" stroke="none"></circle>
+  </symbol>
+
+  <symbol id="ic-struct-scrap-turret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.5 18.5a5.5 5.5 0 0 1 11 0"></path>
+    <path d="M4 18.5h16"></path>
+    <path d="M15.9 14.6l3.9-3.9"></path>
+    <path d="M10.6 14.2l2.8 2.8M13.4 14.2l-2.8 2.8"></path>
+  </symbol>
+
+  
+
+  <symbol id="ic-state-locked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6.5" y="10.5" width="11" height="9" rx="1.5"></rect>
+    <path d="M8.8 10.5V8.2a3.2 3.2 0 0 1 6.4 0v2.3"></path>
+  </symbol>
+
+  <symbol id="ic-state-cost" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5.2"></circle>
+    <path d="M15.7 8.3l1.5-1.5M8.3 8.3L6.8 6.8M15.7 15.7l1.5 1.5M8.3 15.7l-1.5 1.5"></path>
+  </symbol>
+
+  <symbol id="ic-state-cooldown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 12a7 7 0 1 1-7-7c1.96 0 3.83.78 5.24 2.13L19 8.9"></path>
+    <path d="M19 5v3.9h-3.9"></path>
+  </symbol>
+
+  
+
+  <symbol id="ic-role-commander" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.5 21V3.5"></path>
+    <path d="M7.5 4.5H17l-2.6 3.75L17 12H7.5"></path>
+  </symbol>
+
+  <symbol id="ic-role-builder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.2 8.2l5-5 5.4 5.4-5 5z"></path>
+    <path d="M12.4 11.4l7.3 7.3-2 2-7.3-7.3"></path>
+  </symbol>
+
+  <symbol id="ic-role-extractor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 5h6l3.5 4.2L12 19.5 5.5 9.2z"></path>
+    <path d="M5.5 9.2h13"></path>
+    <path d="M9 5l3 4.2L15 5M12 9.2V19.5"></path>
+  </symbol>
+
+  
+
+  <symbol id="ic-class-heavy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.8 11V8.2a3.2 3.2 0 0 1 6.4 0V11"></path>
+    <circle cx="12" cy="15.3" r="5.2"></circle>
+  </symbol>
+
+  <symbol id="ic-class-ranged" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 19L18.6 5.4"></path>
+    <path d="M11.7 5.4h6.9v6.9"></path>
+  </symbol>
+
+  <symbol id="ic-class-support" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="7.8"></circle>
+    <path d="M12 8.6v6.8M8.6 12h6.8"></path>
+  </symbol>
+
+  <symbol id="ic-class-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 6.5l5.5 5.5L6 17.5"></path>
+    <path d="M12.5 6.5L18 12l-5.5 5.5"></path>
+  </symbol>
+
+  <symbol id="ic-class-disrupt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4.5v15M5.5 8.25l13 7.5M5.5 15.75l13-7.5"></path>
+  </symbol>
+
+  <symbol id="ic-class-wildcard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4.5" y="4.5" width="15" height="15" rx="2.5"></rect>
+    <circle cx="9" cy="9" r="1.15" fill="currentColor" stroke="none"></circle>
+    <circle cx="12" cy="12" r="1.15" fill="currentColor" stroke="none"></circle>
+    <circle cx="15" cy="15" r="1.15" fill="currentColor" stroke="none"></circle>
+  </symbol>
+</svg>

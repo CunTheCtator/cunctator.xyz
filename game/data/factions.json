@@ -1,0 +1,66 @@
+[
+  {
+    "id": "covenant",
+    "name": "The Covenant",
+    "species": "Aevari",
+    "color": "#ad85ec",
+    "playStyle": "Support and control. Buff and debuff heavy with damage-over-time focus. Rewards patient, methodical play.",
+    "remnantRelation": "Research material. Technological advancement sanctioned by the god. No theological conflict — pure utility.",
+    "amplificationType": "Precision. Less raw output than other factions, more control over what gets amplified and how.",
+    "consequenceVariable": {
+      "id": "caevyn_proximity",
+      "label": "Caevyn Proximity",
+      "description": "Tracks decisions that pull Caevyn toward the mission site. Determines death location.",
+      "lowThreshold": 30,
+      "highThreshold": 70
+    }
+  },
+  {
+    "id": "syndicate",
+    "name": "The Syndicate",
+    "species": "Human",
+    "color": "#5b9be6",
+    "playStyle": "Direct and ranged. Generalist toolbox with light buff and debuff capability. Rewards adaptability and information use.",
+    "remnantRelation": "Commodity and leverage. Priced and positioned commercially. Control access, create dependency.",
+    "amplificationType": "Controlled. Precision amplification — not the strongest output, but the most manageable.",
+    "consequenceVariable": {
+      "id": "syndicate_distrust",
+      "label": "Syndicate Distrust",
+      "description": "Tracks decisions signaling the commander operates outside expected parameters. Determines mission 3 stacking.",
+      "lowThreshold": 30,
+      "highThreshold": 70
+    }
+  },
+  {
+    "id": "vrath",
+    "name": "The Eternal Vrath",
+    "species": "Vrakthi",
+    "color": "#c13a33",
+    "playStyle": "Close range, direct damage. Almost no buffs or debuffs. Rewards aggression and forward pressure.",
+    "remnantRelation": "Amplification equipment. Makes soldiers hit harder. That is the entirety of the interest.",
+    "amplificationType": "Raw and overwhelming. The highest output of any faction. Unsubtle.",
+    "consequenceVariable": {
+      "id": "cultural_disrespect",
+      "label": "Cultural Disrespect",
+      "description": "Tracks decisions that fail to demonstrate understanding of Vrath values. Determines defection rate in mission 3.",
+      "lowThreshold": 30,
+      "highThreshold": 70
+    }
+  },
+  {
+    "id": "pirates",
+    "name": "The Pirates",
+    "species": "Mixed",
+    "color": "#e3b341",
+    "playStyle": "Eclectic and unpredictable. Slightly stronger than equivalent faction units. No doctrine — just results.",
+    "remnantRelation": "Contract targets. The buyer pays; the crew delivers. The crew does not ask what the buyer wants them for.",
+    "amplificationType": "Varied. Multi-species crew means remnant amplification affects different crew members differently.",
+    "consequenceVariable": {
+      "id": "captain_trust",
+      "label": "Captain Trust",
+      "description": "Tracks decisions that build or erode Halloran's trust in the commander. Determines mission 3 crew support.",
+      "lowThreshold": 30,
+      "highThreshold": 70
+    }
+  }
+]

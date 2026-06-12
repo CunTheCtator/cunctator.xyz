@@ -1,0 +1,147 @@
+[
+  {
+    "id": "barrier",
+    "name": "Barrier",
+    "faction": "shared",
+    "category": "defensive",
+    "currencyCost": 50,
+    "durability": 30,
+    "repairCostPerPoint": 2,
+    "description": "Blocks movement for all units. Provides cover to adjacent friendly units, reducing incoming damage.",
+    "effect": { "type": "block_movement", "coverBonus": 1 }
+  },
+  {
+    "id": "fortified_wall",
+    "name": "Fortified Wall",
+    "faction": "shared",
+    "category": "defensive",
+    "currencyCost": 120,
+    "durability": 60,
+    "repairCostPerPoint": 2,
+    "description": "Heavy barrier. Blocks movement. Provides stronger cover bonus than a standard Barrier. Upgrade path from Barrier — Builder can upgrade an existing Barrier for the cost difference.",
+    "upgradeFrom": "barrier",
+    "upgradeCost": 70,
+    "effect": { "type": "block_movement", "coverBonus": 2 }
+  },
+  {
+    "id": "relay_post",
+    "name": "Relay Post",
+    "faction": "shared",
+    "category": "economic",
+    "currencyCost": 150,
+    "durability": 40,
+    "repairCostPerPoint": 2,
+    "description": "Amplifies the Extractor's output. Must be placed within 4 tiles of the Extractor to take effect. Multiple Relay Posts stack.",
+    "effect": { "type": "extractor_amplify", "bonusPerTurn": 25, "range": 4 }
+  },
+  {
+    "id": "watchtower",
+    "name": "Watchtower",
+    "faction": "shared",
+    "category": "military",
+    "currencyCost": 100,
+    "durability": 35,
+    "repairCostPerPoint": 2,
+    "description": "Passively removes fog of war in a radius. Units inside the watchtower's vision zone are always visible regardless of fog.",
+    "effect": { "type": "vision", "radius": 4 }
+  },
+  {
+    "id": "turret",
+    "name": "Turret",
+    "faction": "shared",
+    "category": "military",
+    "currencyCost": 175,
+    "durability": 45,
+    "repairCostPerPoint": 2,
+    "description": "Automatically attacks the nearest visible enemy unit each turn. Low damage. Does not require an action to fire.",
+    "effect": { "type": "auto_attack", "damage": 3, "range": 3, "targetPriority": "nearest_visible_enemy" }
+  },
+  {
+    "id": "covenant_sanctified_ground",
+    "name": "Sanctified Ground",
+    "faction": "covenant",
+    "category": "defensive",
+    "currencyCost": 200,
+    "durability": 50,
+    "repairCostPerPoint": 2,
+    "description": "Tiles adjacent to this structure apply a minor DoT to any enemy unit that enters them. Friendly units are unaffected.",
+    "effect": { "type": "dot_aura", "damage": 2, "duration": 1, "radius": 1, "affectsEnemies": true, "affectsAllies": false }
+  },
+  {
+    "id": "covenant_resonance_beacon",
+    "name": "Resonance Beacon",
+    "faction": "covenant",
+    "category": "military",
+    "currencyCost": 225,
+    "durability": 50,
+    "repairCostPerPoint": 2,
+    "description": "Amplifies all Cantor DoT effects within range. DoTs applied by Cantors within 5 tiles deal increased damage per tick.",
+    "effect": { "type": "ability_amplify", "targetUnitRole": "cantor", "effectType": "dot", "magnitude": 2, "range": 5 }
+  },
+  {
+    "id": "syndicate_sensor_array",
+    "name": "Sensor Array",
+    "faction": "syndicate",
+    "category": "military",
+    "currencyCost": 220,
+    "durability": 50,
+    "repairCostPerPoint": 2,
+    "description": "Reveals all enemy units within a large radius regardless of fog of war. Enemy units in range are Marked automatically.",
+    "effect": { "type": "vision", "radius": 6, "marksEnemies": true }
+  },
+  {
+    "id": "syndicate_supply_cache",
+    "name": "Supply Cache",
+    "faction": "syndicate",
+    "category": "economic",
+    "currencyCost": 200,
+    "durability": 50,
+    "repairCostPerPoint": 2,
+    "description": "Generates a small amount of global currency each turn independently of the Extractor. Does not require resource tile proximity.",
+    "effect": { "type": "passive_income", "currencyPerTurn": 20 }
+  },
+  {
+    "id": "vrath_spike_wall",
+    "name": "Spike Wall",
+    "faction": "vrath",
+    "category": "defensive",
+    "currencyCost": 200,
+    "durability": 50,
+    "repairCostPerPoint": 2,
+    "description": "Functions as a Barrier. Additionally, any unit that destroys this structure takes heavy damage from the spikes.",
+    "effect": { "type": "block_movement", "coverBonus": 1, "destroyDamage": 15 }
+  },
+  {
+    "id": "vrath_war_totem",
+    "name": "War Totem",
+    "faction": "vrath",
+    "category": "military",
+    "currencyCost": 225,
+    "durability": 50,
+    "repairCostPerPoint": 2,
+    "description": "Increases the attack stat of all Vrath units within range. The bonus applies passively while the totem stands.",
+    "effect": { "type": "stat_aura", "stat": "attack", "magnitude": 3, "range": 4, "affectsAllies": true }
+  },
+  {
+    "id": "pirates_booby_trap",
+    "name": "Booby Trap",
+    "faction": "pirates",
+    "category": "defensive",
+    "currencyCost": 175,
+    "durability": 50,
+    "repairCostPerPoint": 2,
+    "description": "Invisible to enemy units. Detonates when an enemy unit enters the tile, dealing heavy damage. Destroyed on detonation.",
+    "effect": { "type": "proximity_trap", "damage": 20, "invisible": true, "detonatesOnContact": true, "destroyedOnDetonation": true }
+  },
+  {
+    "id": "pirates_scrap_turret",
+    "name": "Scrap Turret",
+    "faction": "pirates",
+    "category": "military",
+    "currencyCost": 200,
+    "durability": 50,
+    "repairCostPerPoint": 2,
+    "description": "Stronger than a standard Turret but unreliable. Has a 25% chance to malfunction and not fire each turn.",
+    "effect": { "type": "auto_attack", "damage": 6, "range": 4, "targetPriority": "nearest_visible_enemy", "malfunctionChance": 0.25 }
+  }
+]

@@ -1,0 +1,4747 @@
+{
+ "id": "ac-411",
+ "name": "AC-411 — Marsh",
+ "world": "AC-411",
+ "description": "A ladder of firm causeways over open marsh. Moving on firm ground is twice as fast — so the rails and rungs are the map, and the tussock islands are the only honest shortcuts. Three landmasses hang off the edges: two peninsulas and a lake shore.",
+ "ambientRegister": "Flat grey, ground-level mist, muffled sound. Water and mud underfoot.",
+ "designRationale": "Movement-cost map: routes are priced, not walled. The causeway ladder gives clean fast routes that the enemy can read; the tussock chains give slow concealed ones. No one-tiling — every rail and rung is 3–4 wide. The finale's three fronts each own a map edge, and the hub rung is where they collide.",
+ "usedInMissions": [
+  {
+   "campaign": "vrath",
+   "mission": 2,
+   "side": "player"
+  },
+  {
+   "campaign": "vrath",
+   "mission": 3,
+   "side": "player"
+  }
+ ],
+ "grid": {
+  "format": "region-spec",
+  "size": 64,
+  "implementation": "Fill defaultTile. Apply regions in order (later wins). Apply tileOverrides. Regions flagged interference reduce vision by 2 inside the zone.",
+  "defaultTile": {
+   "type": "marsh",
+   "movementCost": 2,
+   "blocksVision": false,
+   "destructible": false,
+   "resource": false
+  },
+  "regions": [
+   {
+    "label": "North rock line",
+    "rows": [
+     0,
+     2
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "South rim",
+    "rows": [
+     61,
+     63
+    ],
+    "cols": [
+     0,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West rim",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     0,
+     2
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East rim",
+    "rows": [
+     3,
+     60
+    ],
+    "cols": [
+     61,
+     63
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "North firm shore",
+    "rows": [
+     3,
+     8
+    ],
+    "cols": [
+     3,
+     60
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West rail (N-S causeway)",
+    "rows": [
+     8,
+     56
+    ],
+    "cols": [
+     18,
+     21
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East rail (N-S causeway)",
+    "rows": [
+     8,
+     56
+    ],
+    "cols": [
+     42,
+     45
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "North rung",
+    "rows": [
+     18,
+     21
+    ],
+    "cols": [
+     21,
+     42
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Hub rung (centre)",
+    "rows": [
+     34,
+     37
+    ],
+    "cols": [
+     21,
+     42
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "South rung",
+    "rows": [
+     50,
+     53
+    ],
+    "cols": [
+     21,
+     42
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West lake (impassable sink)",
+    "rows": [
+     24,
+     40
+    ],
+    "cols": [
+     5,
+     12
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "West shoreline (landing ground)",
+    "rows": [
+     20,
+     46
+    ],
+    "cols": [
+     13,
+     16
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East peninsula",
+    "rows": [
+     12,
+     24
+    ],
+    "cols": [
+     50,
+     59
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "East peninsula rock spur",
+    "rows": [
+     14,
+     17
+    ],
+    "cols": [
+     56,
+     59
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "South peninsula",
+    "rows": [
+     46,
+     58
+    ],
+    "cols": [
+     48,
+     59
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "South peninsula rock spur",
+    "rows": [
+     52,
+     55
+    ],
+    "cols": [
+     54,
+     58
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Tussocks — N marsh",
+    "rows": [
+     12,
+     15
+    ],
+    "cols": [
+     26,
+     30
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Tussocks — NW basin",
+    "rows": [
+     24,
+     28
+    ],
+    "cols": [
+     24,
+     27
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Tussocks — NE basin",
+    "rows": [
+     26,
+     30
+    ],
+    "cols": [
+     36,
+     39
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Tussocks — SW basin",
+    "rows": [
+     42,
+     46
+    ],
+    "cols": [
+     26,
+     29
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Tussocks — S basin",
+    "rows": [
+     40,
+     43
+    ],
+    "cols": [
+     34,
+     37
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Tussocks — peninsula approach",
+    "rows": [
+     12,
+     16
+    ],
+    "cols": [
+     46,
+     49
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Tussocks — SE marsh",
+    "rows": [
+     54,
+     57
+    ],
+    "cols": [
+     36,
+     39
+    ],
+    "tile": {
+     "type": "ruins",
+     "movementCost": 2,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Deep marsh — N pocket",
+    "rows": [
+     28,
+     32
+    ],
+    "cols": [
+     28,
+     33
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "label": "Deep marsh — S pocket",
+    "rows": [
+     44,
+     47
+    ],
+    "cols": [
+     30,
+     33
+    ],
+    "tile": {
+     "type": "mountain",
+     "movementCost": 99,
+     "blocksVision": true,
+     "destructible": false,
+     "resource": false
+    }
+   }
+  ],
+  "tileOverrides": [
+   {
+    "row": 5,
+    "col": 32,
+    "label": "Transport pad (extraction / endings)",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 35,
+    "col": 32,
+    "label": "Forward position — hub rung",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 18,
+    "col": 54,
+    "label": "Entrenchment works (Syndicate, M2)",
+    "tile": {
+     "type": "structure",
+     "movementCost": 99,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": false
+    }
+   },
+   {
+    "row": 6,
+    "col": 28,
+    "label": "Pad cache — Reaper seat, t2 from the N shore",
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 20,
+    "col": 54,
+    "label": "Peninsula cache — E",
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   },
+   {
+    "row": 50,
+    "col": 52,
+    "label": "Peninsula cache — S",
+    "tile": {
+     "type": "ruins",
+     "movementCost": 1,
+     "blocksVision": false,
+     "destructible": false,
+     "resource": true
+    }
+   }
+  ]
+ },
+ "resourceTiles": [
+  {
+   "row": 6,
+   "col": 28
+  },
+  {
+   "row": 20,
+   "col": 54
+  },
+  {
+   "row": 50,
+   "col": 52
+  }
+ ],
+ "keyFeatures": [
+  {
+   "id": "ac-411_hub_rung",
+   "type": "objective",
+   "label": "Hub Rung",
+   "description": "where all three fronts collide",
+   "at": {
+    "row": 35,
+    "col": 33
+   }
+  },
+  {
+   "id": "ac-411_transport_pad",
+   "type": "landmark",
+   "label": "Transport Pad",
+   "description": "all three endings play here",
+   "at": {
+    "row": 5,
+    "col": 33
+   }
+  },
+  {
+   "id": "ac-411_entrenchment_works",
+   "type": "objective",
+   "label": "Entrenchment Works",
+   "description": "M2 — break before it finishes",
+   "at": {
+    "row": 18,
+    "col": 55
+   }
+  },
+  {
+   "id": "ac-411_tussock_chains",
+   "type": "terrain",
+   "label": "Tussock Chains",
+   "description": "slow, concealed wade routes",
+   "at": {
+    "row": 28,
+    "col": 38
+   }
+  },
+  {
+   "id": "ac-411_west_shoreline",
+   "type": "spawn",
+   "label": "West Shoreline",
+   "description": "Covenant landing (M3)",
+   "at": {
+    "row": 30,
+    "col": 14
+   }
+  }
+ ],
+ "defaultSpawnZones": {
+  "player": [
+   {
+    "row": 3,
+    "col": 20
+   },
+   {
+    "row": 3,
+    "col": 21
+   },
+   {
+    "row": 3,
+    "col": 22
+   },
+   {
+    "row": 3,
+    "col": 23
+   },
+   {
+    "row": 3,
+    "col": 24
+   },
+   {
+    "row": 3,
+    "col": 25
+   },
+   {
+    "row": 3,
+    "col": 26
+   },
+   {
+    "row": 3,
+    "col": 27
+   },
+   {
+    "row": 3,
+    "col": 28
+   },
+   {
+    "row": 3,
+    "col": 29
+   },
+   {
+    "row": 3,
+    "col": 30
+   },
+   {
+    "row": 3,
+    "col": 31
+   },
+   {
+    "row": 3,
+    "col": 32
+   },
+   {
+    "row": 3,
+    "col": 33
+   },
+   {
+    "row": 3,
+    "col": 34
+   },
+   {
+    "row": 3,
+    "col": 35
+   },
+   {
+    "row": 3,
+    "col": 36
+   },
+   {
+    "row": 3,
+    "col": 37
+   },
+   {
+    "row": 3,
+    "col": 38
+   },
+   {
+    "row": 3,
+    "col": 39
+   },
+   {
+    "row": 3,
+    "col": 40
+   },
+   {
+    "row": 3,
+    "col": 41
+   },
+   {
+    "row": 3,
+    "col": 42
+   },
+   {
+    "row": 3,
+    "col": 43
+   },
+   {
+    "row": 3,
+    "col": 44
+   },
+   {
+    "row": 4,
+    "col": 20
+   },
+   {
+    "row": 4,
+    "col": 21
+   },
+   {
+    "row": 4,
+    "col": 22
+   },
+   {
+    "row": 4,
+    "col": 23
+   },
+   {
+    "row": 4,
+    "col": 24
+   },
+   {
+    "row": 4,
+    "col": 25
+   },
+   {
+    "row": 4,
+    "col": 26
+   },
+   {
+    "row": 4,
+    "col": 27
+   },
+   {
+    "row": 4,
+    "col": 28
+   },
+   {
+    "row": 4,
+    "col": 29
+   },
+   {
+    "row": 4,
+    "col": 30
+   },
+   {
+    "row": 4,
+    "col": 31
+   },
+   {
+    "row": 4,
+    "col": 32
+   },
+   {
+    "row": 4,
+    "col": 33
+   },
+   {
+    "row": 4,
+    "col": 34
+   },
+   {
+    "row": 4,
+    "col": 35
+   },
+   {
+    "row": 4,
+    "col": 36
+   },
+   {
+    "row": 4,
+    "col": 37
+   },
+   {
+    "row": 4,
+    "col": 38
+   },
+   {
+    "row": 4,
+    "col": 39
+   },
+   {
+    "row": 4,
+    "col": 40
+   },
+   {
+    "row": 4,
+    "col": 41
+   },
+   {
+    "row": 4,
+    "col": 42
+   },
+   {
+    "row": 4,
+    "col": 43
+   },
+   {
+    "row": 4,
+    "col": 44
+   },
+   {
+    "row": 5,
+    "col": 20
+   },
+   {
+    "row": 5,
+    "col": 21
+   },
+   {
+    "row": 5,
+    "col": 22
+   },
+   {
+    "row": 5,
+    "col": 23
+   },
+   {
+    "row": 5,
+    "col": 24
+   },
+   {
+    "row": 5,
+    "col": 25
+   },
+   {
+    "row": 5,
+    "col": 26
+   },
+   {
+    "row": 5,
+    "col": 27
+   },
+   {
+    "row": 5,
+    "col": 28
+   },
+   {
+    "row": 5,
+    "col": 29
+   },
+   {
+    "row": 5,
+    "col": 30
+   },
+   {
+    "row": 5,
+    "col": 31
+   },
+   {
+    "row": 5,
+    "col": 33
+   },
+   {
+    "row": 5,
+    "col": 34
+   },
+   {
+    "row": 5,
+    "col": 35
+   },
+   {
+    "row": 5,
+    "col": 36
+   },
+   {
+    "row": 5,
+    "col": 37
+   },
+   {
+    "row": 5,
+    "col": 38
+   },
+   {
+    "row": 5,
+    "col": 39
+   },
+   {
+    "row": 5,
+    "col": 40
+   },
+   {
+    "row": 5,
+    "col": 41
+   },
+   {
+    "row": 5,
+    "col": 42
+   },
+   {
+    "row": 5,
+    "col": 43
+   },
+   {
+    "row": 5,
+    "col": 44
+   },
+   {
+    "row": 6,
+    "col": 20
+   },
+   {
+    "row": 6,
+    "col": 21
+   },
+   {
+    "row": 6,
+    "col": 22
+   },
+   {
+    "row": 6,
+    "col": 23
+   },
+   {
+    "row": 6,
+    "col": 24
+   },
+   {
+    "row": 6,
+    "col": 25
+   },
+   {
+    "row": 6,
+    "col": 26
+   },
+   {
+    "row": 6,
+    "col": 27
+   },
+   {
+    "row": 6,
+    "col": 28
+   },
+   {
+    "row": 6,
+    "col": 29
+   },
+   {
+    "row": 6,
+    "col": 30
+   },
+   {
+    "row": 6,
+    "col": 31
+   },
+   {
+    "row": 6,
+    "col": 32
+   },
+   {
+    "row": 6,
+    "col": 33
+   },
+   {
+    "row": 6,
+    "col": 34
+   },
+   {
+    "row": 6,
+    "col": 35
+   },
+   {
+    "row": 6,
+    "col": 36
+   },
+   {
+    "row": 6,
+    "col": 37
+   },
+   {
+    "row": 6,
+    "col": 38
+   },
+   {
+    "row": 6,
+    "col": 39
+   },
+   {
+    "row": 6,
+    "col": 40
+   },
+   {
+    "row": 6,
+    "col": 41
+   },
+   {
+    "row": 6,
+    "col": 42
+   },
+   {
+    "row": 6,
+    "col": 43
+   },
+   {
+    "row": 6,
+    "col": 44
+   },
+   {
+    "row": 7,
+    "col": 20
+   },
+   {
+    "row": 7,
+    "col": 21
+   },
+   {
+    "row": 7,
+    "col": 22
+   },
+   {
+    "row": 7,
+    "col": 23
+   },
+   {
+    "row": 7,
+    "col": 24
+   },
+   {
+    "row": 7,
+    "col": 25
+   },
+   {
+    "row": 7,
+    "col": 26
+   },
+   {
+    "row": 7,
+    "col": 27
+   },
+   {
+    "row": 7,
+    "col": 28
+   },
+   {
+    "row": 7,
+    "col": 29
+   },
+   {
+    "row": 7,
+    "col": 30
+   },
+   {
+    "row": 7,
+    "col": 31
+   },
+   {
+    "row": 7,
+    "col": 32
+   },
+   {
+    "row": 7,
+    "col": 33
+   },
+   {
+    "row": 7,
+    "col": 34
+   },
+   {
+    "row": 7,
+    "col": 35
+   },
+   {
+    "row": 7,
+    "col": 36
+   },
+   {
+    "row": 7,
+    "col": 37
+   },
+   {
+    "row": 7,
+    "col": 38
+   },
+   {
+    "row": 7,
+    "col": 39
+   },
+   {
+    "row": 7,
+    "col": 40
+   },
+   {
+    "row": 7,
+    "col": 41
+   },
+   {
+    "row": 7,
+    "col": 42
+   },
+   {
+    "row": 7,
+    "col": 43
+   },
+   {
+    "row": 7,
+    "col": 44
+   }
+  ],
+  "enemy": [
+   {
+    "row": 14,
+    "col": 50
+   },
+   {
+    "row": 14,
+    "col": 51
+   },
+   {
+    "row": 14,
+    "col": 52
+   },
+   {
+    "row": 14,
+    "col": 53
+   },
+   {
+    "row": 14,
+    "col": 54
+   },
+   {
+    "row": 14,
+    "col": 55
+   },
+   {
+    "row": 15,
+    "col": 50
+   },
+   {
+    "row": 15,
+    "col": 51
+   },
+   {
+    "row": 15,
+    "col": 52
+   },
+   {
+    "row": 15,
+    "col": 53
+   },
+   {
+    "row": 15,
+    "col": 54
+   },
+   {
+    "row": 15,
+    "col": 55
+   },
+   {
+    "row": 16,
+    "col": 50
+   },
+   {
+    "row": 16,
+    "col": 51
+   },
+   {
+    "row": 16,
+    "col": 52
+   },
+   {
+    "row": 16,
+    "col": 53
+   },
+   {
+    "row": 16,
+    "col": 54
+   },
+   {
+    "row": 16,
+    "col": 55
+   },
+   {
+    "row": 17,
+    "col": 50
+   },
+   {
+    "row": 17,
+    "col": 51
+   },
+   {
+    "row": 17,
+    "col": 52
+   },
+   {
+    "row": 17,
+    "col": 53
+   },
+   {
+    "row": 17,
+    "col": 54
+   },
+   {
+    "row": 17,
+    "col": 55
+   },
+   {
+    "row": 18,
+    "col": 50
+   },
+   {
+    "row": 18,
+    "col": 51
+   },
+   {
+    "row": 18,
+    "col": 52
+   },
+   {
+    "row": 18,
+    "col": 53
+   },
+   {
+    "row": 18,
+    "col": 55
+   },
+   {
+    "row": 18,
+    "col": 56
+   },
+   {
+    "row": 18,
+    "col": 57
+   },
+   {
+    "row": 18,
+    "col": 58
+   },
+   {
+    "row": 19,
+    "col": 50
+   },
+   {
+    "row": 19,
+    "col": 51
+   },
+   {
+    "row": 19,
+    "col": 52
+   },
+   {
+    "row": 19,
+    "col": 53
+   },
+   {
+    "row": 19,
+    "col": 54
+   },
+   {
+    "row": 19,
+    "col": 55
+   },
+   {
+    "row": 19,
+    "col": 56
+   },
+   {
+    "row": 19,
+    "col": 57
+   },
+   {
+    "row": 19,
+    "col": 58
+   },
+   {
+    "row": 20,
+    "col": 50
+   },
+   {
+    "row": 20,
+    "col": 51
+   },
+   {
+    "row": 20,
+    "col": 52
+   },
+   {
+    "row": 20,
+    "col": 53
+   },
+   {
+    "row": 20,
+    "col": 54
+   },
+   {
+    "row": 20,
+    "col": 55
+   },
+   {
+    "row": 20,
+    "col": 56
+   },
+   {
+    "row": 20,
+    "col": 57
+   },
+   {
+    "row": 20,
+    "col": 58
+   },
+   {
+    "row": 21,
+    "col": 50
+   },
+   {
+    "row": 21,
+    "col": 51
+   },
+   {
+    "row": 21,
+    "col": 52
+   },
+   {
+    "row": 21,
+    "col": 53
+   },
+   {
+    "row": 21,
+    "col": 54
+   },
+   {
+    "row": 21,
+    "col": 55
+   },
+   {
+    "row": 21,
+    "col": 56
+   },
+   {
+    "row": 21,
+    "col": 57
+   },
+   {
+    "row": 21,
+    "col": 58
+   },
+   {
+    "row": 22,
+    "col": 50
+   },
+   {
+    "row": 22,
+    "col": 51
+   },
+   {
+    "row": 22,
+    "col": 52
+   },
+   {
+    "row": 22,
+    "col": 53
+   },
+   {
+    "row": 22,
+    "col": 54
+   },
+   {
+    "row": 22,
+    "col": 55
+   },
+   {
+    "row": 22,
+    "col": 56
+   },
+   {
+    "row": 22,
+    "col": 57
+   },
+   {
+    "row": 22,
+    "col": 58
+   },
+   {
+    "row": 10,
+    "col": 42
+   },
+   {
+    "row": 10,
+    "col": 43
+   },
+   {
+    "row": 10,
+    "col": 44
+   },
+   {
+    "row": 10,
+    "col": 45
+   },
+   {
+    "row": 11,
+    "col": 42
+   },
+   {
+    "row": 11,
+    "col": 43
+   },
+   {
+    "row": 11,
+    "col": 44
+   },
+   {
+    "row": 11,
+    "col": 45
+   },
+   {
+    "row": 12,
+    "col": 42
+   },
+   {
+    "row": 12,
+    "col": 43
+   },
+   {
+    "row": 12,
+    "col": 44
+   },
+   {
+    "row": 12,
+    "col": 45
+   },
+   {
+    "row": 13,
+    "col": 42
+   },
+   {
+    "row": 13,
+    "col": 43
+   },
+   {
+    "row": 13,
+    "col": 44
+   },
+   {
+    "row": 13,
+    "col": 45
+   },
+   {
+    "row": 14,
+    "col": 42
+   },
+   {
+    "row": 14,
+    "col": 43
+   },
+   {
+    "row": 14,
+    "col": 44
+   },
+   {
+    "row": 14,
+    "col": 45
+   },
+   {
+    "row": 15,
+    "col": 42
+   },
+   {
+    "row": 15,
+    "col": 43
+   },
+   {
+    "row": 15,
+    "col": 44
+   },
+   {
+    "row": 15,
+    "col": 45
+   },
+   {
+    "row": 16,
+    "col": 42
+   },
+   {
+    "row": 16,
+    "col": 43
+   },
+   {
+    "row": 16,
+    "col": 44
+   },
+   {
+    "row": 16,
+    "col": 45
+   },
+   {
+    "row": 12,
+    "col": 46
+   },
+   {
+    "row": 12,
+    "col": 47
+   },
+   {
+    "row": 12,
+    "col": 48
+   },
+   {
+    "row": 12,
+    "col": 49
+   },
+   {
+    "row": 13,
+    "col": 46
+   },
+   {
+    "row": 13,
+    "col": 47
+   },
+   {
+    "row": 13,
+    "col": 48
+   },
+   {
+    "row": 13,
+    "col": 49
+   },
+   {
+    "row": 14,
+    "col": 46
+   },
+   {
+    "row": 14,
+    "col": 47
+   },
+   {
+    "row": 14,
+    "col": 48
+   },
+   {
+    "row": 14,
+    "col": 49
+   },
+   {
+    "row": 15,
+    "col": 46
+   },
+   {
+    "row": 15,
+    "col": 47
+   },
+   {
+    "row": 15,
+    "col": 48
+   },
+   {
+    "row": 15,
+    "col": 49
+   },
+   {
+    "row": 16,
+    "col": 46
+   },
+   {
+    "row": 16,
+    "col": 47
+   },
+   {
+    "row": 16,
+    "col": 48
+   },
+   {
+    "row": 16,
+    "col": 49
+   }
+  ]
+ },
+ "puzzleNodes": [
+  {
+   "id": "ac411_node_1",
+   "label": "Marsh Relay",
+   "row": 26,
+   "col": 25,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "steadied",
+    "description": "Steadied, 2 turns"
+   }
+  },
+  {
+   "id": "ac411_node_2",
+   "label": "Causeway Console",
+   "row": 44,
+   "col": 19,
+   "activationRange": 1,
+   "note": "",
+   "reward": {
+    "effectId": "army_1_move",
+    "description": "Army +1 move, 2 turns"
+   }
+  }
+ ],
+ "missionOverrides": {
+  "vrath_m2": {
+   "objectiveLabel": "The Syndicate are entrenching the east peninsula. Three prices for the same door: the east rail (fast, watched), the hub rung loop (flanks the neck), or the tussock wade (slow, concealed, cold). Pay one before the works finish.",
+   "enemyFaction": "syndicate",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 3,
+      "col": 20
+     },
+     {
+      "row": 3,
+      "col": 21
+     },
+     {
+      "row": 3,
+      "col": 22
+     },
+     {
+      "row": 3,
+      "col": 23
+     },
+     {
+      "row": 3,
+      "col": 24
+     },
+     {
+      "row": 3,
+      "col": 25
+     },
+     {
+      "row": 3,
+      "col": 26
+     },
+     {
+      "row": 3,
+      "col": 27
+     },
+     {
+      "row": 3,
+      "col": 28
+     },
+     {
+      "row": 3,
+      "col": 29
+     },
+     {
+      "row": 3,
+      "col": 30
+     },
+     {
+      "row": 3,
+      "col": 31
+     },
+     {
+      "row": 3,
+      "col": 32
+     },
+     {
+      "row": 3,
+      "col": 33
+     },
+     {
+      "row": 3,
+      "col": 34
+     },
+     {
+      "row": 3,
+      "col": 35
+     },
+     {
+      "row": 3,
+      "col": 36
+     },
+     {
+      "row": 3,
+      "col": 37
+     },
+     {
+      "row": 3,
+      "col": 38
+     },
+     {
+      "row": 3,
+      "col": 39
+     },
+     {
+      "row": 3,
+      "col": 40
+     },
+     {
+      "row": 3,
+      "col": 41
+     },
+     {
+      "row": 3,
+      "col": 42
+     },
+     {
+      "row": 3,
+      "col": 43
+     },
+     {
+      "row": 3,
+      "col": 44
+     },
+     {
+      "row": 4,
+      "col": 20
+     },
+     {
+      "row": 4,
+      "col": 21
+     },
+     {
+      "row": 4,
+      "col": 22
+     },
+     {
+      "row": 4,
+      "col": 23
+     },
+     {
+      "row": 4,
+      "col": 24
+     },
+     {
+      "row": 4,
+      "col": 25
+     },
+     {
+      "row": 4,
+      "col": 26
+     },
+     {
+      "row": 4,
+      "col": 27
+     },
+     {
+      "row": 4,
+      "col": 28
+     },
+     {
+      "row": 4,
+      "col": 29
+     },
+     {
+      "row": 4,
+      "col": 30
+     },
+     {
+      "row": 4,
+      "col": 31
+     },
+     {
+      "row": 4,
+      "col": 32
+     },
+     {
+      "row": 4,
+      "col": 33
+     },
+     {
+      "row": 4,
+      "col": 34
+     },
+     {
+      "row": 4,
+      "col": 35
+     },
+     {
+      "row": 4,
+      "col": 36
+     },
+     {
+      "row": 4,
+      "col": 37
+     },
+     {
+      "row": 4,
+      "col": 38
+     },
+     {
+      "row": 4,
+      "col": 39
+     },
+     {
+      "row": 4,
+      "col": 40
+     },
+     {
+      "row": 4,
+      "col": 41
+     },
+     {
+      "row": 4,
+      "col": 42
+     },
+     {
+      "row": 4,
+      "col": 43
+     },
+     {
+      "row": 4,
+      "col": 44
+     },
+     {
+      "row": 5,
+      "col": 20
+     },
+     {
+      "row": 5,
+      "col": 21
+     },
+     {
+      "row": 5,
+      "col": 22
+     },
+     {
+      "row": 5,
+      "col": 23
+     },
+     {
+      "row": 5,
+      "col": 24
+     },
+     {
+      "row": 5,
+      "col": 25
+     },
+     {
+      "row": 5,
+      "col": 26
+     },
+     {
+      "row": 5,
+      "col": 27
+     },
+     {
+      "row": 5,
+      "col": 28
+     },
+     {
+      "row": 5,
+      "col": 29
+     },
+     {
+      "row": 5,
+      "col": 30
+     },
+     {
+      "row": 5,
+      "col": 31
+     },
+     {
+      "row": 5,
+      "col": 33
+     },
+     {
+      "row": 5,
+      "col": 34
+     },
+     {
+      "row": 5,
+      "col": 35
+     },
+     {
+      "row": 5,
+      "col": 36
+     },
+     {
+      "row": 5,
+      "col": 37
+     },
+     {
+      "row": 5,
+      "col": 38
+     },
+     {
+      "row": 5,
+      "col": 39
+     },
+     {
+      "row": 5,
+      "col": 40
+     },
+     {
+      "row": 5,
+      "col": 41
+     },
+     {
+      "row": 5,
+      "col": 42
+     },
+     {
+      "row": 5,
+      "col": 43
+     },
+     {
+      "row": 5,
+      "col": 44
+     },
+     {
+      "row": 6,
+      "col": 20
+     },
+     {
+      "row": 6,
+      "col": 21
+     },
+     {
+      "row": 6,
+      "col": 22
+     },
+     {
+      "row": 6,
+      "col": 23
+     },
+     {
+      "row": 6,
+      "col": 24
+     },
+     {
+      "row": 6,
+      "col": 25
+     },
+     {
+      "row": 6,
+      "col": 26
+     },
+     {
+      "row": 6,
+      "col": 27
+     },
+     {
+      "row": 6,
+      "col": 28
+     },
+     {
+      "row": 6,
+      "col": 29
+     },
+     {
+      "row": 6,
+      "col": 30
+     },
+     {
+      "row": 6,
+      "col": 31
+     },
+     {
+      "row": 6,
+      "col": 32
+     },
+     {
+      "row": 6,
+      "col": 33
+     },
+     {
+      "row": 6,
+      "col": 34
+     },
+     {
+      "row": 6,
+      "col": 35
+     },
+     {
+      "row": 6,
+      "col": 36
+     },
+     {
+      "row": 6,
+      "col": 37
+     },
+     {
+      "row": 6,
+      "col": 38
+     },
+     {
+      "row": 6,
+      "col": 39
+     },
+     {
+      "row": 6,
+      "col": 40
+     },
+     {
+      "row": 6,
+      "col": 41
+     },
+     {
+      "row": 6,
+      "col": 42
+     },
+     {
+      "row": 6,
+      "col": 43
+     },
+     {
+      "row": 6,
+      "col": 44
+     },
+     {
+      "row": 7,
+      "col": 20
+     },
+     {
+      "row": 7,
+      "col": 21
+     },
+     {
+      "row": 7,
+      "col": 22
+     },
+     {
+      "row": 7,
+      "col": 23
+     },
+     {
+      "row": 7,
+      "col": 24
+     },
+     {
+      "row": 7,
+      "col": 25
+     },
+     {
+      "row": 7,
+      "col": 26
+     },
+     {
+      "row": 7,
+      "col": 27
+     },
+     {
+      "row": 7,
+      "col": 28
+     },
+     {
+      "row": 7,
+      "col": 29
+     },
+     {
+      "row": 7,
+      "col": 30
+     },
+     {
+      "row": 7,
+      "col": 31
+     },
+     {
+      "row": 7,
+      "col": 32
+     },
+     {
+      "row": 7,
+      "col": 33
+     },
+     {
+      "row": 7,
+      "col": 34
+     },
+     {
+      "row": 7,
+      "col": 35
+     },
+     {
+      "row": 7,
+      "col": 36
+     },
+     {
+      "row": 7,
+      "col": 37
+     },
+     {
+      "row": 7,
+      "col": 38
+     },
+     {
+      "row": 7,
+      "col": 39
+     },
+     {
+      "row": 7,
+      "col": 40
+     },
+     {
+      "row": 7,
+      "col": 41
+     },
+     {
+      "row": 7,
+      "col": 42
+     },
+     {
+      "row": 7,
+      "col": 43
+     },
+     {
+      "row": 7,
+      "col": 44
+     }
+    ],
+    "enemy": [
+     {
+      "row": 14,
+      "col": 50
+     },
+     {
+      "row": 14,
+      "col": 51
+     },
+     {
+      "row": 14,
+      "col": 52
+     },
+     {
+      "row": 14,
+      "col": 53
+     },
+     {
+      "row": 14,
+      "col": 54
+     },
+     {
+      "row": 14,
+      "col": 55
+     },
+     {
+      "row": 15,
+      "col": 50
+     },
+     {
+      "row": 15,
+      "col": 51
+     },
+     {
+      "row": 15,
+      "col": 52
+     },
+     {
+      "row": 15,
+      "col": 53
+     },
+     {
+      "row": 15,
+      "col": 54
+     },
+     {
+      "row": 15,
+      "col": 55
+     },
+     {
+      "row": 16,
+      "col": 50
+     },
+     {
+      "row": 16,
+      "col": 51
+     },
+     {
+      "row": 16,
+      "col": 52
+     },
+     {
+      "row": 16,
+      "col": 53
+     },
+     {
+      "row": 16,
+      "col": 54
+     },
+     {
+      "row": 16,
+      "col": 55
+     },
+     {
+      "row": 17,
+      "col": 50
+     },
+     {
+      "row": 17,
+      "col": 51
+     },
+     {
+      "row": 17,
+      "col": 52
+     },
+     {
+      "row": 17,
+      "col": 53
+     },
+     {
+      "row": 17,
+      "col": 54
+     },
+     {
+      "row": 17,
+      "col": 55
+     },
+     {
+      "row": 18,
+      "col": 50
+     },
+     {
+      "row": 18,
+      "col": 51
+     },
+     {
+      "row": 18,
+      "col": 52
+     },
+     {
+      "row": 18,
+      "col": 53
+     },
+     {
+      "row": 18,
+      "col": 55
+     },
+     {
+      "row": 18,
+      "col": 56
+     },
+     {
+      "row": 18,
+      "col": 57
+     },
+     {
+      "row": 18,
+      "col": 58
+     },
+     {
+      "row": 19,
+      "col": 50
+     },
+     {
+      "row": 19,
+      "col": 51
+     },
+     {
+      "row": 19,
+      "col": 52
+     },
+     {
+      "row": 19,
+      "col": 53
+     },
+     {
+      "row": 19,
+      "col": 54
+     },
+     {
+      "row": 19,
+      "col": 55
+     },
+     {
+      "row": 19,
+      "col": 56
+     },
+     {
+      "row": 19,
+      "col": 57
+     },
+     {
+      "row": 19,
+      "col": 58
+     },
+     {
+      "row": 20,
+      "col": 50
+     },
+     {
+      "row": 20,
+      "col": 51
+     },
+     {
+      "row": 20,
+      "col": 52
+     },
+     {
+      "row": 20,
+      "col": 53
+     },
+     {
+      "row": 20,
+      "col": 54
+     },
+     {
+      "row": 20,
+      "col": 55
+     },
+     {
+      "row": 20,
+      "col": 56
+     },
+     {
+      "row": 20,
+      "col": 57
+     },
+     {
+      "row": 20,
+      "col": 58
+     },
+     {
+      "row": 21,
+      "col": 50
+     },
+     {
+      "row": 21,
+      "col": 51
+     },
+     {
+      "row": 21,
+      "col": 52
+     },
+     {
+      "row": 21,
+      "col": 53
+     },
+     {
+      "row": 21,
+      "col": 54
+     },
+     {
+      "row": 21,
+      "col": 55
+     },
+     {
+      "row": 21,
+      "col": 56
+     },
+     {
+      "row": 21,
+      "col": 57
+     },
+     {
+      "row": 21,
+      "col": 58
+     },
+     {
+      "row": 22,
+      "col": 50
+     },
+     {
+      "row": 22,
+      "col": 51
+     },
+     {
+      "row": 22,
+      "col": 52
+     },
+     {
+      "row": 22,
+      "col": 53
+     },
+     {
+      "row": 22,
+      "col": 54
+     },
+     {
+      "row": 22,
+      "col": 55
+     },
+     {
+      "row": 22,
+      "col": 56
+     },
+     {
+      "row": 22,
+      "col": 57
+     },
+     {
+      "row": 22,
+      "col": 58
+     },
+     {
+      "row": 10,
+      "col": 42
+     },
+     {
+      "row": 10,
+      "col": 43
+     },
+     {
+      "row": 10,
+      "col": 44
+     },
+     {
+      "row": 10,
+      "col": 45
+     },
+     {
+      "row": 11,
+      "col": 42
+     },
+     {
+      "row": 11,
+      "col": 43
+     },
+     {
+      "row": 11,
+      "col": 44
+     },
+     {
+      "row": 11,
+      "col": 45
+     },
+     {
+      "row": 12,
+      "col": 42
+     },
+     {
+      "row": 12,
+      "col": 43
+     },
+     {
+      "row": 12,
+      "col": 44
+     },
+     {
+      "row": 12,
+      "col": 45
+     },
+     {
+      "row": 13,
+      "col": 42
+     },
+     {
+      "row": 13,
+      "col": 43
+     },
+     {
+      "row": 13,
+      "col": 44
+     },
+     {
+      "row": 13,
+      "col": 45
+     },
+     {
+      "row": 14,
+      "col": 42
+     },
+     {
+      "row": 14,
+      "col": 43
+     },
+     {
+      "row": 14,
+      "col": 44
+     },
+     {
+      "row": 14,
+      "col": 45
+     },
+     {
+      "row": 15,
+      "col": 42
+     },
+     {
+      "row": 15,
+      "col": 43
+     },
+     {
+      "row": 15,
+      "col": 44
+     },
+     {
+      "row": 15,
+      "col": 45
+     },
+     {
+      "row": 16,
+      "col": 42
+     },
+     {
+      "row": 16,
+      "col": 43
+     },
+     {
+      "row": 16,
+      "col": 44
+     },
+     {
+      "row": 16,
+      "col": 45
+     },
+     {
+      "row": 12,
+      "col": 46
+     },
+     {
+      "row": 12,
+      "col": 47
+     },
+     {
+      "row": 12,
+      "col": 48
+     },
+     {
+      "row": 12,
+      "col": 49
+     },
+     {
+      "row": 13,
+      "col": 46
+     },
+     {
+      "row": 13,
+      "col": 47
+     },
+     {
+      "row": 13,
+      "col": 48
+     },
+     {
+      "row": 13,
+      "col": 49
+     },
+     {
+      "row": 14,
+      "col": 46
+     },
+     {
+      "row": 14,
+      "col": 47
+     },
+     {
+      "row": 14,
+      "col": 48
+     },
+     {
+      "row": 14,
+      "col": 49
+     },
+     {
+      "row": 15,
+      "col": 46
+     },
+     {
+      "row": 15,
+      "col": 47
+     },
+     {
+      "row": 15,
+      "col": 48
+     },
+     {
+      "row": 15,
+      "col": 49
+     },
+     {
+      "row": 16,
+      "col": 46
+     },
+     {
+      "row": 16,
+      "col": 47
+     },
+     {
+      "row": 16,
+      "col": 48
+     },
+     {
+      "row": 16,
+      "col": 49
+     }
+    ]
+   },
+   "reinforcements": [],
+   "objectiveTiles": [
+    {
+     "row": 18,
+     "col": 54,
+     "label": "Entrenchment works"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "East rail (watched)",
+     "kind": "fast",
+     "waypoints": [
+      {
+       "row": 8,
+       "col": 43
+      },
+      {
+       "row": 14,
+       "col": 43
+      },
+      {
+       "row": 16,
+       "col": 47
+      },
+      {
+       "row": 18,
+       "col": 52
+      }
+     ]
+    },
+    {
+     "label": "Hub loop (flank the neck)",
+     "kind": "flank",
+     "waypoints": [
+      {
+       "row": 8,
+       "col": 32
+      },
+      {
+       "row": 19,
+       "col": 32
+      },
+      {
+       "row": 20,
+       "col": 43
+      },
+      {
+       "row": 34,
+       "col": 43
+      },
+      {
+       "row": 30,
+       "col": 48
+      },
+      {
+       "row": 24,
+       "col": 52
+      }
+     ]
+    },
+    {
+     "label": "Tussock wade (concealed)",
+     "kind": "covered",
+     "waypoints": [
+      {
+       "row": 8,
+       "col": 28
+      },
+      {
+       "row": 13,
+       "col": 28
+      },
+      {
+       "row": 15,
+       "col": 37
+      },
+      {
+       "row": 14,
+       "col": 47
+      },
+      {
+       "row": 16,
+       "col": 51
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Aedhrik-violation scene fires at ~60% enemy strength."
+    },
+    {
+     "condition": "design-note",
+     "element": "Post-mission: the war-leader declaration."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "vrath_breaker",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "Shatter eats the entrenchment works for free — the mission counter"
+     },
+     {
+      "unitId": "vrath_charger",
+      "count": 2,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Tussock wade — Charge out of the last island"
+     },
+     {
+      "unitId": "vrath_render",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Pushes defenders off the peninsula neck"
+     },
+     {
+      "unitId": "vrath_sworn",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Rail fire support"
+     },
+     {
+      "unitId": "vrath_forger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Holds the hub rung behind the push"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "syndicate_contractor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "The entrencher — kill it and the clock stops"
+     },
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Neck denial"
+     },
+     {
+      "unitId": "syndicate_rangefinder",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Rock spur overwatch over open marsh"
+     },
+     {
+      "unitId": "syndicate_handler",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Marks waders in the tussocks"
+     },
+     {
+      "unitId": "syndicate_assessor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "On the peninsula cache — the second clock. Kill the Contractor; starve the rest"
+     },
+     {
+      "unitId": "syndicate_operative",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Forward post on the east rail"
+     },
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 1,
+      "spawnZone": 2,
+      "commander": false,
+      "designNote": "Tussock picket — your concealed route isn't free"
+     }
+    ],
+    "reinforcements": []
+   },
+   "economyNotes": {
+    "player": "No Reaper — deliberate. The mission punishes economy play; spend what you brought before the works finish.",
+    "enemy": "Assessor on the peninsula cache: their losses regrow while the walls rise. The clock is double — entrenchment AND rebuy."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       3,
+       7
+      ],
+      "cols": [
+       20,
+       44
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       14,
+       22
+      ],
+      "cols": [
+       50,
+       58
+      ]
+     },
+     {
+      "rows": [
+       10,
+       16
+      ],
+      "cols": [
+       42,
+       45
+      ]
+     },
+     {
+      "rows": [
+       12,
+       16
+      ],
+      "cols": [
+       46,
+       49
+      ]
+     }
+    ]
+   }
+  },
+  "vrath_m3": {
+   "objectiveLabel": "Covenant land on the west shoreline; Syndicate press from the south peninsula. You hold the hub. Break one front before the other reaches the rails — then survive turn 4.",
+   "enemyFaction": "covenant",
+   "ambushStart": false,
+   "spawnOverride": {
+    "player": [
+     {
+      "row": 32,
+      "col": 21
+     },
+     {
+      "row": 32,
+      "col": 22
+     },
+     {
+      "row": 32,
+      "col": 23
+     },
+     {
+      "row": 32,
+      "col": 24
+     },
+     {
+      "row": 32,
+      "col": 25
+     },
+     {
+      "row": 32,
+      "col": 26
+     },
+     {
+      "row": 32,
+      "col": 27
+     },
+     {
+      "row": 33,
+      "col": 21
+     },
+     {
+      "row": 33,
+      "col": 22
+     },
+     {
+      "row": 33,
+      "col": 23
+     },
+     {
+      "row": 33,
+      "col": 24
+     },
+     {
+      "row": 33,
+      "col": 25
+     },
+     {
+      "row": 33,
+      "col": 26
+     },
+     {
+      "row": 33,
+      "col": 27
+     },
+     {
+      "row": 34,
+      "col": 21
+     },
+     {
+      "row": 34,
+      "col": 22
+     },
+     {
+      "row": 34,
+      "col": 23
+     },
+     {
+      "row": 34,
+      "col": 24
+     },
+     {
+      "row": 34,
+      "col": 25
+     },
+     {
+      "row": 34,
+      "col": 26
+     },
+     {
+      "row": 34,
+      "col": 27
+     },
+     {
+      "row": 35,
+      "col": 21
+     },
+     {
+      "row": 35,
+      "col": 22
+     },
+     {
+      "row": 35,
+      "col": 23
+     },
+     {
+      "row": 35,
+      "col": 24
+     },
+     {
+      "row": 35,
+      "col": 25
+     },
+     {
+      "row": 35,
+      "col": 26
+     },
+     {
+      "row": 35,
+      "col": 27
+     },
+     {
+      "row": 36,
+      "col": 21
+     },
+     {
+      "row": 36,
+      "col": 22
+     },
+     {
+      "row": 36,
+      "col": 23
+     },
+     {
+      "row": 36,
+      "col": 24
+     },
+     {
+      "row": 36,
+      "col": 25
+     },
+     {
+      "row": 36,
+      "col": 26
+     },
+     {
+      "row": 36,
+      "col": 27
+     },
+     {
+      "row": 37,
+      "col": 21
+     },
+     {
+      "row": 37,
+      "col": 22
+     },
+     {
+      "row": 37,
+      "col": 23
+     },
+     {
+      "row": 37,
+      "col": 24
+     },
+     {
+      "row": 37,
+      "col": 25
+     },
+     {
+      "row": 37,
+      "col": 26
+     },
+     {
+      "row": 37,
+      "col": 27
+     },
+     {
+      "row": 38,
+      "col": 21
+     },
+     {
+      "row": 38,
+      "col": 22
+     },
+     {
+      "row": 38,
+      "col": 23
+     },
+     {
+      "row": 38,
+      "col": 24
+     },
+     {
+      "row": 38,
+      "col": 25
+     },
+     {
+      "row": 38,
+      "col": 26
+     },
+     {
+      "row": 38,
+      "col": 27
+     },
+     {
+      "row": 39,
+      "col": 21
+     },
+     {
+      "row": 39,
+      "col": 22
+     },
+     {
+      "row": 39,
+      "col": 23
+     },
+     {
+      "row": 39,
+      "col": 24
+     },
+     {
+      "row": 39,
+      "col": 25
+     },
+     {
+      "row": 39,
+      "col": 26
+     },
+     {
+      "row": 39,
+      "col": 27
+     },
+     {
+      "row": 32,
+      "col": 37
+     },
+     {
+      "row": 32,
+      "col": 38
+     },
+     {
+      "row": 32,
+      "col": 39
+     },
+     {
+      "row": 32,
+      "col": 40
+     },
+     {
+      "row": 32,
+      "col": 41
+     },
+     {
+      "row": 32,
+      "col": 42
+     },
+     {
+      "row": 32,
+      "col": 43
+     },
+     {
+      "row": 33,
+      "col": 37
+     },
+     {
+      "row": 33,
+      "col": 38
+     },
+     {
+      "row": 33,
+      "col": 39
+     },
+     {
+      "row": 33,
+      "col": 40
+     },
+     {
+      "row": 33,
+      "col": 41
+     },
+     {
+      "row": 33,
+      "col": 42
+     },
+     {
+      "row": 33,
+      "col": 43
+     },
+     {
+      "row": 34,
+      "col": 37
+     },
+     {
+      "row": 34,
+      "col": 38
+     },
+     {
+      "row": 34,
+      "col": 39
+     },
+     {
+      "row": 34,
+      "col": 40
+     },
+     {
+      "row": 34,
+      "col": 41
+     },
+     {
+      "row": 34,
+      "col": 42
+     },
+     {
+      "row": 34,
+      "col": 43
+     },
+     {
+      "row": 35,
+      "col": 37
+     },
+     {
+      "row": 35,
+      "col": 38
+     },
+     {
+      "row": 35,
+      "col": 39
+     },
+     {
+      "row": 35,
+      "col": 40
+     },
+     {
+      "row": 35,
+      "col": 41
+     },
+     {
+      "row": 35,
+      "col": 42
+     },
+     {
+      "row": 35,
+      "col": 43
+     },
+     {
+      "row": 36,
+      "col": 37
+     },
+     {
+      "row": 36,
+      "col": 38
+     },
+     {
+      "row": 36,
+      "col": 39
+     },
+     {
+      "row": 36,
+      "col": 40
+     },
+     {
+      "row": 36,
+      "col": 41
+     },
+     {
+      "row": 36,
+      "col": 42
+     },
+     {
+      "row": 36,
+      "col": 43
+     },
+     {
+      "row": 37,
+      "col": 37
+     },
+     {
+      "row": 37,
+      "col": 38
+     },
+     {
+      "row": 37,
+      "col": 39
+     },
+     {
+      "row": 37,
+      "col": 40
+     },
+     {
+      "row": 37,
+      "col": 41
+     },
+     {
+      "row": 37,
+      "col": 42
+     },
+     {
+      "row": 37,
+      "col": 43
+     },
+     {
+      "row": 38,
+      "col": 37
+     },
+     {
+      "row": 38,
+      "col": 38
+     },
+     {
+      "row": 38,
+      "col": 39
+     },
+     {
+      "row": 38,
+      "col": 40
+     },
+     {
+      "row": 38,
+      "col": 41
+     },
+     {
+      "row": 38,
+      "col": 42
+     },
+     {
+      "row": 38,
+      "col": 43
+     },
+     {
+      "row": 39,
+      "col": 37
+     },
+     {
+      "row": 39,
+      "col": 38
+     },
+     {
+      "row": 39,
+      "col": 39
+     },
+     {
+      "row": 39,
+      "col": 40
+     },
+     {
+      "row": 39,
+      "col": 41
+     },
+     {
+      "row": 39,
+      "col": 42
+     },
+     {
+      "row": 39,
+      "col": 43
+     },
+     {
+      "row": 3,
+      "col": 26
+     },
+     {
+      "row": 3,
+      "col": 27
+     },
+     {
+      "row": 3,
+      "col": 28
+     },
+     {
+      "row": 3,
+      "col": 29
+     },
+     {
+      "row": 3,
+      "col": 30
+     },
+     {
+      "row": 3,
+      "col": 31
+     },
+     {
+      "row": 3,
+      "col": 32
+     },
+     {
+      "row": 3,
+      "col": 33
+     },
+     {
+      "row": 3,
+      "col": 34
+     },
+     {
+      "row": 3,
+      "col": 35
+     },
+     {
+      "row": 3,
+      "col": 36
+     },
+     {
+      "row": 3,
+      "col": 37
+     },
+     {
+      "row": 3,
+      "col": 38
+     },
+     {
+      "row": 4,
+      "col": 26
+     },
+     {
+      "row": 4,
+      "col": 27
+     },
+     {
+      "row": 4,
+      "col": 28
+     },
+     {
+      "row": 4,
+      "col": 29
+     },
+     {
+      "row": 4,
+      "col": 30
+     },
+     {
+      "row": 4,
+      "col": 31
+     },
+     {
+      "row": 4,
+      "col": 32
+     },
+     {
+      "row": 4,
+      "col": 33
+     },
+     {
+      "row": 4,
+      "col": 34
+     },
+     {
+      "row": 4,
+      "col": 35
+     },
+     {
+      "row": 4,
+      "col": 36
+     },
+     {
+      "row": 4,
+      "col": 37
+     },
+     {
+      "row": 4,
+      "col": 38
+     },
+     {
+      "row": 5,
+      "col": 26
+     },
+     {
+      "row": 5,
+      "col": 27
+     },
+     {
+      "row": 5,
+      "col": 28
+     },
+     {
+      "row": 5,
+      "col": 29
+     },
+     {
+      "row": 5,
+      "col": 30
+     },
+     {
+      "row": 5,
+      "col": 31
+     },
+     {
+      "row": 5,
+      "col": 33
+     },
+     {
+      "row": 5,
+      "col": 34
+     },
+     {
+      "row": 5,
+      "col": 35
+     },
+     {
+      "row": 5,
+      "col": 36
+     },
+     {
+      "row": 5,
+      "col": 37
+     },
+     {
+      "row": 5,
+      "col": 38
+     },
+     {
+      "row": 6,
+      "col": 26
+     },
+     {
+      "row": 6,
+      "col": 27
+     },
+     {
+      "row": 6,
+      "col": 28
+     },
+     {
+      "row": 6,
+      "col": 29
+     },
+     {
+      "row": 6,
+      "col": 30
+     },
+     {
+      "row": 6,
+      "col": 31
+     },
+     {
+      "row": 6,
+      "col": 32
+     },
+     {
+      "row": 6,
+      "col": 33
+     },
+     {
+      "row": 6,
+      "col": 34
+     },
+     {
+      "row": 6,
+      "col": 35
+     },
+     {
+      "row": 6,
+      "col": 36
+     },
+     {
+      "row": 6,
+      "col": 37
+     },
+     {
+      "row": 6,
+      "col": 38
+     },
+     {
+      "row": 7,
+      "col": 26
+     },
+     {
+      "row": 7,
+      "col": 27
+     },
+     {
+      "row": 7,
+      "col": 28
+     },
+     {
+      "row": 7,
+      "col": 29
+     },
+     {
+      "row": 7,
+      "col": 30
+     },
+     {
+      "row": 7,
+      "col": 31
+     },
+     {
+      "row": 7,
+      "col": 32
+     },
+     {
+      "row": 7,
+      "col": 33
+     },
+     {
+      "row": 7,
+      "col": 34
+     },
+     {
+      "row": 7,
+      "col": 35
+     },
+     {
+      "row": 7,
+      "col": 36
+     },
+     {
+      "row": 7,
+      "col": 37
+     },
+     {
+      "row": 7,
+      "col": 38
+     }
+    ],
+    "enemy": [
+     {
+      "row": 22,
+      "col": 13
+     },
+     {
+      "row": 22,
+      "col": 14
+     },
+     {
+      "row": 22,
+      "col": 15
+     },
+     {
+      "row": 22,
+      "col": 16
+     },
+     {
+      "row": 23,
+      "col": 13
+     },
+     {
+      "row": 23,
+      "col": 14
+     },
+     {
+      "row": 23,
+      "col": 15
+     },
+     {
+      "row": 23,
+      "col": 16
+     },
+     {
+      "row": 24,
+      "col": 13
+     },
+     {
+      "row": 24,
+      "col": 14
+     },
+     {
+      "row": 24,
+      "col": 15
+     },
+     {
+      "row": 24,
+      "col": 16
+     },
+     {
+      "row": 25,
+      "col": 13
+     },
+     {
+      "row": 25,
+      "col": 14
+     },
+     {
+      "row": 25,
+      "col": 15
+     },
+     {
+      "row": 25,
+      "col": 16
+     },
+     {
+      "row": 26,
+      "col": 13
+     },
+     {
+      "row": 26,
+      "col": 14
+     },
+     {
+      "row": 26,
+      "col": 15
+     },
+     {
+      "row": 26,
+      "col": 16
+     },
+     {
+      "row": 27,
+      "col": 13
+     },
+     {
+      "row": 27,
+      "col": 14
+     },
+     {
+      "row": 27,
+      "col": 15
+     },
+     {
+      "row": 27,
+      "col": 16
+     },
+     {
+      "row": 28,
+      "col": 13
+     },
+     {
+      "row": 28,
+      "col": 14
+     },
+     {
+      "row": 28,
+      "col": 15
+     },
+     {
+      "row": 28,
+      "col": 16
+     },
+     {
+      "row": 29,
+      "col": 13
+     },
+     {
+      "row": 29,
+      "col": 14
+     },
+     {
+      "row": 29,
+      "col": 15
+     },
+     {
+      "row": 29,
+      "col": 16
+     },
+     {
+      "row": 30,
+      "col": 13
+     },
+     {
+      "row": 30,
+      "col": 14
+     },
+     {
+      "row": 30,
+      "col": 15
+     },
+     {
+      "row": 30,
+      "col": 16
+     },
+     {
+      "row": 31,
+      "col": 13
+     },
+     {
+      "row": 31,
+      "col": 14
+     },
+     {
+      "row": 31,
+      "col": 15
+     },
+     {
+      "row": 31,
+      "col": 16
+     },
+     {
+      "row": 32,
+      "col": 13
+     },
+     {
+      "row": 32,
+      "col": 14
+     },
+     {
+      "row": 32,
+      "col": 15
+     },
+     {
+      "row": 32,
+      "col": 16
+     },
+     {
+      "row": 33,
+      "col": 13
+     },
+     {
+      "row": 33,
+      "col": 14
+     },
+     {
+      "row": 33,
+      "col": 15
+     },
+     {
+      "row": 33,
+      "col": 16
+     },
+     {
+      "row": 34,
+      "col": 13
+     },
+     {
+      "row": 34,
+      "col": 14
+     },
+     {
+      "row": 34,
+      "col": 15
+     },
+     {
+      "row": 34,
+      "col": 16
+     },
+     {
+      "row": 35,
+      "col": 13
+     },
+     {
+      "row": 35,
+      "col": 14
+     },
+     {
+      "row": 35,
+      "col": 15
+     },
+     {
+      "row": 35,
+      "col": 16
+     },
+     {
+      "row": 36,
+      "col": 13
+     },
+     {
+      "row": 36,
+      "col": 14
+     },
+     {
+      "row": 36,
+      "col": 15
+     },
+     {
+      "row": 36,
+      "col": 16
+     },
+     {
+      "row": 37,
+      "col": 13
+     },
+     {
+      "row": 37,
+      "col": 14
+     },
+     {
+      "row": 37,
+      "col": 15
+     },
+     {
+      "row": 37,
+      "col": 16
+     },
+     {
+      "row": 38,
+      "col": 13
+     },
+     {
+      "row": 38,
+      "col": 14
+     },
+     {
+      "row": 38,
+      "col": 15
+     },
+     {
+      "row": 38,
+      "col": 16
+     },
+     {
+      "row": 39,
+      "col": 13
+     },
+     {
+      "row": 39,
+      "col": 14
+     },
+     {
+      "row": 39,
+      "col": 15
+     },
+     {
+      "row": 39,
+      "col": 16
+     },
+     {
+      "row": 40,
+      "col": 13
+     },
+     {
+      "row": 40,
+      "col": 14
+     },
+     {
+      "row": 40,
+      "col": 15
+     },
+     {
+      "row": 40,
+      "col": 16
+     },
+     {
+      "row": 41,
+      "col": 13
+     },
+     {
+      "row": 41,
+      "col": 14
+     },
+     {
+      "row": 41,
+      "col": 15
+     },
+     {
+      "row": 41,
+      "col": 16
+     },
+     {
+      "row": 42,
+      "col": 13
+     },
+     {
+      "row": 42,
+      "col": 14
+     },
+     {
+      "row": 42,
+      "col": 15
+     },
+     {
+      "row": 42,
+      "col": 16
+     },
+     {
+      "row": 43,
+      "col": 13
+     },
+     {
+      "row": 43,
+      "col": 14
+     },
+     {
+      "row": 43,
+      "col": 15
+     },
+     {
+      "row": 43,
+      "col": 16
+     },
+     {
+      "row": 44,
+      "col": 13
+     },
+     {
+      "row": 44,
+      "col": 14
+     },
+     {
+      "row": 44,
+      "col": 15
+     },
+     {
+      "row": 44,
+      "col": 16
+     },
+     {
+      "row": 48,
+      "col": 48
+     },
+     {
+      "row": 48,
+      "col": 49
+     },
+     {
+      "row": 48,
+      "col": 50
+     },
+     {
+      "row": 48,
+      "col": 51
+     },
+     {
+      "row": 48,
+      "col": 52
+     },
+     {
+      "row": 48,
+      "col": 53
+     },
+     {
+      "row": 48,
+      "col": 54
+     },
+     {
+      "row": 48,
+      "col": 55
+     },
+     {
+      "row": 48,
+      "col": 56
+     },
+     {
+      "row": 48,
+      "col": 57
+     },
+     {
+      "row": 48,
+      "col": 58
+     },
+     {
+      "row": 49,
+      "col": 48
+     },
+     {
+      "row": 49,
+      "col": 49
+     },
+     {
+      "row": 49,
+      "col": 50
+     },
+     {
+      "row": 49,
+      "col": 51
+     },
+     {
+      "row": 49,
+      "col": 52
+     },
+     {
+      "row": 49,
+      "col": 53
+     },
+     {
+      "row": 49,
+      "col": 54
+     },
+     {
+      "row": 49,
+      "col": 55
+     },
+     {
+      "row": 49,
+      "col": 56
+     },
+     {
+      "row": 49,
+      "col": 57
+     },
+     {
+      "row": 49,
+      "col": 58
+     },
+     {
+      "row": 50,
+      "col": 48
+     },
+     {
+      "row": 50,
+      "col": 49
+     },
+     {
+      "row": 50,
+      "col": 50
+     },
+     {
+      "row": 50,
+      "col": 51
+     },
+     {
+      "row": 50,
+      "col": 52
+     },
+     {
+      "row": 50,
+      "col": 53
+     },
+     {
+      "row": 50,
+      "col": 54
+     },
+     {
+      "row": 50,
+      "col": 55
+     },
+     {
+      "row": 50,
+      "col": 56
+     },
+     {
+      "row": 50,
+      "col": 57
+     },
+     {
+      "row": 50,
+      "col": 58
+     },
+     {
+      "row": 51,
+      "col": 48
+     },
+     {
+      "row": 51,
+      "col": 49
+     },
+     {
+      "row": 51,
+      "col": 50
+     },
+     {
+      "row": 51,
+      "col": 51
+     },
+     {
+      "row": 51,
+      "col": 52
+     },
+     {
+      "row": 51,
+      "col": 53
+     },
+     {
+      "row": 51,
+      "col": 54
+     },
+     {
+      "row": 51,
+      "col": 55
+     },
+     {
+      "row": 51,
+      "col": 56
+     },
+     {
+      "row": 51,
+      "col": 57
+     },
+     {
+      "row": 51,
+      "col": 58
+     },
+     {
+      "row": 52,
+      "col": 48
+     },
+     {
+      "row": 52,
+      "col": 49
+     },
+     {
+      "row": 52,
+      "col": 50
+     },
+     {
+      "row": 52,
+      "col": 51
+     },
+     {
+      "row": 52,
+      "col": 52
+     },
+     {
+      "row": 52,
+      "col": 53
+     },
+     {
+      "row": 53,
+      "col": 48
+     },
+     {
+      "row": 53,
+      "col": 49
+     },
+     {
+      "row": 53,
+      "col": 50
+     },
+     {
+      "row": 53,
+      "col": 51
+     },
+     {
+      "row": 53,
+      "col": 52
+     },
+     {
+      "row": 53,
+      "col": 53
+     },
+     {
+      "row": 54,
+      "col": 48
+     },
+     {
+      "row": 54,
+      "col": 49
+     },
+     {
+      "row": 54,
+      "col": 50
+     },
+     {
+      "row": 54,
+      "col": 51
+     },
+     {
+      "row": 54,
+      "col": 52
+     },
+     {
+      "row": 54,
+      "col": 53
+     },
+     {
+      "row": 55,
+      "col": 48
+     },
+     {
+      "row": 55,
+      "col": 49
+     },
+     {
+      "row": 55,
+      "col": 50
+     },
+     {
+      "row": 55,
+      "col": 51
+     },
+     {
+      "row": 55,
+      "col": 52
+     },
+     {
+      "row": 55,
+      "col": 53
+     },
+     {
+      "row": 56,
+      "col": 48
+     },
+     {
+      "row": 56,
+      "col": 49
+     },
+     {
+      "row": 56,
+      "col": 50
+     },
+     {
+      "row": 56,
+      "col": 51
+     },
+     {
+      "row": 56,
+      "col": 52
+     },
+     {
+      "row": 56,
+      "col": 53
+     },
+     {
+      "row": 56,
+      "col": 54
+     },
+     {
+      "row": 56,
+      "col": 55
+     },
+     {
+      "row": 56,
+      "col": 56
+     },
+     {
+      "row": 56,
+      "col": 57
+     },
+     {
+      "row": 56,
+      "col": 58
+     }
+    ]
+   },
+   "reinforcements": [
+    {
+     "turn": 4,
+     "label": "Defectors · t4",
+     "tiles": [
+      {
+       "row": 40,
+       "col": 42
+      },
+      {
+       "row": 40,
+       "col": 43
+      },
+      {
+       "row": 40,
+       "col": 44
+      },
+      {
+       "row": 40,
+       "col": 45
+      },
+      {
+       "row": 41,
+       "col": 42
+      },
+      {
+       "row": 41,
+       "col": 43
+      },
+      {
+       "row": 41,
+       "col": 44
+      },
+      {
+       "row": 41,
+       "col": 45
+      },
+      {
+       "row": 42,
+       "col": 42
+      },
+      {
+       "row": 42,
+       "col": 43
+      },
+      {
+       "row": 42,
+       "col": 44
+      },
+      {
+       "row": 42,
+       "col": 45
+      },
+      {
+       "row": 43,
+       "col": 42
+      },
+      {
+       "row": 43,
+       "col": 43
+      },
+      {
+       "row": 43,
+       "col": 44
+      },
+      {
+       "row": 43,
+       "col": 45
+      },
+      {
+       "row": 44,
+       "col": 42
+      },
+      {
+       "row": 44,
+       "col": 43
+      },
+      {
+       "row": 44,
+       "col": 44
+      },
+      {
+       "row": 44,
+       "col": 45
+      },
+      {
+       "row": 45,
+       "col": 42
+      },
+      {
+       "row": 45,
+       "col": 43
+      },
+      {
+       "row": 45,
+       "col": 44
+      },
+      {
+       "row": 45,
+       "col": 45
+      },
+      {
+       "row": 46,
+       "col": 42
+      },
+      {
+       "row": 46,
+       "col": 43
+      },
+      {
+       "row": 46,
+       "col": 44
+      },
+      {
+       "row": 46,
+       "col": 45
+      },
+      {
+       "row": 47,
+       "col": 42
+      },
+      {
+       "row": 47,
+       "col": 43
+      },
+      {
+       "row": 47,
+       "col": 44
+      },
+      {
+       "row": 47,
+       "col": 45
+      },
+      {
+       "row": 48,
+       "col": 42
+      },
+      {
+       "row": 48,
+       "col": 43
+      },
+      {
+       "row": 48,
+       "col": 44
+      },
+      {
+       "row": 48,
+       "col": 45
+      }
+     ]
+    }
+   ],
+   "objectiveTiles": [
+    {
+     "row": 35,
+     "col": 32,
+     "label": "Hold the hub"
+    },
+    {
+     "row": 5,
+     "col": 32,
+     "label": "Transport pad — keep open"
+    }
+   ],
+   "designedRoutes": [
+    {
+     "label": "Covenant thrust (W)",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 32,
+       "col": 14
+      },
+      {
+       "row": 35,
+       "col": 17
+      },
+      {
+       "row": 35,
+       "col": 22
+      },
+      {
+       "row": 35,
+       "col": 28
+      }
+     ]
+    },
+    {
+     "label": "Syndicate thrust (S)",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 50,
+       "col": 52
+      },
+      {
+       "row": 52,
+       "col": 44
+      },
+      {
+       "row": 44,
+       "col": 43
+      },
+      {
+       "row": 38,
+       "col": 43
+      }
+     ]
+    },
+    {
+     "label": "Defection (t4)",
+     "kind": "enemy",
+     "waypoints": [
+      {
+       "row": 44,
+       "col": 43
+      },
+      {
+       "row": 38,
+       "col": 43
+      },
+      {
+       "row": 36,
+       "col": 38
+      }
+     ]
+    }
+   ],
+   "conditionalElements": [
+    {
+     "condition": "design-note",
+     "element": "Turn 3: the challenge-runner. Turn 4: Vorhel's defection opens a third front inside your own line (east rail)."
+    },
+    {
+     "condition": "design-note",
+     "element": "Pirate-unlock alt: pirates reinforce if every Vrakthi defects."
+    }
+   ],
+   "startingRosters": {
+    "player": [
+     {
+      "unitId": "vrath_breaker",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": true,
+      "designNote": "West front anchor"
+     },
+     {
+      "unitId": "vrath_render",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Throws the landing back into the lake"
+     },
+     {
+      "unitId": "vrath_forger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Hub fortifications — Reinforced builds hold the rung"
+     },
+     {
+      "unitId": "vrath_breaker",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "South front anchor"
+     },
+     {
+      "unitId": "vrath_sworn",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Fires down the south rail"
+     },
+     {
+      "unitId": "vrath_charger",
+      "count": 2,
+      "spawnZone": 2,
+      "commander": false,
+      "designNote": "Rail response force — redeploys to whichever front cracks"
+     },
+     {
+      "unitId": "vrath_reaper",
+      "count": 1,
+      "spawnZone": 2,
+      "commander": false,
+      "designNote": "Pad cache — seats by t2, keeps the war fund alive"
+     }
+    ],
+    "enemy": [
+     {
+      "unitId": "covenant_keeper",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Beachhead anchor"
+     },
+     {
+      "unitId": "covenant_cantor",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Burns the shoreline rail"
+     },
+     {
+      "unitId": "covenant_witness",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Sees over the mist"
+     },
+     {
+      "unitId": "covenant_architect",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Digs the beachhead in"
+     },
+     {
+      "unitId": "syndicate_suppressor",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "South peninsula denial"
+     },
+     {
+      "unitId": "syndicate_operative",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Probes the south rung"
+     },
+     {
+      "unitId": "syndicate_rangefinder",
+      "count": 1,
+      "spawnZone": 1,
+      "commander": false,
+      "designNote": "Spur overwatch"
+     }
+    ],
+    "reinforcements": [
+     {
+      "unitId": "vrath_charger",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "Vorhel's defectors — your own shapes, wrong color"
+     },
+     {
+      "unitId": "vrath_sworn",
+      "count": 1,
+      "spawnZone": 0,
+      "commander": false,
+      "designNote": "With him"
+     }
+    ]
+   },
+   "economyNotes": {
+    "player": "Pad cache is inside the deploy zone — Reaper seats by t2. 50/turn, rebuy at 150–175, respawn at the pad-side Reaper.",
+    "enemy": "Two fixed fronts plus the defection — no enemy economy. Survive the spend and the marsh is yours."
+   },
+   "spawnZoneRects": {
+    "player": [
+     {
+      "rows": [
+       32,
+       39
+      ],
+      "cols": [
+       21,
+       27
+      ]
+     },
+     {
+      "rows": [
+       32,
+       39
+      ],
+      "cols": [
+       37,
+       43
+      ]
+     },
+     {
+      "rows": [
+       3,
+       7
+      ],
+      "cols": [
+       26,
+       38
+      ]
+     }
+    ],
+    "enemy": [
+     {
+      "rows": [
+       22,
+       44
+      ],
+      "cols": [
+       13,
+       16
+      ]
+     },
+     {
+      "rows": [
+       48,
+       56
+      ],
+      "cols": [
+       48,
+       58
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "terrain": {
+  "seed": 42,
+  "warpStrength": 0.5,
+  "palette": {
+   "open": [
+    110,
+    116,
+    92
+   ],
+   "ruins": [
+    68,
+    72,
+    57
+   ],
+   "mountain": [
+    35,
+    37,
+    29
+   ],
+   "spire_wall": [
+    16,
+    18,
+    35
+   ],
+   "spire_floor": [
+    90,
+    107,
+    135
+   ]
+  },
+  "amplitude": {
+   "open": 20,
+   "ruins": 24,
+   "mountain": 32,
+   "spire_wall": 14,
+   "spire_floor": 22
+  },
+  "blockingRenderTypes": [
+   "mountain",
+   "spire_wall"
+  ],
+  "renderTypeOverrides": [],
+  "structureRenderType": "ruins",
+  "decorations": {
+   "boulder": [],
+   "crevasse": []
+  },
+  "ruinsPerturb": {
+   "regions": [],
+   "erodeProb": 0.45,
+   "expandProb": 0.35
+  },
+  "spriteAssets": {
+   "resource": "/game/assets/terrain/shared/resource.png",
+   "puzzle": "/game/assets/terrain/shared/puzzle.png"
+  },
+  "paintedTiles": {
+   "open": "/game/assets/terrain/ac-411/open.png",
+   "ruins": "/game/assets/terrain/ac-411/harsh.png",
+   "mountain": "/game/assets/terrain/ac-411/impassable.png"
+  },
+  "paintedBlurSigma": {
+   "open": 5,
+   "ruins": 5,
+   "mountain": 5,
+   "spire_wall": 0,
+   "spire_floor": 0
+  },
+  "paintedOutputSize": 3072,
+  "resourceAlphaScale": 0.6,
+  "fractal": {
+   "fine": {
+    "baseScale": 2,
+    "octaves": 4,
+    "seedOffset": 0
+   },
+   "medium": {
+    "baseScale": 6,
+    "octaves": 3,
+    "seedOffset": 9999
+   },
+   "warpX": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 1111
+   },
+   "warpY": {
+    "baseScale": 12,
+    "octaves": 3,
+    "seedOffset": 2222
+   },
+   "fineMediumMix": [
+    0.6,
+    0.4
+   ]
+  },
+  "boundaryAntiAliasStrength": 0.15,
+  "rotationHash": [
+   137,
+   31
+  ]
+ }
+}

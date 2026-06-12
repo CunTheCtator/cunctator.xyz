@@ -1,0 +1,154 @@
+[
+  {
+    "id": "m1_select",
+    "scope": "first-mission",
+    "anchor": "board",
+    "title": "Select",
+    "copy": "Your detachment holds the line. Select a unit.",
+    "action": "Click one of your units"
+  },
+  {
+    "id": "m1_move",
+    "scope": "first-mission",
+    "anchor": "board",
+    "title": "Move",
+    "copy": "Lit tiles are in reach this turn. Broken ground costs double. Order the move.",
+    "action": "Click a lit tile"
+  },
+  {
+    "id": "m1_budget",
+    "scope": "first-mission",
+    "anchor": "hud-act",
+    "title": "Action budget",
+    "copy": "Every order draws from one pool, shared across the detachment. Spend them where it matters.",
+    "action": "Watch the ACTIONS counter"
+  },
+  {
+    "id": "m1_endturn",
+    "scope": "first-mission",
+    "anchor": "hud-end",
+    "title": "End turn",
+    "copy": "Orders spent. End the turn. The enemy moves under the same rules you do.",
+    "action": "Press ENTER or End turn"
+  },
+  {
+    "id": "m1_fog",
+    "scope": "first-mission",
+    "anchor": "board",
+    "title": "Fog & ghosts",
+    "copy": "You see what your units see. A ghost marker holds an enemy's last known position. Trust it less every turn.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m1_income",
+    "scope": "first-mission",
+    "anchor": "hud-currency",
+    "title": "Extractor economy",
+    "copy": "Your extractor draws ¤ from the deposit each turn. Currency buys structures, repairs, and certain abilities.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m1_forecast",
+    "scope": "first-mission",
+    "anchor": "board",
+    "title": "Forecast",
+    "copy": "The forecast is exact. Damage out, retaliation back, both outcomes. If the trade reads bad, it is bad.",
+    "action": "Hover an enemy in range"
+  },
+  {
+    "id": "m1_status",
+    "scope": "first-mission",
+    "anchor": "board",
+    "title": "Status marks",
+    "copy": "Status marks stack beside the unit. Red works against you. Check the inspector for terms and time remaining.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m1_xp",
+    "scope": "first-mission",
+    "anchor": "hud-inspector",
+    "title": "XP record",
+    "copy": "Kills feed the record. Harden at 2, new trait at 4, abilities at 6 and 7. Veterans are made, not issued.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m1_node",
+    "scope": "first-mission",
+    "anchor": "node",
+    "title": "Remnant nodes",
+    "copy": "A Remnant console. End a move beside it to interface. Success arms the whole detachment. Failure costs nothing.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m1_objective",
+    "scope": "first-mission",
+    "anchor": "hud-objective",
+    "title": "Objective pressure",
+    "copy": "The objective will not come to you, and the enemy is not required to wait. Advance.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m1_commander",
+    "scope": "first-mission",
+    "anchor": "commander",
+    "title": "Commander stakes",
+    "copy": "Your commander is the campaign. If they fall, this ends here. Pull them back.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "c_reposition",
+    "scope": "any",
+    "anchor": "unit",
+    "title": "Reposition",
+    "copy": "This unit may reposition after striking. The move is free. Take it, or end its turn.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "c_turret",
+    "scope": "any",
+    "anchor": "board",
+    "title": "Turret",
+    "copy": "That is a turret. It fires on its own at the start of each enemy turn. Stay out of the arc, or end it.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m2_build",
+    "scope": "second-mission",
+    "anchor": "hud-act",
+    "title": "Build",
+    "copy": "Your builder places structures on adjacent tiles. Walls block, turrets fire, relays feed the extractor.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m2_structure_budget",
+    "scope": "second-mission",
+    "anchor": "hud-act",
+    "title": "Hold the works",
+    "copy": "A unit standing on a friendly structure adds +1 to the action pool. Fortify, then man the walls.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m2_repair",
+    "scope": "second-mission",
+    "anchor": "board",
+    "title": "Repair",
+    "copy": "Structures take damage and fall. Your builder repairs adjacent works, at currency per point.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m2_upgrade",
+    "scope": "second-mission",
+    "anchor": "hud-currency",
+    "title": "Amplify",
+    "copy": "Idle currency is a wasted turn. Your builder can upgrade the extractor: more ¤ every turn after.",
+    "action": "Acknowledge"
+  },
+  {
+    "id": "m2_armychips",
+    "scope": "second-mission",
+    "anchor": "hud-objective",
+    "title": "Army effects",
+    "copy": "Chips in the strip modify every unit you field. Green works for you, red against. They tick down each turn.",
+    "action": "Acknowledge"
+  }
+]

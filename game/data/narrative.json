@@ -1,0 +1,3373 @@
+{
+  "scenes": {
+    "covenant_intro": {
+      "initialBackground": "covenant_briefing_terminal",
+      "initialLeft": "adept_velhin_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Senior Priest's briefing, Commander."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Helvyn, southern ice shelf. The Syndicate has held a remnant site for a hundred and forty days. We want it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Standard Covenant detachment, your command. The approach is mapped. Their forward team has a defensive line you'll need to fold."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Capture, not destruction. Site stays intact. Their lead researcher has been keeping notes. The notes are your secondary objective."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Not the researcher. The notes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Standard authorization on the operation. They'll check the after-action, not the during. Use that."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Drop in four hours."
+        },
+        {
+          "type": "set_sprites",
+          "left": "covenant_unit_officer_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "helvyn_ice_shelf_exterior"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Detachment ready, Commander. Forward scouts report clear path to the perimeter."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "The forward team's line starts at two hundred meters. Their lead researcher is inside the spire with the notes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Your orders."
+        }
+      ]
+    },
+    "covenant_m1_post": {
+      "initialBackground": "covenant_briefing_terminal",
+      "initialLeft": "adept_velhin_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Two calls. Researcher and intel. They share the resource pool."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Researcher first."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Send the senior. Keep the office quiet.",
+              "delta": 0,
+              "choiceId": "covenant_m1_c1",
+              "optionKey": "A"
+            },
+            {
+              "text": "The junior. We're running out of time for the orthodox path.",
+              "delta": 5,
+              "choiceId": "covenant_m1_c1",
+              "optionKey": "B"
+            },
+            {
+              "text": "The non-Aevari. The data is bigger than the doctrine.",
+              "delta": 10,
+              "choiceId": "covenant_m1_c1",
+              "optionKey": "C"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Senior researcher's transport leaves at tomorrow's cycle.",
+          "condition": {
+            "choiceId": "covenant_m1_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "The Senior Priest is drafting the office memo.",
+          "condition": {
+            "choiceId": "covenant_m1_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "The Senior Priest is requesting a session with the office.",
+          "condition": {
+            "choiceId": "covenant_m1_c1",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Intel next. They knew we were coming. We can find out how much else they know."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Full decryption. Mission Two starts late and informed.",
+              "delta": 0,
+              "choiceId": "covenant_m1_c2",
+              "optionKey": "A"
+            },
+            {
+              "text": "Split it. Half on the intel, half on the site.",
+              "delta": 5,
+              "choiceId": "covenant_m1_c2",
+              "optionKey": "B"
+            },
+            {
+              "text": "Bury the intel. All resources to the site.",
+              "delta": 10,
+              "choiceId": "covenant_m1_c2",
+              "optionKey": "C"
+            },
+            {
+              "text": "Send it to Caevyn. Raw. Decide what we can't decide from here.",
+              "delta": -5,
+              "choiceId": "covenant_m1_c2",
+              "optionKey": "D"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Decryption priority raised. The Senior Priest is pushing the timeline back.",
+          "condition": {
+            "choiceId": "covenant_m1_c2",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Resources splitting now.",
+          "condition": {
+            "choiceId": "covenant_m1_c2",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Decryption queue suspended. The Senior Priest will revise the after-action.",
+          "condition": {
+            "choiceId": "covenant_m1_c2",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Forwarding to the Senior Priest.",
+          "condition": {
+            "choiceId": "covenant_m1_c2",
+            "value": "D"
+          }
+        }
+      ]
+    },
+    "covenant_m2_intro": {
+      "initialBackground": "covenant_briefing_terminal",
+      "initialLeft": "adept_velhin_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Senior Priest's briefing, Commander."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Helvyn site is yours. Research team deploying to the central chamber and the two ancillary nodes. Six researchers total."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Senior researcher arrived on Helvyn yesterday. Already at the site.",
+          "condition": {
+            "choiceId": "covenant_m1_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Junior researcher arrived overnight. Already at work.",
+          "condition": {
+            "choiceId": "covenant_m1_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Non-Aevari specialist arrived on a separate transport. Escort detail is securing access.",
+          "condition": {
+            "choiceId": "covenant_m1_c1",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Counterattack window is two days out. Composition confirmed.",
+          "condition": {
+            "choiceId": "covenant_m1_c2",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Counterattack window is approximate. Composition partial.",
+          "condition": {
+            "choiceId": "covenant_m1_c2",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Counterattack window unknown. Composition unknown.",
+          "condition": {
+            "choiceId": "covenant_m1_c2",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Decryption pending. The Senior Priest is reviewing the raw signal.",
+          "condition": {
+            "choiceId": "covenant_m1_c2",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Hold the site. Protect the researchers. Complete the day's work."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "The day's work ends when the researchers say it ends. Or when you say it ends. The authority is yours."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Site output is exceeding projections. The Senior Priest flagged it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Drop in two hours."
+        },
+        {
+          "type": "set_sprites",
+          "left": "covenant_unit_officer_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "helvyn_spire_central_chamber"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Researchers in position. Central chamber and both nodes occupied. Detachment perimeter is set."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "The Syndicate will come for the notes, the researchers, or the site. Probably all three. The order will tell us what they want most."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Your orders."
+        }
+      ]
+    },
+    "covenant_m2_post": {
+      "initialBackground": "covenant_briefing_terminal",
+      "initialLeft": "adept_velhin_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Three calls. Team, window, scout. Vrath arrival inside thirty-six hours."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Team first."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Keep them working. Every hour is data.",
+              "delta": 5,
+              "choiceId": "covenant_m2_c1",
+              "optionKey": "A"
+            },
+            {
+              "text": "Pull them now. Clean field.",
+              "delta": 0,
+              "choiceId": "covenant_m2_c1",
+              "optionKey": "B"
+            },
+            {
+              "text": "Ask them. They know what's coming.",
+              "delta": 0,
+              "choiceId": "covenant_m2_c1",
+              "optionKey": "C"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Research team continuing. Evacuation transports on hot standby.",
+          "condition": {
+            "choiceId": "covenant_m2_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Evacuation in progress. Day's data lockdown engaged.",
+          "condition": {
+            "choiceId": "covenant_m2_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Research team consulted.",
+          "condition": {
+            "choiceId": "covenant_m2_c1",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Window next."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Fortify. They come to us.",
+              "delta": 0,
+              "choiceId": "covenant_m2_c2",
+              "optionKey": "A"
+            },
+            {
+              "text": "Ambush. We meet them away from the site.",
+              "delta": 0,
+              "choiceId": "covenant_m2_c2",
+              "optionKey": "B"
+            },
+            {
+              "text": "Request reinforcements. I know what it costs in the chain.",
+              "delta": -10,
+              "choiceId": "covenant_m2_c2",
+              "optionKey": "C"
+            },
+            {
+              "text": "Hold the current posture.",
+              "delta": 5,
+              "choiceId": "covenant_m2_c2",
+              "optionKey": "D"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Fortification crews deployed.",
+          "condition": {
+            "choiceId": "covenant_m2_c2",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Forward team repositioning. Site coverage reduced for the window.",
+          "condition": {
+            "choiceId": "covenant_m2_c2",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Reinforcements en route. Senior priest will be on-site.",
+          "condition": {
+            "choiceId": "covenant_m2_c2",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "No changes posted.",
+          "condition": {
+            "choiceId": "covenant_m2_c2",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Scout last."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Pull the scout. Force size is enough.",
+              "delta": 0,
+              "choiceId": "covenant_m2_c3",
+              "optionKey": "A"
+            },
+            {
+              "text": "Hold them longer. Approach vector matters.",
+              "delta": 0,
+              "choiceId": "covenant_m2_c3",
+              "optionKey": "B"
+            },
+            {
+              "text": "Push the scout. I want everything.",
+              "delta": 5,
+              "choiceId": "covenant_m2_c3",
+              "optionKey": "C"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Scout returning. Approach vector unconfirmed.",
+          "condition": {
+            "choiceId": "covenant_m2_c3",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Scout holding. Reporting on approach now.",
+          "condition": {
+            "choiceId": "covenant_m2_c3",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Scout continuing. Recovery uncertain.",
+          "condition": {
+            "choiceId": "covenant_m2_c3",
+            "value": "C"
+          }
+        }
+      ]
+    },
+    "covenant_m3_intro": {
+      "initialBackground": "covenant_briefing_terminal",
+      "initialLeft": "adept_velhin_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Senior Priest's briefing, Commander. Mission Three."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Vrath are here. Forward elements within striking range inside the hour."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Research team still on site.",
+          "condition": {
+            "choiceId": "covenant_m2_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Research team off-site.",
+          "condition": {
+            "choiceId": "covenant_m2_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Fortifications complete.",
+          "condition": {
+            "choiceId": "covenant_m2_c2",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Forward team in position on the approach.",
+          "condition": {
+            "choiceId": "covenant_m2_c2",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Scout returned. Force size confirmed.",
+          "condition": {
+            "choiceId": "covenant_m2_c3",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Scout reported in. Approach vector confirmed.",
+          "condition": {
+            "choiceId": "covenant_m2_c3",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Scout lost. Tactical picture complete.",
+          "condition": {
+            "choiceId": "covenant_m2_c3",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Adept Velhin",
+          "text": "Drop in one hour."
+        },
+        {
+          "type": "set_sprites",
+          "left": null,
+          "right": "caevyn_base"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Caevyn",
+          "text": "Good fortune, Commander."
+        },
+        {
+          "type": "set_sprites",
+          "left": "covenant_unit_officer_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "helvyn_spire_central_chamber"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Vrath forces inbound."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Your orders."
+        }
+      ]
+    },
+    "covenant_ending_low": {
+      "initialBackground": "helvyn_ice_shelf_exterior",
+      "initialLeft": "covenant_comms_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Comms Officer",
+          "text": "Commander. A message from Caelith. Personal designation. Sent two hours ago."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The officer hands over a slate. Walks away without being asked."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Commander,\n\nThe office is in session. I'm called to attend.\n\nI don't yet know the disposition. I'm writing this because I'd rather it exist than not.\n\nIf the after-action passes through my hands, you'll hear from me again. If not, you won't. The request was a good one. I am not sorry for making it.\n\nSheifport was not a bad room. I would sit in it again.\n\nCaevyn"
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The commander closes the slate. Doesn't open it again. Departure."
+        }
+      ]
+    },
+    "covenant_ending_mid": {
+      "initialBackground": "helvyn_ice_shelf_exterior",
+      "initialLeft": "covenant_comms_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Comms Officer",
+          "text": "Commander. A report. It's incomplete."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The officer hands over a slate."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Caevyn's transport did not arrive at its destination. Recovery operations underway. Status: missing."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Comms Officer",
+          "text": "The case is open. Probably will stay open."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Departure."
+        }
+      ]
+    },
+    "covenant_ending_high": {
+      "initialBackground": "helvyn_eastern_node_interior",
+      "initialLeft": "caevyn_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Caevyn",
+          "text": "The site won't hold. Vrath take this chamber in four minutes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Caevyn",
+          "text": "There's a sequence. It denatures the interface. Makes the site silent. Permanently."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Caevyn",
+          "text": "The office wouldn't authorize it. The office isn't here."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "A glance up. Not a request."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Caevyn",
+          "text": "I'm telling you so the room has someone in it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Caevyn turns to the interface and runs the sequence. The interface goes dark."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The Vrath team enters through the far door eleven seconds later. The commander is close. Not close enough."
+        }
+      ]
+    },
+    "syndicate_intro": {
+      "initialBackground": "syndicate_ops_karadun_orbit",
+      "initialLeft": "soldan_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Karadun. Eastern equatorial, under the glass field."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Vrath remnant. They've been clearing access for four days. Their amplifier team reaches the console pole inside six minutes once they commit."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "We want them not to have it. We don't need to have it ourselves. The clean outcome is they fight without amplification and we walk away intact."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Their lead is a Vrakthi commander ranked high enough that capture alive is on the menu. If you can. If you can't, no penalty."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Your detachment is the third and fourth guild contingents under unified command. They'll fight as one army and report to seven different auditors after the fact. That part's mine."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Drop in two hours."
+        },
+        {
+          "type": "set_sprites",
+          "left": "syndicate_unit_officer_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "karadun_glass_field"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Vrakthi force forming up across the glass. Their amplifier team is moving toward the console pole."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Six minutes before they reach it. The Vrakthi commander has the standard up. Standard up means committing."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Your orders."
+        }
+      ]
+    },
+    "syndicate_m1_post": {
+      "initialBackground": "syndicate_ops_karadun_orbit",
+      "initialLeft": "soldan_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Clean operation. The Vrath didn't activate. Cost stayed inside projection. The auditors will have a quiet week."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Two calls. The remnant. The Vrakthi commander, if we have one. Both yours."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "We take it. Denial today, asset tomorrow.",
+              "delta": 0,
+              "choiceId": "syndicate_m1_c1",
+              "optionKey": "A"
+            },
+            {
+              "text": "Collapse the approach. Nobody gets it.",
+              "delta": 10,
+              "choiceId": "syndicate_m1_c1",
+              "optionKey": "B"
+            },
+            {
+              "text": "Leave it. Not our problem.",
+              "delta": 5,
+              "choiceId": "syndicate_m1_c1",
+              "optionKey": "C"
+            },
+            {
+              "text": "Remnant is denied and intact. What do you want done with it?",
+              "delta": 0,
+              "choiceId": "syndicate_m1_c1",
+              "optionKey": "D"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Securing team en route. The fourth guild's logistics arm gets the notice. They'll guess who.",
+          "condition": {
+            "choiceId": "syndicate_m1_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Demolition charges deployed. The auditors will list it as terrain shaping.",
+          "condition": {
+            "choiceId": "syndicate_m1_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Position abandoned. Karadun stays Karadun.",
+          "condition": {
+            "choiceId": "syndicate_m1_c1",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Leave it. I'll explain why later if you ask. You haven't asked.",
+          "condition": {
+            "choiceId": "syndicate_m1_c1",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Commander next."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Send them home. No ransom. No conditions.",
+              "delta": 0,
+              "choiceId": "syndicate_m1_c2",
+              "optionKey": "A"
+            },
+            {
+              "text": "Ransom. The Vrath don't love it. They'll pay if they want them.",
+              "delta": 10,
+              "choiceId": "syndicate_m1_c2",
+              "optionKey": "B"
+            },
+            {
+              "text": "Intelligence takes them.",
+              "delta": 5,
+              "choiceId": "syndicate_m1_c2",
+              "optionKey": "C"
+            },
+            {
+              "text": "They stay with me. Not in the Syndicate pipeline.",
+              "delta": 5,
+              "choiceId": "syndicate_m1_c2",
+              "optionKey": "D"
+            },
+            {
+              "text": "In the field. They fell in combat with the rest.",
+              "delta": 5,
+              "choiceId": "syndicate_m1_c2",
+              "optionKey": "E"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Return convoy preparing. The Vrath will read it however they read it.",
+          "condition": {
+            "choiceId": "syndicate_m1_c2",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Demand drafted. The seventh guild's diplomatic desk has the file.",
+          "condition": {
+            "choiceId": "syndicate_m1_c2",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Transfer underway. The intel desk says thanks. They don't normally.",
+          "condition": {
+            "choiceId": "syndicate_m1_c2",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Off the auditor's count. On yours.",
+          "condition": {
+            "choiceId": "syndicate_m1_c2",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Recorded as combat casualty. Their family receives the standard notification.",
+          "condition": {
+            "choiceId": "syndicate_m1_c2",
+            "value": "E"
+          }
+        }
+      ]
+    },
+    "syndicate_m2_intro": {
+      "initialBackground": "syndicate_ops_saren_volyn_orbit",
+      "initialLeft": "soldan_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Saren-Volyn. Covenant-administered, lightly defended on the surface, heavily monitored from orbit."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "They have a research presence in the southern lattice. We have an asset there we want back."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Remnant component. Small, portable. Amplifier-class. Per-target output higher than the size suggests. The Covenant documented it. Documentation is incomplete."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "We want the asset. Notes are a bonus if you can grab them. We don't want a firefight that produces a Covenant body they can name."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "After retrieval, you'll hand it to me. Pre-handover, the asset is in your custody for some hours."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "I'm noting that now. The post-mission calls will ask what you did during those hours. The contract is what it is. The hours before are operationally yours."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Drop in two hours."
+        },
+        {
+          "type": "set_sprites",
+          "left": "syndicate_unit_officer_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "saren_volyn_lattice_insertion"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Insertion clean. Lattice cover holding our signature."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Bunker is one approach plus the rear emergency exit they don't know we know about. Quiet or loud. Soldan's standing order is quiet."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Your orders."
+        }
+      ]
+    },
+    "syndicate_m2_post": {
+      "initialBackground": "syndicate_ops_saren_volyn_orbit",
+      "initialLeft": "soldan_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Asset received. Notes received. Operation closed. Auditors will rate it favorably."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Three calls. The asset. The Covenant's approach. What you do with what you know."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Asset first. What did you do with it during those hours?"
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Sealed and delivered. Case wasn't opened.",
+              "delta": 0,
+              "choiceId": "syndicate_m2_c1",
+              "optionKey": "A"
+            },
+            {
+              "text": "Opened it. Scanned it. Handed it over. I noticed some things.",
+              "delta": 5,
+              "choiceId": "syndicate_m2_c1",
+              "optionKey": "B"
+            },
+            {
+              "text": "Sealed and delivered.",
+              "delta": 10,
+              "choiceId": "syndicate_m2_c1",
+              "optionKey": "C"
+            },
+            {
+              "text": "Logistics delay. Asset sealed and delivered.",
+              "delta": 5,
+              "choiceId": "syndicate_m2_c1",
+              "optionKey": "D"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Clean.",
+          "condition": {
+            "choiceId": "syndicate_m2_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Noted in return.",
+          "condition": {
+            "choiceId": "syndicate_m2_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Clean.",
+          "condition": {
+            "choiceId": "syndicate_m2_c1",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Logged.",
+          "condition": {
+            "choiceId": "syndicate_m2_c1",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "The Covenant reached out. A senior priest, not Aeathas, not Caevyn. Wants a meeting on neutral ground."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Forward to the seventh guild's diplomatic desk.",
+              "delta": 0,
+              "choiceId": "syndicate_m2_c2",
+              "optionKey": "A"
+            },
+            {
+              "text": "I'll take it myself. Off the books.",
+              "delta": 10,
+              "choiceId": "syndicate_m2_c2",
+              "optionKey": "B"
+            },
+            {
+              "text": "No response. Their silence will be data.",
+              "delta": 5,
+              "choiceId": "syndicate_m2_c2",
+              "optionKey": "C"
+            },
+            {
+              "text": "I'll meet them. I'll tell you after.",
+              "delta": 5,
+              "choiceId": "syndicate_m2_c2",
+              "optionKey": "D"
+            },
+            {
+              "text": "I'll meet them. I'll lie. The Syndicate benefits.",
+              "delta": 10,
+              "choiceId": "syndicate_m2_c2",
+              "optionKey": "E"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Forwarded. The seventh guild's response will be appropriately uninformative.",
+          "condition": {
+            "choiceId": "syndicate_m2_c2",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Off the books on my end too? ... Acknowledged.",
+          "condition": {
+            "choiceId": "syndicate_m2_c2",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "No response logged. Their silence will be its own message.",
+          "condition": {
+            "choiceId": "syndicate_m2_c2",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Looking forward to the report.",
+          "condition": {
+            "choiceId": "syndicate_m2_c2",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Loop me on the brief if you can. No pressure.",
+          "condition": {
+            "choiceId": "syndicate_m2_c2",
+            "value": "E"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Last call. You've worked out enough of the picture. What do you do with what you know?"
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "The contract's the contract. Mission Three is the table.",
+              "delta": 0,
+              "choiceId": "syndicate_m2_c3",
+              "optionKey": "A"
+            },
+            {
+              "text": "The asset isn't what you said. I need you to know I know.",
+              "delta": 10,
+              "choiceId": "syndicate_m2_c3",
+              "optionKey": "B"
+            },
+            {
+              "text": "Revising the southern routing. Operational reasons.",
+              "delta": 5,
+              "choiceId": "syndicate_m2_c3",
+              "optionKey": "C"
+            },
+            {
+              "text": "I want access to intelligence beyond my operational clearance.",
+              "delta": 10,
+              "choiceId": "syndicate_m2_c3",
+              "optionKey": "D"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Noted.",
+          "condition": {
+            "choiceId": "syndicate_m2_c3",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Heard.",
+          "condition": {
+            "choiceId": "syndicate_m2_c3",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Operational reasons logged. The auditors love operational reasons.",
+          "condition": {
+            "choiceId": "syndicate_m2_c3",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Access granted. Logged.",
+          "condition": {
+            "choiceId": "syndicate_m2_c3",
+            "value": "D"
+          }
+        }
+      ]
+    },
+    "syndicate_m3_intro": {
+      "initialBackground": "syndicate_ops_saren_volyn_orbit",
+      "initialLeft": "soldan_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Mission Three. Saren-Volyn, northern lattice. Covenant has reinforced their presence after the extraction."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "We're going back in to secure a forward position. It gives us leverage in the next phase."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "That's the briefing in the auditor's version."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "You've worked out the rest."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "The position we want is near the relay site. The work inside the relay site during the mission, regardless of who controls the surface, is the actual operation. The fight on the surface is the cover."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Drop in three hours. You'll be paid in full at the standard schedule. The contract terminates at the conclusion of Mission Three."
+        },
+        {
+          "type": "set_sprites",
+          "left": "syndicate_unit_officer_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "saren_volyn_northern_relay"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Forward elements engaging. Relay site is one kilometer north, beyond the Covenant defensive line."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Soldan's standing orders: push forward and establish a perimeter around the site. Site itself isn't the objective. The perimeter is."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Your orders."
+        }
+      ]
+    },
+    "syndicate_ending": {
+      "initialBackground": "saren_volyn_commanders_quarters",
+      "initialLeft": null,
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Contract terminated. Payment posted. A message arrives on the commander's slate."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Commander,\n\nThe Syndicate would like to offer you continued engagement. Generous terms. Substantively different work. We wouldn't pretend it was the same kind of work.\n\nOpen for seventy-two hours.\n\nThe auditors rated the operation favorably. Your participation was notable. I'm not surprised by either.\n\nSoldan"
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The commander reads. Does not respond. Departure."
+        }
+      ]
+    },
+    "vrath_intro": {
+      "initialBackground": "vrakthi_encampment_yelvar",
+      "initialLeft": "high_chief_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "The Covenant has a force in the western valley. Three hundred and forty. Two priest-officers."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Their amplification doctrine is the one we've fought before. You know it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Take the second cohort. Engage. The Vrakthi under you fight as Vrakthi fight. Some of them will die. They've already decided whether dying under you is acceptable."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "You'll be evaluated. By them. By how they tell the story after."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Drop in one hour. Speak it plain if you have a question."
+        },
+        {
+          "type": "set_sprites",
+          "left": "vrakthi_officer_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "yelvar_western_valley"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "Commander. Cohort ready. The Covenant is where the Covenant is."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "We move when you say. We speak when you ask."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "Your orders."
+        }
+      ]
+    },
+    "vrath_m1_post": {
+      "initialBackground": "vrakthi_encampment_yelvar",
+      "initialLeft": "high_chief_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Two matters. The Covenant force that escaped. My order during the fight."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Speak."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "They're running. We follow. A defeated enemy that walks is a fight you'll have again.",
+              "delta": 0,
+              "choiceId": "vrath_m1_c1",
+              "optionKey": "A"
+            },
+            {
+              "text": "Let them go. The cohort's at half. Pursuit costs more than it returns.",
+              "delta": 5,
+              "choiceId": "vrath_m1_c1",
+              "optionKey": "B"
+            },
+            {
+              "text": "Send a runner. Tell them why they're being let go. Let them carry it home.",
+              "delta": -5,
+              "choiceId": "vrath_m1_c1",
+              "optionKey": "C"
+            },
+            {
+              "text": "Their commander against me. If they accept, we settle it. If they refuse, the Vrath will hear it.",
+              "delta": -10,
+              "choiceId": "vrath_m1_c1",
+              "optionKey": "D"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "The straight call. The cohort will note it.",
+          "condition": {
+            "choiceId": "vrath_m1_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "A calculation. The cohort will note that too.",
+          "condition": {
+            "choiceId": "vrath_m1_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "An unusual choice. I don't know yet whether it was the right one. Neither do the Vrakthi who heard.",
+          "condition": {
+            "choiceId": "vrath_m1_c1",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "They refused. Of course they refused. The offer is the thing. The refusal is theirs to carry.",
+          "condition": {
+            "choiceId": "vrath_m1_c1",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "My order during the fight. Speak."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "I followed. Repositioned. The western flank wasn't yet won. I let it become unwon to obey.",
+              "delta": -5,
+              "choiceId": "vrath_m1_c2",
+              "optionKey": "A"
+            },
+            {
+              "text": "Finished the western flank first. Repositioned after. Twelve minutes late.",
+              "delta": 10,
+              "choiceId": "vrath_m1_c2",
+              "optionKey": "B"
+            },
+            {
+              "text": "I followed. The order was correct procedurally. I'm here to say it was wrong tactically.",
+              "delta": 0,
+              "choiceId": "vrath_m1_c2",
+              "optionKey": "C"
+            },
+            {
+              "text": "I didn't follow. The order was wrong. I made the call.",
+              "delta": 15,
+              "choiceId": "vrath_m1_c2",
+              "optionKey": "D"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Obeyed. Some Vrakthi will respect it. Some won't. The way of it.",
+          "condition": {
+            "choiceId": "vrath_m1_c2",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Initiative or insubordination. The cohort will decide which.",
+          "condition": {
+            "choiceId": "vrath_m1_c2",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "You followed and came here to say it. That's a way I haven't seen an outsider take. I don't know yet whether I respect it.",
+          "condition": {
+            "choiceId": "vrath_m1_c2",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "You decided. You won. You're standing in front of me telling me you were right. Tell me again.",
+          "condition": {
+            "choiceId": "vrath_m1_c2",
+            "value": "D"
+          }
+        }
+      ]
+    },
+    "vrath_m2_intro": {
+      "initialBackground": "ac411_marsh_forward_position",
+      "initialLeft": "high_chief_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Syndicate force on the eastern peninsula. Two companies. Mixed guild. Their commander isn't named to me. Not unusual."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Take the cohort. Break them before they entrench. The marsh favors them in the entrench. It doesn't favor them in the approach. You have the window."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "The cohort will mark its second victory after this. Marking is Vrakthi. You'll be present or not. Your choice. I'm noting the option exists."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Drop in one hour."
+        },
+        {
+          "type": "set_sprites",
+          "left": "vrakthi_officer_base",
+          "right": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "Cohort ready. Syndicate is across the open. The marsh will slow us. It'll slow them more if we close."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "Your orders."
+        }
+      ]
+    },
+    "vrath_m2_post": {
+      "initialBackground": "ac411_marsh_forward_position",
+      "initialLeft": "high_chief_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Three matters. The cohort's marking. Aedhrik. And a matter I'll raise myself."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "I'll be there. Whatever the marking is. I've fought with them twice.",
+              "delta": -10,
+              "choiceId": "vrath_m2_c1",
+              "optionKey": "A"
+            },
+            {
+              "text": "I'll be present. Not in everything. There are parts that aren't mine.",
+              "delta": -5,
+              "choiceId": "vrath_m2_c1",
+              "optionKey": "B"
+            },
+            {
+              "text": "I'll observe. Not Vrakthi. I'll witness without performing.",
+              "delta": 0,
+              "choiceId": "vrath_m2_c1",
+              "optionKey": "C"
+            },
+            {
+              "text": "I'll skip. Operational reasons.",
+              "delta": 10,
+              "choiceId": "vrath_m2_c1",
+              "optionKey": "D"
+            },
+            {
+              "text": "I'll be there. I'll mark it with them. I'll bring something from my background that fits.",
+              "delta": -15,
+              "choiceId": "vrath_m2_c1",
+              "optionKey": "E"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Marked. The cohort will see you there.",
+          "condition": {
+            "choiceId": "vrath_m2_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Partial. Marked.",
+          "condition": {
+            "choiceId": "vrath_m2_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Observer's slot. The cohort will be told.",
+          "condition": {
+            "choiceId": "vrath_m2_c1",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Marking proceeds without you.",
+          "condition": {
+            "choiceId": "vrath_m2_c1",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Bring it. The cohort will see what you bring.",
+          "condition": {
+            "choiceId": "vrath_m2_c1",
+            "value": "E"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Aedhrik."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Not my culture, not my place.",
+              "delta": 10,
+              "choiceId": "vrath_m2_c2",
+              "optionKey": "A"
+            },
+            {
+              "text": "I'll speak to Aedhrik. Alone. The cohort will know it was addressed.",
+              "delta": 0,
+              "choiceId": "vrath_m2_c2",
+              "optionKey": "B"
+            },
+            {
+              "text": "In front of the cohort. I'll name what was done.",
+              "delta": -5,
+              "choiceId": "vrath_m2_c2",
+              "optionKey": "C"
+            },
+            {
+              "text": "Vrath culture, Vrath authority. The matter is yours.",
+              "delta": 0,
+              "choiceId": "vrath_m2_c2",
+              "optionKey": "D"
+            },
+            {
+              "text": "By my standards. Aedhrik gets disciplined the way I discipline.",
+              "delta": 10,
+              "choiceId": "vrath_m2_c2",
+              "optionKey": "E"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Recorded.",
+          "condition": {
+            "choiceId": "vrath_m2_c2",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Aedhrik notified.",
+          "condition": {
+            "choiceId": "vrath_m2_c2",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "The cohort will be assembled at sundown.",
+          "condition": {
+            "choiceId": "vrath_m2_c2",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Mine then.",
+          "condition": {
+            "choiceId": "vrath_m2_c2",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Your standards. Noted.",
+          "condition": {
+            "choiceId": "vrath_m2_c2",
+            "value": "E"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "The matter I'll raise."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "I'm making you a war-leader of the Eternal Vrath. The role traditionally requires combat for assumption. You haven't had it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "I'm declaring that the two fights you've led under me satisfy the requirement."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "The declaration is mine to make. The Vrakthi will hear it within the day. Some will accept. Some will not. The not is mine to handle, not yours."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Speak."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "I accept. I know what it means. I'll challenge him. Let me settle it the way it's supposed to be settled.",
+              "delta": -10,
+              "choiceId": "vrath_m2_c3",
+              "optionKey": "A"
+            },
+            {
+              "text": "I accept. Thank you, High Chief.",
+              "delta": 5,
+              "choiceId": "vrath_m2_c3",
+              "optionKey": "B"
+            },
+            {
+              "text": "I can't accept. The role isn't mine to take.",
+              "delta": -5,
+              "choiceId": "vrath_m2_c3",
+              "optionKey": "C"
+            },
+            {
+              "text": "No. Not interested in titles. I'm a contractor.",
+              "delta": 15,
+              "choiceId": "vrath_m2_c3",
+              "optionKey": "D"
+            },
+            {
+              "text": "Before I answer — what does it mean? What does it cost you? What does it ask of me?",
+              "delta": -5,
+              "choiceId": "vrath_m2_c3",
+              "optionKey": "E"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "You'll have the challenge.",
+          "condition": {
+            "choiceId": "vrath_m2_c3",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Accepted.",
+          "condition": {
+            "choiceId": "vrath_m2_c3",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "A decline that knows what it declines.",
+          "condition": {
+            "choiceId": "vrath_m2_c3",
+            "value": "C"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Recorded.",
+          "condition": {
+            "choiceId": "vrath_m2_c3",
+            "value": "D"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "A war-leader's role. Command in my absence. Judgment when I cannot judge. The standing to be challenged for the position by any Vrakthi who thinks they can take it. The cost is mine: a declaration the previous High Chiefs would not have made. What it asks of you is to understand what you're accepting before you accept it. Now you can choose.",
+          "condition": {
+            "choiceId": "vrath_m2_c3",
+            "value": "E"
+          }
+        }
+      ]
+    },
+    "vrath_m3_intro": {
+      "initialBackground": "ac411_marsh_forward_position",
+      "initialLeft": "high_chief_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Two-front engagement. Covenant landed at the western lake. Syndicate reinforced the southern peninsula."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Take the cohort. Fight both. The Covenant will press first. The Syndicate will press once you are committed to the Covenant. You will decide which side to break first."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "The third fight. After three, the contract is complete. The Vrath will pay what was agreed."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Drop in two hours. Speak it plain if you have a question."
+        },
+        {
+          "type": "set_sprites",
+          "left": "vrakthi_officer_base",
+          "right": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "Cohort ready, Commander. Covenant on the western lake. Syndicate on the southern peninsula."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "We move when you say."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "Your orders."
+        }
+      ]
+    },
+    "vrath_ending_low": {
+      "initialBackground": "ac411_transport_pad",
+      "initialLeft": "vrakthi_senior_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Most of the surviving cohort walks the commander to the transport pad. None speak."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Senior Officer",
+          "text": "Good fight, Commander."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "She turns and walks back to the cohort. The transport lifts."
+        }
+      ]
+    },
+    "vrath_ending_mid": {
+      "initialBackground": "ac411_transport_pad",
+      "initialLeft": "vrakthi_senior_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "A smaller cohort walks the commander to the pad. The Vrakthi who were on the other line don't approach."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Senior Officer",
+          "text": "A fight that was many fights. You stood in one of them. The others will be remembered as the others."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "She turns. The cohort splits as it walks back, some going to the new High Chief's banner, some staying with the senior officer."
+        }
+      ]
+    },
+    "vrath_ending_high": {
+      "initialBackground": "ac411_transport_pad",
+      "initialLeft": "vrakthi_senior_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The walk to the pad is short. Few stayed."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Senior Officer",
+          "text": "You fought well, Commander. You did not become Vrakthi. The Vrath do not pretend otherwise."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Senior Officer",
+          "text": "I do not regret staying. I do not blame those who left. The way of it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The transport lifts. No ceremony, no confrontation."
+        }
+      ]
+    },
+    "pirates_intro": {
+      "initialBackground": "pirate_transport_common_area",
+      "initialLeft": "halloran_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Alright, alright, settle in, my friends. Karadun. Open glass field. There's a remnant under the central console pole."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "The Vrath had it. They were setting up to activate it when the Syndicate showed up and politely explained that no, they weren't. Whatever the Syndicate decided to do about it afterward, the remnant is still there. We are going to relieve it of its surroundings and bring it home."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Light Syndicate maintenance presence. Patrol rotations, one watch tower, nothing serious. The Syndicate doesn't actually want to hold this place, they just want to deny it. So we're going to slip in, slip out, and they can keep denying it to an empty field afterward."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "You're running ground. My people on support. They know the field layout, they know the patrols, they'll feed you everything they have once you're moving."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Standard pirate split on the take. Anyone want to ask anything before we drop?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Then we drop in ninety. Get your kit, get your heads ready, we leave on the hour."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Just between us, my friend. First job with us. Take your time. Don't try to be a hero. Just do the work, and the crew will read you as one of theirs."
+        },
+        {
+          "type": "set_sprites",
+          "left": "pirate_crew_human_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "karadun_glass_field"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Pirate Crew",
+          "text": "Edge of the field, Commander. Syndicate watch is on rotation. Halloran's intel matches."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Pirate Crew",
+          "text": "Quiet day. Your call."
+        }
+      ]
+    },
+    "pirates_m1_post": {
+      "initialBackground": "pirate_transport_common_area",
+      "initialLeft": "halloran_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Well, well. Would you look at that. The Vrath were keeping a working fund on hand, for the activation we so politely prevented. Cash money. They didn't get to spend it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Which means, my friend, we do. Standard pirate question: what do we want to do with it?"
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Give it to Halloran to decide.",
+              "delta": 10,
+              "extraDeltas": {
+                "crew_standing": 0
+              },
+              "choiceId": "pirates_m1_c1",
+              "optionKey": "A"
+            },
+            {
+              "text": "Standard captain-and-second split.",
+              "delta": 5,
+              "extraDeltas": {
+                "crew_standing": -2
+              },
+              "choiceId": "pirates_m1_c1",
+              "optionKey": "B"
+            },
+            {
+              "text": "Keep it, bribe the finder to stay quiet.",
+              "delta": -10,
+              "extraDeltas": {
+                "crew_standing": -5
+              },
+              "choiceId": "pirates_m1_c1",
+              "optionKey": "C"
+            },
+            {
+              "text": "Split equally with the crew.",
+              "delta": 0,
+              "extraDeltas": {
+                "crew_standing": 10
+              },
+              "choiceId": "pirates_m1_c1",
+              "optionKey": "D"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Generous of you. Alright. I'll hold onto it. We'll figure it out when we've got time.",
+          "condition": {
+            "choiceId": "pirates_m1_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Standard. Fair. Clean. Done.",
+          "condition": {
+            "choiceId": "pirates_m1_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Generous. The crew will remember.",
+          "condition": {
+            "choiceId": "pirates_m1_c1",
+            "value": "D"
+          }
+        }
+      ]
+    },
+    "pirates_m2_intro": {
+      "initialBackground": "pirate_transport_common_area",
+      "initialLeft": "halloran_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Alright. Saren-Volyn. Covenant research site, southern lattice. They've been studying a remnant component there. We are going to take it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Harder than Karadun. Covenant has standing presence on the planet, priests on site, security routines that the locals actually maintain. We go quiet, hit fast, and pull before they can spool up a real response."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Insertion through the southern lattice. The refraction makes it hard for their orbital sensors to track us in."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "You're running ground again. My people on support. Same split as before. Anyone with questions, now is the time."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Drop in two hours."
+        },
+        {
+          "type": "set_sprites",
+          "left": "pirate_crew_human_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "saren_volyn_priest_research_wing"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Pirate Crew",
+          "text": "We're through the refraction. Sensors aren't picking us up yet. Covenant has two priest squads on site, three patrol rotations."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Pirate Crew",
+          "text": "Halloran's read holds. Your call, Commander."
+        }
+      ]
+    },
+    "pirates_m2_post": {
+      "initialBackground": "pirate_transport_cargo_hold",
+      "initialLeft": "halloran_base",
+      "initialRight": "korren_base",
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Asset received. Notes received. Operation closed. Auditors will rate it favorably."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Two calls. What you did with the asset. Korren."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "The terminal in the hold. What did you decide?"
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Extract the data. Send it to the buyer's channel.",
+              "delta": 0,
+              "extraDeltas": {
+                "buyer_visibility": 10
+              },
+              "choiceId": "pirates_m2_c1",
+              "optionKey": "A"
+            },
+            {
+              "text": "Don't extract. Hand the component over clean.",
+              "delta": 0,
+              "extraDeltas": {
+                "buyer_visibility": 0
+              },
+              "choiceId": "pirates_m2_c1",
+              "optionKey": "B"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Korren did something he shouldn't have, my friend. The priest was down. Korren killed him anyway. He has history with that kind of face."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "This is my crew, so this is my call. But I want to hear what you think."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Advocate the pirate norm. Let it slide.",
+              "delta": 5,
+              "extraDeltas": {
+                "crew_standing": 0
+              },
+              "choiceId": "pirates_m2_c2",
+              "optionKey": "A"
+            },
+            {
+              "text": "Push for a sharper response.",
+              "delta": 5,
+              "extraDeltas": {
+                "crew_standing": 0
+              },
+              "choiceId": "pirates_m2_c2",
+              "optionKey": "B"
+            },
+            {
+              "text": "Ignore the issue entirely.",
+              "delta": 0,
+              "extraDeltas": {
+                "crew_standing": -3
+              },
+              "choiceId": "pirates_m2_c2",
+              "optionKey": "C"
+            },
+            {
+              "text": "Intervene directly, handle it myself.",
+              "delta": -10,
+              "extraDeltas": {
+                "crew_standing": 0
+              },
+              "choiceId": "pirates_m2_c2",
+              "optionKey": "D"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Heard you. Korren, you know better. Don't do it again.",
+          "condition": {
+            "choiceId": "pirates_m2_c2",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Fair point. Korren, what you did was wrong. I'm noting it.",
+          "condition": {
+            "choiceId": "pirates_m2_c2",
+            "value": "B"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Alright. I'll handle it.",
+          "condition": {
+            "choiceId": "pirates_m2_c2",
+            "value": "C"
+          }
+        }
+      ]
+    },
+    "pirates_m3_pre": {
+      "initialBackground": "pirate_transport_side_cabin",
+      "initialLeft": "halloran_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Right. Last job. Helvyn. Big spire, Syndicate-held, biggest remnant of the three. The buyer's been very interested in this one."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Here's the thing. We've been delivering. We've been good. We've been professional. The buyer has been paying. Everything is on the level."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "But this last remnant. The Helvyn one. Word is going around. Other captains, other operations. People want it. Several people. The price someone is willing to pay to NOT have this one go to our buyer — it's substantially more than what we're contracted for."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "I'm bringing this up because the contract is yours and mine, my friend. Yours as much as mine. We took the work together, we close the work together."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Or we don't. We take it somewhere else. Keep the contract money already paid, take the bigger payout from the other side. The buyer will be displeased. We will be considerably richer."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Your call. I'll back what you decide. But I wanted to lay it out before we drop."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Keep the contract. Deliver to the buyer as agreed.",
+              "delta": -5,
+              "extraDeltas": {
+                "buyer_visibility": 5
+              },
+              "choiceId": "pirates_m3_pre_c1",
+              "optionKey": "A"
+            },
+            {
+              "text": "Betray the buyer. Take the bigger payout.",
+              "delta": 10,
+              "extraDeltas": {
+                "buyer_visibility": -5,
+                "crew_standing": 5
+              },
+              "choiceId": "pirates_m3_pre_c1",
+              "optionKey": "B"
+            }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Alright, my friend. Buyer it is. Let's go bring them their thing.",
+          "condition": {
+            "choiceId": "pirates_m3_pre_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Ha. Knew I liked you, my friend. Alright. Different drop-off. Different rules. The crew gets the new plan once we're moving.",
+          "condition": {
+            "choiceId": "pirates_m3_pre_c1",
+            "value": "B"
+          }
+        }
+      ]
+    },
+    "pirates_m3_intro": {
+      "initialBackground": "pirate_transport_common_area",
+      "initialLeft": "halloran_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Helvyn. Southern ice shelf. The Syndicate has been holding the spire since whatever happened before. We're going in, we're getting the remnant, we're getting out."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Biggest remnant we've handled. Worth being careful. The Syndicate doesn't want a fight on the ice, they want their investment to keep paying. So they'll defend, but they'll defend conservatively. Use that."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Standard delivery. We've done this twice already. Drop in two hours.",
+          "condition": {
+            "choiceId": "pirates_m3_pre_c1",
+            "value": "A"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Different delivery. The crew has the new plan. Drop in two hours.",
+          "condition": {
+            "choiceId": "pirates_m3_pre_c1",
+            "value": "B"
+          }
+        },
+        {
+          "type": "set_sprites",
+          "left": "pirate_crew_human_base",
+          "right": null
+        },
+        {
+          "type": "set_background",
+          "background": "helvyn_ice_shelf_pirate_approach"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Pirate Crew",
+          "text": "On the shelf, Commander. Spire is half a klick ahead. Syndicate has fortified the entrance. Two squads visible, more inside."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Pirate Crew",
+          "text": "We'll need to push hard. Your call."
+        }
+      ]
+    },
+    "pirates_ending": {
+      "initialBackground": "pirate_transport_common_area",
+      "initialLeft": "halloran_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Three jobs. Done."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Take is being processed. Your favor is owed. We're square on the work."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "My friend, if you ever want another job, you know how to find me. The door is always open, the drinks are decent, and the company is sometimes worth keeping."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Now. The buyer."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "You and I both held that thing on Helvyn. You and I both got the same partial impression. You and I both came up short, and frankly, that's the most honest thing I can say about it. Whoever the buyer is, my friend, they are not from any cluster you or I have heard of. They are not from any time you or I are part of. They paid us well to bring them their own artifact back. And the artifact has things to say that you and I simply cannot hear."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "I have my opinions. Some captains have theirs. Nobody knows. That's the truth of it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The crew is gathered loosely in the background. The commander leaves the table. Halloran raises his drink."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Until the next one, my friend. Or not. Either way, it was good work."
+        }
+      ]
+    },
+    "sheifport_hub": {
+      "initialBackground": "sheifport_back_room",
+      "initialLeft": null,
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Three faction representatives are present when the commander arrives. None of them stand. None of them seem surprised by the other two. The Covenant sent Aeathas. The Syndicate sent Soldan. The Eternal Vrath sent the High Chief, the First of its Kind, the Apex of the Eternal Vrath, in person."
+        },
+        {
+          "type": "set_sprites",
+          "left": null,
+          "right": "aeathas_base"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Aeathas",
+          "text": "It's been some time."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Aeathas",
+          "text": "The Covenant has an advisory contract for you. Premium rate, the senior priest’s discretionary supplement on top."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Aeathas",
+          "text": "Caevyn submitted the request six days ago. Through formal channels. One name on the requisition. No alternates."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Aeathas",
+          "text": "Two things that aren’t on the slate."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Aeathas",
+          "text": "First, Caevyn drafted the language. You’ll recognize the marginalia."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Aeathas",
+          "text": "Second, the work runs out of the southern wing at Caelith. Primary office. Caevyn took it back six weeks ago. I trust you remember which one."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Aeathas",
+          "text": "The cycle is open for the week. I’ll listen to my counterparts now."
+        },
+        {
+          "type": "set_sprites",
+          "left": "soldan_base",
+          "right": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Look at the fourth column."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "I’m not asking you to guess who they are. I’m asking you to notice that someone is. And that the Covenant hasn’t."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Whoever they are, they move through the regions our contract takes you through."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Sign with us, we name them. Don’t, and the slate goes in my coat."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Either way, you walk out knowing more than you walked in with."
+        },
+        {
+          "type": "set_sprites",
+          "left": null,
+          "right": "high_chief_base"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "You are good at war. We need someone good at war."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "A campaign contract. We pay in your currency, at the rate the Syndicate pays."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "We do not ask you to be Vrakthi. We do not pretend you are."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "You will fight under Vrakthi who will judge you by what they see. Which is fair."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "If you take the contract and fight badly, you die in the field. The contract closes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "If you take it and fight well, you leave when the work is done. The contract closes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief",
+          "text": "Either way it closes clean."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "Accept the Covenant contract.",
+              "delta": 0,
+              "choiceId": "faction_choice",
+              "optionKey": "covenant"
+            },
+            {
+              "text": "Accept the Syndicate contract.",
+              "delta": 0,
+              "choiceId": "faction_choice",
+              "optionKey": "syndicate"
+            },
+            {
+              "text": "Accept the Vrath contract.",
+              "delta": 0,
+              "choiceId": "faction_choice",
+              "optionKey": "vrath"
+            }
+          ]
+        }
+      ]
+    },
+    "covenant_m1_spire_breach": {
+      "initialBackground": "helvyn_spire_central_chamber",
+      "initialLeft": "covenant_priest_trooper_base",
+      "initialRight": "covenant_researcher_base",
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The door fails. The researcher is at the central console, unarmed, reaching for the slate that holds the notes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The priest-trooper fires once. The researcher falls across the slate."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The slate is intact."
+        },
+        {
+          "type": "set_sprites",
+          "left": "covenant_unit_officer_base",
+          "right": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Researcher down. Notes secured. Site is ours, Commander."
+        }
+      ]
+    },
+    "covenant_m2_caevyn_arrival": {
+      "initialBackground": "helvyn_ice_shelf_exterior",
+      "initialLeft": null,
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "A Covenant transport sets down outside the perimeter. No prior clearance."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Caevyn descends, accompanied by two priests of the high priest's office."
+        },
+        {
+          "type": "set_sprites",
+          "left": "caevyn_base",
+          "right": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Caevyn",
+          "text": "Decryption complete. Their composition is on the slate."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Caevyn",
+          "text": "Hold the line. We'll discuss the rest after."
+        }
+      ]
+    },
+    "covenant_m3_eastern_node": {
+      "initialBackground": "helvyn_eastern_node_interior",
+      "initialLeft": "covenant_unit_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Commander. Eastern node is compromised. Caevyn is in there with the office priests. No clean extraction from current positions."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The unit officer waits. No choice prompt. The decision is in unit movement."
+        }
+      ]
+    },
+    "syndicate_m1_capture_window": {
+      "initialBackground": "karadun_glass_field",
+      "initialLeft": "syndicate_unit_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Commander, the Vrakthi lead is in capture range. Killing ends the engagement faster. Capture complicates Mission Two logistics."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "No choice prompt. The decision is in unit movement."
+        }
+      ]
+    },
+    "syndicate_m3_relay_activity": {
+      "initialBackground": "saren_volyn_northern_relay",
+      "initialLeft": "syndicate_unit_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Commander. Forward team reporting unusual activity inside the relay site. Syndicate signature, not Covenant. They're not on our roster. Inside the perimeter we haven't established."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Soldan is not responding on channel one."
+        }
+      ]
+    },
+    "syndicate_m3_soldan_appears": {
+      "initialBackground": "saren_volyn_northern_relay",
+      "initialLeft": null,
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "A Syndicate transport lands at the rear of the deployment. Soldan steps out, accompanied by two operatives."
+        },
+        {
+          "type": "set_sprites",
+          "left": "soldan_base",
+          "right": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Commander. The auditors find your decisions interesting. The auditors don't handle interesting in person. I do."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Operation concludes on schedule. Your detachment fulfills its objective. The contract terminates clean."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Soldan",
+          "text": "Anything you've been not asking through channels, ask me now."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Soldan stays at the command position, observing. The fight resumes."
+        }
+      ]
+    },
+    "syndicate_m3_support_pulled": {
+      "initialBackground": "saren_volyn_northern_relay",
+      "initialLeft": "syndicate_unit_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "Commander. Reinforcement waves not in position. No contact. Auxiliary support has been redirected. Orders signed at guild authority, not Soldan's."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unit Officer",
+          "text": "We have what we have. Standing orders unchanged."
+        }
+      ]
+    },
+    "vrath_m1_high_chief_order": {
+      "initialBackground": "yelvar_western_valley",
+      "initialLeft": "vrakthi_runner_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Runner",
+          "text": "From the High Chief. Reposition to the northern approach. Now."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "No reason given. The runner does not speculate."
+        }
+      ]
+    },
+    "vrath_m2_aedhrik_violation": {
+      "initialBackground": "ac411_marsh_forward_position",
+      "initialLeft": "vrakthi_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "Commander. Aedhrik in the third squad did a thing in the assault. The Vrakthi who saw it are talking."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "Matter will be on your desk after the fight."
+        }
+      ]
+    },
+    "vrath_m3_challenge_runner": {
+      "initialBackground": "ac411_marsh_forward_position",
+      "initialLeft": "vrakthi_runner_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "A Vrakthi runner reaches the command position. Out of breath."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Runner",
+          "text": "Commander. From the rear. The High Chief has been challenged. By Vorhel. Vorhel had standing."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Runner",
+          "text": "Challenge answered. Vorhel won."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Runner",
+          "text": "The previous High Chief is dead. The new High Chief is Vorhel."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The runner returns to position. The fight does not pause."
+        }
+      ]
+    },
+    "vrath_m3_defection": {
+      "initialBackground": "ac411_marsh_forward_position",
+      "initialLeft": null,
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The new High Chief transmits openly on a frequency the cohort uses, mid-engagement."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief Vorhel",
+          "text": "Warriors of the Eternal Vrath. The previous High Chief is dead. The outsider was never Vrakthi."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief Vorhel",
+          "text": "I call the Vrakthi back from his command. Return to the Vrath. The fight is here."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief Vorhel",
+          "text": "Those who stay defy this order. The way of it."
+        },
+        {
+          "type": "set_sprites",
+          "left": "vrakthi_defecting_base",
+          "right": "vrakthi_staying_base"
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Defections happen on the field. Vrakthi who are leaving cross the line mid-engagement. They state it as they go."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Defecting Vrakthi",
+          "text": "The High Chief speaks for the Vrakthi."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Defecting Vrakthi",
+          "text": "I fought under the previous High Chief. I don't fight under an outsider whom the previous High Chief named in a moment I don't respect."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Staying Vrakthi",
+          "text": "I fought under him at Yelvar. I serve him still."
+        },
+        {
+          "type": "set_sprites",
+          "left": "vrakthi_officer_base",
+          "right": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Officer",
+          "text": "About half answered the call. Those gone are on the field under the new High Chief. You'll see them across the line."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The fight resumes. Vorhel's banner is now a third front."
+        }
+      ]
+    },
+    "vrath_m3_senior_officer": {
+      "initialBackground": "ac411_marsh_forward_position",
+      "initialLeft": "vrakthi_senior_officer_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The senior officer approaches at a brief lull. She is bleeding from a flank wound."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Senior Officer",
+          "text": "The Vrath do not speak of this aloud. I will speak of it once."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Senior Officer",
+          "text": "Those who stayed read you as Vrakthi-enough. Those who left did not. Neither reading is wrong. Both are the way of it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Senior Officer",
+          "text": "I read you as Vrakthi-enough. That is the reason I stayed. I'll not speak of it again."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Vrakthi Senior Officer",
+          "text": "Speak it plain if you have a question, then back to the work."
+        }
+      ]
+    },
+    "pirates_m2_buyer_contact": {
+      "initialBackground": "saren_volyn_priest_research_wing",
+      "initialLeft": null,
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The commander's personal slate vibrates. A message has arrived on a private channel that should not be reachable from here. No sender ID. Unknown frequency."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unknown Sender",
+          "text": "South interface of the remnant. There is a terminal."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unknown Sender",
+          "text": "Access it. Take what is on it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unknown Sender",
+          "text": "The standard extraction will continue regardless of your choice."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unknown Sender",
+          "text": "If you do this, there will be consequences. If you do not, there will be other consequences. If you share this message, there will be consequences. If you do not, there will be other consequences."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Unknown Sender",
+          "text": "What is best is not stated. What is asked is stated."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The slate goes still. Halloran is continuing on standard comms, unaware. The commander has seconds."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "[Private channel to Halloran] Got a message. Not from you.",
+              "delta": 0,
+              "extraDeltas": {
+                "buyer_visibility": 0
+              },
+              "choiceId": "pirates_m2_mid_share",
+              "optionKey": "tell"
+            },
+            {
+              "text": "Keep the message private. Process it alone.",
+              "delta": 0,
+              "extraDeltas": {
+                "buyer_visibility": 0
+              },
+              "choiceId": "pirates_m2_mid_share",
+              "optionKey": "hide"
+            }
+          ]
+        },
+        {
+          "type": "set_sprites",
+          "left": "halloran_base",
+          "right": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "... What kind of message, my friend?",
+          "condition": {
+            "choiceId": "pirates_m2_mid_share",
+            "value": "tell"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The commander relays the buyer's text.",
+          "condition": {
+            "choiceId": "pirates_m2_mid_share",
+            "value": "tell"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Ah. So our friend wants something extra. Of course they do.",
+          "condition": {
+            "choiceId": "pirates_m2_mid_share",
+            "value": "tell"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "They didn't tell you what the consequences are, did they?",
+          "condition": {
+            "choiceId": "pirates_m2_mid_share",
+            "value": "tell"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Right. Well. Your call. I'll back what you decide. Just don't get killed making it.",
+          "condition": {
+            "choiceId": "pirates_m2_mid_share",
+            "value": "tell"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The commander returns to the operation."
+        }
+      ]
+    },
+    "vrath_m3_defection_pirate_alt": {
+      "initialBackground": "ac411_marsh_forward_position",
+      "initialLeft": null,
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Vorhel's transmission plays exactly as standard."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief Vorhel",
+          "text": "Warriors of the Eternal Vrath. The previous High Chief is dead. The outsider was never Vrakthi."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief Vorhel",
+          "text": "I call the Vrakthi back from his command. Return to the Vrath. The fight is here."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "High Chief Vorhel",
+          "text": "Those who stay defy this order. The way of it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Every single Vrakthi on the field defects. None stay."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The Vrakthi reform under Vorhel's banner across the field. The commander stands alone, the cohort empty around them."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Then: a transport drops into low atmosphere. Markings: pirate. The commander's comms open without request."
+        },
+        {
+          "type": "set_sprites",
+          "left": "halloran_base",
+          "right": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Looks like you could use a hand, my friend. We were in the area."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Pirate forces deploy from the transport. They fill in where the Vrakthi cohort stood. The fight proceeds. Covenant, Syndicate, and Vrath all engaged, the commander no longer alone."
+        }
+      ]
+    },
+    "vrath_m3_closing_pirate_alt": {
+      "initialBackground": "pirate_transport_common_area",
+      "initialLeft": "halloran_base",
+      "initialRight": null,
+      "beats": [
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "The pirate transport lifts. Halloran offers the commander a drink and a seat."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "That was something. The Vrath walked away from you. That doesn't happen."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Beat."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "Listen. I have work. You're welcome to come along. Different operation, different rules, different conversations. If you've had enough of contracts and rituals and corporate dances, you know where to find me. The Sheifport. Same place you met the three of them. Different door."
+        },
+        {
+          "type": "dialogue",
+          "speaker": null,
+          "text": "Beat."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Halloran",
+          "text": "No pressure. Take your time. The door will be open."
+        }
+      ]
+    }
+  },
+  "midMissionTriggers": {
+    "covenant_m1": [
+      {
+        "id": "covenant_m1_spire_breach",
+        "sceneId": "covenant_m1_spire_breach",
+        "conditions": [
+          {
+            "type": "objective_tile_reached",
+            "at": {
+              "x": 48,
+              "y": 30
+            }
+          }
+        ]
+      }
+    ],
+    "covenant_m2": [
+      {
+        "id": "covenant_m2_caevyn_arrival",
+        "sceneId": "covenant_m2_caevyn_arrival",
+        "conditions": [
+          {
+            "type": "choice_history",
+            "choiceId": "covenant_m1_c2",
+            "value": "D"
+          },
+          {
+            "type": "turn",
+            "turn": 3
+          }
+        ]
+      }
+    ],
+    "covenant_m3": [
+      {
+        "id": "covenant_m3_eastern_node",
+        "sceneId": "covenant_m3_eastern_node",
+        "conditions": [
+          {
+            "type": "choice_history",
+            "choiceId": "covenant_m1_c2",
+            "value": "D"
+          },
+          {
+            "type": "objective_tile_reached",
+            "at": {
+              "x": 40,
+              "y": 32
+            }
+          }
+        ]
+      }
+    ],
+    "syndicate_m1": [
+      {
+        "id": "syndicate_m1_capture_window",
+        "sceneId": "syndicate_m1_capture_window",
+        "conditions": [
+          {
+            "type": "enemy_unit_hp_pct",
+            "unitDataId": "vrath_warlord",
+            "threshold": 0.3
+          }
+        ]
+      }
+    ],
+    "syndicate_m3": [
+      {
+        "id": "syndicate_m3_relay_activity",
+        "sceneId": "syndicate_m3_relay_activity",
+        "conditions": [
+          {
+            "type": "turn",
+            "turn": 4
+          }
+        ]
+      },
+      {
+        "id": "syndicate_m3_support_pulled",
+        "sceneId": "syndicate_m3_support_pulled",
+        "conditions": [
+          {
+            "type": "consequence_range",
+            "min": 70,
+            "max": 100
+          },
+          {
+            "type": "turn",
+            "turn": 5
+          }
+        ]
+      },
+      {
+        "id": "syndicate_m3_soldan_appears",
+        "sceneId": "syndicate_m3_soldan_appears",
+        "conditions": [
+          {
+            "type": "consequence_range",
+            "min": 30,
+            "max": 69
+          },
+          {
+            "type": "turn",
+            "turn": 6
+          }
+        ]
+      }
+    ],
+    "vrath_m1": [
+      {
+        "id": "vrath_m1_high_chief_order",
+        "sceneId": "vrath_m1_high_chief_order",
+        "conditions": [
+          {
+            "type": "enemy_count_pct",
+            "threshold": 0.5
+          }
+        ]
+      }
+    ],
+    "vrath_m2": [
+      {
+        "id": "vrath_m2_aedhrik_violation",
+        "sceneId": "vrath_m2_aedhrik_violation",
+        "conditions": [
+          {
+            "type": "enemy_count_pct",
+            "threshold": 0.6
+          }
+        ]
+      }
+    ],
+    "vrath_m3": [
+      {
+        "id": "vrath_m3_challenge_runner",
+        "sceneId": "vrath_m3_challenge_runner",
+        "conditions": [
+          {
+            "type": "turn",
+            "turn": 3
+          }
+        ]
+      },
+      {
+        "id": "vrath_m3_defection",
+        "sceneId": "vrath_m3_defection",
+        "pirateAltSceneId": "vrath_m3_defection_pirate_alt",
+        "postUnlockPirates": true,
+        "postSceneId": "vrath_m3_senior_officer",
+        "conditions": [
+          {
+            "type": "turn",
+            "turn": 4
+          }
+        ]
+      }
+    ],
+    "pirates_m2": [
+      {
+        "id": "pirates_m2_buyer_contact",
+        "sceneId": "pirates_m2_buyer_contact",
+        "conditions": [
+          {
+            "type": "objective_tile_reached",
+            "at": {
+              "x": 48,
+              "y": 30
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
